@@ -1,60 +1,42 @@
-# Administration area
+# 監理領域
 
-To access the Contao administration area (back end) simply add `/contao` to the
-URL of your Contao website. The back end login is protected against brute force
-attacks, so if you enter a wrong password more than three times in a row, your
-account will be locked for 5 minutes.
+Contaoの管理領域(バックエンド)にアクセスするには、ContaoのウェブサイトのURLに単純に`/contao`を追加してください。バックエンドのログインは総当たり攻撃から保護してあり、連続して間違ったパスワードを3回入力すると、5分の間アカウントはロックされます。
 
 
-## Listing records
+## レコードの一覧
 
-The Contao core engine supports three views: a simple list ("list view"), a list
-that is grouped by its parent table ("parent view") and a hierarchical list
-("tree view"). These three views can be used to list the records of any table or
-related tables.
+Contaoのコアのエンジンは3つの表示方法をサポートしています: 単純な一覧("リストビュー")、親のテーブルでグループ化した一覧("ペアレントビュー")、階層的な一覧("ツリービュー")です。これらの3つの表示を任意のテーブルや関連するテーブルの一覧に使えます。
 
 
-### List view
+### リストビュー
 
-The "list view" lists the records of a single table in a particular order. The
-results are usually grouped by their first letter.
+"リストビュー"は単一のテーブルのレコードを特定の順序で一覧表示します。その結果は通常は最初の文字でグループにまとめられます。
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/list-view.jpg)
 
 
-### Parent view
+### ペアレントビュー
 
-The "parent view" lists the records of a child table that are related to a
-particular record of a parent table. Parent-child relations are used a lot in
-Contao, e.g. for articles and content elements, news archives and news articles
-or style sheets and format definitions.
+"ペアレントビュー"は親のテーブルの特定のレコードに関連した、子のテーブルのレコードを一覧表示します。親と子の関係はContaoで多数使用していて、例えばアーティクルとコンテンツ要素、ニュースアーカイブとニュース記事、スタイルシートと書式定義などです。
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/parent-view.jpg)
 
 
-### Tree view
+### ツリービュー
 
-The "tree view" lists records and other resources like files and folders that
-are organized in a hierarchical structure. Contao supports listing single
-hierarchical tables (e.g. the site structure) as well as child tables that
-relate to hierarchical parent tables (e.g. articles and pages).
+"ツリービュー"は、ファイルとフォルダーのように階層的な構造を構成する、レコードとその他のリソースを表示します。Contaoは単一の階層的なテーブル(例えば、サイト構造)に加えて、階層的な親のテーブルと関連した子のテーブル(例えば、アーティクルとページ)もサポートしています。
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/tree-view.jpg)
 
 
-### Sorting and filtering data
+### 並べ替えとデータのフィルター
 
-Contao supports various ways to refine results so you do not lose track even if
-a table has several thousands of rows. A lot of listings can be filtered by one
-or more fields so they only show the records matching the filter criteria. Most
-listings additionally offer a full text search that even supports regular
-expressions. To keep the page loading time down to a minimum, Contao only shows
-30 records at a time.
+Contaoには様々な結果を絞り込む方法をサポートしていて、例えテーブルが数千の列でも状況の把握ができなくなるようなことはありません。多くの一覧表示は1つ以上の項目でフィルターして、その条件に合ったレコードだけを表示できます。加えて殆どの一覧表示では、正規表現までサポートした全文検索も提供しています。ページを表示する時間を最小限とするため、Contaoは一度には30レコードだけ表示します。
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/sorting-and-filtering.jpg)
 
 
-## Editing records
+## レコードの編集
 
 Editing data is one of the central functions of a Content Management System.
 Contao offers a lot of professional features that make the editing process as
@@ -63,51 +45,39 @@ record, restore deleted records, move records via clipboard and even edit
 multiple records at once. Most of these functions can be accessed using the
 navigation icons.
 
+データの編集はコンテンツ管理システムの中心的な機能の1つです。Contaoは編集の作業を可能な限り簡単に、そして快適にする多くの専門的な機能を用意しています。レコードの前のバージョンに戻したり、削除したレコードを復元したり、クリップボードを経由して移動したり、同時に複数のレコードを編集したりといったことさえ可能です。これらの機能の殆どはナビゲーションのアイコンを使用して実行できます。
 
-### List view icons
+### リストビューのアイコン
 
-The "list view" being the simplest view only offers the four basic actions:
-edit, duplicate, delete and show.
+「リストビュー」はもっとも単純な表示形式で、4つの基本的な処理: 編集、複製、削除、表示を用意しています。
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/list-view-icons.jpg)
 
 
-### Parent view icons
+### ペアレントビューのアイコン
 
-The "parent view" offers two additional navigation icons to control the order of
-the records. From version 2.7, the order can also be changed via drag and drop.
-To do so, simply click on a record (not a navigation icon) and drag it to its
-new position.
+「ペアレントビュー」はナビゲーションのアイコンを2つの追加していて、レコードの順序を制御できます。バージョン2.7からは、順序はドラッグアンドドロップで変更できます。これは(ナビゲーションのアイコンではなく)単純にレコードをクリックしてから、新しい位置にドラッグできます。
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/parent-view-icons.jpg)
 
 
-### Tree view icons
+### ツリービューのアイコン
 
-The "tree view" requires additional icons to handle the hierarchical structure.
-Besides duplicating a single record, it also supports duplicating a record with
-all its sub-records as well as pasting it after or into another record, so you
-can create a nested structure.
+「ツリービュー」に必要なのは階層構造を扱うための追加のアイコンです。1つのレコードの複製に加えて、すべての下位のレコードを含めた複製、レコードの後や中に貼り付けを提供していて、入れ子となった構造を作成できるようにしています。
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/tree-view-icons.jpg)
 
 
-### Restoring prior versions
+### 以前のバージョンの復元
 
-Contao automatically creates new versions of a record every time you save it. As
-soon as there is more than one version, a drop-down menu which allows you to
-revert back to a prior version appears at the top of the form. Simply choose a
-version and click the "Restore" button.
+Contaoはレコードを保存するときに、その新しいバージョンを毎回自動的に作成しています。複数のバージョンが存在していると、フォームの上部にドロップダウンメニューを表示して、ここから以前のバージョンに戻すことができます。単純にバージョンを選択して復元のボタンをクリックします。
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/versioning.jpg)
 
 
-### Editing multiple records
+### 複数のレコードの編集
 
-The ability to edit more than one record at a time clearly makes Contao stand
-out from the variety of Content management systems. Click the "Edit multiple"
-button to switch the editing mode, then select one or more records and choose
-the fields that you want to modify.
+一度に複数のレコードを編集する能力は、Contaoを様々なコンテンツ管理システムから明らかに際立たせています。「複数を変更」のボタンをクリックすると編集モードが切り替わるので、1つ以上の変更したいレコードを選択して、それから修正したい項目を選択してください。
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/select-multiple-records.jpg)
 
@@ -116,21 +86,18 @@ the fields that you want to modify.
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/edit-multiple-records.jpg)
 
 
-## Keyboard shortcuts
+## キーボードのショートカット
 
-To speed up the workflow when working with Contao, there are several back end
-shortcuts which allow you to execute certain commands. You can e.g. trigger the
-"save" button at the end of a form by klicking it with your mouse or by using
-the keyboard shortcut `[Alt]+[s]`.
+Contaoで作業するときの流れを高速化する、バックエンドのショートカットがいくつかあって、特定のコマンドを実行できます。例えば、フォームの最後にある「保存」ボタンの実行は、マウスのクリックかキーボードのショートカット`[ALT] + [s]`で行えます。
 
 
-### General keyboard shortcuts
+### 一般的なキーボードのショートカット
 
 <table>
 <tr>
-  <th>Shortcut</th>
-  <th>Button</th>
-  <th>Explanation</th>
+  <th>ショートカット</th>
+  <th>ボタン</th>
+  <th>説明</th>
 </tr>
 <tr>
   <td><code>[Alt]+[h]</code></td>
@@ -174,9 +141,9 @@ the keyboard shortcut `[Alt]+[s]`.
 
 <table>
 <tr>
-  <th>Shortcut</th>
-  <th>Button</th>
-  <th>Explanation</th>
+  <th>ショートカット</th>
+  <th>ボタン</th>
+  <th>説明</th>
 </tr>
 <tr>
   <td><code>[Alt]+[s]</code></td>
@@ -212,9 +179,9 @@ creating style sheets.</td>
 
 <table>
 <tr>
-  <th>Shortcut</th>
-  <th>Button</th>
-  <th>Explanation</th>
+  <th>ショートカット</th>
+  <th>ボタン</th>
+  <th>説明</th>
 </tr>
 <tr>
   <td><code>[Alt]+[d]</code></td>

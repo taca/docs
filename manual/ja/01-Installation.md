@@ -1,136 +1,87 @@
-# Installation
+# インストール
 
-The following chapters explain how to install and update Contao. You will learn
-how to use the Contao install tool, how to synchronize an existing installation
-via FTP, how to set up the Safe Mode Hack and how to configure a live server for
-Contao.
+以下の章ではContaoのインストールと更新の方法を説明しています。Contaoのインストールツールの使い方、FTPで既存のインストールと合わせる方法、セーフモード対処の設定の方法、Contaoのために稼働中のサーバーを設定する方法について学べます。
 
+## Contaoのインストール
 
-## Installing Contao
+まず始めに、[最新のContaoのアーカイブ][1]をダウンロードして、使用しているコンピューター上で展開してください。次に展開したファイルをコンピューター上にインストールしているXAMPPの`htdocs`に移動するか、FTPプログラム([WinSCP][2]の使用を推奨)でサーバーにアップロードしてください。サーバーの設定によりますが、公開フォルダーは`htpdocs`、`httpdocs`、`html`、`public_html`といった名前となっている場合が多いでしょう。
 
-First of all, download the [latest Contao archive][1] and extract it on your
-local computer. Move the files into the `htdocs` folder of your local XAMPP
-installation or upload them to your server with an FTP program (we recommend
-using [WinSCP][2]). Depending on your server configuration, the public folder is
-most likely called `htdocs`, `httpdocs`, `html` or `public_html`
+SSHでアクセスできるなら、以下のコマンドでアーカイブのダウンロードできます:
 
-If you have SSH access, you can download and extract the archive with the
-following commands:
 
 ``` {.bash}
 curl -L http://install.contao.org | tar -xzp
 ```
 
 
-### The Contao install tool
+### Contaoのインストールツール
 
-To open the Contao install tool, simply add `/contao/install.php` to the URL of
-your Contao installation. Note that the install tool is protected against brute
-force attacks and will be locked if a wrong password has been entered three
-times in a row. To remove the lock, open file `system/config/localconfig.php` in
-a text editor, find the following line and set it to `0`.
+Contaoのインストールツールを開始するには、ContaoをインストールするURLに単純に`/contao/install.php`を加えてアクセスしてください。インストールツールは総当たりの攻撃に対する防護をしていて、連続して誤ったパスワードを3回入力するとロックします。ロックを解除するには、テキストエディターで`system/config/localconfig.php`を開いて、以下の行を見つけて0に値を設定します。
 
 ``` {.php}
-$GLOBALS['TL_CONFIG']['installCount'] = 0; // This will remove the automatic lock
+$GLOBALS['TL_CONFIG']['installCount'] = 0; // これで自動的なロックを削除
 ```
 
 
-#### Connecting to the database
+#### データベースに接続
 
-Log into your server administration panel (e.g. "Plesk" or "Cpanel") and create
-a new database for Contao. Then enter the login credentials in the Contao
-install tool. Note that the Contao default character set `UTF-8` is written as
-`UTF8` in MySQL!
+サーバーの(例えば"Plesk"や"Cpanel"といった)管理パネルにログインして、Contao用の新しいデータベースを作成してください。そして、Contaoのインストールツールに認証情報を入力してください。Contaoの文字セットの初期値の`UTF-8`は、MySQLでは`UTF8`と書くことに注意してください!
 
 
-#### Updating the database tables
+#### データベースのテーブルの更新
 
-Once you are connected to the database, Contao automatically checks its tables
-and displays a list of recommended changes in case they are not up to date. Make
-sure to read those recommendations carefully, because Contao only knows its own
-tables and will try to remove those of other applications eventually sharing the
-database. Confirm the changes and click the "Update database" button.
+データベースに接続するとContaoは自動的にテーブルを確認して、最新の状態でない場合は推奨する変更のリストを表示します。この推奨する内容は注意深く読むようにしてください。なぜなら、Contaoはそれ自身のテーブルだけを知っていて、データベースを共有している他のアプリケーションのテーブルを最終的に削除しようとするからです。変更を確認して「データベースを更新」のボタンをクリックしてください。
 
 
-#### Importing a template
+#### テンプレートのインポート
 
-A template is a preconfigured website that includes an example site structure
-and several style sheets to format the Contao core modules and content elements.
-The default template is called "Music Academy". To import it, choose the
-`example_website.sql` option from the drop-down menu an click the "Import
-template" button.
+テンプレートはサイト構造、Contaoのコアモジュールとコンテンツ要素を整形するいくつかのスタイルシートを含んでいる、サンプルの構成済みのウェブサイトです。初期状態のテンプレートは"Music Academy"といいます。これをインポートするにはドロップダウンメニューから`example_website.sql`を選択して、「テンプレートをインポート」のボタンをクリックしてください。
 
-**Existing data will be overriden during the template import!**
+**テンプレートをインポートする間に既存のデータは上書きされることに注意してください!**
 
 
-#### Creating an admin user
+#### 管理者ユーザーの作成
 
-If you did not import a template, you have to create an admin user to log into
-the Contao back end. After you have created the account, the installation
-process is completed. The link in the lower right corner will take you to the
-administration area. If you have imported the example website, you can login as
-user "k.jones" with the password "kevinjones".
+テンプレートをインポートしなかった場合は、Contaoにログインする管理者ユーザーを作成しなければなりません。このアカウント作成すると、インストールの処理は完了です。右下の隅にあるリンクから管理領域に移動できます。サンプルのテンプレートをインポートした場合は"k.jones"というユーザーと"kevinjones"というパスワードでログインできます。
 
 
-### Using search engine friendly URLs
+### 検索エンジンわかりやすいURL
 
-If you are running an Apache server and are allowed to use mod_rewrite, you can
-make Contao generate search engine friendly URLs that look like static HTML
-documents. A set of default rewrite rules is stored in the `.htaccess.default`
-file in the Contao directory. Rename this file to `.htacess` so the Apache
-server can handle it and then log into the back end and navigate to the system
-settings. Select "Rewrite URLs" in the "Front end configuration" section and
-save your changes. Now Contao generates static URLs like `home.html` instead of
-`index.php?id=12`.
+Apacheをサーバーとして動作していてmod_rewriteを使用できる場合は静的なHTMLドキュメントのように見える、検索エンジンにわかりやすいURLをContaoが生成するようにできます。
+Contaoのディレクトリにある.htaccess.defaultというファイルには、いくつかの書き換えルールの初期値が含まれています。
+このファイルを.htaccessと名前を変更するとApacheサーバーはこれを処理するようになりますので、バックエンドのログインしてシステムの設定を変更してください。
+「フロントエンドの構成」のセクションにある「URLの書き換え」を選択状態にして、変更を保存してください。これで`Contaoはindex.php?id=12`の代わりに`home.html`といったURLを生成するようになります。
 
 
-## Using the Safe Mode Hack
+## セーフモード対処の設定
 
-While trying to install Contao with the install tool, you might have seen a
-warning that the local configuration file is not writable.
+Contaoをインストールツールでインストールしようとすると、ローカルの構成ファイルに書き込めないという警告が表示されるかもしれません。
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/localconfig-not-writable.jpg)
 
 
-### File permission issues
+### ファイルの権限の問題
 
-The term "Safe Mode Hack" is actually misleading, because it implies that the
-problem was caused by the PHP safe_mode. However, it is caused by insufficient
-file permissions and can occur even if safe_mode is disabled, so it should be
-called "File Permission Hack" instead. PHP as an Apache module is typically run
-as `wwwrun`, `www-data` or `nobody`, whereas the files that you upload via FTP
-belong to you (e.g. `web4` or `ab5678`). The server therefore denies the PHP
-script Contao access to those files.
+「セーフモード対処」という用語は実際には語弊があります、なぜなら問題がPHPのsafe_modeによって起きると暗に示すためです。しかし、実際はファイルへの不十分な権限によって起きて、safe_modeが無効でも起きる場合があるからで、代わりに「ファイルアクセス権限対処」と呼ぶべきでしょう。ApacheのモジュールでPHPは`wwwrun`、`www-data`、`nobody`といったユーザーで動作し、その一方でFTPでアップロードしたファイルはあなたの(`web4`や`ab5678`といった)ユーザーが所有者となります。このような状況ですと、これらのファイルにPHPスクリプトからのアクセスをサーバーは許可しません。
 
 
-#### Using FTP for file operations
+#### ファイルの走査にFTPを使用
 
-To work around the permission problem, Contao establishes an FTP connection to
-modify files and folders. All you have to do is to enter your FTP login details.
-Take special care when entering the relative path from your FTP root directory
-to the Contao folder (e.g. `html/`, `public_html/` or `httpdocs/`).
+この権限の問題に対処するために、ContaoはFTP接続を行ってファイルとフォルダーを変更します。このために必要なのはFTPのログインの詳細を入力するだけです。FTPのルートディレクトリからContaoのフォルダー(例えば`html/`、`public_html/`、`httpdocs/`)への相対パスの入力には特に注意してください。
 
-A few directories still require write permissions, because PHP will access them
-directly:
+さらにディレクトリのいくつかは、PHPが直接アクセスするため書き込みの権限が必要です:
 
 * `assets/images`
 * `assets/images/*`
 * `system/logs`
 * `system/tmp`
 
-The permissions (CHMOD 777) are set by the install tool automatically and do not
-have to be adjusted manually normally. Should it be necessary, please **only
-adjust the three directories mentioned above** – despite what you might have
-read in a tutorial or in the Contao forums!
+インストールツールは権限(CHMOD 777)を自動的に設定して、通常は手作業で調整する必要はありません。万が一必要な場合は、**上に示した3つのディレクトリだけ調整して**ください、例え入門書やContaoのフォーラムにどのように書かれていたとしても!
 
 
-## Manual update
+## 手作業による更新
 
-When it comes to manually updating a Contao installation, you can either upload
-the whole Contao download archive to the server (replacing files) or you can
-upload only the files that have been modified since the last update
-(synchronizing files). Either way, you should always back up the following files
-and folders - just in case there is an error or you accidentally override them:
+インストールしているContaoを手作業で更新するときは、Contaoのダウンロードしたアーカイブ全体をサーバーにアップロードする(ファイルをの置き換え)、または最後の更新から変更されたファイルだけをアップロードする(ファイルの同期)のどちらかで行えます。いずれの場合でも、エラーや誤って上書きした場合のため、以下のファイルとフォルダーを常にバックアップすべきです。
 
 * `files/*`
 * `system/config/dcaconfig.php`
@@ -139,181 +90,120 @@ and folders - just in case there is an error or you accidentally override them:
 * `system/config/localconfig.php`
 * `templates/*`
 
-This will back up your local configuration, your custom templates and your
-files.
+これでローカルの設定、カスタマイズしたテンプレート、あなたのファイルをバックアップしたことになります。
 
 
-### Replacing files
+### ファイルの置き換え
 
-Replacing the files of a Contao installation is pretty simple. Just unpack the
-Contao download archive on the server or extract it on your local computer and
-upload the files with an FTP client. Then restore the files that you have backed
-up and remove potential leftovers from earlier Contao versions.
+インストールしているContaoのファイルの置き換えは極めて単純です。Contaoのダウンロードしたアーカイブを単にサーバー上で展開するか、ローカルのコンピューター上で展開してFTPクライアントでファイルをアップロードしてください。そしてバックアップしたファイルを復元して、前のContaoのバージョンの残りのファイルがあれば削除してください。
 
-**Attention:** If you have installed any third-party extensions, make sure to
-backup and restore them, too, or do not overwrite them at all. Otherwise you
-will have to reinstall the modules and depending on the extension you might
-eventually lose data!
+**注意**: 第三者の機能拡張をインストールしている場合、それらのバックアップと復元も忘れずに行うようにするか、完全に上書きしないようにしてください。そうしないと、モジュールを再インストールしなければならなくなり、機能拡張によってはデータを結果的に失うこともあるからです!
 
 
-### Synchronizing files
+### ファイルの同期
 
-To synchronize a Contao installation, you can either use the [Unix diff
-utility][3] or an FTP program. Unix utilities are typically used by server
-administrators only, so they will not be explained here. To synchronize files
-via FTP, open WinSCP and connect to the server. Backup the files mentioned above
-and then navigate to the Contao directory and click the "Synchronize files"
-button.
+インストールしているContaoの同期をするには、[Unixのdiffユーティリティ][3]かFTPプログラムのどちらかを使用できます。Unixのユーティリティーは一般にサーバーの管理者だけが使用するため、ここでは説明しません。ファイルをFTPで同期するには、WinSCPを実行してサーバーに接続してください。上記で述べたファイルをバックアップしてから、Contaoのディレクトリを指定して、「ファイルの同期(Synchronize files)」のボタンをクリックしてください。
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/synchronization-options.jpg)
 
-Review the options carefully and make sure to choose "Preview changes", so you
-can check which files will be updated. Then confirm each file in the preview
-window and doublecheck the files that are marked for deletion! Click "OK" to
-start the synchronization process.
+オプションを注意深く見直してから「変更のプレビュー("Preview changes")」を選択すると、更新されるファイルを確認できます。それから、それぞれのファイルをプレビューウィンドウで確認し、削除すると印のついたファイルは二重にチェックしてください!  "OK"をクリックすると同期の処理を開始します。
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/synchronization-confirmation.jpg)
 
 
-### Updating the database
+### データベースの更新
 
-After you have updated the Contao files, you need to update the database, too.
-Fortunately, the Contao install tool will do most of the work for you. Just open
-it and enter your password, then scroll down to the database section and confirm
-the changes.
+Contaoのファイルを更新した後で、データベースの更新もしなければなりません。幸いなことに、Contaoのインストールツールは殆どの作業を行ってくれます。Contaoのインストールツールを開いてパスワードを入力して、ページをデータベースのセクションまでスクロールして、変更内容を確認してください。
 
 
-## Live Update Service
+## ライブアップデートサービス
 
-The Contao Live Update Service is a commercial Contao add-on provided by [iNet
-Robots][4], the company of the Contao founder and core developer, Leo Feyer. It
-allows you to update your installation with a only few clicks in the back end,
-without having to download a Contao archive or using an FTP program to replace
-or synchronize files.
+
+Contaoライブアップデートサービスは商用のContaoの追加機能で、Contaoの創始者で中心的な開発者であるLeo Feyer氏の[iNet Robots社][4]が提供しています。ライブアップデートサービスを利用すると、バックエンドで数回のクリックでインストールしているContaoを更新でき、ContaoのアーカイブをダウンロードやFTPプログラムでファイルの置き換えや同期を行う必要もありません。
 
 [Sign up for a Live Update ID][5]
 
-The Live Update includes the following features:
+ライブアップデートサービスには以下の特徴があります:
 
-* Arbitrary up- and downgrades to any Contao version
-* Automatic database backup before the update
-* Individual validation and completion of the Contao installation
-* Comparison of the customized templates and the original files
+* どのContaoのバージョンにも、好きにアップグレードとダウングレード
+* アップデートの前の自動的なデータベースのバックアップ
+* インストールしているContaoの個別の検証と完成
+* カスタマイズしたテンプレートと元のファイルの比較
 
 
-### Version selection
+### バージョンの選択
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/live-update-1.jpg)
 
 
-### Template differences
+### テンプレートの違い
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/live-update-2.jpg)
 
 
-### Troubleshooting
+### トラブルシューティング
 
-99% of all Live Update issues are caused by wrong file permissions. Contao
-requires write permissions to manage files and folders, therefore if the Live
-Update does not work properly, check your server configuration and make sure to
-set up the Safe Mode Hack **as described in this user guide**!
+ライブアップデートのすべての問題の99%は、誤ったファイルの権限によります。Contaoはファイルとフォルダーを管理するために書き込み権限を必要としますので、ライブアップデートが適切に動作しない場合はサーバーの設定を確認し、**このユーザーガイドで説明しているように**セーフモード対処を設定していることを確認してください。
 
 
-#### How to get support
+#### サポートの受け方
 
-If you are having problems activating your Live Update ID or receiving the
-update archive, please contact the [iNet Robots support][6]. If you are having
-problems configuring the Safe Mode Hack or using Contao, please choose a support
-option on the [support page][7].
+ライブアップデートIDの起動やアップデートのアーカイブの受信に問題がある場合は、[iNet Robots社][6]に連絡してください。セーフモード対処やContaoの使用に問題がある場合は、[サポートのページ][7]にあるサポートの選択肢を選択してください。
 
 
-## Moving an installation
+## インストールしているContaoの移設
 
-Moving a Contao installation from a local server to a live server is not much
-different from installing a fresh Contao version, except that you are using the
-files from your local installation instead of the Contao download archive and an
-SQL dump of your local database.
+インストールしているContaoをローカルのサーバーから稼働中のサーバーに移設するのは、新しいContaoのバージョンをインストールするのに比べてあまり違いはありません。違いはダウンロードしたContaoのアーカイブの代わりにローカルにインストールしているファイルの使用することと、ローカルのデータベースのSQLのダンプを使用することです。
 
 
-### Uploading the files
+### ファイルのアップロード
 
-Open your FTP program, connect to the target server and upload all files from
-your local Contao installation.
+FTPプログラムを起動して、対象とするサーバーに接続してローカルにインストールしているContaoからファイルをすべてアップロードしてください。
 
 
-### Exporting the database
+### データベースのエクスポート
 
-The easiest way to create a MySQL dump is to use the database administration
-tool "phpMyAdmin". If you are a server administrator, you can also use the
-`mysqldump` utility of course. Log into "phpMyAdmin", choose the database that
-you want to export and click the "Export" tab in the top menu. It is important
-to adjust the export settings according to the screenshot below to minimize
-MySQL version compatibility problems.
+もっとも簡単にMySQLのdumpを作成する方法は、データベースの管理ツール"phpMyAdmin"の使用です。サーバーの管理者の場合は、もちろん`mysqldump`ユーティリティも使用できます。"phpMyAdmin"にログインして、エクスポートしたいデータベースを選択して、トップメニューの"エクスポート(Export)"のタブをクリックしてください。MySQLのバージョンの互換性の問題を最小とするため、以下の画面の例のようにエクスポートの設定を調整することが重要です。
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/sql-export.jpg)
 
 
-### Importing the database
+### データベースのインポート
 
-Open "phpMyAdmin" on the target server and create a new database for Contao.
-Depending on the server configuration, you probably have to use the server
-administration panel (e.g. "Plesk" or "Cpanel") to create new databases. Select
-the empty database and click the "Import" tab in the top menu. Then upload the
-SQL dump of your local database an start the import.
+移設先のサーバーに"phpMyAdmin"でログインしてContao用の新しいデータベースを作成します。サーバーの設定によっては、(例えばPleskやcPanelといった)サーバーの管理パネルをデータベースの作成に使用する必要があるでしょう。空のデータベースを選択して、トップメニューの"インポート(Import)"のタブをクリックしてください。それからローカルのデータベースのSQLのダンプをアップロードしてインポートを開始してください
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/sql-import.jpg)
 
 
-### Adjusting the database configuration
+### データベースの設定の調整
 
-Finally open the Contao install tool of the new installation (the password
-should be the same as for your local installation) and adjust the database
-configuration if necessary. Then go to the back end and log in with your
-username and password.
+最後に、新しいインストールでContaoのインストールツールを実行して(パスワードはローカルにインストールしていたのと同じはず)、必要な場合はデータベースの設定を調整してください。そしてバックエンドに移動して、あなたのユーザー名とパスワードでログインしてください。
 
 
-## Configuring the live server
+## 稼働中のサーバーの設定
 
-This chapter is not about configuring a server in terms of installing Apache or
-compiling PHP, which you cannot do on a shared hosting account anyway. It
-explains how to check whether the Contao system requirements are met and how to
-enable PHP 5.
+この章はApacheのインストールやPHPのコンパイルといった、共有ホスティングサービスのアカウントではどうにも不可能なことについてではありません。Contaoのシステム要件に合っているかどうかの確認と、PHP 5を有効にする方法を説明します。
 
 
-### Contao system requirements
+### Contaoのシステム要件
 
-Contao requires a webserver like Apache or IIS with PHP and MySQL support. The
-minimum PHP version is 5.3.2 and the minimum MySQL version is 4.1, however we
-recommend using MySQL 5 for a better performance. You also need the PHP
-extensions "GDlib" (image resizing) and "SOAP" (Extension Repository) and
-optionally "mbstring" (multi-byte character handling) and "mcrypt" (data
-encryption). Contao has been tested successfully with all major browsers like
-Firefox (from version 2) or Internet Explorer (from version 7).
+ContaoにはPHPとMySQLのサポートしている、ApacheやIISのようなウェブサーバーが必要です。PHPの最小のバージョンは5.3.2で、MySQLの最小のバージョンは4.1ですが、よりよい性能を得るためにMySQL 5を使用することを推奨します。また、PHPのGDlib拡張(画像の大きさの変更)とSOAP拡張(機能拡張リポジトリ)も必要で、さらにmbstring(マルチバイト文字の処理)とmcrypt(データの暗号化)も追加で必要な場合があります。Contaoはすべての主要なブラウザー、Firefox(バージョン2以降)やInternet Explore(バージョン7以降)で正しく動作するテストをしています。
 
 
-### The Contao check
+### Contaoチェック
 
-Download the Contao Check to find out whether your server meets the Contao
-system requirements. The script will check whether you can use the Extension
-Repository and the Live Update and whether you have to use the Safe Mode Hack or
-not. Depending on your system configuration, you can set up a new Contao
-installation with the web installer or validate an existing installation.
+Contaoチェックをダウンロードして、サーバーがContaoのシステム要件を満たしているかどうか調べてください。Contaoチェックは機能拡張リポジトリとライブアップデートを利用できることと、セーフモード対処が必要かどうかを検査します。システムの構成によっては、新しいContaoをインストールツールでインストールのための設定や、既にインストールしているContaoの検証を行えます。
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/contao-check.jpg)
 
-Extract the Zip file, upload the `check` folder to your Contao installation
-directory and open it in a web browser.
+Zipファイルを展開してContaoをインストールしているディレクトリに`check`という名前のフォルダーにアップロードして、それをWebブラウザーで開いてください。
 
-[Download the Contao Check][8] | [Open the GitHub project][9]
+[Contaoチェックをダウンロード][8] | [GitHubのプロジェクトを開く][9]
 
 
-### ISP-specific settings
+### ISPに特有の設定
 
-There are a few major Internet Service Providers that require a little extra
-configuration to get Contao to work. Fortunately, they are just the exception
-from the rule. The ISP-specific settings are described in the [Contao
-forum][10]. If you are looking for hassle-free Contao hosting, check out the
-list of [Contao hosting partners][11].
+Contaoを動作させるのに少し余分な設定が必要となる、主要なインターネットサービスプロバイダー(ISP)があります。幸い、そのようなISPは例外と言えます。ISPに特有の設定は[Contaoのフォーラム][10]に説明があります。手間のかからないContaoのホスティングを探されている場合は、[Contaoのホスティングパートナー][11]のリストを調べてください。
 
 
 [1]: https://contao.org/en/download.html
