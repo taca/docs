@@ -1,260 +1,208 @@
-# Managing pages
+# ページの管理
 
-The following chapters explain how to manage pages in Contao. Since Contao is a
-page-based content management system, pages and the site structure are the
-central elements of your website and any content that is not associated with a
-page can never be viewed.
+以下の章ではContaoでページを管理する方法を説明しています。Contaoはページを基準としたコンテンツ管理システムなので、ページとサイト構造はウェブサイトの中心的な要素で、ページに関連していないコンテンツは決して表示されません。
 
 
-## Components
+## 構成要素
 
-Understanding how pages, articles, content elements and modules relate to each
-other is the key to learning Contao. As mentioned before, the site structure is
-the central element of your website. Visitors of your website always request
-pages and not articles like in a node-based CMS.
+ページ、アーティクル、コンテンツ要素、モジュールが互いの関連の理解が、Contaoを学ぶための鍵となります。前に述べましたように、サイト構造はウェブサイトの中心的な要素です。ウェブサイトの訪問者は常にページをリクエストし、ノードを基盤としたCMSのようにアーティクルをリクエストするのではありません。
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/components.jpg)
 
-The diagram shows that articles and layouts are the two most important page
-elements. Whereas articles store the content of a page, the page layout defines
-how it is displayed on the website. Contao layouts are CSS-based and of course
-do not use layout tables. The following chapters explain how to create style
-sheets and modules, how to combine them in a page layout and how to create pages
-that are using it.
+アーティクルとレイアウトの2つが、もっとも重要なページの要素であることを略図は示しています。アーティクルがページのコンテンツを保持する一方、ページレイアウトはウェブサイトにどのように表示するかを定めています。ContaoのレイアウトはCSSに基づいていて、もちろん表を使用したレイアウトではありません。続く章では、スタイルシートとモジュールの作成方法、それらのページレイアウトへの結合方法、ページレイアウトを使用するページの作成方法について説明します。
 
 
-## Themes
+## テーマ
 
-Although the theme manager is a new feature in version 2.9, it is actually just
-an enhanced interface to something that has been part of Contao ever since. A
-website design typically consists of style sheets, front end modules, page
-layouts, files and templates, which you can manage in the Contao back end. The
-theme manager does not change this approach at all, it just adds an option to
-export and import those resources.
+テーマ管理はバージョン2.9の新しい機能ですが、実際は今までのContaoの一部だった部分から強化したインターフェイスに過ぎません。ウェブサイトのデザインは一般的にスタイルシート、フロントエンドモジュール、ページレイアウト、ファイル、テンプレートから構成されていて、、これらをContaoのバックエンドで管理できます。このやり方をまったく変えずに、これらのリソースのインポートとエクスポートする選択肢をテーマ管理は追加しただけです。
 
 
-### Themes versus front end templates
+### テーマとフロントエンドテンプレートの違い
 
-The main difference between themes and [front end templates][1] is that a front
-end template contains a fully preconfigured example website, including an
-example site structure, articles, content elements and even users and groups. A
-theme, in contrast, contains only the actual website design and can therefore be
-imported without losing any existing data.
+テーマとフロントエンドテンプレートの主な違いは、[フロントエンドテンプレート][1]は完全に事前設定されたウェブサイトで、サンプルのサイト構造、アーティクル、コンテンツ要素、さらにユーザーとグループも含んでいます。テーマは対照的に、実際のウェブサイトのデザインだけを含んでいて、そのため既存のデータを失わずにインポートできます。
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/theme-manager.jpg)
 
 
-### Theme components
+### テーマの構成要素
 
-A theme is a group of [style sheets][2], [front end modules][3] and [page
-layouts][4], which are all stored in the database and automatically recognized
-by the theme exporter. You will learn more about those elements in the following
-chapters. A theme typically also includes images and other files from the files
-directory and optional custom templates from the templates directory. However,
-those resources are not automatically linked with the theme and therefore have
-to be added in the theme configuration to be included in the theme export.
+テーマは[スタイルシート][2]、 [フロントエンドモジュール][3]、[ページレイアウト][4]のグループで、これらはすべてデータベースで保持していて、テーマのエクスポート機構が自動的に認識します。続く章で、これらの要素をさらに詳しく学習します。テーマはファイルディレクトリの画像とその他のファイルを通常は含んでいて、テンプレートのディレクトリのテンプレートを含む場合があります。しかし、これらのリソースはテーマに自動的に関連付けられず、このためエクスポートに含めるためにテーマの設定で追加しなければなりません。
+
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/theme-settings.jpg)
 
 
-### Theme export and import
+### テーマのエクスポートとインポート
 
-To export a theme, simply click on the export button and download the .cto file
-to your local computer. Although .cto is a proprietary file extension for Contao
-themes, the file is actually a ZIP archive that can be extracted with every
-program that handles .zip files. To reimport the theme, upload the .cto file to
-your Contao installation, open the theme manager and click on "Theme import".
-You can import multiple themes at once. After the import has been completed, you
-can assign the page layout(s) of the new theme in the site structure.
+テーマをエクスポートするには、単にテーマのエクスポートのボタンをクリックして.ctoファイルを使用しているコンピューターにダウンロードしてください。.ctoはContaoのテーマのための独自の拡張子ですが、実際のファイルはZIPアーカイブで.zipファイルを扱える、どのプログラムでも展開できます。テーマを再インポートするには、.ctoファイルをインストールしたCOntaoにアップロードして、テーマ管理を開いて「テーマのインポート」をクリックしてください。複数のテーマを一度にインポートできます。インポートが完了した後で、サイト構造に新しいテーマのページレイアウトを割り当てられます。
 
 
-## Style sheets
+## スタイルシート
 
-Accessible websites should always be styled using CSS, that is why Contao
-includes a "style sheets" module which allows you to manage format definitions
-in the back end. To reference the various Contao elements,you need to know their
-class names. [Content element classes][5] start with "ce_" (e.g. "ce_text") and
-[module classes][3] with "mod_" (e.g. "mod_search"). If you are not sure, simply
-look into the page source.
+アクセスしやすいウェブサイトは常にCSSを使用してスタイルを形作らなければなりませんが、これがContaoがバックエンドで書式定義を管理する「スタイルシート」のモジュールを含めている理由です。様々なContaoの要素を参照するには、それらのclass名を知る必要があります。[コンテンツ要素のクラス][5]は(例えば、ce_textといった)ce_で始まり、[モジュールのクラス][3]は(例えば、mod_searchといった)mod_で始まります。よくわからない場合は、単にページのソースを見てください。
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/style-sheet.jpg)
 
-Every style sheet can be limited to one or more media types and/or to a
-particular Internet Explorer version, in case you need to fix one of its
-numerous bugs. Pay attention to the order of the format definitions, because
-later commands override earlier ones.
+それぞれのスタイルシートは1つ以上のメディアタイプと、Internet Exploreのバージョン(多数のバグの1つを修正が必要な場合)の両方またはどちらかに制限できます。書式定義の順序に注意してください、後の定義が前の書式定義を上書きするからです。
 
 ``` {.css}
-/* Set the general value first */
+/* 一般的な値を最初 */
 .mod_search {
     margin:24px;
 }
 
-/* Then override it for IE7 */
+/* それからIE7用の値で上書き */
 *:first-child+html .mod_search {
     margin:18px;
 }
 ```
 
-If the order was reversed, the general value would override the IE-specific
-margin.
+もし順序が逆だと、一般的な値をIEに特定のマージンで上書きしてしまうでしょう。
 
 
-## Modules
+## モジュール
 
-Front end modules allow you to add almost any kind of functionaliy to your
-website. The Contao core includes modules to generate various navigation menus,
-handle user registration and authentication, search the website, import RSS
-feeds and many more. To create a module, log into the back end and choose
-"Themes" -> "Front end modules" in the navigation menu.
+フロントエンドモジュールは、ウェブサイトに殆どどのような種類の機能でも追加できます。Contaoのコアは様々なナビゲーションメニューの生成、ユーザーの登録と認証、ウェブサイトの検索、RSSフィードの取り込み、さらに様々なモジュールを含んでいます。モジュールを作成するには、バックエンドにログインして、ナビゲーションメニューから「テーマ」→「フロントエンドモジュール」と選択してください。
 
 <table>
 <tr>
-  <th>Module</th>
-  <th>CSS class</th>
-  <th>Description</th>
+  <th>モジュール</th>
+  <th>CSSのクラス</th>
+  <th>説明</th>
 </tr>
 <tr>
-  <td>Navigation menu</td>
+  <td>ナビゲーションメニュー</td>
   <td>mod_navigation</td>
-  <td>Generates a navigation menu from the site structure.</td>
+  <td>サイト構造からナビゲーションメニューを生成します。</td>
 </tr>
 <tr>
-  <td>Custom navigation</td>
+  <td>カスタムナビゲーション</td>
   <td>mod_customnav</td>
-  <td>Generates a custom navigation menu.</td>
+  <td>独自のナビゲーションメニューを生成します。</td>
 </tr>
 <tr>
-  <td>Breadcrumb navigation</td>
+  <td>パンくずナビゲーション</td>
   <td>mod_breadcrumb</td>
-  <td>Generates a breadcrumb navigation menu.</td>
+  <td>パンくずナビゲーションのメニューを生成します。</td>
 </tr>
 <tr>
-  <td>Quick navigation</td>
+  <td>クイックナビゲーション</td>
   <td>mod_quicknav</td>
-  <td>Generates a drop-down menu from the site structure.</td>
+  <td>サイト構造からドロップダウンメニューを生成します。</td>
 </tr>
 <tr>
-  <td>Quick link</td>
+  <td>クイックリンク</td>
   <td>mod_quicklink</td>
-  <td>Generates a custom drop-down menu.</td>
+  <td>独自ののドロップダウンメニューを生成します。</td>
 </tr>
 <tr>
-  <td>Book navigation</td>
+  <td>ブックナビゲーション</td>
   <td>mod_booknav</td>
-  <td>Generates a book navigation menu.</td>
+  <td>ブックナビゲーションメニューを生成します。</td>
 </tr>
 <tr>
-  <td>Article navigation</td>
+  <td>アーティクルナビゲーション</td>
   <td>mod_article_nav</td>
-  <td>Generates a pagination menu to navigate articles.</td>
+  <td>アーティクルをナビゲートするページネーションのメニューを生成します。</td>
 </tr>
 <tr>
-  <td>Sitemap</td>
+  <td>サイトマップ</td>
   <td>mod_sitemap</td>
-  <td>Generates a list of all pages in the site structure.</td>
+  <td>サイト構造のすべてのページの一覧を生成します。</td>
 </tr>
 <tr>
-  <td>Login form</td>
+  <td>ログインフォーム</td>
   <td>mod_login</td>
-  <td>Generates a login form.</td>
+  <td>ログインのフォームを生成します。</td>
 </tr>
 <tr>
-  <td>Automatic logout</td>
+  <td>自動ログアウト</td>
   <td>-</td>
-  <td>Automatically logs out a user.</td>
+  <td>ユーザーを自動的にログアウトします。</td>
 </tr>
 <tr>
-  <td>Personal data</td>
+  <td>個人データ</td>
   <td>member_default</td>
-  <td>Generates a form to edit a user's personal data.</td>
+  <td>ユーザーの個人データを編集するフォームを生成します。</td>
 </tr>
 <tr>
-  <td>Registration</td>
+  <td>登録</td>
   <td>member_default</td>
-  <td>Generates a user registration form.</td>
+  <td>ユーザーの登録フォームを生成します。</td>
 </tr>
 <tr>
-  <td>Lost password</td>
+  <td>パスワードの紛失</td>
   <td>mod_password</td>
-  <td>Generates a form to request a new password.</td>
+  <td>新しいパスワードを要求するフォームを生成します。</td>
 </tr>
 <tr>
-  <td>Form</td>
+  <td>フォーム</td>
   <td>mod_form</td>
-  <td>Adds a form to a page.</td>
+  <td>ページにフォームを追加します。</td>
 </tr>
 <tr>
-  <td>Search engine</td>
+  <td>検索エンジン</td>
   <td>mod_search</td>
-  <td>Adds a search form to a page.</td>
+  <td>ページに検索フォームを追加します。</td>
 </tr>
 <tr>
-  <td>Article list</td>
+  <td>アーティクルリスト</td>
   <td>mod_article_list</td>
-  <td>Generates a list of articles of a column.</td>
+  <td>一列のアーティルクの一覧を生成します。</td>
 </tr>
 <tr>
-  <td>Custom HTML</td>
+  <td>カスタムHTML</td>
   <td>-</td>
-  <td>Allows you to add custom HTML code.</td>
+  <td>独自のHTMLコードを追加します。</td>
 </tr>
 <tr>
-  <td>Flash movie</td>
+  <td>Flash動画</td>
   <td>mod_flash</td>
-  <td>Embeds a Flash movie into a page.</td>
+  <td>ページにFlash動画を埋め込みます。</td>
 </tr>
 <tr>
-  <td>Random image</td>
+  <td>ランダムな画像</td>
   <td>mod_random_image</td>
-  <td>Adds a random image to a page.</td>
+  <td>ページにランダムな画像を追加します。</td>
 </tr>
 <tr>
-  <td>Listing</td>
+  <td>リスティング</td>
   <td>list_default</td>
-  <td>Lists the records of a table.</td>
+  <td>テーブルのレコードを一覧します。</td>
 </tr>
 <tr>
-  <td>RSS reader</td>
+  <td>RSSリーダー</td>
   <td>rss_default</td>
-  <td>Adds an RSS feed to a page.</td>
+  <td>RSSフィードをページに追加します。</td>
 </tr>
 </table>
 
 
-### Access control
+### アクセス制御
 
-Each front end module can be protected so only guests or members of a particular
-group can see it on the website.
+それぞれのフロントエンドモジュールは保護してウェブサイドでゲストだけ、または特定のグループのメンバーだけに表示するようにできます。
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/protected-module.jpg)
 
 
-## Page layouts
+## ページレイアウト
 
-Page layouts determine the basic page setup, e.g. the number of columns or the
-overall width, and they define which front end modules are shown in which
-columns. They also allow you to include style sheets, to link to RSS or Atom
-feeds, to associate a Google Analytics ID and to add arbitrary JavaScript code
-that is required to control interactive elements and plugins. The Contao CSS
-framework automatically divides the browser window into several layout sections
-and shows the modules that have been assigned to them one below the other.
+ページレイアウトは例えば列の数や全体の幅といった基本的なページの設定と、それぞれの列にどのフロントエンドモジュールを表示するか定めます。また、ページに含めるスタイルシート、RSSやATOMのフィードのリンク、GoogleアナリティクスのIDの関連付け、対話的な要素とプラグインに必要な任意のJavaScriptのコードを追加できます。ContaoのCSSのフレームワークはブラウザーのウィンドウを自動的にいくつかのレイアウトセクションに分割して、次の図のようにそれぞれのセクションに割り当てたモジュールを下図のように表示します。
+
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/front-end-structure.jpg)
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/front-end-modules.jpg)
 
-That implies that by the time you create a page layout, you have to have created
-all style sheets and front end modules that you want to include in it. Therefore
-it is recommended to create resources in the following order:
+これは、ページレイアウトを作成するまでに含めるすべてのスタイルシートとフロントエンドモジュールを作成が必要なことを意味します。従って、以下の順序でリソースを作成することをお勧めします:
 
-* Create the necessary front end modules
-* Create the necessary style sheets
-* Optionally create news archives or calendars
-* Create a new page layout and combine the components
+* 必要なフロントエンドモジュールの作成
+* 必要なスタイルシートの作成
+* ニュースアーカイブやカレンダーが必要であれば作成
+* 新しいページレイアウトを作成して、これらの構成要素を結合
 
 
-## Page types
+## ページの種類
 
 The page type determines whether a page shows content, forwards to another page
 or defines the starting point of a new website within the page tree. Contao

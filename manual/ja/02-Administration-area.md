@@ -102,42 +102,42 @@ Contaoで作業するときの流れを高速化する、バックエンドの�
 <tr>
   <td><code>[Alt]+[h]</code></td>
   <td><b>H</b>ome</td>
-  <td>Go to the home page of the back end.</td>
+  <td>バックエンドのホームページに移動します。</td>
 </tr>
 <tr>
   <td><code>[Alt]+[q]</code></td>
   <td><b>Q</b>uit</td>
-  <td>Quit the current back end session (log out).</td>
+  <td>原罪のバックエンドのセッションを終了(ログアウト)します。</td>
 </tr>
 <tr>
   <td><code>[Alt]+[t]</code></td>
   <td><b>T</b>op</td>
-  <td>Go to the top of the page.</td>
+  <td>ページの先頭に移動します。</td>
 </tr>
 <tr>
   <td><code>[Alt]+[b]</code></td>
   <td><b>B</b>ack</td>
-  <td>Go back to the previous page.</td>
+  <td>前のページに移動します。</td>
 </tr>
 <tr>
   <td><code>[Alt]+[n]</code></td>
   <td><b>N</b>ew record</td>
-  <td>Create a new record.</td>
+  <td>新しいレコードを作成します。</td>
 </tr>
 <tr>
   <td><code>[Alt]+[e]</code></td>
   <td><b>E</b>dit multiple</td>
-  <td>Switch to the "edit multiple" mode.</td>
+  <td>「複数を変更」モードに切り替えます。</td>
 </tr>
 <tr>
   <td><code>[Alt]+[f]</code></td>
   <td><b>F</b>ront end preview</td>
-  <td>Open the front end preview in a new browser window.</td>
+  <td>新しいブラウザーのウィンドウを開いてフロントエンドのプレビューをします。</td>
 </tr>
 </table>
 
 
-### Keyboard shortcuts in edit mode
+### 編集モードのキーボードのショートカット
 
 <table>
 <tr>
@@ -148,34 +148,32 @@ Contaoで作業するときの流れを高速化する、バックエンドの�
 <tr>
   <td><code>[Alt]+[s]</code></td>
   <td><b>S</b>ave</td>
-  <td>Saves the current form.</td>
+  <td>原罪のフォームを保存します。</td>
 </tr>
 <tr>
   <td><code>[Alt]+[c]</code></td>
   <td>Save and <b>c</b>lose</td>
-  <td>Saves the current form and redirects to the previous page.</td>
+  <td>現在のフォームを保存して前のページに移動します。</td>
 </tr>
 <tr>
   <td><code>[Alt]+[g]</code></td>
   <td>Save and <b>g</b>o back</td>
-  <td>Saves the current form and redirects to the parent page, e.g. from a
-content element to the article tree.</td>
+  <td>現在のフォームを保存して親のページに移動します。例えば、コンテンツ要素の編集を保存してアーティクルのツリーに移動します。</td>
 </tr>
 <tr>
   <td><code>[Alt]+[e]</code></td>
   <td>Save and <b>e</b>dit</td>
-  <td>Saves the current form and redirects to the child records view, e.g. when
-creating style sheets.</td>
+  <td>現在のフォームを保存して子のレコードの表示に移動します。例えば、スタイルシートを作成しているときです。</td>
 </tr>
 <tr>
   <td><code>[Alt]+[n]</code></td>
   <td>Save and <b>n</b>ew</td>
-  <td>Saves the current form and creates a new record.</td>
+  <td>現在のフォームを保存して新しいレコードを作成します。</td>
 </tr>
 </table>
 
 
-### Keyboard shortcuts in "edit multiple" mode
+### 「複数を変更」モードのキーボードショートカット
 
 <table>
 <tr>
@@ -186,26 +184,23 @@ creating style sheets.</td>
 <tr>
   <td><code>[Alt]+[d]</code></td>
   <td><b>D</b>elete multiple</td>
-  <td>Deletes all selected records in "edit multiple" mode.</td>
+  <td>「複数を変更」モードで選択したすべてのレコードを削除します。</td>
 </tr>
 <tr>
   <td><code>[Alt]+[x]</code></td>
   <td>Cut multiple</td>
-  <td>Moves all selected records in "edit multiple" mode.</td>
+  <td>「複数を変更」モードで選択したすべてのレコードを移動します。</td>
 </tr>
 <tr>
   <td><code>[Alt]+[c]</code></td>
   <td><b>C</b>opy multiple</td>
-  <td>Duplicates all selected records in "edit multiple" mode.</td>
+  <td>「複数を変更」モードで選択したすべてのレコードを複製します。</td>
 </tr>
 <tr>
   <td><code>[Alt]+[v]</code></td>
   <td>Override multiple</td>
-  <td>Overrides all selected records in "edit multiple" mode.</td>
+  <td>「複数を変更」モードで選択したすべてのレコードを上書きします。</td>
 </tr>
 </table>
 
-The keyboard shortcuts above only work on Windows in this form. Mac users have
-to use `[Ctrl]+[⌥ Opt]` instead of the `[Alt]` key together with the keyboard
-shortcut. In addition, Firefox on Windows deviates from the standard: you have
-to press `[Alt]+[Shift]` and the keyboard shortcut.
+上に示した方式のキーボードショートカットはWindowsだけで動作します。Macintoshのユーザーは`[Alt]`キーの代わりに`[Ctrl]+[⌥ Opt]`をキーボードショートカットに使用しなければなりません。加えて、Windows上のFirefoxは標準から外れています: `[Alt]+[Shift]`とキーボードショートカットを押さないといけません。
