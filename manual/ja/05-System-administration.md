@@ -1,133 +1,84 @@
-# System administration
+# システム管理
 
-The following chapters explain how to administrate Contao. Besides installing
-and updating the application, an administrator is responsible for creating users
-and groups, managing additional modules and maintaining the system.
+以下の章ではContaoの管理の方法を説明します。アプリケーションのインストールと更新に加えて、管理者はユーザーとグループの作成、追加モジュールの管理、システムの保守に関与します。
 
 
-## Users and groups
+## ユーザーとグループ
 
-Contao distinguishes between back end users ("users"), who can log into the
-administration area, and front end users ("members"), who can log into the
-website. Unlike administrators, who have access to all pages and elements by
-default ("allow all"), regular users cannot access any resource that has not
-been explicitly allowed in their profile or in the profile of one of the groups
-they belong to ("deny all").
+Contaoは管理領域にログインできるバックエンドのユーザー("ユーザー")と、ウェブサイトにログインできるフロントエンドのユーザー("メンバー")を区別しています。管理者が初期設定ですべてのページと要素をアクセスできる("すべて許可")一方、通常ユーザーはそのプロフィールまたは所属するグループの1つのプロフィールで明示的に許可を受けていないリソースにはアクセスできません("すべて拒否")。
 
 
-### Users
+### ユーザー
 
-Each user can be associated with multiple groups and automatically inherits
-their permissions. All permissions are additive, which means that a user
-inherits the sum of permissions of all groups he belongs to. If group A grants a
-certain right, you cannot revoke it in group B.
+それぞれのユーザーに複数のグループを関連付けることができて、関連付けたグループの権限を自動的に継承します。すべての権限は追加的で、所属するグループの権限の総和を継承することを意味します。グループAがある権利を与えている場合に、グループBで取り消すことはできません。
 
 
-#### Pagemounts
+#### ページマウント
 
-Pagemounts define which pages of the site structure a user is allowed to see.
-The screenshot below shows the site structure in the view of Helen Lewis.
-Although the website contains a lot more pages, she can only see three, because
-only the "Courses" page has been mounted in the settings of the "Editors" group.
-Note that although Helen Lewis is allowed to see three pages, she can only edit
-one of them!
+ページマウントは、ユーザーに見ることを許可するサイト構造のページを設定します。下の画面の例は、Helen Lewisさんが見るサイト構造です。ウェブサイトにはさらに多数のページがありますが、彼女は3つのページだけ見ることができます。これは、"Editors"グループの設定で"Course"のページだけがページマウントされているからです。Helen Lewisさんは3つのページを見ることができますが、その中の1つだけ編集できることに注意してください!
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/site-structure-hlewis.jpg)
 
-Being able to see a page does not include the right to edit it (or its
-articles). Remember that [page permissions][1] are set in the site structure, so
-to enable a page for a user, you have to mount it in his profile and grant
-access to it in the site structure.
+ページを見えることは、そのページ(や、そのアーティクル)を編集する権利を含みません。サイト構造で[ページの権限][1]を設定することを覚えておいてください。ページをユーザーに許可するには、そのユーザーのプロフィールでページをマウントして、サイト構造でアクセス権を与えなければなりません。
 
 
-#### Filemounts
+#### ファイルマウント
 
-Similar to pagemounts, filemounts define which folders a user is allowed to see.
-Below is a sceenshot of the file manager in the view of Helen Lewis. She is only
-allowed to see the "campus" folder, whereas administrators can see the whole
-files directory (`tl_files`).
+ページマウントと同様に、ファイルマウントはユーザーが見ることを許可するフォルダーを設定します。下の画面の例はHelen Lewisさんが見るファイル管理です。彼女は"campus"のフォルダーだけ見ることができますが、管理者はファイルディレクトリ(`tl_files`)全体を見ることができます。
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/file-manager-hlewis.jpg)
 
 
-#### Allowed fields
+#### 許可する項目
 
-As mentioned at the beginning, regular users do not have any default permissions
-at all ("deny all"), which also implies that they cannot access any form fields.
-Even if they are e.g. allowed to access the news module, the form to create a
-new entry will be empty until the administrator enables one or more fields of
-the `tl_news` table in the group settings.
+最初に説明しましたように、通常のユーザーは初期状態で権限をまったく持っていません("すべて拒否")が、これはフォームのどの欄にもアクセスできないという意味も含みます。例えばニュースのモジュールにアクセスを許可したとしても、新しい項目を作成するフォームは、管理者がグループの設定で`tl_news`テーブルの1つ以上の項目を有効にするまで空のままとなります。
+
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/allowed-fields.jpg)
 
 
-### Members
+### メンバー
 
-Managing members (front end users) is a lot easier than managing back end users,
-because there are no pagemounts or allowed fields. Member management is mainly
-required to control access to protected pages, which is implemented on group
-level. Depending on the website configuration, registered members will be able
-to see protected pages or access protected downloads that are not available to
-guests.
+メンバー(フロントエンドのユーザー)の管理は、ページマウントや許可する項目がないためバックエンドのユーザーの管理よりもずっと簡単です。メンバーの管理は主に保護したページのアクセス制御に必要で、グループの段階で実現されています。ウェブサイトの構成に依存して、登録済みのメンバーはゲストが利用できない保護したページやアクセス保護されたダウンロードを見ることができます。
 
 
-## Extensions
+## 機能拡張
 
-Extensions are an essential part of Contao, because they allow you to add extra
-functionality. Currently there are 1,292 extensions available in the Contao
-Extension Repository, which you can browse directly in the back end.
-Communication with the repository server is done via SOAP, so you need to enable
-the PHP SOAP extension to use the service (if not enabled by default).
+機能拡張によって追加の機能性をContaoに追加できるので、Contaoには欠かせない部分と言えます。現在、1292(訳注: この値はオリジナルのドキュメントでは動的に更新されています)の機能拡張を、Contao機能拡張リポジトリから利用可能でバックエンドから直接閲覧できます。リポジトリのサーバーとの間の通信はSOAPによって行っているため、サービスを利用するにはPHPのSOAP拡張を(初期状態で有効でないなら)有効にしなければなりません。
 
 
-### Extension catalog
+### 機能拡張カタログ
 
-The "extension catalog" module allows you to browse the extension list and to
-install extensions at the push of a button. Use the filter and sorting options
-to find a particular extension and click the info icon or extension title to
-open the details page and install the module.
+"機能拡張カタログ"のモジュールを使用すると機能拡張のリストの閲覧と、ボタンを押して機能拡張をインストールできます。特定の機能拡張を探すには、フィルターと並べ替えのオプションを使用し、アイコンか機能拡張の名前をクリックして詳細なページを開いて、モジュールをインストールしてください。
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/extension-list.jpg)
 
-The details page contains a description of the extension and important
-information regarding system requirements, versions and dependencies from other
-modules. Click the "Install" button to download and install the extension.
+詳細なページには機能拡張の説明と、システムの必要条件、バージョン、他のモジュールの依存関係といった詳細な情報があります。ダウンロードと機能拡張をインストールするには"インストール"のボタンをクリックしてください。
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/extension-details.jpg)
 
-Contao will automatically download and install the extension and update the
-database if necessary.
+Contaoは自動的に機能拡張のダウンロードとインストールを行い、必要であればデータベースを更新します。
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/extension-install.jpg)
 
 
-### Extension manager
+### 機能拡張管理
 
-The "extension manager" module allows you to update and uninstall extensions. It
-automatically checks for updates and notifies you if a new version is available.
-Many extensions also include links to an online manual and/or forum thread where
-you can get support.
+"機能拡張管理"のモジュールから機能拡張の更新とアンインストールを行えます。自動的に更新がないか確認して、新しいバージョンがあれば通知します。多数の機能拡張にはオンラインマニュアルとサポートを受けられるフォーラムのスレッドの両方、またはその一方のリンクがあります。
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/extension-manager.jpg)
 
-To uninstall an extension, simply click the uninstall icon and follow the
-instructions. The extension manager will remove all files and folders and update
-the database if necessary. Note that this action cannot be undone and the tables
-cannot be restored!
+機能拡張をアンインストールするには、単にアンインストールのアイコンをクリックして指示に従ってください。機能拡張管理はすべてのファイルとフォルダーを削除して、必要ならデータベースを更新します。この動作は取り消せず、テーブルも回復できないことに注意してください!
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/extension-uninstall.jpg)
 
 
-### Manual installation
+### 手作業によるインストール
 
-In case the PHP SOAP extension is not available on your server, you can also
-install Contao extensions manually. Find the respective module in the [extension
-list][2] and download the .zip archive of the latest release. Then unzip the
-files and copy them to your local or remote Contao directory. Finally, check the
-database with the [Contao install tool][3].
+PHPのSOAP拡張がサーバーで利用できない場合、Contaoの機能拡張を手作業でインストールすることもできます。[機能拡張のリスト][2]から個別のモジュールを探して最新のリリースの.zipアーカイブをダウンロードしてください。それからファイルを展開して、展開したファイルをローカルまたはリモートのContaoのディレクトリにコピーしてください。最後に[Contaoインストールツール][3]でデータベースを確認してください。
 
 
-## Maintenance
+## 保守
 
 Most of the maintenance jobs in Contao are executed automatically by the
 Periodic Command Scheduler, so you can focus on your actual work. Even the tasks

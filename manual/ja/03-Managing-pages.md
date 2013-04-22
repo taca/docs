@@ -1,338 +1,403 @@
-# �ڡ����δ���
+# ページの管理
 
-�ʲ��ξϤǤ�Contao�ǥڡ��������������ˡ���������Ƥ��ޤ���Contao�ϥڡ�������Ȥ�������ƥ�Ĵ��������ƥ�ʤΤǡ��ڡ����ȥ����ȹ�¤�ϥ����֥����Ȥ��濴Ū�����Ǥǡ��ڡ����˴�Ϣ���Ƥ��ʤ�����ƥ�ĤϷ褷��ɽ������ޤ���
+以下の章ではContaoでページを管理する方法を説明しています。Contaoはページを基準としたコンテンツ管理システムなので、ページとサイト構造はウェブサイトの中心的な要素で、ページに関連していないコンテンツは決して表示されません。
 
 
-## ��������
+## 構成要素
 
-�ڡ����������ƥ����롢����ƥ�����ǡ��⥸�塼�뤬�ߤ��δ�Ϣ�����򤬡�Contao��ؤ֤���θ��Ȥʤ�ޤ������˽Ҥ٤ޤ����褦�ˡ������ȹ�¤�ϥ����֥����Ȥ��濴Ū�����ǤǤ��������֥����Ȥ�ˬ��ԤϾ�˥ڡ�����ꥯ�����Ȥ����Ρ��ɤ���פȤ���CMS�Τ褦�˥����ƥ������ꥯ�����Ȥ���ΤǤϤ���ޤ���
+ページ、アーティクル、コンテンツ要素、モジュールが互いの関連の理解が、Contaoを学ぶための鍵となります。前に述べましたように、サイト構造はウェブサイトの中心的な要素です。ウェブサイトの訪問者は常にページをリクエストし、ノードを基盤としたCMSのようにアーティクルをリクエストするのではありません。
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/components.jpg)
 
-�����ƥ�����ȥ쥤�����Ȥ�2�Ĥ�����äȤ���פʥڡ��������ǤǤ��뤳�Ȥ�ά�ޤϼ����Ƥ��ޤ��������ƥ����뤬�ڡ����Υ���ƥ�Ĥ��ݻ�����������ڡ����쥤�����Ȥϥ����֥����ȤˤɤΤ褦��ɽ�����뤫�����Ƥ��ޤ���Contao�Υ쥤�����Ȥ�CSS�˴�Ť��Ƥ��ơ��������ɽ����Ѥ����쥤�����ȤǤϤ���ޤ���³���ϤǤϡ��������륷���Ȥȥ⥸�塼��κ�����ˡ�������Υڡ����쥤�����Ȥؤη����ˡ���ڡ����쥤�����Ȥ���Ѥ���ڡ����κ�����ˡ�ˤĤ����������ޤ���
+アーティクルとレイアウトの2つが、もっとも重要なページの要素であることを略図は示しています。アーティクルがページのコンテンツを保持する一方、ページレイアウトはウェブサイトにどのように表示するかを定めています。ContaoのレイアウトはCSSに基づいていて、もちろん表を使用したレイアウトではありません。続く章では、スタイルシートとモジュールの作成方法、それらのページレイアウトへの結合方法、ページレイアウトを使用するページの作成方法について説明します。
 
 
-## �ơ���
+## テーマ
 
-�ơ��޴����ϥС������2.9�ο�������ǽ�Ǥ������ºݤϺ��ޤǤ�Contao�ΰ������ä���ʬ���鶯���������󥿡��ե������˲᤮�ޤ��󡣥����֥����ȤΥǥ�����ϰ���Ū�˥������륷���ȡ��ե���ȥ���ɥ⥸�塼�롢�ڡ����쥤�����ȡ��ե����롢�ƥ�ץ졼�Ȥ��鹽������Ƥ��ơ���������Contao�ΥХå�����ɤǴ����Ǥ��ޤ������Τ������ޤä����Ѥ����ˡ������Υ꥽�����Υ���ݡ��Ȥȥ������ݡ��Ȥ���������ơ��޴������ɲä��������Ǥ���
+テーマ管理はバージョン2.9の新しい機能ですが、実際は今までのContaoの一部だった部分から強化したインターフェイスに過ぎません。ウェブサイトのデザインは一般的にスタイルシート、フロントエンドモジュール、ページレイアウト、ファイル、テンプレートから構成されていて、、これらをContaoのバックエンドで管理できます。このやり方をまったく変えずに、これらのリソースのインポートとエクスポートする選択肢をテーマ管理は追加しただけです。
 
 
-### �ơ��ޤȥե���ȥ���ɥƥ�ץ졼�Ȥΰ㤤
+### テーマとフロントエンドテンプレートの違い
 
-�ơ��ޤȥե���ȥ���ɥƥ�ץ졼�Ȥμ�ʰ㤤�ϡ�[�ե���ȥ���ɥƥ�ץ졼��][1]�ϴ����˻������ꤵ�줿�����֥����Ȥǡ�����ץ�Υ����ȹ�¤�������ƥ����롢����ƥ�����ǡ�����˥桼�����ȥ��롼�פ�ޤ�Ǥ��ޤ����ơ��ޤ��о�Ū�ˡ��ºݤΥ����֥����ȤΥǥ����������ޤ�Ǥ��ơ����Τ����¸�Υǡ����򼺤鷺�˥���ݡ��ȤǤ��ޤ���
+[テーマ][1]とフロントエンドテンプレートの主な違いは、フロントエンドテンプレートは完全に事前設定されたウェブサイトで、サンプルのサイト構造、アーティクル、コンテンツ要素、さらにユーザーとグループも含んでいます。テーマは対照的に、実際のウェブサイトのデザインだけを含んでいて、そのため既存のデータを失わずにインポートできます。
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/theme-manager.jpg)
 
 
-### �ơ��ޤι�������
+### テーマの構成要素
 
-�ơ��ޤ�[�������륷����][2]�� [�ե���ȥ���ɥ⥸�塼��][3]��[�ڡ����쥤������][4]�Υ��롼�פǡ������Ϥ��٤ƥǡ����١������ݻ����Ƥ��ơ��ơ��ޤΥ������ݡ��ȵ�������ưŪ��ǧ�����ޤ���³���Ϥǡ����������Ǥ򤵤�˾ܤ����ؽ����ޤ����ơ��ޤϥե�����ǥ��쥯�ȥ�β����Ȥ���¾�Υե�������̾�ϴޤ�Ǥ��ơ��ƥ�ץ졼�ȤΥǥ��쥯�ȥ�Υƥ�ץ졼�Ȥ�ޤ��礬����ޤ����������������Υ꥽�����ϥơ��ޤ˼�ưŪ�˴�Ϣ�դ���줺�����Τ��ᥨ�����ݡ��Ȥ˴ޤ�뤿��˥ơ��ޤ�������ɲä��ʤ���Фʤ�ޤ���
+テーマは[スタイルシート][2]、 [フロントエンドモジュール][3]、[ページレイアウト][4]のグループで、これらはすべてデータベースで保持していて、テーマのエクスポート機構が自動的に認識します。続く章で、これらの要素をさらに詳しく学習します。テーマはファイルディレクトリの画像とその他のファイルを通常は含んでいて、テンプレートのディレクトリのテンプレートを含む場合があります。しかし、これらのリソースはテーマに自動的に関連付けられず、このためエクスポートに含めるためにテーマの設定で追加しなければなりません。
 
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/theme-settings.jpg)
 
 
-### �ơ��ޤΥ������ݡ��Ȥȥ���ݡ���
+### テーマのエクスポートとインポート
 
-�ơ��ޤ򥨥����ݡ��Ȥ���ˤϡ�ñ�˥ơ��ޤΥ������ݡ��ȤΥܥ���򥯥�å�����.cto�ե��������Ѥ��Ƥ��륳��ԥ塼�����˥���������ɤ��Ƥ���������.cto��Contao�Υơ��ޤΤ�����ȼ��γ�ĥ�ҤǤ������ºݤΥե������ZIP���������֤�.zip�ե�����򰷤��롢�ɤΥץ������Ǥ�Ÿ���Ǥ��ޤ����ơ��ޤ�ƥ���ݡ��Ȥ���ˤϡ�.cto�ե�����򥤥󥹥ȡ��뤷��COntao�˥��åץ����ɤ��ơ��ơ��޴����򳫤��ơ֥ơ��ޤΥ���ݡ��ȡפ򥯥�å����Ƥ���������ʣ���Υơ��ޤ���٤˥���ݡ��ȤǤ��ޤ�������ݡ��Ȥ���λ������ǡ������ȹ�¤�˿������ơ��ޤΥڡ����쥤�����Ȥ������Ƥ��ޤ���
+テーマをエクスポートするには、単にテーマのエクスポートのボタンをクリックして.ctoファイルを使用しているコンピューターにダウンロードしてください。.ctoはContaoのテーマのための独自の拡張子ですが、実際のファイルはZIPアーカイブで.zipファイルを扱える、どのプログラムでも展開できます。テーマを再インポートするには、.ctoファイルをインストールしたCOntaoにアップロードして、テーマ管理を開いて「テーマのインポート」をクリックしてください。複数のテーマを一度にインポートできます。インポートが完了した後で、サイト構造に新しいテーマのページレイアウトを割り当てられます。
 
 
-## �������륷����
+## スタイルシート
 
-�����������䤹�������֥����ȤϾ��CSS����Ѥ��ƥ������������ʤ���Фʤ�ޤ��󤬡����줬Contao���Хå�����ɤǽ�������������֥������륷���ȡפΥ⥸�塼���ޤ�Ƥ�����ͳ�Ǥ����͡���Contao�����Ǥ򻲾Ȥ���ˤϡ�������class̾���Τ�ɬ�פ�����ޤ���[����ƥ�����ǤΥ��饹][5]��(�㤨�С�ce_text�Ȥ��ä�)ce_�ǻϤޤꡢ[�⥸�塼��Υ��饹][3]��(�㤨�С�mod_search�Ȥ��ä�)mod_�ǻϤޤ�ޤ����褯�狼��ʤ����ϡ�ñ�˥ڡ����Υ������򸫤Ƥ���������
+アクセスしやすいウェブサイトは常にCSSを使用してスタイルを形作らなければなりませんが、これがContaoがバックエンドで書式定義を管理する「スタイルシート」のモジュールを含めている理由です。様々なContaoの要素を参照するには、それらのclass名を知る必要があります。[コンテンツ要素のクラス][5]は(例えば、ce_textといった)ce_で始まり、[モジュールのクラス][3]は(例えば、mod_searchといった)mod_で始まります。よくわからない場合は、単にページのソースを見てください。
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/style-sheet.jpg)
 
-���줾��Υ������륷���Ȥ�1�İʾ�Υ�ǥ��������פȡ�Internet Explore�ΥС������(¿���ΥХ���1�Ĥ�����ɬ�פʾ��)��ξ���ޤ��Ϥɤ��餫�����¤Ǥ��ޤ���������ν�������դ��Ƥ��������������������ν�������񤭤��뤫��Ǥ���
+それぞれのスタイルシートは1つ以上のメディアタイプと、Internet Exploreのバージョン(多数のバグの1つを修正が必要な場合)の両方またはどちらかに制限できます。書式定義の順序に注意してください、後の定義が前の書式定義を上書きするからです。
 
 ``` {.css}
-/* ����Ū���ͤ�ǽ� */
+/* 一般的な値を最初 */
 .mod_search {
     margin:24px;
 }
 
-/* ���줫��IE7�Ѥ��ͤǾ�� */
+/* それからIE7用の値で上書き */
 *:first-child+html .mod_search {
     margin:18px;
 }
 ```
 
-�⤷������դ��ȡ�����Ū���ͤ�IE������Υޡ�����Ǿ�񤭤��Ƥ��ޤ��Ǥ��礦��
+もし順序が逆だと、一般的な値をIEに特定のマージンで上書きしてしまうでしょう。
 
 
-## �⥸�塼��
+## モジュール
 
-�ե���ȥ���ɥ⥸�塼��ϡ������֥����Ȥ��ؤɤɤΤ褦�ʼ���ε�ǽ�Ǥ��ɲäǤ��ޤ���Contao�Υ������͡��ʥʥӥ���������˥塼���������桼��������Ͽ��ǧ�ڡ������֥����Ȥθ�����RSS�ե����ɤμ����ߡ�������͡��ʥ⥸�塼���ޤ�Ǥ��ޤ����⥸�塼����������ˤϡ��Хå�����ɤ˥������󤷤ơ��ʥӥ���������˥塼����֥ơ��ޡע��֥ե���ȥ���ɥ⥸�塼��פ����򤷤Ƥ���������
+フロントエンドモジュールは、ウェブサイトに殆どどのような種類の機能でも追加できます。Contaoのコアは様々なナビゲーションメニューの生成、ユーザーの登録と認証、ウェブサイトの検索、RSSフィードの取り込み、さらに様々なモジュールを含んでいます。モジュールを作成するには、バックエンドにログインして、ナビゲーションメニューから「テーマ」→「フロントエンドモジュール」と選択してください。
 
 <table>
 <tr>
-  <th>�⥸�塼��</th>
-  <th>CSS�Υ��饹</th>
-  <th>����</th>
+  <th>モジュール</th>
+  <th>CSSのクラス</th>
+  <th>説明</th>
 </tr>
 <tr>
-  <td>�ʥӥ���������˥塼</td>
+  <td>ナビゲーションメニュー</td>
   <td>mod_navigation</td>
-  <td>�����ȹ�¤����ʥӥ���������˥塼���������ޤ���</td>
+  <td>サイト構造からナビゲーションメニューを生成します。</td>
 </tr>
 <tr>
-  <td>��������ʥӥ��������</td>
+  <td>カスタムナビゲーション</td>
   <td>mod_customnav</td>
-  <td>�ȼ��Υʥӥ���������˥塼���������ޤ���</td>
+  <td>独自のナビゲーションメニューを生成します。</td>
 </tr>
 <tr>
-  <td>�ѥ󤯤��ʥӥ��������</td>
+  <td>パンくずナビゲーション</td>
   <td>mod_breadcrumb</td>
-  <td>�ѥ󤯤��ʥӥ��������Υ�˥塼���������ޤ���</td>
+  <td>パンくずナビゲーションのメニューを生成します。</td>
 </tr>
 <tr>
-  <td>�����å��ʥӥ��������</td>
+  <td>クイックナビゲーション</td>
   <td>mod_quicknav</td>
-  <td>�����ȹ�¤����ɥ��åץ������˥塼���������ޤ���</td>
+  <td>サイト構造からドロップダウンメニューを生成します。</td>
 </tr>
 <tr>
-  <td>�����å����</td>
+  <td>クイックリンク</td>
   <td>mod_quicklink</td>
-  <td>�ȼ��ΤΥɥ��åץ������˥塼���������ޤ���</td>
+  <td>独自ののドロップダウンメニューを生成します。</td>
 </tr>
 <tr>
-  <td>�֥å��ʥӥ��������</td>
+  <td>ブックナビゲーション</td>
   <td>mod_booknav</td>
-  <td>�֥å��ʥӥ���������˥塼���������ޤ���</td>
+  <td>ブックナビゲーションメニューを生成します。</td>
 </tr>
 <tr>
-  <td>�����ƥ�����ʥӥ��������</td>
+  <td>アーティクルナビゲーション</td>
   <td>mod_article_nav</td>
-  <td>�����ƥ������ʥӥ����Ȥ���ڡ����͡������Υ�˥塼���������ޤ���</td>
+  <td>アーティクルをナビゲートするページネーションのメニューを生成します。</td>
 </tr>
 <tr>
-  <td>�����ȥޥå�</td>
+  <td>サイトマップ</td>
   <td>mod_sitemap</td>
-  <td>�����ȹ�¤�Τ��٤ƤΥڡ����ΰ������������ޤ���</td>
+  <td>サイト構造のすべてのページの一覧を生成します。</td>
 </tr>
 <tr>
-  <td>��������ե�����</td>
+  <td>ログインフォーム</td>
   <td>mod_login</td>
-  <td>��������Υե�������������ޤ���</td>
+  <td>ログインのフォームを生成します。</td>
 </tr>
 <tr>
-  <td>��ư����������</td>
+  <td>自動ログアウト</td>
   <td>-</td>
-  <td>�桼������ưŪ�˥��������Ȥ��ޤ���</td>
+  <td>ユーザーを自動的にログアウトします。</td>
 </tr>
 <tr>
-  <td>�Ŀͥǡ���</td>
-  <td>member_default</td>
-  <td>�桼�����θĿͥǡ������Խ�����ե�������������ޤ���</td>
+  <td>個人データ</td>
+  <td>mod_personalData</td>
+  <td>ユーザーの個人データを編集するフォームを生成します。</td>
 </tr>
 <tr>
-  <td>��Ͽ</td>
-  <td>member_default</td>
-  <td>�桼��������Ͽ�ե�������������ޤ���</td>
+  <td>登録</td>
+  <td>mod_registration</td>
+  <td>ユーザーの登録フォームを生成します。</td>
 </tr>
 <tr>
-  <td>�ѥ���ɤ�ʶ��</td>
+  <td>パスワードの紛失</td>
   <td>mod_password</td>
-  <td>�������ѥ���ɤ��׵᤹��ե�������������ޤ���</td>
+  <td>新しいパスワードを要求するフォームを生成します。</td>
 </tr>
 <tr>
-  <td>�ե�����</td>
+  <td>アカウントの廃止</td>
+  <td>mod_closeAccount</td>
+  <td>メンバーのアカウントを削除するフォームを生成します。</td>
+</tr>
+<tr>
+  <td>ニュースリスト</td>
+  <td>mod_newslist</td>
+  <td>ニュース項目のリストをページに追加します。</td>
+</tr>
+<tr>
+  <td>ニュースリーダー</td>
+  <td>mod_newsreader</td>
+  <td>ニュース項目の詳細を表示します。</td>
+</tr>
+<tr>
+  <td>ニュースアーカイブ</td>
+  <td>mod_newsarchive</td>
+  <td>ニュースアーカイブをページに追加します。</td>
+</tr>
+<tr>
+  <td>ニュースアーカイブメニュー</td>
+  <td>mod_newsmenu</td>
+  <td>ニュースアーカイブを閲覧するためのナビゲーションメニューを生成します。</td>
+</tr>
+<tr>
+  <td>カレンダー</td>
+  <td>mod_calendar</td>
+  <td>カレンダーをページに追加します。</td>
+</tr>
+<tr>
+  <td>イベントリーダー</td>
+  <td>mod_eventreader</td>
+  <td>イベントの詳細を表示します。</td>
+</tr>
+<tr>
+  <td>イベントリスト</td>
+  <td>mod_eventlist</td>
+  <td>イベントのリストをページに追加します。</td>
+</tr>
+<tr>
+  <td>イベントリストメニュー</td>
+  <td>mod_eventmenu</td>
+  <td>イベントのリストを閲覧するナビゲーションのメニューを生成します。</td>
+</tr>
+<tr>
+  <td>登録の申し込み</td>
+  <td>mod_subscribe</td>
+  <td>1つ以上のチャンネルの登録を申し込みできるフォームを生成します。</td>
+</tr>
+<tr>
+  <td>解除の申し込み</td>
+  <td>mod_unsubscribe</td>
+  <td>1つ以上のチャンネルの解除を申し込みできるフォームを生成します。</td>
+</tr>
+<tr>
+  <td>ニュースレターリスト</td>
+  <td>mod_nl_list</td>
+  <td>ニュースレターのリストをページに追加します。</td>
+</tr>
+<tr>
+  <td>ニュースレターリーダー</td>
+  <td>mod_nl_reader</td>
+  <td>ニュースレターの詳細を表示します。</td>
+</tr>
+<tr>
+  <td>FAQリスト</td>
+  <td>mod_faqlist</td>
+  <td>よくある質問のリストをページに追加します。</td>
+</tr>
+<tr>
+  <td>FAQリーダー</td>
+  <td>mod_faqreader</td>
+  <td>よくある質問の回答を表示します。</td>
+</tr>
+<tr>
+  <td>FAQページ</td>
+  <td>mod_faqpage</td>
+  <td>FAQリストとFAQリーダーを同一のページで表示します。</td>
+</tr>
+<tr>
+  <td>フォーム</td>
   <td>mod_form</td>
-  <td>�ڡ����˥ե�������ɲä��ޤ���</td>
+  <td>フォームをページに追加します。</td>
 </tr>
 <tr>
-  <td>�������󥸥�</td>
+  <td>検索エンジン</td>
   <td>mod_search</td>
-  <td>�ڡ����˸����ե�������ɲä��ޤ���</td>
+  <td>検索フォームをページに追加します。</td>
 </tr>
 <tr>
-  <td>�����ƥ�����ꥹ��</td>
-  <td>mod_article_list</td>
-  <td>����Υ����ƥ��륯�ΰ������������ޤ���</td>
+  <td>Comments</td>
+  <td>mod_comments</td>
+  <td>コメントのフォームをページに追加します。</td>
 </tr>
 <tr>
-  <td>��������HTML</td>
-  <td>-</td>
-  <td>�ȼ���HTML�����ɤ��ɲä��ޤ���</td>
+  <td>リスティング</td>
+  <td>mod_listing</td>
+  <td>テーブルのレコードを一覧します。</td>
 </tr>
 <tr>
-  <td>Flashư��</td>
+  <td>Flash動画</td>
   <td>mod_flash</td>
-  <td>�ڡ�����Flashư��������ߤޤ���</td>
+  <td>Flash動画をページに埋め込みます。</td>
 </tr>
 <tr>
-  <td>������ʲ���</td>
+  <td>アーティクルリスト</td>
+  <td>mod_article_list</td>
+  <td>一列のアーティルクの一覧を生成します。</td>
+</tr>
+<tr>
+  <td>ランダムな画像</td>
   <td>mod_random_image</td>
-  <td>�ڡ����˥�����ʲ������ɲä��ޤ���</td>
+  <td>無作為に選択した画像をページに追加します。</td>
 </tr>
 <tr>
-  <td>�ꥹ�ƥ���</td>
-  <td>list_default</td>
-  <td>�ơ��֥�Υ쥳���ɤ�������ޤ���</td>
+  <td>カスタムHTML</td>
+  <td>-</td>
+  <td>独自のHTMLコードを追加します。</td>
 </tr>
 <tr>
-  <td>RSS�꡼����</td>
-  <td>rss_default</td>
-  <td>RSS�ե����ɤ�ڡ������ɲä��ޤ���</td>
+  <td>RSSリーダー</td>
+  <td>mod_rss_reader</td>
+  <td>RSSフィードをページに追加します。</td>
 </tr>
 </table>
 
 
-### ������������
+### アクセス制御
 
-���줾��Υե���ȥ���ɥ⥸�塼����ݸ�ƥ����֥����ɤǥ����Ȥ������ޤ�������Υ��롼�פΥ��С�������ɽ������褦�ˤǤ��ޤ���
+それぞれのフロントエンドモジュールは保護してウェブサイドでゲストだけ、または特定のグループのメンバーだけに表示するようにできます。
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/protected-module.jpg)
 
 
-## �ڡ����쥤������
+## ページレイアウト
 
-�ڡ����쥤�����Ȥ��㤨����ο������Τ����Ȥ��ä�����Ū�ʥڡ���������ȡ����줾�����ˤɤΥե���ȥ���ɥ⥸�塼���ɽ�����뤫���ޤ����ޤ����ڡ����˴ޤ�륹�����륷���ȡ�RSS��ATOM�Υե����ɤΥ�󥯡�Google���ʥ�ƥ�������ID�δ�Ϣ�դ�������Ū�����Ǥȥץ饰�����ɬ�פ�Ǥ�դ�JavaScript�Υ����ɤ��ɲäǤ��ޤ���Contao��CSS�Υե졼�����ϥ֥饦�����Υ�����ɥ���ưŪ�ˤ����Ĥ��Υ쥤�����ȥ���������ʬ�䤷�ơ����οޤΤ褦�ˤ��줾��Υ��������˳�����Ƥ��⥸�塼��򲼿ޤΤ褦��ɽ�����ޤ���
+ページレイアウトは例えば列の数や全体の幅といった基本的なページの設定と、それぞれの列にどのフロントエンドモジュールを表示するか定めます。また、ページに含めるスタイルシート、RSSやATOMのフィードのリンク、GoogleアナリティクスのIDの関連付け、対話的な要素とプラグインに必要な任意のJavaScriptのコードを追加できます。ContaoのCSSのフレームワークはブラウザーのウィンドウを自動的にいくつかのレイアウトセクションに分割して、次の図のようにそれぞれのセクションに割り当てたモジュールを下図のように表示します。
 
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/front-end-structure.jpg)
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/front-end-modules.jpg)
 
-����ϡ��ڡ����쥤�����Ȥ��������ޤǤ˴ޤ�뤹�٤ƤΥ������륷���Ȥȥե���ȥ���ɥ⥸�塼��������ɬ�פʤ��Ȥ��̣���ޤ������äơ��ʲ��ν���ǥ꥽������������뤳�Ȥ򤪴��ᤷ�ޤ�:
+これは、ページレイアウトを作成するまでに含めるすべてのスタイルシートとフロントエンドモジュールを作成が必要なことを意味します。従って、以下の順序でリソースを作成することをお勧めします:
 
-* ɬ�פʥե���ȥ���ɥ⥸�塼��κ���
-* ɬ�פʥ������륷���Ȥκ���
-* �˥塼�����������֤䥫��������ɬ�פǤ���к���
-* �������ڡ����쥤�����Ȥ�������ơ������ι������Ǥ���
+* 必要なフロントエンドモジュールの作成
+* 必要なスタイルシートの作成
+* ニュースアーカイブやカレンダーが必要であれば作成
+* 新しいページレイアウトを作成して、これらの構成要素を結合
 
 
-## �ڡ����μ���
+## ページの種類
 
-The page type determines whether a page shows content, forwards to another page
-or defines the starting point of a new website within the page tree. Contao
-supports 6 different page types which are explained below.
+ページの種類は、ページがコンテンツを表示する、他のページに移動する、ページツリー内で新しいウェブサイトの開始点とするといったことを決定します。Contaoは以下に説明する、6つの異なったページの種類をサポートしています。
 
 <table>
 <tr>
-  <th>Page type</th>
-  <th>Description</th>
+  <th>ページの種類</th>
+  <th>説明</th>
 </tr>
 <tr>
-  <td>Regular page</td>
-  <td>A regular page contains articles and content elements. It behaves like a
-      static HTML page.</td>
+  <td>通常ページ page</td>
+  <td>通常ページはアーティクルとコンテンツ要素を含みます。静的なHTMLのページのように振る舞います。</td>
 </tr>
 <tr>
-  <td>External redirect</td>
-  <td>This type of page automatically redirects visitors to an external website.
-      It works like a hyperlink.</td>
+  <td>外部リダイレクト</td>
+  <td>この種類のページは外部のウェブサイトに自動的にリダイレクトします。ハイパーリンクのように動作します。</td>
 </tr>
 <tr>
-  <td>Internal redirect</td>
-  <td>This type of page automatically forwards visitors to another page within
-      the site structure.</td>
+  <td>内部リダイレクト</td>
+  <td>この種類のページはサイト構造の中の他のページに自動的に移動します。</td>
 </tr>
 <tr>
-  <td>Website root</td>
-  <td>This type of page marks the starting point of a new website within the
-      site structure.</td>
+  <td>ウェブサイトのルート</td>
+  <td>この種類のページはページ構造内で新しいウェブサイトを開始する点を示します。</td>
 </tr>
 <tr>
-  <td>403 Access denied</td>
-  <td>If a user requests a protected page without permission, a 403 error page
-      will be loaded instead.</td>
+  <td>403 アクセスの拒否</td>
+  <td>ユーザーが権限を持たない保護されたページを要求した場合に、403のエラーページを代わりに読み込みます。</td>
 </tr>
 <tr>
-  <td>404 Page not found</td>
-  <td>If a user requests a non-existent page, a 404 error page will be loaded
-      instead.</td>
+  <td>404 存在しないページ</td>
+  <td>ユーザーが存在しないページを要求した場合に、404のエラーページを代わりに読み込みます。</td>
 </tr>
 </table>
 
 
-### Multi-domain mode
+### 複数ドメインのモード
 
-Contao supports multiple websites within the site structure and automatically
-redirects visitors to a particular website root page depending on its DNS and
-language settings. Let us assume that you are running a bilingual corporate
-website which uses the domain "www.company.com" and a small private website
-which uses the domain "www.personal-website.com". You need three website root
-pages for that:
+Contaoはサイト構造に複数のウェブサイトをサポートしていて、DNSと言語の設定に応じて訪問者を特定のウェブサイトのルートに自動的に移動します。
+
+"www.company.com"というドメインを使用している二か国語の企業のウェブサイトと、"www.personal.website.com"というドメインを使用している小規模の個人的なウェブサイトを運営しているとした場合、3つのウェブサイトのルートが必要です:</p>
 
 <table>
 <tr>
-  <th>Type</th>
+  <th>種類</th>
   <th>DNS</th>
-  <th>Language code</th>
-  <th>Fallback language</th>
+  <th>言語コード</th>
+  <th>代替の言語</th>
 </tr>
 <tr>
-  <td>German corporate website</td>
-  <td>none</td>
+  <td>企業のサイトのドイツ語版</td>
+  <td>なし</td>
   <td>de</td>
-  <td>no</td>
+  <td>いいえ</td>
 </tr>
 <tr>
-  <td>English corporate website</td>
-  <td>none</td>
+  <td>企業のサイトの英語版</td>
+  <td>なし</td>
   <td>en</td>
-  <td>yes</td>
+  <td>はい</td>
 </tr>
 <tr>
-  <td>Personal website</td>
+  <td>個人的なウェブサイト</td>
   <td>personal-website.com</td>
   <td>de</td>
-  <td>yes</td>
+  <td>はい</td>
 </tr>
 </table>
 
-The following table shows to which page a visitor will be redirected depending
-on the domain and his browser language.
+次の表はドメインとアクセスするブラウザーの言語に対応して、表示するページを示します。
 
 <table>
 <tr>
-  <th>Domain</th>
-  <th>Browser language</th>
-  <th>Redirect target</th>
+  <th>ドメイン</th>
+  <th>ブラウザーの言語</th>
+  <th>表示先</th>
 </tr>
 <tr>
   <td>www.company.com</td>
-  <td>English</td>
-  <td>English corporate website</td>
+  <td>英語</td>
+  <td>企業のサイトの英語版</td>
 </tr>
 <tr>
   <td>www.company.com</td>
-  <td>German</td>
-  <td>German corporate website</td>
+  <td>ドイツ語</td>
+  <td>企業のサイトのドイツ語版</td>
 </tr>
 <tr>
   <td>www.company.com</td>
-  <td>Spanish</td>
-  <td>English corporate website</td>
+  <td>スペイン語</td>
+  <td>企業のサイトの英語版</td>
 </tr>
 <tr>
   <td>www.personal-website.com</td>
-  <td>irrelevant</td>
-  <td>Personal website</td>
+  <td>どれでも</td>
+  <td>個人的なウェブサイト</td>
 </tr>
 </table>
 
-Note that if we had not set the "language fallback" option, the personal website
-would only be available for German speaking users!
+「言語の代替」のオプションを有効にしていないと、個人のウェブのサイトはドイツ語を話すユーザーだけしか利用できないことに注意してください!
 
 
-### Access rights
+### アクセス権
 
-Access rights determine what back end users are allowed to do with a page and
-its articles. It has nothing to do with protected pages that can only be
-accessed by certain front end users! Similar to the Unix file permission system,
-there are three permission levels:
+アクセス権はバックエンドのユーザーがページとそのアーティクルに行えることを定義します。特定のフロントエンドのユーザだけがアクセスできる保護されたページとは無関係です! Unixのファイルの権限システムと同様に、3つの権限レベルがあります:
 
-* Access as the owner of a page
-* Access as a member of the group that owns the page
-* Access as an unprivileged user
+* ページの所有者としてアクセス
+* ページを所有するグループのメンバーとしてアクセス
+* 特別な権限のないユーザーとしてアクセス
 
-
-Each level can have different permissions. By default, the owner of a page is
-allowed to edit the page itself as well as its articles, whereas a member of the
-group that owns a page is only allowed to edit articles. Unprivileged users have
-no writing permissions at all.
+それぞれのレベルに異なる権限を設定できます。初期状態では、ページの所有者はページ自身とそのアーティクルを編集でき、ページを所有するグループのメンバーはアーティクルだけを編集でき、特別な権限のないユーザーは書き込み権限を一切持ちません。
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/access-rights.jpg)
 

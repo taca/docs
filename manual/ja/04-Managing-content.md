@@ -1,158 +1,140 @@
-# Managing content
+# コンテンツの管理
 
-The following chapters explain how to manage content in Contao. The Contao core
-supports many different content types like articles, news, events, newsletters,
-forms or definitions. Further content types like banners, tickets, products or
-recommendations are available in the [Extension Repository][1]. To create
-content, log into the back end and choose one of the modules in the Content
-section of the navigation menu.
+以下の章では、Contaoでコンテンツを管理する方法を説明します。Contaoのコアはアーティクル、ニュース、イベント、ニュースレター、フォーム、定義などの多数の異なるコンテンツの種類をサポートしています。さらにバナー、チケット、プロダクト、お勧めなコンテンツの種類を[機能拡張リポジトリ][1]から利用可能です。コンテンツを作成するには、バックエンドにログインして、ナビゲーションメニューのコンテンツのセクションからモジュールを選択してください。
 
 
-## Articles
+## アーティクル
 
-Articles are containers for content elements. Grouping content elements that
-belong together makes it easy to move, publish, copy, edit or export them all at
-once instead of one by one. Each article is associated with a particular page
-and layout section and therefore has a fixed position in the site structure and
-on the website. Contao optionally shows only the article teaser with a "Read
-more" link.
+アーティクルはコンテンツ要素の入れ物です。コンテンツ要素を一緒にグループ化して、移動、公開、複製、編集、エクスポートを個々に扱うの代わりに一度にまとめて行えます。それぞれのアーティクルは特定のページとレイアウトセクションに関連付けられています。このため、ウェブサイトとサイト構造の固定した位置となります。Contaoには、"続きを読む"のリンクを付けたアーティクルのティーザーだけを表示するオプションがあります。
 
+### コンテンツ要素
 
-### Content elements
-
-Content elements are an easy and intuitive way to create content. Instead of
-just using a Rich Text Editor, Contao provides a separate element for each type
-of content like texts, lists, tables, hyperlinks, images or downloads. Here is
-an overview of the Contao core content elements:
+コンテンツ要素はコンテンツを作成する簡単で直感的な方法です。Contaoは単にリッチテキストエディターを使用する代わりに、テキスト、箇条書き、表、ハイパーリンク、画像、ダウンロードといったコンテンツの種類に別々のコンテンツ要素を提供しています。Contaonのコアのコンテンツ要素の概要をここに示します:
 
 <table>
 <tr>
-  <th>Name</th>
-  <th>CSS class</th>
-  <th>Description</th>
+  <th>名前</th>
+  <th>CSSのclass</th>
+  <th>説明</th>
 </tr>
 <tr>
-  <td>Headline</td>
+  <td>見出し</td>
   <td>ce_headline</td>
-  <td>Generates a headline (h1 - h6).</td>
+  <td>見出し(h1からh6)を生成します。</td>
 </tr>
 <tr>
-  <td>Text</td>
+  <td>テキスト</td>
   <td>ce_text</td>
-  <td>Generates a rich text that can be formatted using [TinyMCE][2].</td>
+  <td>[TinyMCE][2]を使用して書式整形できるリッチテキストエディターを生成します。</td>
 </tr>
 <tr>
   <td>HTML</td>
   <td>-</td>
-  <td>Allows you to add custom HTML code.</td>
+  <td>独自のHTMLコードを追加できます。</td>
 </tr>
 <tr>
-  <td>List</td>
+  <td>箇条書き</td>
   <td>ce_list</td>
-  <td>Generates an ordered or unordered list.</td>
+  <td>順序付き、または順序なしの箇条書きを生成します。</td>
 </tr>
 <tr>
-  <td>Table</td>
+  <td>表</td>
   <td>ce_table</td>
-  <td>Generates an optionally sortable table.</td>
+  <td>並べ替えもできる表を生成します。</td>
 </tr>
 <tr>
-  <td>Accordion</td>
+  <td>アコーディオン</td>
   <td>ce_accordion</td>
-  <td>Generates a [MooTools][3] accordion pane.</td>
+  <td>[MooTools][3]のアコーディオンの枠を生成します。</td>
 </tr>
 <tr>
-  <td>Code</td>
+  <td>コード</td>
   <td>ce_code</td>
-  <td>Highlights code snippets and prints them to the screen.</td>
+  <td>コードの断片を強調表示して画面に表示します。</td>
 </tr>
 <tr>
-  <td>Hyperlink</td>
+  <td>ハイパーリンク</td>
   <td>ce_hyperlink</td>
-  <td>Generates a link to another website.</td>
+  <td>他のウェブサイトへのリンクを生成します。</td>
 </tr>
 <tr>
-  <td>Top link</td>
+  <td>トップリンク</td>
   <td>ce_toplink</td>
-  <td>Generates a link to jump to the top of the page.</td>
+  <td>ページの先頭に移動するリンクを生成します。</td>
 </tr>
 <tr>
-  <td>Image</td>
+  <td>画像</td>
   <td>ce_image</td>
-  <td>Generates a stand-alone image.</td>
+  <td>単体の画像を生成します。</td>
 </tr>
 <tr>
-  <td>Gallery</td>
+  <td>ギャラリー</td>
   <td>ce_gallery</td>
-  <td>Generates a [lightbox][4] image gallery.</td>
+  <td>[lightbox][4]の画像ギャラリーを生成します。</td>
 </tr>
 <tr>
-  <td>Download</td>
+  <td>ダウンロード</td>
   <td>ce_download</td>
-  <td>Generates a link to download a file.</td>
+  <td>単体のファイルをダウンロードするリンクを生成します。</td>
 </tr>
 <tr>
-  <td>Downloads</td>
+  <td>複数ダウンロード</td>
   <td>ce_downloads</td>
-  <td>Generates multiple links to download files.</td>
+  <td>複数のファイルをダウンロードするリンクを生成します。</td>
 </tr>
 <tr>
-  <td>Article</td>
+  <td>アーティクル</td>
   <td>-</td>
-  <td>Includes another article.</td>
+  <td>他のアーティクルを取り込みます。</td>
 </tr>
 <tr>
-  <td>Content element</td>
-  <td>(parent class)</td>
-  <td>Includes another content element.</td>
+  <td>コンテンツ要素</td>
+  <td>(親のclass)</td>
+  <td>他のコンテンツ要素を取り込みます。</td>
 </tr>
 <tr>
-  <td>Form</td>
+  <td>フォーム</td>
   <td>ce_form</td>
-  <td>Includes a form.</td>
+  <td>フォームを取り込みます。</td>
 </tr>
 <tr>
-  <td>Module</td>
-  <td>(parent class)</td>
-  <td>Includes a front end module.</td>
+  <td>モジュール</td>
+  <td>(親のclass)</td>
+  <td>フロントエンドモジュールを取り込みます。</td>
 </tr>
 <tr>
-  <td>Article teaser</td>
+  <td>アーティクルのティーザー</td>
   <td>ce_teaser</td>
-  <td>Displays the teaser text of an article.</td>
+  <td>アーティクルのティーザーを取り込みます。</td>
 </tr>
 <tr>
-  <td>Comments</td>
+  <td>コメント</td>
   <td>ce_comments</td>
-  <td>Adds a comment form to an article.</td>
+  <td>アーティクルにコメントのフォームを追加します。</td>
 </tr>
 </table>
 
 
-### Access control
+### アクセス制御
 
-Each content element can be protected so only guests or members of a particular
-group can see it on the website.
+それぞれのコンテンツ要素を保護して、ウェブサイトでゲストだけ、または特定のグループのメンバーだけに表示するようにできます。
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/protected-element.jpg)
 
 
-### Flash content
+### Flashコンテンツ
 
-Flash content is a special type of content which is not shown in an article on
-the website but loaded into a dynamic Flash movie using "loadVars()". To allow
-communitcation between Contao and Flash, you have to add the following function
-to the root frame of your movie:
+FLashコンテンツは特殊な種類のコンテンツで、ウェブサイトのアーティクルに表示する代わりに動的なFlash動画を"loadVars()"を使用して読み込みます。ContaoとFlashの間の通信ができるように、以下の関数を動画のルートのフレームに追加しなければなりません。:
 
 ``` {.as}
 TextField.prototype._loadArticle = function(flashID) {
   tf = this;
 
-  // Enable HTML mode and remove content
+  // HTMLモードを有効にして、HTMLのコンテンツを削除
   tf.html = true;
   tf.htmlText = "";
 
-  // Instantiate a new LoadVars object
+  // 新しいLoadVarsオブジェクトを生成
   lv = new LoadVars();
   lv["flashID"] = flashID;
   lv.sendAndLoad(URL + "flash.php", lv, "POST");
@@ -164,22 +146,21 @@ TextField.prototype._loadArticle = function(flashID) {
   }
 }
 
-// Load the Flash content "myArticle" into the text field "myTextBox"
+// Flashのコンテンツ"myArticle"をテキスト項目の"myTextBox"に読み込み
 myTextBox._loadArticle("myArticle");
 ```
 
 
-#### Importing a style sheet
+#### スタイルシートのインポート
 
-The following ActionScript allows you to import a style sheet to format a
-dynamic text field:
+以下のActionScriptで動的なテキスト項目を整形するスタイルシートをインポートできます:
 
 ``` {.as}
 TextField.prototype._addCSS = function(style_sheet) {
   tf= this;
   tf.styleSheet = null;
 
-  // Instantiate a new StyleSheet object
+  // 新しいStyleSheetオブジェクトのインスタンスを生成
   st = new TextField.StyleSheet();
   st.load(URL + style_sheet);
 
@@ -190,176 +171,142 @@ TextField.prototype._addCSS = function(style_sheet) {
   }
 }
 
-// Add the style sheet "basic.css" to the text box "myTextBox"
+// スタイルシート"basic.css"をテキストボックス"myTextBox"に追加
 myTextBox._addCSS("basic.css");
 ```
 
-Note that Flash only supports a small subset of HTML tags, so some of your
-styles might not display correctly.
+FlashはHTMLタグの少ない一部だけをサポートしているため、正しく表示されないスタイルもあることに注意してください。
 
 
-## News items
+## ニュース項目
 
-The news/blog extension allows you to manage news items or blog posts and
-display them in the front end. Unlike articles that are associated with a
-particular page, news items are organized in news archives, which allows you to
-easily group, categorize or export them.
+ニュースの機能を使用すると、ニュース項目やブログのポストの管理とフロントエンドに表示をできます。特定のページに関連付けられているアーティクルと異なり、ニュース項目はニュースアーカイブにまとめられていて、簡単にグループ、分類、エクスポートができます。
 
 
-### News archives
+### ニュースアーカイブ
 
-News archives are used to group and/or categorize news items. Each archive can
-relate to a certain language or a particular topic and its posts can be exported
-as an RSS or Atom feed. The XML files are generated automatically in the Contao
-root folder.
+ニュースアーカイブはニュース項目をグループ化と分類、またはその一方だけを行うために使用します。それぞれのアーカイブは特定の言語や話題に関連させることができ、その投稿内容をRSSやAtomのフィードにエクスポートできます。そのXMLファイルはContaoのルートのフォルダーに自動的に生成します。
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/news-feed.jpg)
 
 
-### Front end modules
+### フロントエンドモジュール
 
-Front end modules are used to display news items on the website. They can be
-configured with the "Modules" module in the back end and have to be added to an
-article or page layout to actually show up on the website. The news/blog
-extension includes 4 front end modules:
+ウェブサイトにニュース項目を表示するためにフロントエンドモジュールを使用します。フロントエンドモジュールはバックエンドの"モジュール"から設定でき、ウェブサイトに実際に表示するためにはアーティクルかページレイアウトに追加しなければなりません。ニュース/ブログには4つのフロントエンドモジュールがあります:
 
 <table>
 <tr>
-  <th>Module</th>
-  <th>CSS class</th>
-  <th>Description</th>
+  <th>モジュール</th>
+  <th>CSSのclass</th>
+  <th>説明</th>
 </tr>
 <tr>
-  <td>Newslist</td>
+  <td>ニュースリスト</td>
   <td>mod_newslist</td>
-  <td>Adds a list of news items to a page.</td>
+  <td>ニュース項目のリストをページに追加します。</td>
 </tr>
 <tr>
-  <td>Newsreader</td>
+  <td>ニュースリーダー</td>
   <td>mod_newsreader</td>
-  <td>Shows the details of a news item.</td>
+  <td>ニュース項目の詳細を表示します。</td>
 </tr>
 <tr>
-  <td>News archive</td>
+  <td>ニュースアーカイブ</td>
   <td>mod_newsarchive</td>
-  <td>Adds a news archive to a page.</td>
+  <td>ニュースアーカイブをページに追加します。</td>
 </tr>
 <tr>
-  <td>News archive menu</td>
+  <td>ニュースアーカイブメニュー</td>
   <td>mod_newsarchiveMenu</td>
-  <td>Generates a navigation menu to browse the news archive.</td>
+  <td>ニュースアーカイブを閲覧するためのナビゲーションメニューを生成します。</td>
 </tr>
 </table>
 
 
-### Permalinks
+### 固定リンク
 
-Each news item has a unique URL (permalink) that can be used to reference it:
+それぞれのニュース項目には、その参照に使用できる重複しないURL(固定リンク)があります:
 
 ```
 http://www.domain.com/news/items/james-wilson-returns.html
 ```
 
-The above URL requests the news item "james-wilson-returns" via the page "news".
-Remember that Contao is a page-based CMS, so if the page "news" did not exist or
-if it did not include the news reader module, the news item would not be
-displayed.
+上記のURLは"news"というページから"james-wilson-returns"というニュース項目を要求します。Contaoはページに基づいたCMSであることを忘れないでください、"news"というページが存在しなかったり、ニュースリーダーモジュールを含んでいなかったりするとニュース項目を表示しません。
 
 
-## Events
+## イベント
 
-The calendar extension allows you to manage events and display them in a
-calendar or event list on the website. Unlike articles that are associated with
-a particular page, events are organized in calendars, which allows you to easily
-group, categorize or export them.
+カレンダーを使用すると、イベントを管理してウェブサイトにカレンダーやイベントのリストを表示できます。特定のページに関連付けられているアーティクルと異なり、イベントはカレンダーにまとめられていて、簡単にグループ、分類、エクスポートができます。
 
 
-### Calendars
+### カレンダー
 
-Calendars are used to group and/or categorize events. Each calendar can relate
-to a certain language or a particular topic and its events can be exported as an
-RSS or Atom feed. The XML files are generated automatically in the Contao root
-folder.
+カレンダーはイベントのグループ化と分類、またはその一方だけを行うために使用します。それぞれのカレンダーは特定の言語や話題に関連させて、そのイベントをRSSやAtomのフィードにエクスポートできます。そのXMLファイルはContaoのルートのフォルダーに自動的に生成します。
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/calendar-feed.jpg)
 
 
-### Front end modules
+### フロントエンドモジュール
 
-Front end modules are used to display events on the website. They can be
-configured with the "Modules" module in the back end and have to be added to an
-article or page layout to actually show up on the website. The calendar
-extension includes 4 front end modules:
+ウェブサイトにイベントを表示するためにはフロントエンドモジュールを使用します。フロントエンドモジュールはバックエンドの"モジュール"から設定でき、ウェブサイトに実際に表示するためにはアーティクルかページレイアウトに追加しなければなりません。カレンダー拡張には4つのフロントエンドモジュールがあります:
 
 <table>
 <tr>
-  <th>Module</th>
-  <th>CSS class</th>
-  <th>Description</th>
+  <th>モジュール</th>
+  <th>CSSのclass</th>
+  <th>説明</th>
 </tr>
 <tr>
-  <td>Calendar</td>
+  <td>カレンダー</td>
   <td>mod_calendar</td>
-  <td>Adds a calendar to a page.</td>
+  <td>カレンダーをページに追加します。</td>
 </tr>
 <tr>
-  <td>Event reader</td>
+  <td>イベントリーダー</td>
   <td>mod_event</td>
-  <td>Shows the details of an event.</td>
+  <td>イベントの詳細を表示します。</td>
 </tr>
 <tr>
-  <td>Event list</td>
+  <td>イベントリスト</td>
   <td>mod_eventlist</td>
-  <td>Adds a list of events to a page.</td>
+  <td>イベントのリストをページに追加します。</td>
 </tr>
 <tr>
-  <td>Upcoming events</td>
+  <td>近づいているイベント</td>
   <td>mod_eventlist</td>
-  <td>Adds a list of upcoming events to a page.</td>
+  <td>近づいているイベントの一覧をページに追加します。</td>
 </tr>
 </table>
 
 
-### Permalinks
+### 固定リンク
 
-Each event has a unique URL (permalink) that can be used to reference it:
+それぞれのイベントには、その参照に使用できる重複しないURL(固定リンク)があります:
 
 ```
 http://www.domain.com/event-reader/events/final-exams.html
 ```
 
-The above URL requests the event "final-exams" via the page "events". Remember
-that Contao is a page-based CMS, so if the page "events" did not exist or if it
-did not include the event reader module, the event would not be displayed.
+上記のURLは"events"というページから"final-exams"というニュース項目を要求します。Contaoはページに基づいたCMSであることを忘れないでください、"events"というページが存在しなかったり、イベントリーダーモジュールを含んでいなかったりするとイベントを表示しません。
 
 
-## Newsletters
+## ニュースレター
 
-The newsletter extension allows you to manage and send newsletters and
-optionally display them on the website. Unlike articles that are associated with
-a particular page, newsletters are organized in channels, which allows you to
-easily group or categorize them.
+ニュースレターの機能を使用すると、ニュースレターの管理と送信、必要であればウェブサイトにニュースレターを表示できます。特定のページと関連付けられているアーティクルと違い、ニュースレターはチャンネルにまとめられていて、簡単にグループ化と分類ができます。
 
 
-### Recipients
+### 宛先
 
-Newsletter subscriptions are normally handled by the respective front end
-modules, so you do not have to manage recipients manually. For data privacy
-reasons, Contao requires [Double Opt-In][5] subscriptions and stores only the
-e-mail address of the subscriber.
+ニュースレターの購読は、それぞれのフロントエンドモジュールによって通常は処理するので、宛先を手作業で管理する必要はありません。データのプライバシーの理由で、Contaoは[二重のオプトイン][5]による購読の登録を必要とし、購読者の電子メールのアドレスだけ保管しています。
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/newsletter-recipients.jpg)
 
-In case you already have a list of recipients, you can import them into Contao
-from a CSV file.
+既に宛先のリストがある場合は、CSVファイルからContaoにインポートできます。
 
 
-### Personalized newsletters
+### 名前入りのニュースレター
 
-Insofar as you are sending newsletters to registered members, you can
-personalize them with so called "Simple Tokens". Simple tokens are similar to
-[insert tags][6] and can be used in both the HTML and the text content of a
-newsletter.
+ニュースレターを登録したメンバーに送信する場合には、「シンプルトークン」と呼ばれる方法で個人向けにカスタマイズできます。シンプルトークンは[挿入タグ][6]に似ていて、ニュースレターのHTMLとテキストのコンテンツ両方に使用できます。
 
 ```
 Dear ##firstname## ##lastname##,
@@ -375,9 +322,7 @@ E-mail: ##email##
 The Administrator
 ```
 
-In contrast to insert tags, however, simple tokens do not only allow you to
-insert data of the member table `tl_member`, but also to realize simple
-if-else-statements to e.g. specify the salutation.
+挿入タグと対照的に、シンプルトークンはメンバーのテーブル`tl_member`のデータを取り込むことはできませんが、単純なif-else文を、例えば最初の挨拶部分に指定できます。
 
 ```
 {if gender=="male"}
@@ -398,648 +343,553 @@ The Administrator
 ```
 
 
-### Sending newsletters
+### ニュースレターの送信
 
-Especially on shared hosting servers, there are typically limitations regarding
-the script execution time and/or the number of e-mails that can be sent per
-minute. Contao tries to work around both problems by splitting the sending
-process into several cycles to prevent script timeouts and adding a custom
-waiting time between each cycle to control the number of e-mails per minute.
+特に共有タイプのホスティングサービスでは、スクリプトの実行時間と1分に送信できる電子メールの数の両方、またはその一方について通常は制限されています。Contaoは両方の問題に、スクリプトの実行時間切れを防ぐために送信処理をいくつかの周期に分け、各周期の間に個別の待ち時間を加えて各周期の1分間の電子メールの数を制御する、といった方法で対処に努めています。
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/sending-newsletters.jpg)
 
 
-### Front end modules
+### フロントエンドモジュール
 
-Front end modules are used to handle subscriptions and to optionally display
-newsletters on the website. They can be configured with the "Modules" module in
-the back end and have to be added to an article or page layout to actually show
-up on the website.
+購読の処理と、ウェブサイトにニュースレーターを表示したい場合にフロントエンドモジュールを使用します。フロントエンドモジュールはバックエンドの"モジュール"から設定でき、ウェブサイトに実際に表示するためにはアーティクルかページレイアウトに追加しなければなりません。
+
 
 <table>
 <tr>
-  <th>Module</th>
-  <th>CSS class</th>
-  <th>Description</th>
+  <th>モジュール</th>
+  <th>CSSのclass</th>
+  <th>説明</th>
 </tr>
 <tr>
-  <td>Subscribe</td>
+  <td>登録の申し込み</td>
   <td>nl_default</td>
-  <td>Generates a form to subscribe to one or more channels.</td>
+  <td>1つ以上のチャンネルの登録を申し込みできるフォームを生成します。</td>
 </tr>
 <tr>
-  <td>Unsubscribe</td>
+  <td>解除の申し込み</td>
   <td>nl_default</td>
-  <td>Generates a form to unsubscribe from one or more channels.</td>
+  <td>1つ以上のチャンネルの解除を申し込みできるフォームを生成します。</td>
 </tr>
 <tr>
-  <td>Newsletter list</td>
+  <td>ニュースレターリスト</td>
   <td>mod_newsletter_list</td>
-  <td>Adds a list of newsletters to a page.</td>
+  <td>ニュースレターのリストをページに追加します。</td>
 </tr>
 <tr>
-  <td>Newsletter reader</td>
+  <td>ニュースレターリーダー</td>
   <td>mod_newsletter_reader</td>
-  <td>Shows the details of a newsletter.</td>
+  <td>ニュースレターの詳細を表示します。</td>
 </tr>
 </table>
 
 
-### Permalinks
+### 固定リンク
 
-Each newsletter has a unique URL (permalink) that can be used to reference it:
+それぞれのニュースレターには、その参照に使用できる重複しないURL(固定リンク)があります:
 
 ```
 http://www.domain.com/newsletters/items/james-wilson-returns.html
 ```
 
-The above URL requests the newsletter "james-wilson-returns" via the page
-"newsletters". Remember that Contao is a page-based CMS, so if the page
-"newsletters" did not exist or if it did not include the newsletter reader
-module, the newsletter would not be displayed.
+上記のURLは"newsletters"というページから"james-wilson-returns"というニュースレターを要求します。Contaoはページに基づいたCMSであることを忘れないでください、"newsletters"というページが存在しなかったり、ニュースレターリーダーモジュールを含んでいなかったりするとニュースレターを表示しません。
 
 
-## Forms
+## フォーム
 
-The built-in form generator can be used to create interactive forms that are
-sent via e-mail or stored in the Contao database. Uploaded files can be sent as
-e-mail attachment or stored in the Contao files directory. The form generator
-supports four different data formats:
+組み込みのフォームジェネレーターを使用すると対話的なフォームを作成して、記入内容を電子メールで送信や、Contaoのデータベースに保存できます。アップロードしたファイルは電子メールの添付ファイルとして送信や、Contaoのファイルディレクトリに保存できます。フォームジェネレターは4つの異なるデータの書式をサポートしています:
 
 <table>
 <tr>
-  <th>Format</th>
-  <th>Description</th>
+  <th>書式</th>
+  <th>説明</th>
 </tr>
 <tr>
-  <td>Raw data</td>
-  <td>The form data will be sent as plain text message with each field in a new
-      line.</td>
+  <td>生のデータ</td>
+  <td>各項目を1行にしたテキスト形式のメッセージでフォームのデータを送信します。</td>
 </tr>
 <tr>
-  <td>XML file</td>
-  <td>The form data will be attached to the e-mail as an XML file.</td>
+  <td>XMLファイル</td>
+  <td>フォームのデータをXMLファイルとして電子メールに添付します。</td>
 </tr>
 <tr>
-  <td>CSV file</td>
-  <td>The form data will be attached to the e-mail as a CSV file.</td>
+  <td>CSVファイル</td>
+  <td>フォームのデータをCSVファイルとして電子メールに添付します。</td>
 </tr>
 <tr>
-  <td>E-mail</td>
-  <td>Ignores all fields except email, subject, message and cc (carbon copy) and
-      sends the form data like it had been sent from a mail client. File uploads
-      are allowed.</td>
+  <td>電子メール</td>
+  <td>email、subject、message、cc(カーボンコピー)以外のすべての項目を無視して、フォームのデータをメールのクライアントから送信されたかのように送信します。ファイルのアップロードはできません。</td>
 </tr>
 </table>
 
 
-### Form fields
+### フォームの項目
 
-Similar to content elements, Contao provides a separate element for each type of
-form field like text fields, password fields, select menus, file uploads, hidden
-fields or submit buttons. Here is an overview of the Contao core form fields:
+コンテンツ要素と同様に、Contaoはテキスト入力、パスワード入力、選択メニュー、ファイルのアップロード、隠し入力、提出ボタンといった各種のフォームの項目に分た要素を提供しています。Contaoのコアのフォームの項目の概要をここに示します:
 
 <table>
 <tr>
-  <th>Field</th>
-  <th>CSS class</th>
-  <th>Description</th>
+  <th>項目</th>
+  <th>CSSのclass</th>
+  <th>説明</th>
 </tr>
 <tr>
-  <td>Headline</td>
+  <td>見出し</td>
   <td>headline</td>
-  <td>A custom field to insert a section headline.</td>
+  <td>セクションの見出しを挿入するフォームの項目です。</td>
 </tr>
 <tr>
-  <td>Explanation</td>
+  <td>説明</td>
   <td>explanation</td>
-  <td>A custom field to insert an explanation text.</td>
+  <td>説明のテキストを挿入するフォームの項目です。</td>
 </tr>
 <tr>
-  <td>HTML code</td>
+  <td>HTMLコード</td>
   <td>-</td>
-  <td>A custom field to insert HTML code.</td>
+  <td>HTMLコードを挿入するフォームの項目です。</td>
 </tr>
 <tr>
-  <td>Text field</td>
+  <td>テキスト入力</td>
   <td>text</td>
-  <td>A single-line input field for a short or medium text.</td>
+  <td>短めから中くらいの長さのテキストのための1行の入力項目です。</td>
 </tr>
 <tr>
-  <td>Password field</td>
+  <td>パスワード入力</td>
   <td>password</td>
-  <td>A single-line input field for a password.</td>
+  <td>パスワード入力のための1行の入力項目です。</td>
 </tr>
 <tr>
-  <td>Textarea</td>
+  <td>テキストエリア</td>
   <td>textarea</td>
-  <td>A multi-line input field for a medium or long text.</td>
+  <td>中くらいから長いテキストのための複数行の入力項目です。</td>
 </tr>
 <tr>
-  <td>Select menu</td>
+  <td>選択メニュー</td>
   <td>select/multiselect</td>
-  <td>A single- or multi-line drop-down menu.</td>
+  <td>1行または複数行のドロップダウンメニューです。</td>
 </tr>
 <tr>
-  <td>Radio button menu</td>
+  <td>ラジオボタンメニュー</td>
   <td>radio</td>
-  <td>A list of multiple options from which one can be selected.</td>
+  <td>1つだけ選択できる複数の選択肢の一覧です。</td>
 </tr>
 <tr>
-  <td>Checkbox menu</td>
+  <td>チェックボックスメニュー</td>
   <td>checkbox</td>
-  <td>A list of multiple options from which any can be selected.</td>
+  <td>いくつでも選択できる複数の選択肢の一覧です。</td>
 </tr>
 <tr>
-  <td>File upload</td>
+  <td>ファイルアップロード</td>
   <td>upload</td>
-  <td>A single-line input field to upload a local file to the server.</td>
+  <td>ローカルのファイルをサーバーにアップロードする1行の入力項目です。</td>
 </tr>
 <tr>
-  <td>Hidden field</td>
+  <td>隠し入力</td>
   <td>-</td>
-  <td>A single-line input field that is not visible in the form.</td>
+  <td>フォームに表示しない1行の入力項目です。</td>
 </tr>
 <tr>
-  <td>Security question</td>
+  <td>セキュリティ質問</td>
   <td>captcha</td>
-  <td>A simple math question to protect against spam bots (CAPTCHA).</td>
+  <td>spamボットから保護するための単純な数学の質問(CAPTCHA)です。</td>
 </tr>
 <tr>
-  <td>Submit field</td>
+  <td>提出ボタン</td>
   <td>submit</td>
-  <td>A button to submit the form.</td>
+  <td>フォームを提出するボタンです。</td>
 </tr>
 </table>
 
 
-## Insert tags
+## 挿入タグ
 
-Insert Tags are wildcards that are replaced with dynamic content when a page is
-printed to the screen. They e.g. allow you to show the current date, address a
-front end user by his name or include a file. Insert tags can be used almost
-anywhere in Contao, even on cached pages.
+挿入タグはページが画面を表示するときに、動的なコンテンツと置き換わるワイルドカードです。例えば、現在の日付を表示し、フロントエンドのユーザーの名前に宛て、ファイルを取り込むといったことができます。挿入タグはContaoのほとんどどこでも、キャッシュされたページでさえも使用できます。
 
 
-### Link elements
+### リンク要素
 
-The following Insert Tags allow you to link to another page or article using its
-ID or alias.
+以下の挿入タグを使用すると、IDやエイリアスで指定した他のページやアーティクルのリンクできます。
 
 <table>
 <tr>
-  <th>Insert Tag</th>
-  <th>Description</th>
+  <th>挿入タグ</th>
+  <th>説明</th>
 </tr>
 <tr>
   <td><code>{{link::*}}</code></td>
-  <td>This tag will be replaced with a link to an internal page (replace * with
-      the page ID or alias).</td>
+  <td>このタグは内部のページのリンクに置き換わります。(*をページのIDかエイリアスに置き換えてください。)</td>
 </tr>
 <tr>
   <td><code>{{link::back}}</code></td>
-  <td>This tag will be replaced with a link to the last page visited. Can also
-      be used with "link_open", "link_url" and "link_title".</td>
+  <td>このタグは最後にアクセスしたページのリンクに置き換わります。また、"link_open"、"link_url"、"link_title"とも使用できます。</td>
 </tr>
 <tr>
   <td><code>{{link::login}}</code></td>
-  <td>This tag will be replaced with a link to the login page of the currently
-      logged in front end user (if any).</td>
+  <td>このタグは現在ログインしているフロントエンドユーザーのログインページ(があれば)のリンクに置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{link_open::*}}</code></td>
-  <td>Will be replaced with the opening tag of a link to an internal page:
-      `{{link_open::12}}Click here{{link_close}}`.</td>
+  <td>このタグは内部のページのリンクの開きタグと置き換わります: <code>{{link_open::12}}ここをクリック{{link_close}}</code>。</td>
 </tr>
 <tr>
   <td><code>{{link_url::*}}</code></td>
-  <td>This tag will be replaced with the URL of an internal page: `<a
-      href="{{link_url::12}}">Click here</a>`.</td>
+  <td>このタグは内部のページのURLと置き換わります: <code><a href="{{link_url::12}}">ここをクリック</a></code>。</td>
 </tr>
 <tr>
   <td><code>{{link_title::*}}</code></td>
-  <td>This tag will be replaced with the title of an internal page: `<a
-      title="{{link_title::12}}">Click here</a>`.</td>
+  <td>このタグは内部のページの題名と置き換わります: <code><a title="{{link_title::12}}">ここをクリック</a></code>。</td>
 </tr>
 <tr>
   <td><code>{{link_close}}</code></td>
-  <td>Will be replaced with the closing tag of a link to an internal page:
-      `{{link_open::12}}Click here{{link_close}}`.</td>
+  <td>このタグは内部のページのリンクの閉じタグと置き換わります: <code>{{link_open::12}}ここをクリック{{link_close}}</code>。</td>
 </tr>
 <tr>
   <td><code>{{article::*}}</code></td>
-  <td>This tag will be replaced with a link to an article (replace * with the
-      article ID or alias).</td>
+  <td>このタグはアーティクルのリンクに置き換わります。(*はアーティクルのIDかエイリアスに置き換えてください。)</td>
 </tr>
 <tr>
   <td><code>{{article_open::*}}</code></td>
-  <td>Will be replaced with the opening tag of a link to an article:
-      `{{article_open::12}}Click here{{link_close}}`.</td>
+  <td>このタグはアーティクルのリンクの開きタグと置き換わります: <code>{{article_open::12}}ここをクリック{{link_close}}</code>。</td>
 </tr>
 <tr>
   <td><code>{{article_url::*}}</code></td>
-  <td>This tag will be replaced with the URL of an article: `<a
-      href="{{article_url::12}}">Click here</a>`.</td>
+  <td>このタグはアーティクルのURLと置き換わります: <code><a href="{{article_url::12}}">ここをクリック</a></code>。</td>
 </tr>
 <tr>
   <td><code>{{article_title::*}}</code></td>
-  <td>This tag will be replaced with the title of an article: `<a
-      title="{{article_title::12}}">Click here</a>`.</td>
+  <td>このタグはアーティクルの題名と置き換わります: <code><a title="{{article_title::12}}">ここをクリック</a></code>。</td>
 </tr>
 <tr>
   <td><code>{{news::*}}</code></td>
-  <td>This tag will be replaced with a link to a news item (replace * with the
-      news ID or alias).</td>
+  <td>このタグはニュース項目のリンクに置き換わります。(*はニュース項目のIDかエイリアスに置き換えてください。)</td>
 </tr>
 <tr>
   <td><code>{{news_open::*}}</code></td>
-  <td>Will be replaced with the opening tag of a link to a news article:
-      `{{news_open::12}}Click here{{link_close}}`.</td>
+  <td>このタグはニュース記事のリンクの開きタグと置き換わります: <code>{{news_open::12}}ここをクリック{{link_close}}</code>。</td>
 </tr>
 <tr>
   <td><code>{{news_url::*}}</code></td>
-  <td>This tag will be replaced with the URL of a news article: `<a
-      href="{{news_url::12}}">Click here</a>`.</td>
+  <td>このタグはニュース記事のURLと置き換わります: <code><a href="{{news_url::12}}">ここをクリック</a></code>。</td>
 </tr>
 <tr>
   <td><code>{{news_title::*}}</code></td>
-  <td>This tag will be replaced with the title of a news article: `<a
-      title="{{news_title::12}}">Click here</a>`.</td>
+  <td>このタグはニュース記事の題名と置き換わります: <code><a title="{{news_title::12}}">ここをクリック</a></code>。</td>
 </tr>
 <tr>
   <td><code>{{event::*}}</code></td>
-  <td>This tag will be replaced with a link to an event (replace * with the
-      event ID or alias).</td>
+  <td>このタグはイベントのリンクに置き換わります。(*はイベントのIDかエイリアスに置き換えてください。)</td>
 </tr>
 <tr>
   <td><code>{{event_open::*}}</code></td>
-  <td>Will be replaced with the opening tag of a link to an event:
-      `{{event_open::12}}Click here{{link_close}}`.</td>
+  <td>このタグはイベントのリンクの開きタグと置き換わります: <code>{{event_open::12}}ここをクリック{{link_close}}</code>..</td>
 </tr>
 <tr>
   <td><code>{{event_url::*}}</code></td>
-  <td>This tag will be replaced with the URL of an event: `<a
-      href="{{event_url::12}}">Click here</a>`.</td>
+  <td>このタグはイベントのURLと置き換わります: <code><a href="{{event_url::12}}">ここをクリック</a></code>。</td>
 </tr>
 <tr>
   <td><code>{{event_title::*}}</code></td>
-  <td>This tag will be replaced with the title of an event: `<a
-      title="{{event_title::12}}">Click here</a>`.</td>
+  <td>このタグはイベントの題名と置き換わります: <code><a title="{{event_title::12}}">ここをクリック</a></code>。</td>
 </tr>
 <tr>
   <td><code>{{faq::*}}</code></td>
-  <td>This tag will be replaced with a link to a frequently asked question
-      (replace * with the FAQ ID or alias).</td>
+  <td>このタグはFAQの質問のリンクに置き換わります。(*はFAQの質問のIDかエイリアスに置き換えてください。)</td>
 </tr>
 <tr>
   <td><code>{{faq_open::*}}</code></td>
-  <td>Will be replaced with the opening tag of a link to a question:
-      `{{faq_open::12}}Click here{{link_close}}`.</td>
+  <td>このタグは質問のリンクの開きタグと置き換わります: <code>{{faq_open::12}}ここをクリック{{link_close}}</code>。</td>
 </tr>
 <tr>
   <td><code>{{faq_url::*}}</code></td>
-  <td>This tag will be replaced with the URL of a question: `<a
-      href="{{faq_url::12}}">Click here</a>`.</td>
+  <td>このタグは質問のURLと置き換わります: <code><a href="{{faq_url::12}}">ここをクリック</a></code>。</td>
 </tr>
 <tr>
   <td><code>{{faq_title::*}}</code></td>
-  <td>This tag will be replaced with the title of a question: `<a
-      title="{{faq_title::12}}">Click here</a>`.</td>
+  <td>このタグは質問の題名と置き換わります: <code><a title="{{faq_title::12}}">ここをクリック</a></code>。</td>
 </tr>
 </table>
 
 
-### User properties
+### ユーザーの属性
 
-The following Insert Tags allow you to display any property of the currently
-logged in user.
+以下の挿入タグを使用すると、現在ログインしているユーザーの任意の属性を表示できます。
 
 <table>
 <tr>
-  <th>Insert Tag</th>
-  <th>Description</th>
+  <th>挿入タグ</th>
+  <th>説明</th>
 </tr>
 <tr>
   <td><code>{{user::firstname}}</code></td>
-  <td>This tag will be replaced with the first name of the currently logged in
-      user.</td>
+  <td>このタグは現在ログインしているユーザーの名に置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{user::lastname}}</code></td>
-  <td>This tag will be replaced with the last name of the currently logged in
-      user.</td>
+  <td>このタグは現在ログインしているユーザーの姓に置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{user::company}}</code></td>
-  <td>This tag will be replaced with the company name of the currently logged in
-      user.</td>
+  <td>このタグは現在ログインしているユーザーの会社や組織の名前に置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{user::phone}}</code></td>
-  <td>This tag will be replaced with the phone number of the currently logged in
-      user.</td>
+  <td>このタグは現在ログインしているユーザーの電話番号に置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{user::mobile}}</code></td>
-  <td>This tag will be replaced with the mobile number of the currently logged
-      in user.</td>
+  <td>このタグは現在ログインしているユーザーの携帯番号に置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{user::fax}}</code></td>
-  <td>This tag will be replaced with the fax number of the currently logged in
-      user.</td>
+  <td>このタグは現在ログインしているユーザーのFAX番号に置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{user::email}}</code></td>
-  <td>This tag will be replaced with the e-mail address of the currently logged
-      in user.</td>
+  <td>このタグは現在ログインしているユーザーの電子メールアドレスに置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{user::website}}</code></td>
-  <td>This tag will be replaced with the web address of the currently logged in
-      user.</td>
+  <td>このタグは現在ログインしえいるユーザーのウェブアドレスに置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{user::street}}</code></td>
-  <td>This tag will be replaced with the street name of the currently logged in
-      user.</td>
+  <td>このタグは現在ログインしているユーザーの住所に置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{user::postal}}</code></td>
-  <td>This tag will be replaced with the postal code of the currently logged in
-      user.</td>
+  <td>このタグは現在ログインしているユーザーの郵便番号に置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{user::city}}</code></td>
-  <td>This tag will be replaced with the city of the currently logged in
-      user.</td>
+  <td>このタグは現在ログインしているユーザーの市区町村に置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{user::country}}</code></td>
-  <td>This tag will be replaced with the country of the currently logged in
-      user.</td>
+  <td>このタグは現在ログインしているユーザーの国に置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{user::username}}</code></td>
-  <td>This tag will be replaced with the username of the currently logged in
-      user.</td>
+  <td>このタグは現在ログインしているユーザーのユーザー名に置き換わります。</td>
 </tr>
 </table>
 
 
-### Page properties
+### ページの属性
 
-The following Insert Tags allow you to display any property of the current page.
+次の挿入タグを使用すると、現在のページの任意の属性を表示できます。
 
 <table>
 <tr>
-  <th>Insert Tag</th>
-  <th>Description</th>
+  <th>挿入タグ</th>
+  <th>説明</th>
 </tr>
 <tr>
   <td><code>{{page::id}}</code></td>
-  <td>This tag will be replaced with the ID of the current page.</td>
+  <td>このタグは現在のページのIDに置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{page::alias}}</code></td>
-  <td>This tag will be replaced with the alias of the current page.</td>
+  <td>このタグは現在のページのエイリアスに置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{page::title}}</code></td>
-  <td>This tag will be replaced with the name of the current page.</td>
+  <td>このタグは現在のページの名前に置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{page::pageTitle}}</code></td>
-  <td>This tag will be replaced with the title of the current page.</td>
+  <td>このタグは現在のページの題名に置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{page::language}}</code></td>
-  <td>This tag will be replaced with the language of the current page.</td>
+  <td>このタグは現在のページの言語に置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{page::parentAlias}}</code></td>
-  <td>This tag will be replaced with the alias of the parent page.</td>
+  <td>このタグは親のページのエイリアスに置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{page::parentTitle}}</code></td>
-  <td>This tag will be replaced with the name of the parent page.</td>
+  <td>このタグは親のページの名前に置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{page::parentPageTitle}}</code></td>
-  <td>This tag will be replaced with the title of the parent page.</td>
+  <td>このタグは親のページの題名に置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{page::mainAlias}}</code></td>
-  <td>This tag will be replaced with the alias of the parent main page.</td>
+  <td>このタグは親のメインページのエイリアスに置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{page::mainTitle}}</code></td>
-  <td>This tag will be replaced with the name of the parent main page.</td>
+  <td>このタグは親のメインページの名前に置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{page::mainPageTitle}}</code></td>
-  <td>This tag will be replaced with the title of the parent main page.</td>
+  <td>このタグは親のメインページの題名に置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{page::rootTitle}}</code></td>
-  <td>This tag will be replaced with the title of the website.</td>
+  <td>このタグはウェブサイトの題名に置き換わります。</td>
 </tr>
 </table>
 
 
-### Environment variables
+### 環境変数
 
-The following Insert Tags allow you to display environment variables like the
-page name or the request string.
+以下の挿入タグを使用すると、ページ名やリクエスト文字列のような環境変数を表示できます。
 
 <table>
 <tr>
-  <th>Insert Tag</th>
-  <th>Description</th>
+  <th>挿入タグ</th>
+  <th>説明</th>
 </tr>
 <tr>
   <td><code>{{env::host}}</code></td>
-  <td>This tag will be replaced with the current host name.</td>
+  <td>このタグは現在のホスト名に置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{env::url}}</code></td>
-  <td>This tag will be replaced with the host name and the protocol.</td>
+  <td>このタグは現在のホスト名とプロトコルに置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{env::path}}</code></td>
-  <td>This tag will be replaced with the current base URL including the path to
-      the Contao directory.</td>
+  <td>このタグはContaoのディレクトリのパスを含んだ現在の基準(base)のURLに置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{env::request}}</code></td>
-  <td>This tag will be replaced with the current request string.</td>
+  <td>このタグは現在のリクエスト文字列に置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{env::ip}}</code></td>
-  <td>This tag will be replaced with the IP address of the current visitor.</td>
+  <td>このタグは現在アクセスしているクライアントのIPアドレスに置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{env::referer}}</code></td>
-  <td>This tag will be replaced with the URL of the last page visited.</td>
+  <td>このタグは最後にアクセスしたページのURLに置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{env::files_url}}</code></td>
-  <td>This tag will be replaced with the static URL of the files directory.</td>
+  <td>このタグはfilesディレクトリの静的なURLに置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{env::script_url}}</code></td>
-  <td>This tag will be replaced with the static URL of the scripts
-      directory.</td>
+  <td>このタグはscriptsディレクトリの静的なURLに置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{env::plugins_url}}</code></td>
-  <td>This tag will be replaced with the static URL of the plugins
-      directory.</td>
+  <td>このタグはpluginsディレクトリの静的なURLに置き換わります。</td>
 </tr>
 </table>
 
 
-### Include elements
+### 要素の取り込み
 
-The following Insert Tags allow you to include various resources like articles,
-modules or files from the "templates" directoy.
+以下の挿入タグを使用すると、アーティクル、モジュール、"templates"ディレクトリからのファイルのような様々なリソースを取り込めます。
 
 <table>
 <tr>
-  <th>Insert Tag</th>
-  <th>Description</th>
+  <th>挿入タグ</th>
+  <th>説明</th>
 </tr>
 <tr>
   <td><code>{{insert_article::*}}</code></td>
-  <td>This tag will be replaced with the referenced article (replace * with the
-      article ID or alias).</td>
+  <td>このタグは参照しているアーティクルに置き換わります。(*をアーティクルのIDかエイリアスに置き換えてください。)</td>
 </tr>
 <tr>
   <td><code>{{insert_content::*}}</code></td>
-  <td>This tag will be replaced with the referenced content element (replace *
-      with the element ID).</td>
+  <td>このタグは参照しているコンテンツ要素に置き換わります。(*をコンテンツ要素のIDかエイリアスに置き換えてください。)</td>
 </tr>
 <tr>
   <td><code>{{insert_module::*}}</code></td>
-  <td>This tag will be replaced with the referenced module (replace * with the
-      module ID).</td>
+  <td>このタグは参照しているモジュールに置き換わります。(*をモジュールのIDかエイリアスに置き換えてください。)</td>
 </tr>
 <tr>
   <td><code>{{article_teaser::*}}</code></td>
-  <td>This tag will be replaced with the teaser of an article (replace * with
-      the article ID).</td>
+  <td>このタグはアーティクルのティーザーに置き換わります。(*をアーティクルのIDに置き換えてください。).</td>
 </tr>
 <tr>
   <td><code>{{news_teaser::*}}</code></td>
-  <td>This tag will be replaced with the teaser of a news item (replace * with
-      the news ID).</td>
+  <td>このタグはニュースのティーザーに置き換わります。(*をニュースのIDに置き換えてください。)</td>
 </tr>
 <tr>
   <td><code>{{event_teaser::*}}</code></td>
-  <td>This tag will be replaced with the teaser of an event (replace * with the
-      event ID).</td>
+  <td>このタグはイベントのティーザーに置き換わります。(*をイベントのIDに置き換えてください。)</td>
 </tr>
 <tr>
   <td><code>{{file::*}}</code></td>
-  <td>This tag will be replaced with the content of a file from the "templates"
-      directory (replace * with the file name). You can also provide arguments:
-      `{{file::file.php?arg1=val&amp;arg2=val}}`.</td>
+  <td>このタグは"templates"のディレクトリにあるファイルの内容に置き換わります。(*をファイル名に置き換えてください。)<br />引数を指定することもできます。例: <code>{{file::file.php?arg1=val&arg2=val}}</td>
 </tr>
 </table>
 
 
-### Miscellaneous
+### 様々な挿入タグ
 
-The following Insert Tags allow you to perform miscellaneous tasks like adding
-the current date or including lightbox images.
+以下の挿入タグを使用すると、現在の日付やlightbox画像を含めるといった様々な処理を実行できます。
 
 <table>
 <tr>
-  <th>Insert Tag</th>
-  <th>Description</th>
+  <th>挿入タグ</th>
+  <th>説明</th>
 </tr>
 <tr>
   <td><code>{{date}}</code></td>
-  <td>This tag will be replaced with the current date according to the global
-      date format.</td>
+  <td>このタグは全体的な日付の書式による現在の日付に置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{date::*}}</code></td>
-  <td>This tag will be replaced with the current date according to a custom date
-      format.</td>
+  <td>このタグは独自に指定した日付の書式による、現在の日付に置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{last_update}}</code></td>
-  <td>This tag will be replaced with the date of the last update according to
-      the global date format.</td>
+  <td>このタグは全体的な日付の書式による最終更新の日付に置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{last_update::*}}</code></td>
-  <td>This tag will be replaced with the date of the last update according to a
-      custom date format.</td>
+  <td>このタグは独自に指定した日付の書式による、最終更新の日付に置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{email::*}}</code></td>
-  <td>This tag will be replaced with a clickable and encrypted link to an e-mail
-      address.</td>
+  <td>このタグはクリック可能な暗号化した電子メールアドレスに置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{lang::*}}</code></td>
-  <td>This tag can be used to mark foreign words within a text: `{{lang::fr}}Au
-      revoir{{lang}}`. It will be replaced with `<span lang="fr"
-      xml:lang="fr">Au revoir</span>`.</td>
+  <td>このタグはテキスト中の外国の単語にしるしを付けるのに使用できます。例: `{{lang::fr}}Au revoir{{lang}}` これは`<span lang="fr" xml:lang="fr">Au revoir</span>`に置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{abbr::*}}</code></td>
-  <td>Mark abbreviations in a text: `{{abbr::World Wide Web}}WWW{{abbr}}`.
-      It will be replaced with `<abbr title="World Wide Web">WWW</abbr>`.</td>
+  <td>テキストに略称を付けます: `{{abbr::World Wide Web}}WWW{{abbr}}`。これは`<abbr title="World Wide Web">WWW</abbr>`に置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{acronym::*}}</code></td>
-  <td>Mark acronyms in a text: `{{acronym:: Multipurpose Internet Mail
-      Extensions}}MIME{{acronym}}`. It will be replaced with `<acronym
-      title="Multipurpose Internet Mail Extensions">MIME</acronym>`.</td>
+  <td>テキストに頭字語を付けます: `{{acronym:: Multipurpose Internet Mail Extensions}}MIME{{acronym}}`。これは`<acronym title="Multipurpose Internet Mail Extensions">MIME</acronym>`に置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{ua::*}}</code></td>
-  <td>Output properties of the user agent: `{{ua::browser}}`. It will e.g. be
-      replaced with "chrome".</td>
+  <td>ユーザーエージェントの特性を出力します: `{{ua::browser}}`。これは"chrome"に置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{iflng::*}}</code></td>
-  <td>This tag will be completely removed if the page language does not match
-      the tag language. You can use it to define language-specific labels:
-      `{{iflng::en}}Your name{{iflng}}{{iflng::de}}Ihr Name{{iflng}}`.</td>
+  <td>このタグはページの言語がタグの言語と一致していないと完全に削除されます。言語に特定なラベルを設定するのに使用できます: `{{iflng::en}}Your name{{iflng}}{{iflng::de}}Ihr Name{{iflng}}`。</td>
 </tr>
 <tr>
   <td><code>{{ifnlng::*}}</code></td>
-  <td>This tag will be completely removed if the page language matches the tag
-      language. You can use it to define language-specific labels:
-      `{{ifnlng::de}}Your name{{iflng}}{{iflng::de}}Ihr Name{{iflng}}`.</td>
+  <td>このタグはページの言語がタグの言語と一致していると完全に削除されます。言語に特定なラベルを設定するのに使用できます: `{{ifnlng::de}}Your name{{iflng}}{{iflng::de}}Ihr Name{{iflng}}`。</td>
 </tr>
 <tr>
   <td><code>{{image::*}}</code></td>
-  <td>This tag will be replaced with the thumbnail of an image:
-      `{{image::files/image.jpg?width=200&amp;height=150}}`. **width**
-      Thumbnail width, **height** Thumbnail height, **alt** Alternative
-      text, **class** CSS class, **rel** rel-attribute (e.g. "lightbox"),
-      **mode** mode ("proportional", "crop" or "box").</td>
+  <td>このタグは画像のサムネイルに置き換わります: `{{image::files/image.jpg?width=200&amp;height=150}}`。**width**はサムネイルの幅、**height**はサムネイルの高さ、**alt**は代替テキスト、**class**はCSSのclass、**rel**はrel属性(例えば"lightbox")、**mode**はモード("proportional"、"crop"、"box")。</td>
 </tr>
 <tr>
   <td><code>{{label::*}}</code></td>
-  <td>This tag will be replaced with a translated label: `{{label::CNT:au}}` or
-      `{{label::tl_article:title:0}}`. Note that only the first colon is a
-      double colon.</td>
+  <td>このタグは翻訳したラベルに置き換わります: `{{label::CNT:au}}` や `{{label::tl_article:title:0}}`。 最初のコロンだけ二重のコロンとなっていることに注意してください。</td>
 </tr>
 <tr>
   <td><code>{{version::*}}</code></td>
-  <td>This tag will be replaced with the current Contao version (e.g.
-      2.11.2).</td>
+  <td>このタグは現在のContaoのバージョン(例えば 2.11.2)に置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{request_token::*}}</code></td>
-  <td>This tag will be replaced with the request token of the current
-      session.</td>
+  <td>このタグは現在のセッションのリクエストトークにに置き換わります。</td>
 </tr>
 </table>
 
