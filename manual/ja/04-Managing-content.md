@@ -119,7 +119,7 @@
 
 それぞれのコンテンツ要素を保護して、ウェブサイトでゲストだけ、または特定のグループのメンバーだけに表示するようにできます。
 
-![](https://raw.github.com/contao/docs/3.0/manual/en/images/protected-element.jpg)
+![](https://raw.github.com/contao/docs/3.1/manual/en/images/protected-element.jpg)
 
 
 ### Flashコンテンツ
@@ -185,9 +185,7 @@ FlashはHTMLタグの少ない一部だけをサポートしているため、�
 
 ### ニュースアーカイブ
 
-ニュースアーカイブはニュース項目をグループ化と分類、またはその一方だけを行うために使用します。それぞれのアーカイブは特定の言語や話題に関連させることができ、その投稿内容をRSSやAtomのフィードにエクスポートできます。そのXMLファイルはContaoのルートのフォルダーに自動的に生成します。
-
-![](https://raw.github.com/contao/docs/3.0/manual/en/images/news-feed.jpg)
+ニュースアーカイブはニュース項目をグループ化と分類、またはその一方だけを行うために使用します。それぞれのアーカイブは特定の言語や話題に関連したものにできます。
 
 
 ### フロントエンドモジュール
@@ -241,9 +239,7 @@ http://www.domain.com/news/items/james-wilson-returns.html
 
 ### カレンダー
 
-カレンダーはイベントのグループ化と分類、またはその一方だけを行うために使用します。それぞれのカレンダーは特定の言語や話題に関連させて、そのイベントをRSSやAtomのフィードにエクスポートできます。そのXMLファイルはContaoのルートのフォルダーに自動的に生成します。
-
-![](https://raw.github.com/contao/docs/3.0/manual/en/images/calendar-feed.jpg)
+カレンダーはイベントのグループ化と分類、またはその一方だけを行うために使用します。それぞれのカレンダーは特定の言語や話題に関連したものにできます。
 
 
 ### フロントエンドモジュール
@@ -290,6 +286,29 @@ http://www.domain.com/event-reader/events/final-exams.html
 上記のURLは"events"というページから"final-exams"というニュース項目を要求します。Contaoはページに基づいたCMSであることを忘れないでください、"events"というページが存在しなかったり、イベントリーダーモジュールを含んでいなかったりするとイベントを表示しません。
 
 
+## RSS/Atom feed
+
+This feature can be used for news archives and calendars. Here is an example
+with the calendars list.
+
+![](https://raw.github.com/contao/docs/3.1/manual/en/images/rss-calendar.jpg)
+
+
+### Settings
+
+One or several calendars can be grouped and exported as an RSS or Atom feed.
+It goes the same for news archives. At the same time, you can choose to export
+only the teasers or full articles of each event or news.
+
+![](https://raw.github.com/contao/docs/3.1/manual/en/images/rss-settings.jpg)
+
+
+### XML files
+
+The XML files are generated automatically in the ```share``` directory of your
+Contao installation. In this example : ```share/events.xml```.
+
+
 ## ニュースレター
 
 ニュースレターの機能を使用すると、ニュースレターの管理と送信、必要であればウェブサイトにニュースレターを表示できます。特定のページと関連付けられているアーティクルと違い、ニュースレターはチャンネルにまとめられていて、簡単にグループ化と分類ができます。
@@ -299,7 +318,7 @@ http://www.domain.com/event-reader/events/final-exams.html
 
 ニュースレターの購読は、それぞれのフロントエンドモジュールによって通常は処理するので、宛先を手作業で管理する必要はありません。データのプライバシーの理由で、Contaoは[二重のオプトイン][5]による購読の登録を必要とし、購読者の電子メールのアドレスだけ保管しています。
 
-![](https://raw.github.com/contao/docs/3.0/manual/en/images/newsletter-recipients.jpg)
+![](https://raw.github.com/contao/docs/3.1/manual/en/images/newsletter-recipients.jpg)
 
 既に宛先のリストがある場合は、CSVファイルからContaoにインポートできます。
 
@@ -347,7 +366,7 @@ The Administrator
 
 特に共有タイプのホスティングサービスでは、スクリプトの実行時間と1分に送信できる電子メールの数の両方、またはその一方について通常は制限されています。Contaoは両方の問題に、スクリプトの実行時間切れを防ぐために送信処理をいくつかの周期に分け、各周期の間に個別の待ち時間を加えて各周期の1分間の電子メールの数を制御する、といった方法で対処に努めています。
 
-![](https://raw.github.com/contao/docs/3.0/manual/en/images/sending-newsletters.jpg)
+![](https://raw.github.com/contao/docs/3.1/manual/en/images/sending-newsletters.jpg)
 
 
 ### フロントエンドモジュール
@@ -851,6 +870,15 @@ http://www.domain.com/newsletters/items/james-wilson-returns.html
   <td><code>{{email::*}}</code></td>
   <td>このタグはクリック可能な暗号化した電子メールアドレスに置き換わります。</td>
 </tr>
+  <td><code>{{email_open::*}}</code></td>
+  <td>This tag will be replaced with a clickable and encrypted link to an e-mail
+      address. However, the closing <code>&lt;/a&gt;</code> will not be added.</td>
+</tr>
+<tr>
+  <td><code>{{email_url::*}}</code></td>
+  <td>This tag will be replaced by the encrypted e-mail address only.</td>
+</tr>
+<tr>
 <tr>
   <td><code>{{lang::*}}</code></td>
   <td>このタグはテキスト中の外国の単語にしるしを付けるのに使用できます。例: `{{lang::fr}}Au revoir{{lang}}` これは`<span lang="fr" xml:lang="fr">Au revoir</span>`に置き換わります。</td>
@@ -890,6 +918,172 @@ http://www.domain.com/newsletters/items/james-wilson-returns.html
 <tr>
   <td><code>{{request_token::*}}</code></td>
   <td>このタグは現在のセッションのリクエストトークにに置き換わります。</td>
+</tr>
+</table>
+
+
+### Insert tag flags
+
+Using flags, insert tags can be further processed. For example, the value can be
+passed to specific PHP methods. Multiple flags can be applied:
+
+```
+{{ua::browser|uncached}}  
+{{page::title|decodeEntities|strtoupper}}
+```
+
+Available flags:
+
+<table>
+<tr>
+    <th>Flag</th>
+    <th>Description</th>
+    <th>More information</th>
+</tr>
+<tr>
+    <td><code>uncached</code></td>
+    <td>Do not replace insert tag when the page is cached</td>
+    <td></td>
+</tr>
+<tr>
+    <td><code>refresh</code></td>
+    <td>Do not cache the insert tag, even if it is used multiple times on the
+      same page</td>
+    <td></td>
+</tr>
+<tr>
+    <td><code>addslashes</code></td>
+    <td>Quote a string with slashes</td>
+    <td><a target="_blank" href="http://php.net/addslashes">PHP function</a></td>
+</tr>
+<tr>
+    <td><code>stripslashes</code></td>
+    <td>Remove the slashes from a quoted string</td>
+    <td><a target="_blank" href="http://php.net/stripslashes">PHP function</a></td>
+</tr>
+<tr>
+    <td><code>standardize</code></td>
+    <td>Standardize the output (e.g. for a page alias or CSS class)</td>
+    <td></td>
+</tr>
+<tr>
+    <td><code>ampersand</code></td>
+    <td>Convert ampersands to HTML entities</td>
+    <td></td>
+</tr>
+<tr>
+    <td><code>specialchars</code></td>
+    <td>Convert special characters to HTML entities</td>
+    <td></td>
+</tr>
+<tr>
+    <td><code>nl2br</code></td>
+    <td>Inserts HTML line breaks before all newlines in a string</td>
+    <td><a target="_blank" href="http://php.net/nl2br">PHP function</a></td>
+</tr>
+<tr>
+    <td><code>nl2br_pre</code></td>
+    <td>Same as nl2br, but keeps line breaks in <code>&lt;pre&gt;</code> tags</td>
+    <td></td>
+</tr>
+<tr>
+    <td><code>strtolower</code></td>
+    <td>Make a string lowercase</td>
+    <td><a target="_blank" href="http://php.net/strtolower">PHP function</a></td>
+</tr>
+<tr>
+    <td><code>utf8_strtolower</code></td>
+    <td>Unicode-aware lowercase conversion</td>
+    <td></td>
+</tr>
+<tr>
+    <td><code>strtoupper</code></td>
+    <td>Make a string uppercase</td>
+    <td><a target="_blank" href="http://php.net/strtoupper">PHP function</a></td>
+</tr>
+<tr>
+    <td><code>utf8_strtoupper</code></td>
+    <td>Unicode-aware uppercase conversion</td>
+    <td></td>
+</tr>
+<tr>
+    <td><code>ucfirst</code></td>
+    <td>Make a string's first character uppercase</td>
+    <td><a target="_blank" href="http://php.net/ucfirst">PHP function</a></td>
+</tr>
+<tr>
+    <td><code>lcfirst</code></td>
+    <td>Make a string's first character lowercase</td>
+    <td><a target="_blank" href="http://php.net/lcfirst">PHP function</a></td>
+</tr>
+<tr>
+    <td><code>ucwords</code></td>
+    <td>Uppercase the first character of each word in a string</td>
+    <td><a target="_blank" href="http://php.net/ucwords">PHP function</a></td>
+</tr>
+<tr>
+    <td><code>trim</code></td>
+    <td>Strip whitespace from the beginning and end of a string</td>
+    <td><a target="_blank" href="http://php.net/trim">PHP function</a></td>
+</tr>
+<tr>
+    <td><code>rtrim</code></td>
+    <td>Strip whitespace from the end of a string</td>
+    <td><a target="_blank" href="http://php.net/rtrim">PHP function</a></td>
+</tr>
+<tr>
+    <td><code>ltrim</code></td>
+    <td>Strip whitespace from the beginning of a string</td>
+    <td><a target="_blank" href="http://php.net/ltrim">PHP function</a></td>
+</tr>
+<tr>
+    <td><code>utf8_romanize</code></td>
+    <td>Romanize the output</td>
+    <td></td>
+</tr>
+<tr>
+    <td><code>strrev</code></td>
+    <td>Reverse a string</td>
+    <td><a target="_blank" href="http://php.net/strrev">PHP function</a></td>
+</tr>
+<tr>
+    <td><code>encodeEmail</code></td>
+    <td>Encode email addresses in the output</td>
+    <td>see <code>String::encodeEmail</code></td>
+</tr>
+<tr>
+    <td><code>decodeEntities</code></td>
+    <td>Decodes HTML entities in the output</td>
+    <td>see <code>String::decodeEntities()</code></td>
+</tr>
+<tr>
+    <td><code>number_format</code></td>
+    <td>Formats a number (without decimal places)</td>
+    <td>see <code>System::getFormattedNumber()</code></td>
+</tr>
+<tr>
+    <td><code>currency_format</code></td>
+    <td>Formats a currency (two decimal places)</td>
+    <td>see <code>System::getFormattedNumber()</code></td>
+</tr>
+<tr>
+    <td><code>readable_size</code></td>
+    <td>Convert file sizes to human readable format</td>
+    <td>see <code>System::getReadableSize()</code></td>
+</tr>
+<tr>
+    <td><code>base64_encode</code></td>
+    <td>Encodes a text using the <a href="https://en.wikipedia
+    .org/wiki/Base64" target="_blank">Base64 algorithm</a>.</td>
+    <td><a target="_blank" href="http://php.net/base64_encode">PHP
+    function</a></td>
+</tr>
+<tr>
+    <td><code>base64_decode</code></td>
+    <td>Decodes a text using the <a href="https://en.wikipedia
+    .org/wiki/Base64" target="_blank">Base64 algorithm</a>.</td>
+    <td><a target="_blank" href="http://php.net/base64_decode">PHP
+    function</a></td>
 </tr>
 </table>
 

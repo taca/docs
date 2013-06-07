@@ -17,7 +17,7 @@ Contaoは管理領域にログインできるバックエンドのユーザー("
 
 ページマウントは、ユーザーに見ることを許可するサイト構造のページを設定します。下の画面の例は、Helen Lewisさんが見るサイト構造です。ウェブサイトにはさらに多数のページがありますが、彼女は3つのページだけ見ることができます。これは、"Editors"グループの設定で"Course"のページだけがページマウントされているからです。Helen Lewisさんは3つのページを見ることができますが、その中の1つだけ編集できることに注意してください!
 
-![](https://raw.github.com/contao/docs/3.0/manual/en/images/site-structure-hlewis.jpg)
+![](https://raw.github.com/contao/docs/3.1/manual/en/images/site-structure-hlewis.jpg)
 
 ページを見えることは、そのページ(や、そのアーティクル)を編集する権利を含みません。サイト構造で[ページの権限][1]を設定することを覚えておいてください。ページをユーザーに許可するには、そのユーザーのプロフィールでページをマウントして、サイト構造でアクセス権を与えなければなりません。
 
@@ -26,7 +26,7 @@ Contaoは管理領域にログインできるバックエンドのユーザー("
 
 ページマウントと同様に、ファイルマウントはユーザーが見ることを許可するフォルダーを設定します。下の画面の例はHelen Lewisさんが見るファイル管理です。彼女は"campus"のフォルダーだけ見ることができますが、管理者はファイルディレクトリ(`tl_files`)全体を見ることができます。
 
-![](https://raw.github.com/contao/docs/3.0/manual/en/images/file-manager-hlewis.jpg)
+![](https://raw.github.com/contao/docs/3.1/manual/en/images/file-manager-hlewis.jpg)
 
 
 #### 許可する項目
@@ -34,7 +34,7 @@ Contaoは管理領域にログインできるバックエンドのユーザー("
 最初に説明しましたように、通常のユーザーは初期状態で権限をまったく持っていません("すべて拒否")が、これはフォームのどの欄にもアクセスできないという意味も含みます。例えばニュースのモジュールにアクセスを許可したとしても、新しい項目を作成するフォームは、管理者がグループの設定で`tl_news`テーブルの1つ以上の項目を有効にするまで空のままとなります。
 
 
-![](https://raw.github.com/contao/docs/3.0/manual/en/images/allowed-fields.jpg)
+![](https://raw.github.com/contao/docs/3.1/manual/en/images/allowed-fields.jpg)
 
 
 ### メンバー
@@ -51,26 +51,26 @@ Contaoは管理領域にログインできるバックエンドのユーザー("
 
 "機能拡張カタログ"のモジュールを使用すると機能拡張のリストの閲覧と、ボタンを押して機能拡張をインストールできます。特定の機能拡張を探すには、フィルターと並べ替えのオプションを使用し、アイコンか機能拡張の名前をクリックして詳細なページを開いて、モジュールをインストールしてください。
 
-![](https://raw.github.com/contao/docs/3.0/manual/en/images/extension-list.jpg)
+![](https://raw.github.com/contao/docs/3.1/manual/en/images/extension-list.jpg)
 
 詳細なページには機能拡張の説明と、システムの必要条件、バージョン、他のモジュールの依存関係といった詳細な情報があります。ダウンロードと機能拡張をインストールするには"インストール"のボタンをクリックしてください。
 
-![](https://raw.github.com/contao/docs/3.0/manual/en/images/extension-details.jpg)
+![](https://raw.github.com/contao/docs/3.1/manual/en/images/extension-details.jpg)
 
 Contaoは自動的に機能拡張のダウンロードとインストールを行い、必要であればデータベースを更新します。
 
-![](https://raw.github.com/contao/docs/3.0/manual/en/images/extension-install.jpg)
+![](https://raw.github.com/contao/docs/3.1/manual/en/images/extension-install.jpg)
 
 
 ### 機能拡張管理
 
 "機能拡張管理"のモジュールから機能拡張の更新とアンインストールを行えます。自動的に更新がないか確認して、新しいバージョンがあれば通知します。多数の機能拡張にはオンラインマニュアルとサポートを受けられるフォーラムのスレッドの両方、またはその一方のリンクがあります。
 
-![](https://raw.github.com/contao/docs/3.0/manual/en/images/extension-manager.jpg)
+![](https://raw.github.com/contao/docs/3.1/manual/en/images/extension-manager.jpg)
 
 機能拡張をアンインストールするには、単にアンインストールのアイコンをクリックして指示に従ってください。機能拡張管理はすべてのファイルとフォルダーを削除して、必要ならデータベースを更新します。この動作は取り消せず、テーブルも回復できないことに注意してください!
 
-![](https://raw.github.com/contao/docs/3.0/manual/en/images/extension-uninstall.jpg)
+![](https://raw.github.com/contao/docs/3.1/manual/en/images/extension-uninstall.jpg)
 
 
 ### 手作業によるインストール
@@ -87,14 +87,14 @@ Contaoの保守作業のほとんどは定期的なコマンドスケジュー�
 
 ユーザーが生成したコンテンツに加えてContaoは様々なシステムのデータを保持していて、削除したレコードの復元したり、以前のバージョンに戻したり、ウェブサイトを検索したり、ページの読み込み時間を減らしたり、といったことに使用しています。このデータは手作業で消去でき、例えば画像キャッシュから古いサムネイルの削除や、サイト構造を修正した跡でXMLのサイトマップを再作成を行えます。
 
-![](https://raw.github.com/contao/docs/3.0/manual/en/images/purge-data.jpg)
+![](https://raw.github.com/contao/docs/3.1/manual/en/images/purge-data.jpg)
 
 
 ### 検索インデックスの再構築
 
 ページはフロントエンドで表示されるときに(同時にバックエンドにログインしていなければ)、ページは通常は自動的に検索インデックスに追加されますので、検索インデックスについて心配する必要はありません。しかし、多数のページを変更した場合、ブラウザーでページを1つずつ表示する代わりに、一度に更新できた方が便利です。この場合、検索インデックスを手作業で再構築できます。
 
-![](https://raw.github.com/contao/docs/3.0/manual/en/images/rebuild-the-search-index.jpg)
+![](https://raw.github.com/contao/docs/3.1/manual/en/images/rebuild-the-search-index.jpg)
 
 
 [1]: 03-Managing-pages.md#access-control

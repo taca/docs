@@ -57,7 +57,7 @@ Contaoのディレクトリにある.htaccess.defaultというファイルには
 
 Contaoをインストールツールでインストールしようとすると、ローカルの構成ファイルに書き込めないという警告が表示されるかもしれません。
 
-![](https://raw.github.com/contao/docs/3.0/manual/en/images/localconfig-not-writable.jpg)
+![](https://raw.github.com/contao/docs/3.1/manual/en/images/localconfig-not-writable.jpg)
 
 
 ### ファイルの権限の問題
@@ -104,11 +104,11 @@ Contaoをインストールツールでインストールしようとすると�
 
 インストールしているContaoの同期をするには、[Unixのdiffユーティリティ][3]かFTPプログラムのどちらかを使用できます。Unixのユーティリティーは一般にサーバーの管理者だけが使用するため、ここでは説明しません。ファイルをFTPで同期するには、WinSCPを実行してサーバーに接続してください。上記で述べたファイルをバックアップしてから、Contaoのディレクトリを指定して、「ファイルの同期(Synchronize files)」のボタンをクリックしてください。
 
-![](https://raw.github.com/contao/docs/3.0/manual/en/images/synchronization-options.jpg)
+![](https://raw.github.com/contao/docs/3.1/manual/en/images/synchronization-options.jpg)
 
 オプションを注意深く見直してから「変更のプレビュー("Preview changes")」を選択すると、更新されるファイルを確認できます。それから、それぞれのファイルをプレビューウィンドウで確認し、削除すると印のついたファイルは二重にチェックしてください!  "OK"をクリックすると同期の処理を開始します。
 
-![](https://raw.github.com/contao/docs/3.0/manual/en/images/synchronization-confirmation.jpg)
+![](https://raw.github.com/contao/docs/3.1/manual/en/images/synchronization-confirmation.jpg)
 
 
 ### データベースの更新
@@ -133,12 +133,12 @@ Contaoライブアップデートサービスは商用のContaoの追加機能�
 
 ### バージョンの選択
 
-![](https://raw.github.com/contao/docs/3.0/manual/en/images/live-update-1.jpg)
+![](https://raw.github.com/contao/docs/3.1/manual/en/images/live-update-1.jpg)
 
 
 ### テンプレートの違い
 
-![](https://raw.github.com/contao/docs/3.0/manual/en/images/live-update-2.jpg)
+![](https://raw.github.com/contao/docs/3.1/manual/en/images/live-update-2.jpg)
 
 
 ### トラブルシューティング
@@ -165,14 +165,14 @@ FTPプログラムを起動して、対象とするサーバーに接続して�
 
 もっとも簡単にMySQLのdumpを作成する方法は、データベースの管理ツール"phpMyAdmin"の使用です。サーバーの管理者の場合は、もちろん`mysqldump`ユーティリティも使用できます。"phpMyAdmin"にログインして、エクスポートしたいデータベースを選択して、トップメニューの"エクスポート(Export)"のタブをクリックしてください。MySQLのバージョンの互換性の問題を最小とするため、以下の画面の例のようにエクスポートの設定を調整することが重要です。
 
-![](https://raw.github.com/contao/docs/3.0/manual/en/images/sql-export.jpg)
+![](https://raw.github.com/contao/docs/3.1/manual/en/images/sql-export.jpg)
 
 
 ### データベースのインポート
 
 移設先のサーバーに"phpMyAdmin"でログインしてContao用の新しいデータベースを作成します。サーバーの設定によっては、(例えばPleskやcPanelといった)サーバーの管理パネルをデータベースの作成に使用する必要があるでしょう。空のデータベースを選択して、トップメニューの"インポート(Import)"のタブをクリックしてください。それからローカルのデータベースのSQLのダンプをアップロードしてインポートを開始してください
 
-![](https://raw.github.com/contao/docs/3.0/manual/en/images/sql-import.jpg)
+![](https://raw.github.com/contao/docs/3.1/manual/en/images/sql-import.jpg)
 
 
 ### データベースの設定の調整
@@ -194,7 +194,7 @@ ContaoにはPHPとMySQLのサポートしている、ApacheやIISのようなウ
 
 Contaoチェックをダウンロードして、サーバーがContaoのシステム要件を満たしているかどうか調べてください。Contaoチェックは機能拡張リポジトリとライブアップデートを利用できることと、セーフモード対処が必要かどうかを検査します。システムの構成によっては、新しいContaoをインストールツールでインストールのための設定や、既にインストールしているContaoの検証を行えます。
 
-![](https://raw.github.com/contao/docs/3.0/manual/en/images/contao-check.jpg)
+![](https://raw.github.com/contao/docs/3.1/manual/en/images/contao-check.jpg)
 
 Zipファイルを展開してContaoをインストールしているディレクトリに`check`という名前のフォルダーにアップロードして、それをWebブラウザーで開いてください。
 

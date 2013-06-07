@@ -80,6 +80,28 @@
   <td>trueの場合、Contaoは親のテーブルのレコードを削除するとき、現在のテーブルのレコードを削除しません。</td>
 </tr>
 <tr>
+  <td>sql</td>
+  <td>table configuration (<code>string</code>)</td>
+  <td>Specifies the data type and its configuration in the database, e.g.
+      <code>'sql' =>  "varchar(255) NOT NULL default ''"</code></td>
+</tr>
+<tr>
+  <td>relation</td>
+  <td>table configuration (<code>array</code>)</td>
+  <td>Define the relationship with the parent table.<br>
+      <b>type</b> (<code>string</code>)
+      <ul><li>belongsTo</li>
+      <li>hasOne</li>
+      <li>belongsToMany</li>
+      <li>hasMany</li>
+      </ul>
+      <b>load</b> (<code>string</code>)
+      <ul><li>eagerly</li>
+      <li>lazy</li>
+      </ul>
+  </td>
+</tr>
+<tr>
   <td>onload_callback</td>
   <td>コールバック関数 (<code>配列</code>)</td>
   <td>データコンテナを初期化したときに、データコンテナオブジェクトを引数にしてカスタム関数を呼び出します。</td>
@@ -103,6 +125,16 @@
   <td>oncopy_callback</td>
   <td>コールバック関数 (<code>配列</code>)</td>
   <td>レコードを複製したときに、挿入したIDとデータコンテナオブジェクトを引数にしてカスタム関数を呼び出します。バージョン2.8.2で追加しました。</td>
+</tr>
+<tr>
+  <td>sql</td>
+  <td>テーブル構成(<code>array</code>)</td>
+  <td>データベースのテーブルの構成を定義します。例:
+  <code>'keys' => array
+  		(
+				'id' => 'primary',
+				'pid' => 'index'
+			)</code></td>
 </tr>
 </table>
 
@@ -771,7 +803,7 @@ semicolon (;) or a comma (,). Whereas the comma is just used to separate the
 field names, the semicolon indicates the beginning of a new fieldset, which can
 be expanded and collapsed.
 
-![](https://raw.github.com/contao/docs/3.0/manual/en/images/palettes.jpg)
+![](https://raw.github.com/contao/docs/3.1/manual/en/images/palettes.jpg)
 
 The above example is defined by the following code:
 
