@@ -1,140 +1,115 @@
-# Data Container Arrays
+# データ格納配列
 
-Data Container Arrays (DCAs) are used to store table meta data. Each DCA
-describes a particular table in terms of its configuration, its relations to
-other tables and its fields. The Contao core engine determines by this meta data
-how to list records, how to render back end forms and how to save data.  The DCA
-files of all active module are loaded one after the other (starting with
-"backend" and "frontend" and then in alphabetical order), so that every module
-can override the existing configuration. The `system/config/dcaconfig.php` file
-is included at the end.
+データ格納配列(DCA)はテーブルのメタデータの格納に使用します。それぞれのDCAは、特定のテーブルについて、その設定、他のテーブルとの関係、そのフィールドを記述するものです。これらのメタデータでContaoのコアのエンジンは、レコードを一覧する方法、バックエンドのフォームの表示方法、データを保存する方法を決定します。すべての有効なモジュールのDCAファイルは、("backend"と"frontend"から始めて、その後にアルファベットの順番で)順々に読み込んでいくので、それぞれのモジュールは既存の構成を上書きできます。`system/config/dcaconfig.php`のファイルは最後に読み込まれます。
 
 
-## Reference
+## リファレンス
 
-A Data Container Array is devided into six sections. The first section stores
-the general table configuration like relations to other tables. The second and
-third section determine how records are listed and which operations a user is
-allowed to execute. The fourth section defines different groups of form fields
-which are called "palettes" and the last two sections describe the input fields
-in detail.
+データ格納配列は6つのセクションから構成されています。最初のセクションは他のテーブルとの関係のような一般的なテーブルの構成を保持しています。 第2と第3のセクションはレコードを一覧表示する方法とユーザーに実行を許可する操作を定義しています。第4のセクションは「パレット」と呼ばれるフォームの入力項目の異なるグループを定義し、最後の2つのセクションは入力項目の詳細を記述しています。
 
 
-### Table configuration
+### テーブルの構成
 
-The table configuration describes the table itself, e.g. which type of data
-container is used to store the data or how it relates to other tables. Also you
-can enable versioning or define what happens to child records when data is being
-edited or deleted.
+テーブルの構成はテーブル自身、すなわちデータを保持するのに使用するデータコンテナの種類や他のテーブルとの関係を記述します。また、バージョン管理を有効にしたり、データを編集や削除を行ったときに子のレコードに起こすことを定義できます。
 
 <table>
 <tr>
-  <th>Key</th>
-  <th>Value</th>
-  <th>Description</th>
+  <th>キー</th>
+  <th>値</th>
+  <th>説明</th>
 </tr>
 <tr>
   <td>label</td>
-  <td><code>&$GLOBALS['TL_LANG']</code> (<code>string</code>)</td>
-  <td>The label is used with page or file trees and typically includes reference
-      to the language array.</td>
+  <td><code>&$GLOBALS['TL_LANG']</code> (<code>文字列</code>)</td>
+  <td>labelはページやファイルツリーで使用し、一般に言語配列の参照を含んでいます。</td>
 </tr>
 <tr>
   <td>ptable</td>
-  <td>Parent table (<code>string</code>)</td>
-  <td>Name of the related parent table (table.pid = ptable.id).</td>
+  <td>親のテーブル (<code>文字列</code>)</td>
+  <td>親のテーブルに関連した名前です。(table.pid = ptable.id).</td>
 </tr>
 <tr>
   <td>ctable</td>
-  <td>Child tables (<code>array</code>)</td>
-  <td>Name of the related child tables (table.id = ctable.pid).</td>
+  <td>子のテーブル (<code>配列</code>)</td>
+  <td>子のテーブルに関連した名前です。(table.id = ctable.pid).</td>
 </tr>
 <tr>
   <td>dataContainer</td>
-  <td>Data Container (<code>string</code>)</td>
-  <td>Table (database table), File (local configuration file) or Folder (file
-      manager).</td>
+  <td>データコンテナ (<code>文字列</code>)</td>
+  <td>Table (データベースのテーブル)、File (ローカルの設定ファイル)、Folder (ファイルマネージャー)のいずれかです。</td>
 </tr>
 <tr>
   <td>validFileTypes</td>
-  <td>File types (<code>string</code>)</td>
-  <td>Comma separated list of valid file extensions (applies to file trees
-      only).</td>
+  <td>ファイルの種類 (<code>文字列</code>)</td>
+  <td>有効なファイルの拡張子をコンマで区切ったリストです。(ファイルツリーにだけ適用)</td>
 </tr>
 <tr>
   <td>uploadScript</td>
-  <td>File name (<code>string</code>)</td>
+  <td>ファイル名 (<code>文字列</code>)</td>
   <td>Name of the FancyUpload script in the system/config folder (without file
       extension).</td>
 </tr>
 <tr>
   <td>closed</td>
-  <td>true/false (<code>boolean</code>)</td>
-  <td>If true, you cannot add further records to the table.</td>
+  <td>trueまたはfalse (<code>論理値</code>)</td>
+  <td>trueの場合、テーブルにさらにレコードを追加できません。</td>
 </tr>
 <tr>
   <td>notEditable</td>
-  <td>true/false (<code>boolean</code>)</td>
-  <td>If true, the table cannot be edited.</td>
+  <td>trueまたはfalse (<code>論理値</code>)</td>
+  <td>trueの場合、このテーブルは編集できません。</td>
 </tr>
 <tr>
   <td>switchToEdit</td>
-  <td>true/false (<code>boolean</code>)</td>
-  <td>Activates the "save and edit" button when a new record is added (sorting
-      mode 4 only).</td>
+  <td>trueまたはfalse (<code>論理値</code>)</td>
+  <td>新しいレコードを追加するときに「保存して編集」のボタンを有効にします。(並べ替えモード4だけ)</td>
 </tr>
 <tr>
   <td>enableVersioning</td>
-  <td>true/false (<code>boolean</code>)</td>
-  <td>If true, Contao saves the old version of a record when a new version is
-      created.</td>
+  <td>trueまたはfalse (<code>論理値</code>)</td>
+  <td>trueの場合、Contaoは新しいバージョンを作成するときに古いバージョンを保存します。</td>
 </tr>
 <tr>
   <td>doNotCopyRecords</td>
-  <td>true/false (<code>boolean</code>)</td>
-  <td>If true, Contao will not duplicate records of the current table when a
-      record of its parent table is duplicated.</td>
+  <td>trueまたはfalse (<code>論理値</code>)</td>
+  <td>trueの場合、Contaoは親のテーブルのレコードを複製するとき、現在のテーブルのレコードを複製しません。</td>
 </tr>
 <tr>
   <td>doNotDeleteRecords</td>
-  <td>true/false (<code>boolean</code>)</td>
-  <td>If true, Contao will not delete records of the current table when a record
-      of its parent table is deleted.</td>
+  <td>trueまたはfalse (<code>論理値</code>)</td>
+  <td>trueの場合、Contaoは親のテーブルのレコードを削除するとき、現在のテーブルのレコードを削除しません。</td>
 </tr>
 <tr>
   <td>onload_callback</td>
-  <td>Callback function (<code>array</code>)</td>
-  <td>Calls a custom function when a DataContainer is initialized and passes the
-      DataContainer object as argument.</td>
+  <td>コールバック関数 (<code>配列</code>)</td>
+  <td>データコンテナを初期化したときに、データコンテナオブジェクトを引数にしてカスタム関数を呼び出します。</td>
 </tr>
 <tr>
   <td>onsubmit_callback</td>
-  <td>Callback function (<code>array</code>)</td>
-  <td>Calls a custom function after a record has been updated and passes the
-      DataContainer object as argument.</td>
+  <td>コールバック関数 (<code>配列</code>)</td>
+  <td>レコードを更新した後で、データコンテナオブジェクトを引数にしてカスタム関数を呼び出します。</td>
 </tr>
 <tr>
   <td>ondelete_callback</td>
-  <td>Callback function (<code>array</code>)</td>
-  <td>Calls a custom function when a record is deleted and passes the
-      DataContainer object as argument.</td>
+  <td>コールバック関数 (<code>配列</code>)</td>
+  <td>レコードを削除したときに、データコンテナオブジェクトを引数にしてカスタム関数を呼び出します。</td>
 </tr>
 <tr>
   <td>oncut_callback</td>
-  <td>Callback function (<code>array</code>)</td>
-  <td>Calls a custom function when a record is moved and passes the
-      DataContainer object as argument. Added in version 2.8.2.</td>
+  <td>コールバック関数 (<code>配列</code>)</td>
+  <td>レコードを移動したときに、データコンテナオブジェクトを引数にしてカスタム関数を呼び出します。</td>
 </tr>
 <tr>
   <td>oncopy_callback</td>
-  <td>Callback function (<code>array</code>)</td>
-  <td>Calls a custom function when a record is duplicated and passes the insert
-      ID and the DataContainer object as argument. Added in version 2.8.2.</td>
+  <td>コールバック関数 (<code>配列</code>)</td>
+  <td>レコードを複製したときに、挿入したIDとデータコンテナオブジェクトを引数にしてカスタム関数を呼び出します。バージョン2.8.2で追加しました。</td>
 </tr>
 </table>
 
 
-### Listing records
+### レコードの一覧
+
+リストの配列はレコードを一覧表示する方法を定義します。Contaoのコアのエンジンは3つの異なるビュー、リストビュー、ペアレントビュー、ツリービューをサポートしています。フィルダーやデフォルトの並べ替え順序といった、様々な並べ替えのオプションの設定や、カスタムラベルの追加ができます。
 
 The listing array defines how records are listed. The Contao core engine
 supports three different [views][1]: "list view", "parent view" and "tree view".
@@ -220,18 +195,18 @@ order and you can add custom labels.
 </tr>
 <tr>
   <td>disableGrouping</td>
-  <td>true/false (<code>boolean</code>)</td>
+  <td>trueまたはfalse (<code>論理値</code>)</td>
   <td>Allows you to disable the group headers in list view and parent view.</td>
 </tr>
 <tr>
   <td>paste_button_callback</td>
-  <td>Callback function (<code>array</code>)</td>
+  <td>コールバック関数 (<code>配列</code>)</td>
   <td>This function will be called instead of displaying the default paste
       buttons. Please specify as <code>array('Class', 'Method')</code>.</td>
 </tr>
 <tr>
   <td>child_record_callback</td>
-  <td>Callback function (<code>array</code>)</td>
+  <td>コールバック関数 (<code>配列</code>)</td>
   <td>This function will be called to render the child elements (sorting mode 4
       only). Please specify as <code>array('Class', 'Method')</code>.</td>
 </tr>
@@ -269,13 +244,13 @@ order and you can add custom labels.
 </tr>
 <tr>
   <td>group_callback</td>
-  <td>Callback function (<code>array</code>)</td>
+  <td>コールバック関数 (<code>配列</code>)</td>
   <td>Call a custom function instead of using the default group header
       function.</td>
 </tr>
 <tr>
   <td>label_callback</td>
-  <td>Callback function (<code>array</code>)</td>
+  <td>コールバック関数 (<code>配列</code>)</td>
   <td>Call a custom function instead of using the default label function.</td>
 </tr>
 </table>
@@ -319,7 +294,7 @@ that relate to a particular record only (e.g. editing or deleting a record).
 </tr>
 <tr>
   <td>button_callback</td>
-  <td>Callback function (<code>array</code>)</td>
+  <td>コールバック関数 (<code>配列</code>)</td>
   <td>Call a custom function instead of using the default button function.
       Please specify as <code>array('Class', 'Method')</code>.</td>
 </tr>
@@ -357,7 +332,7 @@ that relate to a particular record only (e.g. editing or deleting a record).
 </tr>
 <tr>
   <td>button_callback</td>
-  <td>Callback function (<code>array</code>)</td>
+  <td>コールバック関数 (<code>配列</code>)</td>
   <td>Call a custom function instead of using the default button function.
       Please specify as <code>array('Class', 'Method')</code>.</td>
 </tr>
@@ -389,25 +364,25 @@ filter criteria.
 </tr>
 <tr>
   <td>exclude</td>
-  <td>true/false (<code>boolean</code>)</td>
+  <td>trueまたはfalse (<code>論理値</code>)</td>
   <td>If true the field will be excluded for non-admins. It can be enabled in
       the user group module (allowed excluded fields).</td>
 </tr>
 <tr>
   <td>search</td>
-  <td>true/false (<code>boolean</code>)</td>
+  <td>trueまたはfalse (<code>論理値</code>)</td>
   <td>If true the field will be included in the search menu (see "sorting
       records" -> "panelLayout").</td>
 </tr>
 <tr>
   <td>sorting</td>
-  <td>true/false (<code>boolean</code>)</td>
+  <td>trueまたはfalse (<code>論理値</code>)</td>
   <td>If true the field will be included in the sorting menu (see "sorting
       records" -> "panelLayout").</td>
 </tr>
 <tr>
   <td>filter</td>
-  <td>true/false (<code>boolean</code>)</td>
+  <td>trueまたはfalse (<code>論理値</code>)</td>
   <td>If true the field will be included in the filter menu (see "sorting
       records" -> "panelLayout").</td>
 </tr>
@@ -461,7 +436,7 @@ filter criteria.
 </tr>
 <tr>
   <td>options_callback</td>
-  <td>Callback function (<code>array</code>)</td>
+  <td>コールバック関数 (<code>配列</code>)</td>
   <td>Callback function that returns an array of options. Please specify as
       <code>array('Class', 'Method')</code>.</td>
 </tr>
@@ -485,7 +460,7 @@ filter criteria.
 </tr>
 <tr>
   <td>input_field_callback</td>
-  <td>Callback function (<code>array</code>)</td>
+  <td>コールバック関数 (<code>配列</code>)</td>
   <td>Executes a custom function instead of using the default input field
       routine and passes the the DataContainer object and the label as
       arguments.</td>
@@ -497,7 +472,7 @@ filter criteria.
 </tr>
 <tr>
   <td>wizard</td>
-  <td>Callback function (<code>array</code>)</td>
+  <td>コールバック関数 (<code>配列</code>)</td>
   <td>Call a custom function and add its return value to the input field. Please
       specify as <code>array('Class', 'Method')</code>.</td>
 </tr>
@@ -536,12 +511,12 @@ Each field can be validated against a regular expression.
 </tr>
 <tr>
   <td>helpwizard</td>
-  <td>true/false (<code>boolean</code>)</td>
+  <td>trueまたはfalse (<code>論理値</code>)</td>
   <td>If true the helpwizard icon will appear next to the field label.</td>
 </tr>
 <tr>
   <td>mandatory</td>
-  <td>true/false (<code>boolean</code>)</td>
+  <td>trueまたはfalse (<code>論理値</code>)</td>
   <td>If true the field cannot be empty.</td>
 </tr>
 <tr>
@@ -556,7 +531,7 @@ Each field can be validated against a regular expression.
 </tr>
 <tr>
   <td>fallback</td>
-  <td>true/false (<code>boolean</code>)</td>
+  <td>trueまたはfalse (<code>論理値</code>)</td>
   <td>If true the field can only be assigned once per table.</td>
 </tr>
 <tr>
@@ -594,7 +569,7 @@ Each field can be validated against a regular expression.
 </tr>
 <tr>
   <td>multiple</td>
-  <td>true/false (<code>boolean</code>)</td>
+  <td>trueまたはfalse (<code>論理値</code>)</td>
   <td>Make the input field multiple. Applies to text fields, select menus, radio
       buttons and checkboxes. Required for the checkbox wizard.</td>
 </tr>
@@ -617,71 +592,71 @@ Each field can be validated against a regular expression.
 </tr>
 <tr>
   <td>submitOnChange</td>
-  <td>true/false (<code>boolean</code>)</td>
+  <td>trueまたはfalse (<code>論理値</code>)</td>
   <td>If true the form will be submitted when the field value changes.</td>
 </tr>
 <tr>
   <td>nospace</td>
-  <td>true/false (<code>boolean</code>)</td>
+  <td>trueまたはfalse (<code>論理値</code>)</td>
   <td>If true whitespace characters will not be allowed.</td>
 </tr>
 <tr>
   <td>allowHtml</td>
-  <td>true/false (<code>boolean</code>)</td>
+  <td>trueまたはfalse (<code>論理値</code>)</td>
   <td>If true the current field will accept HTML input.</td>
 </tr>
 <tr>
   <td>preserveTags</td>
-  <td>true/false (<code>boolean</code>)</td>
+  <td>trueまたはfalse (<code>論理値</code>)</td>
   <td>If true no HTML tags will be removed at all.</td>
 </tr>
 <tr>
   <td>decodeEntities</td>
-  <td>true/false (<code>boolean</code>)</td>
+  <td>trueまたはfalse (<code>論理値</code>)</td>
   <td>If true HTML entities will be decoded. Note that HTML entities are always
       decoded if allowHtml is true.</td>
 </tr>
 <tr>
   <td>doNotSaveEmpty</td>
-  <td>true/false (<code>boolean</code>)</td>
+  <td>trueまたはfalse (<code>論理値</code>)</td>
   <td>If true the field will not be saved if it is empty.</td>
 </tr>
 <tr>
   <td>alwaysSave</td>
-  <td>true/false (<code>boolean</code>)</td>
+  <td>trueまたはfalse (<code>論理値</code>)</td>
   <td>If true the field will always be saved, even if its value has not changed.
       This can be useful in conjunction with a load_callback.</td>
 </tr>
 <tr>
   <td>spaceToUnderscore</td>
-  <td>true/false (<code>boolean</code>)</td>
+  <td>trueまたはfalse (<code>論理値</code>)</td>
   <td>If true any whitespace character will be replaced by an underscore.</td>
 </tr>
 <tr>
   <td>unique</td>
-  <td>true/false (<code>boolean</code>)</td>
+  <td>trueまたはfalse (<code>論理値</code>)</td>
   <td>If true the field value cannot be saved if it exists already.</td>
 </tr>
 <tr>
   <td>encrypt</td>
-  <td>true/false (<code>boolean</code>)</td>
+  <td>trueまたはfalse (<code>論理値</code>)</td>
   <td>If true the field value will be stored encrypted.</td>
 </tr>
 <tr>
   <td>trailingSlash</td>
-  <td>true/false (<code>boolean</code>)</td>
+  <td>trueまたはfalse (<code>論理値</code>)</td>
   <td>If true a trailing slash will be added to the field value. If false, an
       existing trailing slash will be removed from the field value.</td>
 </tr>
 <tr>
   <td>files</td>
-  <td>true/false (<code>boolean</code>)</td>
+  <td>trueまたはfalse (<code>論理値</code>)</td>
   <td>If true files and folders will be shown. If false, only folders will be
       shown. Applies to file trees only.</td>
 </tr>
 <tr>
   <td>filesOnly</td>
-  <td>true/false (<code>boolean</code>)</td>
+  <td>trueまたはfalse (<code>論理値</code>)</td>
   <td>Removes the radio buttons or checkboxes next to folders. Applies to file
       trees only.</td>
 </tr>
@@ -705,7 +680,7 @@ Each field can be validated against a regular expression.
 </tr>
 <tr>
   <td>includeBlankOption</td>
-  <td>true/false (<code>boolean</code>)</td>
+  <td>trueまたはfalse (<code>論理値</code>)</td>
   <td>If true a blank option will be added to the options array. Applies to
       drop-down menus only.</td>
 </tr>
@@ -716,7 +691,7 @@ Each field can be validated against a regular expression.
 </tr>
 <tr>
   <td>findInSet</td>
-  <td>true/false (<code>boolean</code>)</td>
+  <td>trueまたはfalse (<code>論理値</code>)</td>
   <td>Sort by the actual option values instead of their labels.</td>
 </tr>
 <tr>
@@ -726,7 +701,7 @@ Each field can be validated against a regular expression.
 </tr>
 <tr>
   <td>feEditable</td>
-  <td>true/false (<code>boolean</code>)</td>
+  <td>trueまたはfalse (<code>論理値</code>)</td>
   <td>If true the current field can be edited in the frontend. Applies to table
       tl_member only.</td>
 </tr>
@@ -741,40 +716,40 @@ Each field can be validated against a regular expression.
 </tr>
 <tr>
   <td>feViewable</td>
-  <td>true/false (<code>boolean</code>)</td>
+  <td>trueまたはfalse (<code>論理値</code>)</td>
   <td>If true the current field is viewable in the member listing module.</td>
 </tr>
 <tr>
   <td>doNotCopy</td>
-  <td>true/false (<code>boolean</code>)</td>
+  <td>trueまたはfalse (<code>論理値</code>)</td>
   <td>If true the current field will not be duplicated if the record is
       duplicated.</td>
 </tr>
 <tr>
   <td>hideInput</td>
-  <td>true/false (<code>boolean</code>)</td>
+  <td>trueまたはfalse (<code>論理値</code>)</td>
   <td>If true the field value will be hidden (it is still visible in the page
       source though!).</td>
 </tr>
 <tr>
   <td>doNotShow</td>
-  <td>true/false (<code>boolean</code>)</td>
+  <td>trueまたはfalse (<code>論理値</code>)</td>
   <td>If true the current field will not be shown in "edit all" or "show
       details" mode.</td>
 </tr>
 <tr>
   <td>isBoolean</td>
-  <td>true/false (<code>boolean</code>)</td>
+  <td>trueまたはfalse (<code>論理値</code>)</td>
   <td>Indicates that a particular field is boolean.</td>
 </tr>
 <tr>
   <td>disabled</td>
-  <td>true/false (<code>boolean</code>)</td>
+  <td>trueまたはfalse (<code>論理値</code>)</td>
   <td>Disables the field (not supported by all field types).</td>
 </tr>
 <tr>
   <td>readonly</td>
-  <td>true/false (<code>boolean</code>)</td>
+  <td>trueまたはfalse (<code>論理値</code>)</td>
   <td>Makes the field read only (not supported by all field types).</td>
 </tr>
 </table>

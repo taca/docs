@@ -80,31 +80,19 @@ PHPのSOAP拡張がサーバーで利用できない場合、Contaoの機能拡�
 
 ## 保守
 
-Most of the maintenance jobs in Contao are executed automatically by the
-Periodic Command Scheduler, so you can focus on your actual work. Even the tasks
-in the maintenance module are carried out automatically, however sometimes it is
-necessary to trigger them manually.
+Contaoの保守作業のほとんどは定期的なコマンドスケジューラーによって定期的に実行されますから、実際の作業に集中できます。保守モジュールの仕事さえも自動的に実行されますが、時々はそれらを手作業で起動することも必要でしょう。
 
 
-### Purging data
+### データの消去
 
-Besides the user generated content, Contao stores a lot of system data which is
-used to restore deleted records, revert back to prior versions, search the
-website or decrease the page loading time. You can purge this data manually e.g.
-to remove old thumbnails from the image cache or to recreate the XML sitemap
-files after you have modified the site structure.
+ユーザーが生成したコンテンツに加えてContaoは様々なシステムのデータを保持していて、削除したレコードの復元したり、以前のバージョンに戻したり、ウェブサイトを検索したり、ページの読み込み時間を減らしたり、といったことに使用しています。このデータは手作業で消去でき、例えば画像キャッシュから古いサムネイルの削除や、サイト構造を修正した跡でXMLのサイトマップを再作成を行えます。
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/purge-data.jpg)
 
 
-### Rebuilding the search index
+### 検索インデックスの再構築
 
-Pages are usually added to the search index automatically when they are viewed
-in the front end (unless you are logged into the back end at the same time), so
-you do not need to worry about the search index. However if you have changed a
-large number of pages, it is more convenient to update them all at once instead
-of opening them one by one in the browser. In this case you can rebuild the
-search index manually.
+ページはフロントエンドで表示されるときに(同時にバックエンドにログインしていなければ)、ページは通常は自動的に検索インデックスに追加されますので、検索インデックスについて心配する必要はありません。しかし、多数のページを変更した場合、ブラウザーでページを1つずつ表示する代わりに、一度に更新できた方が便利です。この場合、検索インデックスを手作業で再構築できます。
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/rebuild-the-search-index.jpg)
 

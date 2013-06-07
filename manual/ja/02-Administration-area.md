@@ -38,14 +38,7 @@ Contaoには様々な結果を絞り込む方法をサポートしていて、�
 
 ## レコードの編集
 
-Editing data is one of the central functions of a Content Management System.
-Contao offers a lot of professional features that make the editing process as
-easy and comfortable as possible. You can revert back to earlier versions of a
-record, restore deleted records, move records via clipboard and even edit
-multiple records at once. Most of these functions can be accessed using the
-navigation icons.
-
-データの編集はコンテンツ管理システムの中心的な機能の1つです。Contaoは編集の作業を可能な限り簡単に、そして快適にする多くの専門的な機能を用意しています。レコードの前のバージョンに戻したり、削除したレコードを復元したり、クリップボードを経由して移動したり、同時に複数のレコードを編集したりといったことさえ可能です。これらの機能の殆どはナビゲーションのアイコンを使用して実行できます。
+データの編集はコンテンツ管理システムの中心的な機能の1つです。Contaoは編集の作業を可能な限り容易と快適にする多くの専門的な機能を用意しています。レコードの前のバージョンに戻したり、削除したレコードを復元したり、クリップボードを経由して移動したり、同時に複数のレコードを編集したりといったことさえ可能です。これらの機能の殆どはナビゲーションのアイコンを使用して実行できます。
 
 ### リストビューのアイコン
 
