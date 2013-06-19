@@ -905,7 +905,14 @@ http://www.domain.com/newsletters/items/james-wilson-returns.html
 </tr>
 <tr>
   <td><code>{{image::*}}</code></td>
-  <td>このタグは画像のサムネイルに置き換わります: `{{image::files/image.jpg?width=200&amp;height=150}}`。**width**はサムネイルの幅、**height**はサムネイルの高さ、**alt**は代替テキスト、**class**はCSSのclass、**rel**はrel属性(例えば"lightbox")、**mode**はモード("proportional"、"crop"、"box")。</td>
+  <td>このタグは画像のサムネイルに置き換わります:
+  <code>{{image::files/image.jpg?width=200&amp;height=150}}</code>。<br />
+  <strong>width</strong>: サムネイルの幅、<br />
+  <strong>height</strong>: サムネイルの高さ、<br />
+  <strong>alt</strong>: 代替テキスト、<br />
+  <strong>class</strong>: CSSのclass、<br />
+  <strong>rel</strong>: rel属性(例えば"lightbox")、<br />
+  <strong>mode</strong>: モード("proportional"、"crop"、"box")。</td>
 </tr>
 <tr>
   <td><code>{{label::*}}</code></td>

@@ -126,16 +126,6 @@
   <td>コールバック関数 (<code>配列</code>)</td>
   <td>レコードを複製したときに、挿入したIDとデータコンテナオブジェクトを引数にしてカスタム関数を呼び出します。バージョン2.8.2で追加しました。</td>
 </tr>
-<tr>
-  <td>sql</td>
-  <td>テーブル構成(<code>array</code>)</td>
-  <td>データベースのテーブルの構成を定義します。例:
-  <code>'keys' => array
-  		(
-				'id' => 'primary',
-				'pid' => 'index'
-			)</code></td>
-</tr>
 </table>
 
 
@@ -720,6 +710,12 @@ Each field can be validated against a regular expression.
   <td>blankOptionLabel</td>
   <td>Label (<code>string</code>)</td>
   <td>Label for the blank option (defaults to <code>-</code>).</td>
+</tr>
+<tr>
+  <td>chosen</td>
+  <td>true/false (<code>boolean</code>)</td>
+  <td>Native selects enhanced with
+      <a href="http://harvesthq.github.io/chosen/" target="_blank">Chosen</a>.</td>
 </tr>
 <tr>
   <td>findInSet</td>
