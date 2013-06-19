@@ -131,6 +131,16 @@ edited or deleted.
   <td>Calls a custom function when a record is duplicated and passes the insert
       ID and the DataContainer object as argument. Added in version 2.8.2.</td>
 </tr>
+<tr>
+  <td>sql</td>
+  <td>table configuration (<code>array</code>)</td>
+  <td>Define the configuration of the database table.  e.g.
+  <code>'keys' => array
+  		(
+				'id' => 'primary',
+				'pid' => 'index'
+			)</code></td>
+</tr>
 </table>
 
 
@@ -500,6 +510,28 @@ filter criteria.
   <td>Callback function (<code>array</code>)</td>
   <td>Call a custom function and add its return value to the input field. Please
       specify as <code>array('Class', 'Method')</code>.</td>
+</tr>
+<tr>
+  <td>sql</td>
+  <td>table configuration (<code>string</code>)</td>
+  <td>Specifies the data type and its configuration in the database, e.g.
+      <code>'sql' =>  "varchar(255) NOT NULL default ''"</code></td>
+</tr>
+<tr>
+  <td>relation</td>
+  <td>table configuration (<code>array</code>)</td>
+  <td>Define the relationship with the parent table.<br>
+      <b>type</b> (<code>string</code>)
+      <ul><li>belongsTo</li>
+      <li>hasOne</li>
+      <li>belongsToMany</li>
+      <li>hasMany</li>
+      </ul>
+      <b>load</b> (<code>string</code>)
+      <ul><li>eagerly</li>
+      <li>lazy</li>
+      </ul>
+  </td>
 </tr>
 <tr>
   <td>load_callback</td>

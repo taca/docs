@@ -286,7 +286,7 @@ http://www.domain.com/event-reader/events/final-exams.html
 上記のURLは"events"というページから"final-exams"というニュース項目を要求します。Contaoはページに基づいたCMSであることを忘れないでください、"events"というページが存在しなかったり、イベントリーダーモジュールを含んでいなかったりするとイベントを表示しません。
 
 
-## RSS/Atom feed
+## RSS/Atomフィード
 
 This feature can be used for news archives and calendars. Here is an example
 with the calendars list.
