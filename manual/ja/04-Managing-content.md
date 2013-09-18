@@ -351,7 +351,7 @@ XMLファイルは自動的にインストールしているContaoの```share```
 
 ### 名前入りのニュースレター
 
-ニュースレターを登録したメンバーに送信する場合には、「シンプルトークン」と呼ばれる方法で個人向けにカスタマイズできます。シンプルトークンは[挿入タグ][3]似ていて、ニュースレターのHTMLとテキストのコンテンツ両方に使用できます。
+ニュースレターを登録したメンバーに送信する場合には、「シンプルトークン」と呼ばれる方法で個人向けにカスタマイズできます。シンプルトークンは[挿入タグ][3]に似ていて、ニュースレターのHTMLとテキストのコンテンツ両方に使用できます。
 
 ```
 Dear ##firstname## ##lastname##,
@@ -494,6 +494,12 @@ http://www.domain.com/newsletters/items/james-wilson-returns.html
   <td>HTMLコードを挿入するフォームの項目です。</td>
 </tr>
 <tr>
+  <td>フィールドセット</td>
+  <td>-</td>
+  <td>オプションで見出しを付けられる、フォームの項目のコンテナです。
+説明文を追加できる、フォームの項目を囲む枠です。(表を使用しないレイアウトだけで利用できます。)</td>
+</tr>
+<tr>
   <td>テキスト入力</td>
   <td>text</td>
   <td>短めから中くらいの長さのテキストのための1行の入力項目です。</td>
@@ -578,11 +584,11 @@ http://www.domain.com/newsletters/items/james-wilson-returns.html
 </tr>
 <tr>
   <td><code>{{link_url::*}}</code></td>
-  <td>このタグは内部のページのURLと置き換わります: <code><a href="{{link_url::12}}">ここをクリック</a></code>。</td>
+  <td>このタグは内部のページのURLと置き換わります: <code>&lt;a href="{{link_url::12}}"&gt;ここをクリック&lt;/a&gt;</code>。</td>
 </tr>
 <tr>
   <td><code>{{link_title::*}}</code></td>
-  <td>このタグは内部のページの題名と置き換わります: <code><a title="{{link_title::12}}">ここをクリック</a></code>。</td>
+  <td>このタグは内部のページの題名と置き換わります: <code>&lt;a title="{{link_title::12}}"&gt;ここをクリック&lt;/a&gt;</code>。</td>
 </tr>
 <tr>
   <td><code>{{link_close}}</code></td>
@@ -598,11 +604,11 @@ http://www.domain.com/newsletters/items/james-wilson-returns.html
 </tr>
 <tr>
   <td><code>{{article_url::*}}</code></td>
-  <td>このタグはアーティクルのURLと置き換わります: <code><a href="{{article_url::12}}">ここをクリック</a></code>。</td>
+  <td>このタグはアーティクルのURLと置き換わります: <code>&lt;a href="{{article_url::12}}"&gt;ここをクリック&lt;/a&gt;</code>。</td>
 </tr>
 <tr>
   <td><code>{{article_title::*}}</code></td>
-  <td>このタグはアーティクルの題名と置き換わります: <code><a title="{{article_title::12}}">ここをクリック</a></code>。</td>
+  <td>このタグはアーティクルの題名と置き換わります: <code>&lt;a title="{{article_title::12}}"&gt;ここをクリック&lt;/a&gt;</code>。</td>
 </tr>
 <tr>
   <td><code>{{news::*}}</code></td>
@@ -614,11 +620,11 @@ http://www.domain.com/newsletters/items/james-wilson-returns.html
 </tr>
 <tr>
   <td><code>{{news_url::*}}</code></td>
-  <td>このタグはニュース記事のURLと置き換わります: <code><a href="{{news_url::12}}">ここをクリック</a></code>。</td>
+  <td>このタグはニュース記事のURLと置き換わります: <code>&lt;a href="{{news_url::12}}"&gt;ここをクリック&lt;/a&gt;</code>。</td>
 </tr>
 <tr>
   <td><code>{{news_title::*}}</code></td>
-  <td>このタグはニュース記事の題名と置き換わります: <code><a title="{{news_title::12}}">ここをクリック</a></code>。</td>
+  <td>このタグはニュース記事の題名と置き換わります: <code>&lt;a title="{{news_title::12}}"&gt;ここをクリック&lt;/a&gt;</code>。</td>
 </tr>
 <tr>
   <td><code>{{event::*}}</code></td>
@@ -630,11 +636,11 @@ http://www.domain.com/newsletters/items/james-wilson-returns.html
 </tr>
 <tr>
   <td><code>{{event_url::*}}</code></td>
-  <td>このタグはイベントのURLと置き換わります: <code><a href="{{event_url::12}}">ここをクリック</a></code>。</td>
+  <td>このタグはイベントのURLと置き換わります: <code>&lt;a href="{{event_url::12}}"&gt;ここをクリック&lt;/a&gt;</code>。</td>
 </tr>
 <tr>
   <td><code>{{event_title::*}}</code></td>
-  <td>このタグはイベントの題名と置き換わります: <code><a title="{{event_title::12}}">ここをクリック</a></code>。</td>
+  <td>このタグはイベントの題名と置き換わります: <code>&lt;a title="{{event_title::12}}"&gt;ここをクリック&lt;/a&gt;</code>。</td>
 </tr>
 <tr>
   <td><code>{{faq::*}}</code></td>
@@ -646,11 +652,11 @@ http://www.domain.com/newsletters/items/james-wilson-returns.html
 </tr>
 <tr>
   <td><code>{{faq_url::*}}</code></td>
-  <td>このタグは質問のURLと置き換わります: <code><a href="{{faq_url::12}}">ここをクリック</a></code>。</td>
+  <td>このタグは質問のURLと置き換わります: <code>&lt;a href="{{faq_url::12}}"&gt;ここをクリック&lt;/a&gt;</code>。</td>
 </tr>
 <tr>
   <td><code>{{faq_title::*}}</code></td>
-  <td>このタグは質問の題名と置き換わります: <code><a title="{{faq_title::12}}">ここをクリック</a></code>。</td>
+  <td>このタグは質問の題名と置き換わります: <code>&lt;a title="{{faq_title::12}}"&gt;ここをクリック&lt;/a&gt;</code>。</td>
 </tr>
 </table>
 
@@ -862,7 +868,7 @@ http://www.domain.com/newsletters/items/james-wilson-returns.html
 </tr>
 <tr>
   <td><code>{{file::*}}</code></td>
-  <td>このタグは"templates"のディレクトリにあるファイルの内容に置き換わります。(*をファイル名に置き換えてください。)<br />引数を指定することもできます。例: <code>{{file::file.php?arg1=val&arg2=val}}</td>
+  <td>このタグは"templates"のディレクトリにあるファイルの内容に置き換わります。(*をファイル名に置き換えてください。)<br />引数を指定することもできます。例: <code>{{file::file.php?arg1=val&arg2=val}}</code></td>
 </tr>
 </table>
 
@@ -906,27 +912,27 @@ http://www.domain.com/newsletters/items/james-wilson-returns.html
 </tr>
 <tr>
   <td><code>{{lang::*}}</code></td>
-  <td>このタグはテキスト中の外国の単語にしるしを付けるのに使用できます。例: `{{lang::fr}}Au revoir{{lang}}` これは`<span lang="fr" xml:lang="fr">Au revoir</span>`に置き換わります。</td>
+  <td>このタグはテキスト中の外国の単語にしるしを付けるのに使用できます: <code>{{lang::fr}}Au revoir{{lang}}</code>。これは<code><span lang="fr" xml:lang="fr">Au revoir</span></code>に置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{abbr::*}}</code></td>
-  <td>テキストに略称を付けます: `{{abbr::World Wide Web}}WWW{{abbr}}`。これは`<abbr title="World Wide Web">WWW</abbr>`に置き換わります。</td>
+  <td>テキストに略称を付けます: <code>{{abbr::World Wide Web}}WWW{{abbr}}</code>。これは<code><abbr title="World Wide Web">WWW</abbr></code>に置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{acronym::*}}</code></td>
-  <td>テキストに頭字語を付けます: `{{acronym:: Multipurpose Internet Mail Extensions}}MIME{{acronym}}`。これは`<acronym title="Multipurpose Internet Mail Extensions">MIME</acronym>`に置き換わります。</td>
+  <td>テキストに頭字語を付けます: <code>{{acronym:: Multipurpose Internet Mail Extensions}}MIME{{acronym}}</code>。これは<code><acronym title="Multipurpose Internet Mail Extensions">MIME</acronym></code>に置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{ua::*}}</code></td>
-  <td>ユーザーエージェントの特性を出力します: `{{ua::browser}}`。これは"chrome"に置き換わります。</td>
+  <td>ユーザーエージェントの特性を出力します: <code>{{ua::browser}}</code>。これは"chrome"に置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{iflng::*}}</code></td>
-  <td>このタグはページの言語がタグの言語と一致していないと完全に削除されます。言語に特定なラベルを設定するのに使用できます: `{{iflng::en}}Your name{{iflng}}{{iflng::de}}Ihr Name{{iflng}}`。</td>
+  <td>このタグはページの言語がタグの言語と一致していないと完全に削除されます。言語に特定なラベルを設定するのに使用できます: <code>{{iflng::en}}Your name{{iflng}}{{iflng::de}}Ihr Name{{iflng}}</code>。</td>
 </tr>
 <tr>
   <td><code>{{ifnlng::*}}</code></td>
-  <td>このタグはページの言語がタグの言語と一致していると完全に削除されます。言語に特定なラベルを設定するのに使用できます: `{{ifnlng::de}}Your name{{iflng}}{{iflng::de}}Ihr Name{{iflng}}`。</td>
+  <td>このタグはページの言語がタグの言語と一致していると完全に削除されます。言語に特定なラベルを設定するのに使用できます: <code>{{ifnlng::de}}Your name{{iflng}}{{iflng::de}}Ihr Name{{iflng}}</code>。</td>
 </tr>
 <tr>
   <td><code>{{image::*}}</code></td>
@@ -941,7 +947,7 @@ http://www.domain.com/newsletters/items/james-wilson-returns.html
 </tr>
 <tr>
   <td><code>{{label::*}}</code></td>
-  <td>このタグは翻訳したラベルに置き換わります: `{{label::CNT:au}}` や `{{label::tl_article:title:0}}`。 最初のコロンだけ二重のコロンとなっていることに注意してください。</td>
+  <td>このタグは翻訳したラベルに置き換わります: <code>{{label::CNT:au}}</code>や<code>{{label::tl_article:title:0}}</code>。 最初のコロンだけ二重のコロンとなっていることに注意してください。</td>
 </tr>
 <tr>
   <td><code>{{version::*}}</code></td>

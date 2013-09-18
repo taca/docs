@@ -450,7 +450,7 @@ public function myGenerateFrontendUrl($arrRow, $strParams, $strUrl)
 $GLOBALS['TL_HOOKS']['generatePage'][] = array('MyClass', 'myGeneratePage');
 
 // MyClass.php
-public function myGeneratePage(Database_Result $objPage, Database_Result $objLayout, PageRegular $objPageRegular)
+public function myGeneratePage(\PageModel $objPage, \LayoutModel $objLayout, \PageRegular $objPageRegular)
 {
     // 何か実行
 }
