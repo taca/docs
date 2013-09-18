@@ -658,8 +658,13 @@ fieldsの配列は表のカラムを定義します。これらの設定によ�
 </tr>
 <tr>
   <td>datepicker</td>
-  <td>日付選択 (<code>string</code>)</td>
-  <td>日付選択の構成の文字列です。</td>
+  <td>trueまたはfalse (<code>string</code>)</td>
+  <td>trueの場合、この項目に日付選択を付けます。</td>
+</tr>
+<tr>
+  <td>colorpicker</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
+  <td>trueの場合、この項目に色選択を付けます。</td>
 </tr>
 <tr>
   <td>feEditable</td>
