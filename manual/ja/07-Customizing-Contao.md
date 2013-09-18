@@ -1,33 +1,19 @@
-# Customizing Contao
+# Contaoのカスタマイズ
 
-Customizability is one of the most important features of any application and
-particularly Content Management Systems. Contao provides many options to adjust
-the configuration, customize fields and labels, add own code snippets or even
-create new extensions. You can control almost any behaviour of the Contao core
-without even touching its files, so you do not have to reapply your changes
-after every update.
+どのようなアプリケーションでもカスタマイズは、その重要な特徴の1つで、コンテンツ管理システムでは尚更です。Contaoは多数のオプションを提供していて、構成の調整、項目とラベルのカスタマイズ、独自のコードの断片の追加や新しい機能拡張をさらに作成をするといったことができます。Contaoのコアのファイルに殆ど変更しないで、コアの動作の殆どを制御できますので、毎回の更新の後で行った変更を再適用する必要はありません。
 
 
-## Custom configurations
+## 構成のカスタマイズ
 
-The Contao configuration is stored in one big array that is divided into three
-sections: the system configuration, the data container configuration and the
-language configuration. The configuration array is built at run-time and
-contains only those parts that are required to generate a certain page. Contao
-does not waste time and memory parsing a lot of redundant configuration files.
+Contaoの構成はシステム構成、データコンテナ構成、言語の構成の3つの部分に分かれた、1つの大きな配列に保持されています。この構成の配列は実行時に構築されて、あるページを生成するのに必要な部分だけを含んでいます。Contaoは多数の冗長な構成ファイルを解析のために時間とメモリを無駄にするといったことはしません。
 
 
-### Customizing the system configuration
+### システム構成のカスタマイズ
 
-The system configuration is stored in the `config.php` files of the various
-Contao modules. If you want to customize it, apply your changes to the
-`system/config/localconfig.php` file, so they will not be overridden on the next
-update. Most parameters can be set in the back end in the settings module and
-will be written to the local configuration file automatically, so you hardly
-ever need to edit it manually.
+システム構成は、様々なContaoのモジュールの`config.php`というファイルに保管しています。これをカスタマイズしたい場合は`system/config/localconfig.php`というファイルに変更を適用してください、すると次のアップデートで上書きされません。殆どのパラメターターは設定モジュールのバックエンドで設定でき、自動的にローカルの構成ファイルに書き込まれます。このため手作業で編集する必要は殆どないでしょう。
 
 ``` {.php}
-// Disable the task center
+// タスクセンターを無効にします。
 unset($GLOBALS['BE_MOD']['profile']['tasks']);
 
 ### INSTALL TOOL START ###
@@ -35,52 +21,42 @@ $GLOBALS['TL_CONFIG']['debugMode'] = false;
 $GLOBALS['TL_CONFIG']['displayErrors'] = false;
 ```
 
-Make sure to store your changes above the `INSTALL TOOL START` line, otherwise
-they will be removed by the settings module. And **never use the `config.php`
-file to store configuration parameters**, because the file might be overridden on
-updates!
+変更する内容を`INSTALL TOOL START`の行の前に書いているか確認してください。そうしないと設定モジュールで削除されます。そして、 **`config.php`ファイルに設定パラメーターに保存しないでください**、なぜなら更新時に上書きされる可能性があるためです!
 
 
-### Customizing the data container configuration
+### データコンテナ構成のカスタマイズ
 
-Contao uses [Data Container Arrays][1] to store table meta information. The data
-container configuration is stored in the `dca` folders of the various Contao
-modules. Apply your changes to the `system/config/dcaconfig.php` file so they
-will not be overridden on the next update.
+Contaoは[データコンテナ配列][1]をテーブルのメタ情報の保持に使用しています。データコンテナの構成は、様々なContaoのモジュールの`dca`というフォルダーに保管されています。独自の変更は`system/config/dcaconfig.php`というファイルに適用してください、すると次の更新で上書きされません。
+
 
 ``` {.php}
-// Make company a mandatory field in the members table
+// membersのテーブルでcompanyを必須の項目にします。
 $GLOBALS['TL_DCA']['tl_member']['fields']['company']['eval']['mandatory'] =
 true;
 
-// Make sure that company names consist of alphanumeric characters only
+// companyの名前を英数文字だけとします。
 $GLOBALS['TL_DCA']['tl_member']['fields']['company']['eval']['rgxp'] = 'alnum';
 
-// Allow only admins to use include content elements
+// インクルードするコンテンツ要素を管理者だけに許可します。
 if (!$this->User->isAdmin)
 {
     unset($GLOBALS['TL_CTE']['includes']);
 }
 ```
 
-As you see, the `dcaconfig.php` file is a good place to store minor
-modifications to the Contao configuration. If you need to make a lot of changes,
-you should consider encapsulating them in a custom extension so you do not lose
-track.
+既にご覧のように、`dcaconfig.php`ファイルはContaoの構成の些細な修正を保存するのに適しています。多くの変更が必要な場合は、変更内容がわらかなくなってしまわないように、独自の機能拡張にまとめることも検討すべきでしょう。
 
 
-### Customizing labels and translations
+### ラベルと翻訳のカスタマイズ
 
-Labels and translations are stored in the `languages` folders of the various
-Contao modules. Each language is identified by its [ISO-639-1 language code][2].
-Apply your changes to the `system/config/langconfig.php` file so they will not
-be overridden on the next update.
+ラベルと翻訳は、様々なContaoのモジュールの`languages`というフォルダーに保管しています。各言語は、その言語の[ISO-639-1 言語コード][2]で識別します。独自の変更は`system/config/langconfig.php`というファイルに適用してください、すると次の更新で上書きされません。
+
 
 ``` {.php}
-// Change a label for all languages
+// ラベルをすべての言語で変更します。
 $GLOBALS['TL_LANG']['MSC']['goBack'] = '«';
 
-// Change a label for a particular language only
+// 特定の言語だけでラベルを変更します。
 if ($GLOBALS['TL_LANGUAGE'] == 'de')
 {
     $GLOBALS['TL_LANG']['tl_layout']['column'] = 'Bereich';
@@ -91,27 +67,17 @@ elseif ($GLOBALS['TL_LANGUAGE'] == 'fr')
 }
 ```
 
-Of course changes to the language array can also be encapsulated in a custom
-module, which is recommended if there are a lot of them.
+もちろん言語配列の変更をカスタムモジュールにまとめることができ、変更が多岐に渡る場合に推奨する方法です
 
 
-## Adding custom fields
+## 独自の項目の追加
 
-Let us assume that you want to add a customer number to the members table.
-Adding a custom field to a Contao table requires to change more than just one
-file, therefore it is recommended to create a custom module in the
-`system/modules` directory. Remember that modules are loaded in alphabetical
-order, so do not name your extension `custom` if you want to override settings
-of the `news` extension.
+ここではメンバーテーブルに顧客番号を追加することとします。Contaoのテーブルに独自の項目を追加するには複数のファイルの変更が必要となります。このため、`system/modules`というディレクトリにカスタムモジュールを作成することを推奨します。モジュールはアルファベット順に読み込まれることを忘れないでください。このため`news`拡張の設定を上書きしたい場合は、機能拡張を`custom`という名前にしてはなりません。
 
 
-### Extending the database
+### データベースの拡張
 
-The database configuration is stored in the `config/database.sql` files of the
-various Contao modules. The SQL files are not sent to the database but used to
-calculate the difference between the Contao specifications and the actual
-database tables. Therefore, you can also alter fields defined by another module
-in the `database.sql` file. Add the following code to create the new field:
+データベースの構成は、様々なContaoのモジュールの`config/database.sql`というファイルに保管されています。SQLファイルをデータベースに送ることはありませんが、Contaoの仕様と実際のデータベースのテーブルの間の違いを算出するのに使用します。したがって、他のモジュールで定義されている項目を`database.sql`ファイルで改変できます。新しい項目を作成するには以下のコードを追加します:
 
 ``` {.sql}
 CREATE TABLE `tl_member`(
@@ -119,16 +85,16 @@ CREATE TABLE `tl_member`(
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 ```
 
-Use the [Contao install tool][3] to update your database tables.
+
+データベースのテーブルを更新するには、[Contaoインストールツール][3]を使用してください。
 
 
-### Extending the DCA
+### DCAの拡張
 
-Create the file `dca/tl_member.php` in your module folder and add the meta data
-for the new field so Contao knows how to handle it.
+`dca/tl_member.php`というファイルを新しいモジュールのフォルダーに作成して、新しい項目のメタデータを追加して、Contaoに処理する方法を指定します。
 
 ``` {.php}
-// Modify the palette
+// パレットを修正
 $GLOBALS['TL_DCA']['tl_member']['palettes']['default'] = str_replace
 (
     'company',
@@ -136,7 +102,7 @@ $GLOBALS['TL_DCA']['tl_member']['palettes']['default'] = str_replace
     $GLOBALS['TL_DCA']['tl_member']['palettes']['default']
 );
 
-// Add the field meta data
+// 項目のメタデータを追加
 $GLOBALS['TL_DCA']['tl_member']['fields']['customer_number'] = array
 (
     'label'     => &amp;$GLOBALS['TL_LANG']['tl_member']['customer_number'],
@@ -146,14 +112,12 @@ $GLOBALS['TL_DCA']['tl_member']['fields']['customer_number'] = array
 );
 ```
 
-If you do not understand the code above, you might want to read the chapter on
-[Data Container Arrays][1].
+上記のコードの理解が難しい場合は[データコンテナ配列][1]の章を読むとよいでしょう。
 
 
-### Adding a translation
+### 翻訳の追加
 
-Create the file `languages/en/tl_member.php` in your module folder and add the
-English labels for the new field:
+`languages/en/tl_member.php`というファイルを新しいモジュールのフォルダーに作成して、新しい項目の英語のラベルを追加します:
 
 ``` {.php}
 $GLOBALS['TL_LANG']['tl_member']['customer_number'] = array
@@ -163,55 +127,33 @@ $GLOBALS['TL_LANG']['tl_member']['customer_number'] = array
 );
 ```
 
-Now you can enter a customer number in the "members" module which can contain up
-to 8 digits. If the field is left blank or contains any non-digit characters,
-Contao will not save the value and show an error message instead.
+これで"member"のモジュールに8桁の顧客番号を入力できるようになります。フォームで項目を空のままにしたり、数字以外の文字を含んでいると、Contaoは値を保存しないで代わりにエラーメッセージを表示します。
 
 
-## Customizing TinyMCE
+## TinyMCEのカスタマイズ
 
-This page explains how to customize the Rich Text Editor and save the changes so
-they will not be overriden on the next Contao update. Note that Contao does not
-include all TinyMCE plugins by default, so if you want to use a certain plugin
-that is not part of the Contao distribution, download it from the [TinyMCE
-project website][4] and move it into the `plugins/tinyMCE/plugins` folder.
+このページではリッチテキストエディターのカスタマイズして、Contaoの次の更新で上書きされないように変更を保存する方法を説明しています。Contaoは初期状態ではTinyMCEのプラグインをすべては取り込んでいないことに注意してください。このためContaoの配布に含まれていない、あるプラグインを使用したい場合は[TinyMCEのプロジェクトのウェブサイト][4]からダウンロードして`plugins/tinyMCE/plugins`というフォルダーに移してください。
 
 ![](https://raw.github.com/contao/docs/3.0/manual/en/images/rich-text-editor.jpg)
 
-To image above shows the default Rich Text Editor configuration file
-`system/config/tinyMCE.php`. To create a custom configuration file, simply copy
-it and rename it e.g. to `tinyCustom.php`. Then apply your changes and save the
-new file. The last step is to adjust the [data container configuration][5] in
-the `system/config/dcaconfig.php` file and tell Contao to which fields the
-custom file shall be applied.
+上の画像はリッチテキストエディターの構成ファイル`system/config/tinyMCE.php`の初期状態の内容です。構成をカスタマイズするファイルを作成するには、単純にこれをコピーして名前を変更、例えば`tinyCustom.php`とします。次に、この新しいファイルを変更して保存します。最後の段階として、`system/config/dcaconfig.php`というファイルで[[データコンテナ構成][5]を調整して、Contaoにカスタマイズしたファイルを適用する項目を指定します。
 
 ``` {.php}
-// Use the custom RTE configuration for text elements
+// テキストのコンテンツ要素に独自のリッチテキストエディタの構成を使用します。
+Use the custom RTE configuration for text elements
 $GLOBALS['TL_DCA']['tl_content']['fields']['text']['eval']['rte'] =
 'tinyCustom';
 ```
 
 
-## Overriding class methods
+## クラスメソッドのオーバーライド
 
-Let us assume that you want to modify the behaviour of the navigation module to
-always display even if there are no sub-pages and the module would not be shown
-at all. In this case a note shall be printed to inform the user that there are
-no sub-pages. Of course we will try to preserve as much of the original
-navigation class as possible, so future updates do not require maintenance.
-Module and content element classes can be assigned dynamically in the Contao
-system configuration, which allows you to easily replace them with your own
-versions.
+ここではナビゲーションモジュールの動作を変更して、下位のページがなくてモジュールをまったく表示しない場合でも、常にモジュールを表示するようにしてみます。下位のページがない場合は、そのことをユーザーに通知する表示をします。もちろん、元のナビゲーションのクラスの殆どはそのままにするようにして、将来のアップデートで保守を不要にします。モジュールとコンテンツ要素のクラスはContaoのシステム構成で動的に割り当てられ、独自のバージョンと簡単に置き換えることができるようになっています。
 
 
-### Creating a custom class
+### 独自のクラスの作成
 
-The default navigation class behaves pretty much like we want it to, except that
-the `generate()` method hides the module if there are no sub-pages. Therefore
-all we need to change is this particular method, so the best practice is to
-extend the original class and simply override it. To do so, create a new
-`xcustom/ModuleMyNavigation.php` file and define the custom class
-`ModuleMyNavigation`:
+既定のナビゲーションクラスの動作は、今回の目的にたいへんよく似ていますが、`generate()`メソッドが下位のページが存在しない場合にモジュールを表示しないところが違います。従って、この特定のメソッドだけ変更が必要なので、元のクラスをオーバーライドするのが最良の方法です。これを実現するには、新しく`xcustom/ModuleMyNavigation.php`というファイルを作成して、独自のクラス`ModuleMyNavigation`を定義します:
 
 ``` {.php}
 // xcustom/ModuleMyNavigation.php
@@ -219,7 +161,7 @@ class ModuleMyNavigation extends ModuleNavigation
 {
     public function generate()
     {
-        // Execute the original method
+        // オリジナルのメソッドを実効
         $buffer = parent::generate();
 
         if (empty($buffer))
@@ -233,37 +175,26 @@ class ModuleMyNavigation extends ModuleNavigation
 ```
 
 
-### Registering a custom class
+### 独自のクラスを登録
 
-Module and content element classes can be assigned dynamically in the Contao
-system configuration, which allows you to easily replace them with your own
-versions. The names of the module classes are stored in the global `FE_MOD`
-array.
+モジュールとコンテンツ要素のクラスはContaoのシステム構成で動的に割り当てられ、独自のバージョンと簡単に置き換えられるようになっています。モジュールのクラスは広域な配列`FE_MOD`が保持しています。
 
 ``` {.php}
 // xcustom/config/config.php
 $GLOBALS['FE_MOD']['navigationMenu']['navigation'] = 'ModuleMyNavigation';
 ```
 
-Thanks to the dynamic configuration, Contao automatically loads the new class
-upon the next request and the navigation module prints the "There are no
-subpages" notice instead of not displaying at all. The modification is
-update-safe and does not require maintenance.
+動的な構成のおかげで、次のリクエストからContaoは自動的に新しいクラスを読み込み、ナビゲーションモジュールは何も表示しない代わりに "There are no subpages"という通知を表示します。この変更はContaoの更新に対応していて、保守を必要としません。
 
 
-## Contao hooks
+## Contaoのフック
 
-Hooks work similar to the [callback functions][6] of the Data Container Array.
-You can register one or more functions for a certain event and when the event is
-triggered, the callback functions are executed. Hooks allow you to add custom
-functionality to the core.
+フックはデータコンテナ配列の[コールバック関数][6]に似た動作をします。特定のイベントに1つ異常の関数を登録でき、イベントが起きると登録した関数を実行します。フックによってコアに独自の機能を追加できます。
 
 
 ### activateAccount
 
-The "activateAccount" hook is triggered when a new front end account is
-activated. It passes the user object as argument and does not expect a return
-value. It is available from version 2.4.3.
+"activateAccount"フックは新しいフロントエンドのアカウントを有効したときに動作します。フック関数はユーザーオブジェクトを引数にし、戻り値は不要です。バージョン2.4.3から利用可能です。
 
 ``` {.php}
 // config.php
@@ -273,17 +204,14 @@ $GLOBALS['TL_HOOKS']['activateAccount'][] = array('MyClass',
 // MyClass.php
 public function myActivateAccount(Database_Result $objUser)
 {
-    // Do something
+    // 何か実行
 }
 ```
 
 
 ### activateRecipient
 
-The "activateRecipient" hook is triggered when a new newsletter recipient is
-added. It passes the e-mail address, the recipient IDs and the channel IDs as
-argument and does not expect a return value. It is available from version
-2.8.RC1.
+"activateRecipient"フックはニュースレターの新しい宛先を追加したときに動作します。フック関数は電子メールアドレス、宛先のID、チャンネルのIDを引数にし、戻り値は不要です。バージョン2.8.RC1から利用可能です。
 
 ``` {.php}
 // config.php
@@ -293,16 +221,14 @@ $GLOBALS['TL_HOOKS']['activateRecipient'][] = array('MyClass',
 // MyClass.php
 public function myActivateRecipient($strEmail, $arrRecipients, $arrChannels)
 {
-    // Do something
+    // 何か実行
 }
 ```
 
 
 ### addComment
 
-The "addComment" hook is triggered when a comment is added. It passes the ID of
-the record and the data array as arguments and does not expect a return value.
-It is available from version 2.8.2.
+"addComment"フックはコメントを追加したときに動作します。 フック関数はレコードのIDとデータ配列を引数にし、戻り値は不要です。バージョン2.8.2から利用可能です。
 
 ``` {.php}
 // config.php
@@ -311,17 +237,14 @@ $GLOBALS['TL_HOOKS']['addComment'][] = array('MyClass', 'myAddComment');
 // MyClass.php
 public function myAddComment($intId, $arrSet)
 {
-    // Do something
+    // 何か実行
 }
 ```
 
 
 ### addCustomRegexp
 
-The "addCustomRegexp" hook is triggered when an unknown regular expression is
-found. It passes the name of the regexp, the current value and the widget object
-as arguments and expects a boolean return value. It is available from version
-2.6.2.
+"addCustomRegexp"フックは未知の正規表現があった場合に動作します。フック関数は正規表現の名前、現在の値、ウィジェットオブジェクトを引数にし、論理値を戻り値とします。バージョン2.6.2から利用可能です。
 
 ``` {.php}
 // config.php
@@ -348,9 +271,7 @@ public function myAddCustomRegexp($strRegexp, $varValue, Widget $objWidget)
 
 ### addLogEntry
 
-The "addLogEntry" hook is triggered when a new log entry is added. It passes the
-message, the function and the action as arguments and does not expect a return
-value. It is available from version 2.8.RC1.
+"addLogEntry"フックは新しいログの項目を追加したときに動作します。フック関数はメッセージ、(訳注: ログの元となった)関数、アクションを引数にし、戻り値は不要です。バージョン2.8.RC1から利用可能です。
 
 ``` {.php}
 // config.php
@@ -366,10 +287,7 @@ public function myAddLogEntry($strText, $strFunction, $strAction)
 
 ### checkCredentials
 
-The "checkCredentials" hook is triggered when a login attempt fails due to a
-wrong password. It passes the username and password as well as the user object
-as arguments and expects a boolean return value. It is available from version
-2.6.0.
+"checkCredentials"フックは間違ったパスワードでログインに失敗したときに動作します。フック関数はユーザー名、パスワードに加えてユーザーオブジェクトを引数にし、論理値を戻り値とします。バージョン2.6.0から利用可能です。
 
 ``` {.php}
 // config.php
@@ -379,7 +297,7 @@ $GLOBALS['TL_HOOKS']['checkCredentials'][] = array('MyClass',
 // MyClass.php
 public function myCheckCredentials($strUsername, $strPassword, User $objUser)
 {
-    // Check against a global database
+    // 広域なデータベースに対して確認
     if ($this->checkGlobalDbFor($strUsername, $strPassword))
     {
         return true;
@@ -392,9 +310,7 @@ public function myCheckCredentials($strUsername, $strPassword, User $objUser)
 
 ### closeAccount
 
-The "closeAccount" hook is triggered when a user closes his account. It passes
-the user ID, the operation mode and the module as arguments and does not expect
-a return value. It is available from version 2.8.0.
+"closeAccount"フックはユーザーがアカウントを廃止したときに動作します。フック関数はユーザーのID、操作モード、モジュールを引数にし、戻り値は不要です。バージョン2.8.0から利用可能です。
 
 ``` {.php}
 // config.php
@@ -405,7 +321,7 @@ public function myCloseAccount($intId, $strMode, $objModule)
 {
     if ($strMode == 'close_delete')
     {
-        // Do something
+        // 何か実行
     }
 }
 ```
@@ -413,9 +329,7 @@ public function myCloseAccount($intId, $strMode, $objModule)
 
 ### compileDefinition
 
-The "compileDefinition" hook is triggered when a format definition of a style
-sheet is written. It passes the configuration array as argument and expects a
-string as return value. It is available from version 2.9.4.
+"compileDefinition"フックはスタイルシートの書式定義を書き込んだときに動作します。フック関数は構成配列を引数にし、文字列を戻り値とします。バージョン2.9.4から利用可能です。
 
 ``` {.php}
 // config.php
@@ -437,10 +351,7 @@ public function myCompileDefinition($arrRow)
 
 ### createDefinition
 
-The "createDefinition" hook is triggered when a format definition of a style
-sheet is imported. It passes the key and value, the original format definition
-and the data array as arguments and expects an array or "false" as return value.
-It is available from version 2.9.4.
+"createDefinition"フックはスタイルシートの書式定義をインポートしたときに動作します。フック関数はキー、値、元の書式定義、データ配列を引数にし、配列またはfalseを戻り値とします。バージョン2.9.4から利用可能です。
 
 ``` {.php}
 // config.php
@@ -462,9 +373,7 @@ public function myCreateDefinition($strKey, $strValue, $strDefinition, $arrSet)
 
 ### createNewUser
 
-The "createNewUser" hook is triggered when a new front end user registers on the
-website. It passes the ID of the new user and the data array as arguments and
-does not expect a return value. It is available from version 2.2.0.
+"createNewUser"フックはウェブサイトに新しいフロントエンドのユーザーを登録したときに動作します。フック関数は新しいユーザーのIDとデータ配列を引数とし、戻り値は不要です。バージョン2.2.0から利用可能です。
 
 ``` {.php}
 // config.php
@@ -473,16 +382,14 @@ $GLOBALS['TL_HOOKS']['createNewUser'][] = array('MyClass', 'myCreateNewUser');
 // MyClass.php
 public function myCreateNewUser($intId, $arrData)
 {
-    // Modify the record
+    // レコードを修正
 }
 ```
 
 
 ### executePreActions
 
-The "executePreActions" hook is triggered on Ajax requests that do not require a
-DCA object. It passes the name of the action as argument and does not expect a
-return value. It is available from version 2.6.1.
+"executePreActions"フックはDCAオブジェクトを必要としないAjaxのリクエストで動作します。フック関数はアクションの名前を引数とし、戻り値は不要です。バージョン2.6.1から利用可能です。
 
 ``` {.php}
 // config.php
@@ -493,7 +400,7 @@ public function myExecutePreActions($strAction)
 {
     if ($strAction == 'update')
     {
-        // Do something
+        // 何か実行
     }
 }
 ```
@@ -501,10 +408,7 @@ public function myExecutePreActions($strAction)
 
 ### executePostActions
 
-The "executePostActions" hook is triggered on Ajax requests that require a DCA
-object. It passes the name of the action and the data container object as
-arguments and does not expect a return value. It is available from version
-2.6.1.
+"executePostActions"フックはDCAオブジェクトが必要なAjaxのリクエストで動作します。フック関数はアクションの名前とデータコンテナオブジェクトを引数とし、戻り値は不要です。バージョン2.6.1から利用可能です。
 
 ``` {.php}
 // config.php
@@ -523,9 +427,7 @@ public function myExecutePostActions($strAction, DataContainer $dc)
 
 ### generateFrontendUrl
 
-The "generateFrontendUrl" hook is triggered when a front end URL is recreated.
-It passes the page object, the parameter string and the default URL as arguments
-and expects a string as return value. It is available from version 2.5.8.
+"generateFrontendUrl"フックはフロントエンドのURLを再作成したときに動作します。フック関数はページオブジェクト、パラメーター引数、デフォルトのURLを引数とし、文字列を戻り値とします。バージョン2.5.8から利用可能です。
 
 ``` {.php}
 // config.php
@@ -541,10 +443,7 @@ public function myGenerateFrontendUrl($arrRow, $strParams, $strUrl)
 
 ### generatePage
 
-The "generatePage" hook is triggered before the main layout ("fe_page") is
-compiled. It passes the page object, the layout object and a self-reference as
-arguments and does not expect a return value. It is available from version
-2.8.RC1.
+"generatePage"フックはメインのレイアウト(fe_page)を処理する前に動作します。フック関数はページオブジェクト、レイアウトオブジェクト、自身への参照を引数とし、戻り値は不要です。バージョン2.8.RC1から利用可能です。
 
 ``` {.php}
 // config.php
@@ -553,17 +452,14 @@ $GLOBALS['TL_HOOKS']['generatePage'][] = array('MyClass', 'myGeneratePage');
 // MyClass.php
 public function myGeneratePage(Database_Result $objPage, Database_Result $objLayout, PageRegular $objPageRegular)
 {
-    // Do something
+    // 何か実行
 }
 ```
 
 
 ### getAllEvents
 
-The "getAllEvents" hook allows you to modify the result sets of calendar and
-event modules. It passes the current result set, the IDs of the parent items and
-the start and end time as arguments and expects a result set (array) as return
-value. It is available from version 2.6.4.
+"getAllEvents"フックでカレンダーとイベントモジュールの結果のセットを変更できます。フック関数は現在の結果のセット、親の項目のID、開始と終了の時刻を引数とし、結果のセット(配列)を戻り値とします。バージョン2.6.4から利用可能です。
 
 ``` {.php}
 // config.php
@@ -580,9 +476,7 @@ public function myGetAllEvents($arrEvents, $arrCalendars, $intStart, $intEnd, Mo
 
 ### getContentElement
 
-The "getContentElement" hook is triggered when a content element is rendered. It
-passes the database object and the buffer string as arguments and expects a
-buffer string as return value. It is available from version 2.9.0.
+"getContentElement"フックはコンテンツ要素をレンダリングするときに動作します。フック関数はデータベースオブジェクトとバッファー文字列を引数とし、バッファー文字列を戻り値とします。バージョン2.9.0から利用可能です。
 
 ``` {.php}
 // config.php
@@ -598,10 +492,7 @@ public function myGetContentElement(Database_Result $objElement, $strBuffer)
 
 ### getImage
 
-The "getImage" hook is triggered when a thumbnail is generated and allows you to
-add a custom routine. It passes the path, the width and height, the mode, the
-cache name and the file object as arguments and expects a path as return value.
-It is available from version 2.8.RC1.
+"getImage"フックはサムネイルを生成したときに動作し、独自の処理を追加できます。フック関数はパス、幅と高さ、モード、キャッシュの名前、ファイルオブジェクトを引数とし、パスを戻り値とします。バージョン2.8から利用可能です。
 
 ``` {.php}
 // config.php
@@ -617,9 +508,7 @@ public function myGetImage($image, $width, $height, $mode, $strCacheName, $objFi
 
 ### getPageIdFromUrl
 
-The "getPageIdFromUrl" hook is triggered when the URL fragments are evaluated.
-It passes the array of URL fragments as argument and expects an array of URL
-fragments as return value. It is available from version 2.5.4.
+"getPageIdFromUrl"フックはURLの断片を評価したときに動作します。フック関数はURLの断片を引数とし、URLの断片の配列を戻り値とします。バージョン2.5.4から利用可能です。
 
 ``` {.php}
 // config.php
@@ -635,10 +524,7 @@ public function myGetPageIdFromUrl($arrFragments)
 
 ### getSearchablePages
 
-The "getSearchablePages" hook is triggered when the the search index is rebuilt.
-It passes the array of pages and the ID of the root page as arguments and
-expects an array of absolute URLs (!) as return value. It is available from
-version 2.2.0.
+"getSearchablePages"フックは検索インデックスを再構築したときに動作します。フック関数はページの配列とルートページを引数とし、完全なURL(!)の配列を戻り値とします。バージョン2.2.0から利用可能です。
 
 ``` {.php}
 // config.php
@@ -654,9 +540,7 @@ public function myGetSearchablePages($arrPages, $intRoot)
 
 ### importUser
 
-The "importUser" hook is triggered when a username cannot be found in the
-database. It passes the username, the password and the table name as arguments
-and expects a boolean return value. It is available from version 2.7.RC1.
+"importUser"フックはデータベースにユーザー名を見つからなかったときに動作します。フック関数はユーザー名、パスワード、テーブル名を引数とし、論理値を戻り値とします。バージョン2.7.RC1から利用可能です。
 
 ``` {.php}
 // config.php
@@ -667,7 +551,7 @@ public function myImportUser($strUsername, $strPassword, $strTable)
 {
     if ($strTable == 'tl_member')
     {
-        // Import user from an LDAP server
+        // ユーザーをLDAPサーバーから取り込み
         if ($this->importUserFromLdap($strUsername, $strPassword))
         {
             return true;
@@ -681,9 +565,7 @@ public function myImportUser($strUsername, $strPassword, $strTable)
 
 ### listComments
 
-The "listComments" hook is triggered when comments are listed in the back end.
-It passes the current record as argument and expects a string as return value.
-It is available from version 2.8.RC2.
+"listComments"フックはコメントをバックエンドに一覧されるときに動作します。フック関数は現在のレコードを引数とし、文字列を戻り値とします。バージョン2.8.RC2から利用可能です。
 
 ``` {.php}
 // config.php
@@ -699,9 +581,7 @@ public function myListComments($arrRow)
 
 ### loadFormField
 
-The "loadFormField" hook is triggered when a form field is loaded. It passes the
-widget object, the form ID and the form data as arguments and expects a widget
-object as return value. It is available from version 2.5.0.
+"loadFormField"フックはフォームの項目を読み込んだときに動作します。フック関数はウィジェットのオブジェクト、フォームのID、フォームのデータを引数とし、ウィジェットのオブジェクトを戻り値とします。バージョン2.5.0から利用可能です。
 
 ``` {.php}
 // config.php
@@ -718,9 +598,7 @@ public function myLoadFormField(Widget $objWidget, $strForm, $arrForm)
 
 ### loadDataContainer
 
-The "loadDataContainer" hook is triggered when a DCA file is loaded. It passes
-the file name as argument and does not expect a return value. It is available
-from version 2.8.2.
+"loadDataContainer"フックはDCAファイルを読み込んだときに動作します。フック関数はファイル名を引数とし、戻り値は不要です。バージョン2.8.2から利用可能です。
 
 ``` {.php}
 // config.php
@@ -729,16 +607,14 @@ $GLOBALS['TL_HOOKS']['loadDataContainer'][] = array('MyClass', 'myLoadDataContai
 // MyClass.php
 public function myLoadDataContainer($strName)
 {
-    // Do something
+    // 何か実行
 }
 ```
 
 
 ### loadLanguageFile
 
-The "loadLanguageFile" hook is triggered when a language file is loaded. It
-passes the file name and the language as arguments and does not expect a return
-value. It is available from version 2.8.RC1.
+"loadLanguageFile"フックは言語ファイルを読み込んだときに動作します。フック関数はファイル名と言語を引数とし、戻り値は不要です。バージョン2.8.RC1から利用可能です。
 
 ``` {.php}
 // config.php
@@ -747,17 +623,14 @@ $GLOBALS['TL_HOOKS']['loadLanguageFile'][] = array('MyClass', 'myLoadLanguageFil
 // MyClass.php
 public function myLoadLanguageFile($strName, $strLanguage)
 {
-    // Do something
+    // 何か実行
 }
 ```
 
 
 ### outputBackendTemplate
 
-The "outputBackendTemplate" hook is triggered when a back end template is
-printed to the screen. It passes the template content and the template name as
-arguments and expects the template content as return value. It is available from
-version 2.6.0.
+"outputBackendTemplate"フックはバックエンドのテンプレートを画面に表示するときに動作します。フック関数はテンプレートの内容とテンプレート名を引数とし、テンプレートのコンテンツを戻り値とします。バージョン2.6.0から利用可能です。
 
 ``` {.php}
 // config.php
@@ -768,7 +641,7 @@ public function myOutputBackendTemplate($strContent, $strTemplate)
 {
     if ($strTemplate == 'be_main')
     {
-        // Modify output
+        // 出力を修正
     }
 
     return $strContent;
@@ -778,10 +651,7 @@ public function myOutputBackendTemplate($strContent, $strTemplate)
 
 ### outputFrontendTemplate
 
-The "outputFrontendTemplate" hook is triggered when a front end template is
-printed to the screen. It passes the template content and the template name as
-arguments and expects the template content as return value. It is available from
-version 2.6.0.
+"outputFrontendTemplate"フックはフロントエンドのテンプレートを画面に表示するときに動作します。フック関数はテンプレートの内容とテンプレート名を引数とし、テンプレートのコンテンツを戻り値とします。バージョン2.6.0から利用可能です。
 
 ``` {.php}
 // config.php
@@ -792,7 +662,7 @@ public function myOutputFrontendTemplate($strContent, $strTemplate)
 {
     if ($strTemplate == 'fe_page')
     {
-        // Modify output
+        // 出力を修正
     }
 
     return $strContent;
@@ -802,9 +672,7 @@ public function myOutputFrontendTemplate($strContent, $strTemplate)
 
 ### parseBackendTemplate
 
-The "parseBackendTemplate" hook is triggered when a back end template is parsed.
-It passes the template content and the template name as arguments and expects
-the template content as return value. It is available from version 2.6.0.
+"parseBackendTemplate"フックはバックエンドのテンプレートを解析したときに動作します。フック関数はテンプレートの内容とテンプレート名を引数とし、テンプレートのコンテンツを戻り値とします。バージョン2.6.0から利用可能です。
 
 ``` {.php}
 // config.php
@@ -815,7 +683,7 @@ public function myParseBackendTemplate($strContent, $strTemplate)
 {
     if ($strTemplate == 'be_main')
     {
-        // Modify output
+        // 出力を修正
     }
 
     return $strContent;
@@ -825,10 +693,7 @@ public function myParseBackendTemplate($strContent, $strTemplate)
 
 ### parseFrontendTemplate
 
-The "parseFrontendTemplate" hook is triggered when a front end template is
-parsed. It passes the template content and the template name as arguments and
-expects the template content as return value. It is available from version
-2.6.0.
+"parseFrontendTemplate"フックはフロントエンドのテンプレートを解析したときに動作します。フック関数はテンプレートの内容とテンプレート名を引数とし、テンプレートのコンテンツを戻り値とします。バージョン2.6.0から利用可能です。
 
 ``` {.php}
 // config.php
@@ -839,7 +704,7 @@ public function myParseFrontendTemplate($strContent, $strTemplate)
 {
     if ($strTemplate == 'ce_text')
     {
-        // Modify output
+        // 出力を修正
     }
 
     return $strContent;
@@ -849,9 +714,7 @@ public function myParseFrontendTemplate($strContent, $strTemplate)
 
 ### postDownload
 
-The "postDownload" hook is triggered after a file has been downloaded with the
-download(s) element. It passes the file name as argument and does not expect a
-return value. It is available from version 2.4.6.
+"postDownload"フックはダウンロードや複数ダウンロードといったコンテンツ要素で、ファイルがダウンロードした後で動作します。フック関数はファイル名を引数とし、戻り値は不要です。バージョン2.4.6から利用可能です。
 
 ``` {.php}
 // config.php
@@ -860,52 +723,46 @@ $GLOBALS['TL_HOOKS']['postDownload'][] = array('MyClass', 'myPostDownload');
 // MyClass.php
 public function myPostDownload($strFile)
 {
-    // Do something
+    // 何か実行
 }
 ```
 
 
 ### postLogin
 
-The "postLogin" hook is triggered after a user has logged into the front end. It
-passes the user object as argument and does not expect a return value. It is
-available from version 2.4.3.
+"postLogin"フックはユーザーがフロントエンドにログインした後で動作します。フック関数はユーザーオブジェクトを引数とし、戻り値は不要です。バージョン2.4.3から利用可能です。
 
 ``` {.php}
 // config.php
 $GLOBALS['TL_HOOKS']['postLogin'][] = array('MyClass', 'myPostLogin');
 
 // MyClass.php
-public function myPostLogin(FrontendUser $objUser)
+public function myPostLogin(User $objUser)
 {
-    // Do something
+    // 何か実行
 }
 ```
 
 
 ### postLogout
 
-The "postLogout" hook is triggered after a user has logged out from the front
-end. It passes the user object as argument and does not expect a return value.
-It is available from version 2.4.3.
+"postLogout"フックはユーザーがフロントエンドからログアウトした後で動作します。フック関数はユーザーオブジェクトを引数とし、戻り値は不要です。バージョン2.4.3から利用可能です。
 
 ``` {.php}
 // config.php
 $GLOBALS['TL_HOOKS']['postLogout'][] = array('MyClass', 'myPostLogout');
 
 // MyClass.php
-public function myPostLogout(FrontendUser $objUser)
+public function myPostLogout(User $objUser)
 {
-    // Do something
+    // 何か実行
 }
 ```
 
 
 ### postUpload
 
-The "postUpload" hook is triggered after a user has uploaded one or more file in
-the back end. It passes an array of filenames as argument and does not expect a
-return value. It is available from version 2.6.4.
+"postUpload"フックはユーザーがバックエンドで1つ以上のファイルをアップロードした後で動作します。フック関数はファイル名の配列を引数とし、戻り値は不要です。バージョン2.6.4から利用可能です。
 
 ``` {.php}
 // config.php
@@ -914,16 +771,14 @@ $GLOBALS['TL_HOOKS']['postUpload'][] = array('MyClass', 'myPostUpload');
 // MyClass.php
 public function myPostUpload($arrFiles)
 {
-    // Do something
+    // 何か実行
 }
 ```
 
 
 ### printArticleAsPdf
 
-The "printArticleAsPdf" hook is triggered when an article is exported as PDF. It
-passes the article text and the article object as arguments and does not expect
-a return value. It is available from version 2.8.RC1.
+"printArticleAsPdf"フックはアーティクルをPDFとしてエクスポートするときに動作します。フック関数はアーティクルのテキストとアーティクルのオブジェクトを引数とし、戻り値は不要です。バージョン2.8.RC1から利用可能です。
 
 ``` {.php}
 // config.php
@@ -932,7 +787,7 @@ $GLOBALS['TL_HOOKS']['printArticleAsPdf'][] = array('MyClass', 'myPrintArticleAs
 // MyClass.php
 public function myPrintArticleAsPdf($strArticle, Database_Result $objArticle)
 {
-    // Do something
+    // 何か実行
     exit;
 }
 ```
@@ -940,10 +795,7 @@ public function myPrintArticleAsPdf($strArticle, Database_Result $objArticle)
 
 ### processFormData
 
-The "processFormData" hook is triggered after a form has been submitted. It
-passes the form data array, the [Data Container Array][1] and the files array as
-arguments and does not expect a return value. It is available from version
-2.4.4.
+"processFormData"フックはフォームが提出された後で動作します。フック関数はデータ配列、データコンテナ配列、ファイル配列を引数とし、戻り値は不要です。バージョン2.4.4から利用可能です。
 
 ``` {.php}
 // config.php
@@ -952,16 +804,14 @@ $GLOBALS['TL_HOOKS']['processFormData'][] = array('MyClass', 'myProcessFormData'
 // MyClass.php
 public function myProcessFormData($arrPost, $arrForm, $arrFiles)
 {
-    // Do something
+    // 何か実行
 }
 ```
 
 
 ### removeOldFeeds
 
-The "removeOldFeeds" hook is triggered when old XML files are being removed from
-the Contao directory. It does not pass an argument and expects an array of file
-names to preserve as return value. It is available from version 2.5.8.
+"removeOldFeeds"フックは古いXMLファイルをContaoのディレクトリから削除するときに動作します。フック関数に引数はなく、保存するファイル名の配列を戻り値とします。バージョン2.5.8から利用可能です。
 
 ``` {.php}
 // config.php
@@ -977,9 +827,7 @@ public function myRemoveOldFeeds()
 
 ### removeRecipient
 
-The "removeRecipient" hook is triggered when a newsletter recipient is removed.
-It passes the e-mail address and the channel IDs as argument and does not expect
-a return value. It is available from version 2.8.RC1.
+"removeRecipient"フックはニュースレターの宛先を削除するときに動作します。フック関数は電子メールアドレス、チャンネルのIDを引数とし、戻りは不要です。バージョン2.8.RC1から利用可能です。
 
 ``` {.php}
 // config.php
@@ -988,16 +836,14 @@ $GLOBALS['TL_HOOKS']['removeRecipient'][] = array('MyClass', 'myRemoveRecipient'
 // MyClass.php
 public function myRemoveRecipient($strEmail, $arrChannels)
 {
-    // Do something
+    // 何か実行
 }
 ```
 
 
 ### replaceInsertTags
 
-The "replaceInsertTags" hook is triggered when an unknown insert tag is found.
-It passes the insert tag as argument and expects the replacement value or
-"false" as return value. It is available from version 2.6.0.
+"replaceInsertTags"フックは未知の挿入タグがあった場合に動作します。フック関数は挿入タグを引数とし、置き換えた値かfalseを戻り値とします。バージョン2.6.0から利用可能です。
 
 ``` {.php}
 // config.php
@@ -1018,11 +864,7 @@ public function myReplaceInsertTags($strTag)
 
 ### reviseTable
 
-The "reviseTable" hook is triggered when Contao removes orphan records from a
-table. It passes the name of the current table, the IDs of all new records, the
-name of the parent table and the names of all child tables as arguments and does
-expect a boolean return value (returning "true" will cause the current page to
-be reloaded). It is available from version 2.6.4.
+"reviseTable"フックはContaoがテーブルから親のいないレコードを削除するときに動作します。フック関数は現在のテーブル、新しいレコードのID、親のテーブルの名前、すべての子のテーブルを引数とし、論理値を戻り値とします(trueを返すと現在のページを再読み込みすることになります)。バージョン2.6.4から利用可能です。
 
 ``` {.php}
 // config.php
@@ -1031,16 +873,14 @@ $GLOBALS['TL_HOOKS']['reviseTable'][] = array('MyClass', 'myReviseTable');
 // MyClass.php
 public function myReviseTable($table, $new_records, $parent_table, $child_tables)
 {
-    // Do something
+    // 何か実行
 }
 ```
 
 
 ### setNewPassword
 
-The "setNewPassword" hook is triggered after a new password has been set. It
-passes the user object and the encrypted password as arguments and does not
-expect a return value. It is available from version 2.2.3.
+"setNewPassword"フックは新しいパスワードを設定した後で動作します。フック関数はユーザーオブジェクトと暗号化したパスワードを引数とし、戻り値は不要です。バージョン2.2.3から利用可能です。
 
 ``` {.php}
 // config.php
@@ -1049,16 +889,14 @@ $GLOBALS['TL_HOOKS']['setNewPassword'][] = array('MyClass', 'mySetNewPassword');
 // MyClass.php
 public function mySetNewPassword($objUser, $strPassword)
 {
-    // Do something
+    // 何か実行
 }
 ```
 
 
 ### validateFormField
 
-The "validateFormField" hook is triggered when a form field is submitted. It
-passes the widget object and the form ID as arguments and expects a widget
-object as return value. It is available from version 2.5.0.
+"validateFormField"フックはフォームの項目が提出されたときに動作します。フック関数はウィジェットのオブジェクト、フォームのIDを引数とし、ウィジェットのオブジェクトを戻り値とします。バージョン2.5.0から利用可能です。
 
 ``` {.php}
 // config.php
@@ -1069,7 +907,7 @@ public function myValidateFormField(Widget $objWidget, $intId)
 {
     if ($objWidget instanceof FormPassword)
     {
-        // Do something
+        // 何か実行
     }
 
     return $objWidget;
