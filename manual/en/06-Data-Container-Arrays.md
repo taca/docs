@@ -78,6 +78,11 @@ edited or deleted.
   <td>If true, the table cannot be edited.</td>
 </tr>
 <tr>
+  <td>notDeletable</td>
+  <td>true/false (<code>boolean</code>)</td>
+  <td>If true, records in the table cannot be deleted.</td>
+</tr>
+<tr>
   <td>switchToEdit</td>
   <td>true/false (<code>boolean</code>)</td>
   <td>Activates the "save and edit" button when a new record is added (sorting
@@ -130,6 +135,16 @@ edited or deleted.
   <td>Callback function (<code>array</code>)</td>
   <td>Calls a custom function when a record is duplicated and passes the insert
       ID and the DataContainer object as argument. Added in version 2.8.2.</td>
+</tr>
+<tr>
+  <td>sql</td>
+  <td>Table configuration (<code>array</code>)</td>
+  <td>Describes table configuration, e.g.
+  <code>'keys' => array
+  		(
+				'id' => 'primary',
+				'pid' => 'index'
+			)</code></td>
 </tr>
 </table>
 
@@ -502,6 +517,18 @@ filter criteria.
       specify as <code>array('Class', 'Method')</code>.</td>
 </tr>
 <tr>
+  <td>sql</td>
+  <td>Database field definition (<code>string</code>)</td>
+  <td>Describes data type and its database configuration, e.g.
+      <code>varchar(255) NOT NULL default ''</code></td>
+</tr>
+<tr>
+  <td>relation</td>
+  <td>Configuration of relations (<code>array</code>)</td>
+  <td>Describes relation to parent table (see paragraph "relations").
+  </td>
+</tr>
+<tr>
   <td>load_callback</td>
   <td>Callback functions (<code>array</code>)</td>
   <td>These functions will be called when the field is loaded. Please specify
@@ -721,14 +748,14 @@ Each field can be validated against a regular expression.
 </tr>
 <tr>
   <td>datepicker</td>
-  <td>Date picker (<code>string</code>)</td>
-  <td>Date picker configuration string.</td>
+  <td>true/false (<code>boolean</code>)</td>
+  <td>If true the current field has a date picker.</td>
 </tr>
 <tr>
   <td>feEditable</td>
   <td>true/false (<code>boolean</code>)</td>
-  <td>If true the current field can be edited in the frontend. Applies to table
-      tl_member only.</td>
+  <td>If true the current field can be edited in the front end. Applies to table
+      <code>tl_member</code> only.</td>
 </tr>
 <tr>
   <td>feGroup</td>
@@ -776,6 +803,44 @@ Each field can be validated against a regular expression.
   <td>readonly</td>
   <td>true/false (<code>boolean</code>)</td>
   <td>Makes the field read only (not supported by all field types).</td>
+</tr>
+</table>
+
+
+### Relations
+
+Relations describes, how database fields are related to other tables. 
+Define the referenced table in the `foreignKey` key. Relations provide 
+model classes to load referenced data sets efficiently and developer friendly.
+(see `Model::getRelated()`).
+
+<table>
+<tr>
+  <th>Key</th>
+  <th>Value</th>
+  <th>Describtion</th>
+</tr>
+<tr>
+  <td>type</td>
+  <td>Type of relation<br> (<code>string</code>)
+  <td>
+    <b>hasOne</b> Value references a child data set<br>
+    <b>hasMany</b> Value references some child data sets
+       (serialized)<br>
+    <b>belongsTo</b> Value references a parent data set
+       (z.B. <code>pid</code>)<br>
+    <b>belongsToMany</b> Value references some parent data sets
+       (serialized)<br>
+  </td>
+</tr>
+<tr>
+  <td>load</td>
+  <td>Load behaviour<br> (<code>string</code>)</td>
+  <td>
+      <b>lazy</b> Loading referenced records only when necessary
+         (default, saves RAM)<br>
+      <b>eager</b> Loading referenced records automatically (saves database calls)
+  </td>
 </tr>
 </table>
 

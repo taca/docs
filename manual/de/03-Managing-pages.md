@@ -112,11 +112,11 @@ IE-spezifischen Wert überschreiben.
 
 ## Module
 
-Mit Hilfe von Frontend-Modulen können Sie Ihre Webseite um fast jedeerdenkliche
-Funktionalität erweitern. Der Contao-Core enthältModule, um verschiedene
-Navigationsmodule zu erstellen, dieBenutzerregistrierung und -anmeldung zu
-ermöglichen, die Webseite zudurchsuchen, RSS-Feeds zu importieren und vieles
-mehr. Module können imBackend unter "Themes" -> "Frontend-Module" konfiguriert
+Mit Hilfe von Frontend-Modulen können Sie Ihre Webseite um fast jede erdenkliche
+Funktionalität erweitern. Der Contao-Core enthält Module, um verschiedene
+Navigationsmodule zu erstellen, die Benutzerregistrierung und -anmeldung zu
+ermöglichen, die Webseite zu durchsuchen, RSS-Feeds zu importieren und vieles
+mehr. Module können im Backend unter "Themes" -> "Frontend-Module" konfiguriert
 werden.
 
 <table>
@@ -384,12 +384,12 @@ Seitenstruktur markiert. Contao unterstützt folgende 6 Seitentypen:
 <tr>
   <td>403 Zugriff verweigert</td>
   <td>Beim Aufruf einer geschützte Seite ohne Zugriffsrechte wird stattdessen
-      die 403-Fehlerseite geladen.</td>
+      die 403-Fehlerseite geladen. Diese Seite muss <b>direkt unterhalb</b> des Startpunktes einer Webseite angelegt werden.</td>
 </tr>
 <tr>
   <td>404 Seite nicht gefunden</td>
   <td>Beim Aufruf einer nicht vorhandenen Seite wird stattdessen die
-      404-Fehlerseite geladen.</td>
+      404-Fehlerseite geladen. Diese Seite muss <b>direkt unterhalb</b> des Startpunktes einer Webseite angelegt werden.</td>
 </tr>
 </table>
 
