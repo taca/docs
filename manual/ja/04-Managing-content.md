@@ -25,7 +25,7 @@
 <tr>
   <td>テキスト</td>
   <td>ce_text</td>
-  <td>[TinyMCE][2]を使用して書式整形できるリッチテキストエディターを生成します。</td>
+  <td><a href="http://www.tinymce.com">TinyMCE</a>を使用して書式整形できるリッチテキストエディターを生成します。</td>
 </tr>
 <tr>
   <td>HTML</td>
@@ -43,14 +43,34 @@
   <td>並べ替えもできる表を生成します。</td>
 </tr>
 <tr>
-  <td>アコーディオン</td>
-  <td>ce_accordion</td>
-  <td>[MooTools][3]のアコーディオンの枠を生成します。</td>
-</tr>
-<tr>
   <td>コード</td>
   <td>ce_code</td>
   <td>コードの断片を強調表示して画面に表示します。</td>
+</tr>
+<tr>
+  <td>アコーディオン(単一の要素)</td>
+  <td>ce_accordion</td>
+  <td>単一のアコーディオンの枠を(<a href="http://mootools.net">MooTools</a>で)生成します。</td>
+</tr>
+<tr>
+  <td>アコーディオン(ラッパーの会誌)</td>
+  <td>ce_accordionStart</td>
+  <td>アコーディオンの枠を開始する部分を生成します。</td>
+</tr>
+<tr>
+  <td>アコーディオン(ラッパーの終了)</td>
+  <td>-</td>
+  <td>アコーディオンの枠を終了する部分を生成します。</td>
+</tr>
+<tr>
+  <td>コンテントスライダー(ラッパーの開始)</td>
+  <td>ce_sliderStart</td>
+  <td>スライダーのラッパーを開始する部分を生成します。</td>
+</tr>
+<tr>
+  <td>コンテントスライダー(ラッパーの終了)</td>
+  <td>-</td>
+  <td>スライダーのラッパーを終了する部分を生成します。</td>
 </tr>
 <tr>
   <td>ハイパーリンク</td>
@@ -70,7 +90,17 @@
 <tr>
   <td>ギャラリー</td>
   <td>ce_gallery</td>
-  <td>[lightbox][4]の画像ギャラリーを生成します。</td>
+  <td><a href="http://www.digitalia.be/software/slimbox">lightbox</a>の画像ギャラリーを生成します。</td>
+</tr>
+<tr>
+  <td>映像や音声</td>
+  <td>ce_player</td>
+  <td>映像や音声のプレーヤーを生成します。</td>
+</tr>
+<tr>
+  <td>Youtube</td>
+  <td>ce_youtube</td>
+  <td>YouTubeの映像を追加します。</td>
 </tr>
 <tr>
   <td>ダウンロード</td>
@@ -259,7 +289,7 @@ http://www.domain.com/news/items/james-wilson-returns.html
 </tr>
 <tr>
   <td>イベントリーダー</td>
-  <td>mod_event</td>
+  <td>mod_eventreader</td>
   <td>イベントの詳細を表示します。</td>
 </tr>
 <tr>
@@ -268,9 +298,9 @@ http://www.domain.com/news/items/james-wilson-returns.html
   <td>イベントのリストをページに追加します。</td>
 </tr>
 <tr>
-  <td>近づいているイベント</td>
-  <td>mod_eventlist</td>
-  <td>近づいているイベントの一覧をページに追加します。</td>
+  <td>イベントリストメニュー</td>
+  <td>mod_eventmenu</td>
+  <td>イベントのリストを閲覧するメニューのナビゲーションを生成します。</td>
 </tr>
 </table>
 
@@ -288,25 +318,21 @@ http://www.domain.com/event-reader/events/final-exams.html
 
 ## RSS/Atomフィード
 
-This feature can be used for news archives and calendars. Here is an example
-with the calendars list.
+この機能はニュースアーカイブとカレンダーに使用できます。ここではカレンダーリストでの例です。
 
 ![](https://raw.github.com/contao/docs/3.1/manual/en/images/rss-calendar.jpg)
 
 
-### Settings
+### 設定
 
-One or several calendars can be grouped and exported as an RSS or Atom feed.
-It goes the same for news archives. At the same time, you can choose to export
-only the teasers or full articles of each event or news.
+1つ以上のカレンダーをグループにして、RSSやAtomのフィードに出力できます。ニュースアーカイブでも同様です。同時に、それぞれのイベントやニュースを、ティーザーだけか記事全体を出力するか選択できます。
 
 ![](https://raw.github.com/contao/docs/3.1/manual/en/images/rss-settings.jpg)
 
 
-### XML files
+### XMLファイル
 
-The XML files are generated automatically in the ```share``` directory of your
-Contao installation. In this example : ```share/events.xml```.
+XMLファイルは自動的にインストールしているContaoの```share```というディレクトリに生成します。ここでの例では次の様になります: ```share/events.xml```。
 
 
 ## ニュースレター
@@ -316,7 +342,7 @@ Contao installation. In this example : ```share/events.xml```.
 
 ### 宛先
 
-ニュースレターの購読は、それぞれのフロントエンドモジュールによって通常は処理するので、宛先を手作業で管理する必要はありません。データのプライバシーの理由で、Contaoは[二重のオプトイン][5]による購読の登録を必要とし、購読者の電子メールのアドレスだけ保管しています。
+ニュースレターの購読は、それぞれのフロントエンドモジュールによって通常は処理するので、宛先を手作業で管理する必要はありません。データのプライバシーの理由で、Contaoは[二重のオプトイン][2]による購読の登録を必要とし、購読者の電子メールのアドレスだけ保管しています。
 
 ![](https://raw.github.com/contao/docs/3.1/manual/en/images/newsletter-recipients.jpg)
 
@@ -325,7 +351,7 @@ Contao installation. In this example : ```share/events.xml```.
 
 ### 名前入りのニュースレター
 
-ニュースレターを登録したメンバーに送信する場合には、「シンプルトークン」と呼ばれる方法で個人向けにカスタマイズできます。シンプルトークンは[挿入タグ][6]に似ていて、ニュースレターのHTMLとテキストのコンテンツ両方に使用できます。
+ニュースレターを登録したメンバーに送信する場合には、「シンプルトークン」と呼ばれる方法で個人向けにカスタマイズできます。シンプルトークンは[挿入タグ][3]似ていて、ニュースレターのHTMLとテキストのコンテンツ両方に使用できます。
 
 ```
 Dear ##firstname## ##lastname##,
@@ -341,7 +367,7 @@ E-mail: ##email##
 The Administrator
 ```
 
-挿入タグと対照的に、シンプルトークンはメンバーのテーブル`tl_member`のデータを取り込むことはできませんが、単純なif-else文を、例えば最初の挨拶部分に指定できます。
+挿入タグと対照的に、シンプルトークンはメンバーのテーブル`tl_member`のデータを取り込むだけではなく、単純なif-else文を、例えば最初の挨拶の部分に指定できます。
 
 ```
 {if gender=="male"}
@@ -382,22 +408,22 @@ The Administrator
 </tr>
 <tr>
   <td>登録の申し込み</td>
-  <td>nl_default</td>
+  <td>mod_subscribe</td>
   <td>1つ以上のチャンネルの登録を申し込みできるフォームを生成します。</td>
 </tr>
 <tr>
   <td>解除の申し込み</td>
-  <td>nl_default</td>
+  <td>mod_unsubscribe</td>
   <td>1つ以上のチャンネルの解除を申し込みできるフォームを生成します。</td>
 </tr>
 <tr>
   <td>ニュースレターリスト</td>
-  <td>mod_newsletter_list</td>
+  <td>mod_nl_list</td>
   <td>ニュースレターのリストをページに追加します。</td>
 </tr>
 <tr>
   <td>ニュースレターリーダー</td>
-  <td>mod_newsletter_reader</td>
+  <td>mod_nl_reader</td>
   <td>ニュースレターの詳細を表示します。</td>
 </tr>
 </table>
@@ -444,7 +470,7 @@ http://www.domain.com/newsletters/items/james-wilson-returns.html
 
 ### フォームの項目
 
-コンテンツ要素と同様に、Contaoはテキスト入力、パスワード入力、選択メニュー、ファイルのアップロード、隠し入力、提出ボタンといった各種のフォームの項目に分た要素を提供しています。Contaoのコアのフォームの項目の概要をここに示します:
+コンテンツ要素と同様に、Contaoはテキスト入力、パスワード入力、選択メニュー、ファイルのアップロード、隠し入力、提出ボタンといった各種のフォームの項目に分けた要素を提供しています。Contaoのコアのフォームの項目の概要をここに示します:
 
 <table>
 <tr>
@@ -879,7 +905,6 @@ http://www.domain.com/newsletters/items/james-wilson-returns.html
   <td>This tag will be replaced by the encrypted e-mail address only.</td>
 </tr>
 <tr>
-<tr>
   <td><code>{{lang::*}}</code></td>
   <td>このタグはテキスト中の外国の単語にしるしを付けるのに使用できます。例: `{{lang::fr}}Au revoir{{lang}}` これは`<span lang="fr" xml:lang="fr">Au revoir</span>`に置き換わります。</td>
 </tr>
@@ -929,175 +954,166 @@ http://www.domain.com/newsletters/items/james-wilson-returns.html
 </table>
 
 
-### Insert tag flags
+### 挿入タグのフラッグ
 
-Using flags, insert tags can be further processed. For example, the value can be
-passed to specific PHP methods. Multiple flags can be applied:
+フラッグを使用すると、さらに挿入タグを処理できます。例えば、値を特定のPHPモジュールに渡せます。複数のフラッグを適用できます:
 
 ```
 {{ua::browser|uncached}}  
 {{page::title|decodeEntities|strtoupper}}
 ```
 
-Available flags:
+利用できるフラッグです:
 
 <table>
 <tr>
-    <th>Flag</th>
-    <th>Description</th>
-    <th>More information</th>
+    <th>フラッグ</th>
+    <th>説明</th>
+    <th>さらなる情報</th>
 </tr>
 <tr>
     <td><code>uncached</code></td>
-    <td>Do not replace insert tag when the page is cached</td>
+    <td>ページをキャッシュする時に挿入タグを置き換えません。</td>
     <td></td>
 </tr>
 <tr>
     <td><code>refresh</code></td>
-    <td>Do not cache the insert tag, even if it is used multiple times on the
-      same page</td>
+    <td>同一のページで複数回使用している場合でも、挿入タグをキャッシュしません。</td>
     <td></td>
 </tr>
 <tr>
     <td><code>addslashes</code></td>
-    <td>Quote a string with slashes</td>
-    <td><a target="_blank" href="http://php.net/addslashes">PHP function</a></td>
+    <td>文字列をバックスラッシュによる引用をします。</td>
+    <td><a target="_blank" href="http://php.net/addslashes">PHPの関数</a></td>
 </tr>
 <tr>
     <td><code>stripslashes</code></td>
-    <td>Remove the slashes from a quoted string</td>
-    <td><a target="_blank" href="http://php.net/stripslashes">PHP function</a></td>
+    <td>文字列からバックスラッシュによる引用を削除します。</td>
+    <td><a target="_blank" href="http://php.net/stripslashes">PHPの関数</a></td>
 </tr>
 <tr>
     <td><code>standardize</code></td>
-    <td>Standardize the output (e.g. for a page alias or CSS class)</td>
+    <td>出力を標準化します。(例: ページのエイリアスやCSSのクラス)</td>
     <td></td>
 </tr>
 <tr>
     <td><code>ampersand</code></td>
-    <td>Convert ampersands to HTML entities</td>
+    <td>アンパサンドをHTMLのエンティティに変換します。</td>
     <td></td>
 </tr>
 <tr>
     <td><code>specialchars</code></td>
-    <td>Convert special characters to HTML entities</td>
+    <td>特殊文字をHTMLのエンティティに変換します。</td>
     <td></td>
 </tr>
 <tr>
     <td><code>nl2br</code></td>
-    <td>Inserts HTML line breaks before all newlines in a string</td>
-    <td><a target="_blank" href="http://php.net/nl2br">PHP function</a></td>
+    <td>こじれ角すべての改行の前にHTMLの改行を挿入します。</td>
+    <td><a target="_blank" href="http://php.net/nl2br">PHPの関数</a></td>
 </tr>
 <tr>
     <td><code>nl2br_pre</code></td>
-    <td>Same as nl2br, but keeps line breaks in <code>&lt;pre&gt;</code> tags</td>
+    <td>nl2brと同様ですが、<code>&lt;pre&gt;</code>タグの中の改行を保持します。</td>
     <td></td>
 </tr>
 <tr>
     <td><code>strtolower</code></td>
-    <td>Make a string lowercase</td>
-    <td><a target="_blank" href="http://php.net/strtolower">PHP function</a></td>
+    <td>文字列を小文字に変換します。</td>
+    <td><a target="_blank" href="http://php.net/strtolower">PHPの関数</a></td>
 </tr>
 <tr>
     <td><code>utf8_strtolower</code></td>
-    <td>Unicode-aware lowercase conversion</td>
+    <td>Unicodeに配慮した小文字に変換します。</td>
     <td></td>
 </tr>
 <tr>
     <td><code>strtoupper</code></td>
-    <td>Make a string uppercase</td>
-    <td><a target="_blank" href="http://php.net/strtoupper">PHP function</a></td>
+    <td>文字列を大文字に変換します。</td>
+    <td><a target="_blank" href="http://php.net/strtoupper">PHPの関数</a></td>
 </tr>
 <tr>
     <td><code>utf8_strtoupper</code></td>
-    <td>Unicode-aware uppercase conversion</td>
+    <td>Unicodeに配慮した大文字に変換します。</td>
     <td></td>
 </tr>
 <tr>
     <td><code>ucfirst</code></td>
-    <td>Make a string's first character uppercase</td>
-    <td><a target="_blank" href="http://php.net/ucfirst">PHP function</a></td>
+    <td>文字列の最初の文字を大文字に変換します。</td>
+    <td><a target="_blank" href="http://php.net/ucfirst">PHPの関数</a></td>
 </tr>
 <tr>
     <td><code>lcfirst</code></td>
-    <td>Make a string's first character lowercase</td>
-    <td><a target="_blank" href="http://php.net/lcfirst">PHP function</a></td>
+    <td>文字列の最初の文字を小文字に変換します。</td>
+    <td><a target="_blank" href="http://php.net/lcfirst">PHPの関数</a></td>
 </tr>
 <tr>
     <td><code>ucwords</code></td>
-    <td>Uppercase the first character of each word in a string</td>
-    <td><a target="_blank" href="http://php.net/ucwords">PHP function</a></td>
+    <td>文字列中の単語のそれぞれの最初の文字を大文字にします。</td>
+    <td><a target="_blank" href="http://php.net/ucwords">PHPの関数</a></td>
 </tr>
 <tr>
     <td><code>trim</code></td>
-    <td>Strip whitespace from the beginning and end of a string</td>
-    <td><a target="_blank" href="http://php.net/trim">PHP function</a></td>
+    <td>文字列の前後の空白を削除します。</td>
+    <td><a target="_blank" href="http://php.net/trim">PHPの関数</a></td>
 </tr>
 <tr>
     <td><code>rtrim</code></td>
-    <td>Strip whitespace from the end of a string</td>
-    <td><a target="_blank" href="http://php.net/rtrim">PHP function</a></td>
+    <td>文字列の最後にある空白を削除します。</td>
+    <td><a target="_blank" href="http://php.net/rtrim">PHPの関数</a></td>
 </tr>
 <tr>
     <td><code>ltrim</code></td>
-    <td>Strip whitespace from the beginning of a string</td>
-    <td><a target="_blank" href="http://php.net/ltrim">PHP function</a></td>
+    <td>文字列の最初にある空白を削除します。</td>
+    <td><a target="_blank" href="http://php.net/ltrim">PHPの関数</a></td>
 </tr>
 <tr>
     <td><code>utf8_romanize</code></td>
-    <td>Romanize the output</td>
+    <td>出力をローマ字化します。</td>
     <td></td>
 </tr>
 <tr>
     <td><code>strrev</code></td>
-    <td>Reverse a string</td>
-    <td><a target="_blank" href="http://php.net/strrev">PHP function</a></td>
+    <td>文字列を逆順にします。</td>
+    <td><a target="_blank" href="http://php.net/strrev">PHPの関数</a></td>
 </tr>
 <tr>
     <td><code>encodeEmail</code></td>
-    <td>Encode email addresses in the output</td>
-    <td>see <code>String::encodeEmail</code></td>
+    <td>出力の電子メールのアドレスをエンコードします。</td>
+    <td><code>String::encodeEmail</code>を参照</td>
 </tr>
 <tr>
     <td><code>decodeEntities</code></td>
-    <td>Decodes HTML entities in the output</td>
-    <td>see <code>String::decodeEntities()</code></td>
+    <td>出力のHTMLのエンティティをデコードします。</td>
+    <td><code>String::decodeEntities()</code>を参照</td>
 </tr>
 <tr>
     <td><code>number_format</code></td>
-    <td>Formats a number (without decimal places)</td>
-    <td>see <code>System::getFormattedNumber()</code></td>
+    <td>数値を(少数桁なしで)書式整形します。</td>
+    <td><code>System::getFormattedNumber()</code>を参照</td>
 </tr>
 <tr>
     <td><code>currency_format</code></td>
-    <td>Formats a currency (two decimal places)</td>
-    <td>see <code>System::getFormattedNumber()</code></td>
+    <td>通貨を(少数第2位で)書式整形します。</td>
+    <td><code>System::getFormattedNumber()</code>を参照</td>
 </tr>
 <tr>
     <td><code>readable_size</code></td>
-    <td>Convert file sizes to human readable format</td>
-    <td>see <code>System::getReadableSize()</code></td>
+    <td>ファイルの大きさを人が読みやすい書式に変換します。</td>
+    <td><code>System::getReadableSize()</code>を参照</td>
 </tr>
 <tr>
     <td><code>base64_encode</code></td>
-    <td>Encodes a text using the <a href="https://en.wikipedia
-    .org/wiki/Base64" target="_blank">Base64 algorithm</a>.</td>
-    <td><a target="_blank" href="http://php.net/base64_encode">PHP
-    function</a></td>
+    <td><a href="https://en.wikipedia.org/wiki/Base64" target="_blank">Base64アルゴリズム</a>を使用してテキストをエンコードします。</td>
+    <td><a target="_blank" href="http://php.net/base64_encode">PHPの関数</a></td>
 </tr>
 <tr>
     <td><code>base64_decode</code></td>
-    <td>Decodes a text using the <a href="https://en.wikipedia
-    .org/wiki/Base64" target="_blank">Base64 algorithm</a>.</td>
-    <td><a target="_blank" href="http://php.net/base64_decode">PHP
-    function</a></td>
+    <td><a href="https://en.wikipedia.org/wiki/Base64" target="_blank">Base64アルゴリズム</a>を使用してテキストをデコードします。</td>
+    <td><a target="_blank" href="http://php.net/base64_decode">PHPの関数</a></td>
 </tr>
 </table>
 
 
 [1]: https://contao.org/en/extension-list.html
-[2]: http://tinymce.moxiecode.com
-[3]: http://mootools.net
-[4]: http://www.digitalia.be/software/slimbox
-[5]: http://en.wikipedia.org/wiki/Opt_in_e-mail
-[6]: 04-Managing-content.md#insert-tags
+[2]: http://en.wikipedia.org/wiki/Opt_in_e-mail
+[3]: 04-Managing-content.md#insert-tags

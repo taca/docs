@@ -1,24 +1,15 @@
-# Contao development
+# Contaoの開発
 
-The Contao development website, which is the base of the ongoing development of
-Contao, is available at [github.com/contao][1]. It e.g. contains a journal of
-past changes and future features (milestones) as well as a ticket system to
-report issues or request new features. It also supports browsing the Contao code
-repository, where you can see exactly which files have changed.
+進行中のContaoの開発の基盤となるContaoの開発サイトは[github.com/contao][1]から利用できます。開発サイトには例えば、過去の変更の記録(変更記録)、将来の機能(ロードマップ)、そして問題の報告や新しい機能のリクエストを行うためのチケットシステムがあります。また、Contaoのコードのリポジトリを閲覧でき、変更されたファイルを正確に知ることができます。
 
 
-## Creating a new issue
+## 新しいissueの作成
 
-First of all, please note that you have to be logged in to create new tickets.
-[Registration on GitHub][2] is free. Then log into your account and click "New
-Issue" in the main navigation.
+まず始めに、新しいチケットを作成するにはログインしなければならないことに注意してください。[GitHubの登録][2]は無償です。あなたのアカウントでログインしたら、メインのナビゲーションにある"New issue"をクリックしてください。
 
 ![](https://raw.github.com/contao/docs/3.1/manual/en/images/new-issue.jpg)
 
-Always describe possible problems in detail and let us know how to reproduce
-them in the online demo or in our development environment. If a problem occurs
-only in your installation but not in the online demo, please refer to the
-[forums][3].
+常に考えられる問題を詳細に記述して、オンラインのデモや開発環境で再現する方法を知らせてください。問題がインストールしたContaoだけで発生してオンラインのデモでは起きない場合は[フォーラム][3]をご覧ください。
 
 
 [1]: https://github.com/contao/core

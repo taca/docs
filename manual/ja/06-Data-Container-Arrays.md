@@ -1,11 +1,11 @@
-# データ格納配列
+# データコンテナ配列
 
-データ格納配列(DCA)はテーブルのメタデータの格納に使用します。それぞれのDCAは、特定のテーブルについて、その設定、他のテーブルとの関係、そのフィールドを記述するものです。これらのメタデータでContaoのコアのエンジンは、レコードを一覧する方法、バックエンドのフォームの表示方法、データを保存する方法を決定します。すべての有効なモジュールのDCAファイルは、("backend"と"frontend"から始めて、その後にアルファベットの順番で)順々に読み込んでいくので、それぞれのモジュールは既存の構成を上書きできます。`system/config/dcaconfig.php`のファイルは最後に読み込まれます。
+データコンテナ配列(DCA)はテーブルのメタデータの格納に使用します。それぞれのDCAは特定のテーブルについて、その設定、他のテーブルとの関係、その項目を記述します。Contaoのコアのエンジンは、このメタデータでレコードを一覧する方法、バックエンドのフォームの表示方法、データを保存する方法を決定します。すべての有効なモジュールのDCAファイルは順々に("backend"と"frontend"から始めて、その後にアルファベットの順番で)読み込んでいくので、それぞれのモジュールは既存の構成を上書きできます。`system/config/dcaconfig.php`のファイルは最後に読み込まれます。
 
 
 ## リファレンス
 
-データ格納配列は6つのセクションから構成されています。最初のセクションは他のテーブルとの関係のような一般的なテーブルの構成を保持しています。 第2と第3のセクションはレコードを一覧表示する方法とユーザーに実行を許可する操作を定義しています。第4のセクションは「パレット」と呼ばれるフォームの入力項目の異なるグループを定義し、最後の2つのセクションは入力項目の詳細を記述しています。
+データコンテナ配列は6つのセクションから構成されています。最初のセクションは他のテーブルとの関係のような一般的なテーブルの構成を保持しています。 第2と第3のセクションはレコードを一覧表示する方法とユーザーに実行を許可する操作を定義しています。第4のセクションは「パレット」と呼ばれるフォームの入力項目の異なるグループを定義し、最後の2つのセクションは入力項目の詳細を記述しています。
 
 
 ### テーブルの構成
@@ -20,110 +20,88 @@
 </tr>
 <tr>
   <td>label</td>
-  <td><code>&$GLOBALS['TL_LANG']</code> (<code>文字列</code>)</td>
+  <td><code>&$GLOBALS['TL_LANG']</code> (<code>string</code>)</td>
   <td>labelはページやファイルツリーで使用し、一般に言語配列の参照を含んでいます。</td>
 </tr>
 <tr>
   <td>ptable</td>
-  <td>親のテーブル (<code>文字列</code>)</td>
+  <td>親のテーブル (<code>string</code>)</td>
   <td>親のテーブルに関連した名前です。(table.pid = ptable.id).</td>
 </tr>
 <tr>
   <td>ctable</td>
-  <td>子のテーブル (<code>配列</code>)</td>
+  <td>子のテーブル (<code>array</code>)</td>
   <td>子のテーブルに関連した名前です。(table.id = ctable.pid).</td>
 </tr>
 <tr>
   <td>dataContainer</td>
-  <td>データコンテナ (<code>文字列</code>)</td>
+  <td>データコンテナ (<code>string</code>)</td>
   <td>Table (データベースのテーブル)、File (ローカルの設定ファイル)、Folder (ファイルマネージャー)のいずれかです。</td>
 </tr>
 <tr>
   <td>validFileTypes</td>
-  <td>ファイルの種類 (<code>文字列</code>)</td>
-  <td>有効なファイルの拡張子をコンマで区切ったリストです。(ファイルツリーにだけ適用)</td>
+  <td>ファイルの種類 (<code>string</code>)</td>
+  <td>有効なファイルの拡張子をコンマで区切ったリストです。(ファイルツリーにだけ適用できます)</td>
 </tr>
 <tr>
   <td>uploadScript</td>
-  <td>ファイル名 (<code>文字列</code>)</td>
+  <td>ファイル名 (<code>string</code>)</td>
   <td>Name of the FancyUpload script in the system/config folder (without file
       extension).</td>
 </tr>
 <tr>
   <td>closed</td>
-  <td>trueまたはfalse (<code>論理値</code>)</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
   <td>trueの場合、テーブルにさらにレコードを追加できません。</td>
 </tr>
 <tr>
   <td>notEditable</td>
-  <td>trueまたはfalse (<code>論理値</code>)</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
   <td>trueの場合、このテーブルは編集できません。</td>
 </tr>
 <tr>
   <td>switchToEdit</td>
-  <td>trueまたはfalse (<code>論理値</code>)</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
   <td>新しいレコードを追加するときに「保存して編集」のボタンを有効にします。(並べ替えモード4だけ)</td>
 </tr>
 <tr>
   <td>enableVersioning</td>
-  <td>trueまたはfalse (<code>論理値</code>)</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
   <td>trueの場合、Contaoは新しいバージョンを作成するときに古いバージョンを保存します。</td>
 </tr>
 <tr>
   <td>doNotCopyRecords</td>
-  <td>trueまたはfalse (<code>論理値</code>)</td>
-  <td>trueの場合、Contaoは親のテーブルのレコードを複製するとき、現在のテーブルのレコードを複製しません。</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
+  <td>trueの場合、Contaoは親のテーブルのレコードを複製するとき、このテーブルのレコードを複製しません。</td>
 </tr>
 <tr>
   <td>doNotDeleteRecords</td>
-  <td>trueまたはfalse (<code>論理値</code>)</td>
-  <td>trueの場合、Contaoは親のテーブルのレコードを削除するとき、現在のテーブルのレコードを削除しません。</td>
-</tr>
-<tr>
-  <td>sql</td>
-  <td>table configuration (<code>string</code>)</td>
-  <td>Specifies the data type and its configuration in the database, e.g.
-      <code>'sql' =>  "varchar(255) NOT NULL default ''"</code></td>
-</tr>
-<tr>
-  <td>relation</td>
-  <td>table configuration (<code>array</code>)</td>
-  <td>Define the relationship with the parent table.<br>
-      <b>type</b> (<code>string</code>)
-      <ul><li>belongsTo</li>
-      <li>hasOne</li>
-      <li>belongsToMany</li>
-      <li>hasMany</li>
-      </ul>
-      <b>load</b> (<code>string</code>)
-      <ul><li>eagerly</li>
-      <li>lazy</li>
-      </ul>
-  </td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
+  <td>trueの場合、Contaoは親のテーブルのレコードを削除するとき、このテーブルのレコードを削除しません。</td>
 </tr>
 <tr>
   <td>onload_callback</td>
-  <td>コールバック関数 (<code>配列</code>)</td>
+  <td>コールバック関数 (<code>array</code>)</td>
   <td>データコンテナを初期化したときに、データコンテナオブジェクトを引数にしてカスタム関数を呼び出します。</td>
 </tr>
 <tr>
   <td>onsubmit_callback</td>
-  <td>コールバック関数 (<code>配列</code>)</td>
+  <td>コールバック関数 (<code>array</code>)</td>
   <td>レコードを更新した後で、データコンテナオブジェクトを引数にしてカスタム関数を呼び出します。</td>
 </tr>
 <tr>
   <td>ondelete_callback</td>
-  <td>コールバック関数 (<code>配列</code>)</td>
+  <td>コールバック関数 (<code>array</code>)</td>
   <td>レコードを削除したときに、データコンテナオブジェクトを引数にしてカスタム関数を呼び出します。</td>
 </tr>
 <tr>
   <td>oncut_callback</td>
-  <td>コールバック関数 (<code>配列</code>)</td>
+  <td>コールバック関数 (<code>array</code>)</td>
   <td>レコードを移動したときに、データコンテナオブジェクトを引数にしてカスタム関数を呼び出します。</td>
 </tr>
 <tr>
   <td>oncopy_callback</td>
-  <td>コールバック関数 (<code>配列</code>)</td>
+  <td>コールバック関数 (<code>array</code>)</td>
   <td>レコードを複製したときに、挿入したIDとデータコンテナオブジェクトを引数にしてカスタム関数を呼び出します。バージョン2.8.2で追加しました。</td>
 </tr>
 </table>
@@ -131,684 +109,629 @@
 
 ### レコードの一覧
 
-リストの配列はレコードを一覧表示する方法を定義します。Contaoのコアのエンジンは3つの異なるビュー、リストビュー、ペアレントビュー、ツリービューをサポートしています。フィルダーやデフォルトの並べ替え順序といった、様々な並べ替えのオプションの設定や、カスタムラベルの追加ができます。
-
-The listing array defines how records are listed. The Contao core engine
-supports three different [views][1]: "list view", "parent view" and "tree view".
-You can configure various sorting options like filters or the default sorting
-order and you can add custom labels.
+listの配列はレコードを一覧表示する方法を定義します。Contaoのコアのエンジンは3つの異なる[ビュー][1]: リストビュー、ペアレントビュー、ツリービューをサポートしています。フィルダーやデフォルトの並べ替え順序といった、様々な並べ替えのオプションの設定や、カスタムラベルの追加ができます。
 
 
-#### Sorting
+#### 並べ替え(sorting)
 
 <table>
 <tr>
-  <th>Key</th>
-  <th>Value</th>
-  <th>Description</th>
+  <th>キー</th>
+  <th>値</th>
+  <th>説明</th>
 </tr>
 <tr>
   <td>mode</td>
-  <td>Sorting mode (<code>integer</code>)</td>
-  <td><b>0</b> Records are not sorted<br>
-      <b>1</b> Records are sorted by a fixed field<br>
-      <b>2</b> Records are sorted by a switchable field<br>
-      <b>3</b> Records are sorted by the parent table<br>
-      <b>4</b> Displays the child records of a parent record (see style sheets
-      module)<br>
-      <b>5</b> Records are displayed as tree (see site structure)<br>
-      <b>6</b> Displays the child records within a tree structure (see articles
-      module)</td>
+  <td>並べ替えのモード (<code>integer</code>)</td>
+  <td><b>0</b> レコードを並べ替えない<br>
+      <b>1</b> レコードを固定した項目で並べ替え<br>
+      <b>2</b> レコードを切り替えできる項目で並べ替え<br>
+      <b>3</b> レコードを親のテーブルで並べ替え<br>
+      <b>4</b> 親のレコードの子のレコードを表示
+      (スタイルシートモジュールを参照)<br>
+      <b>5</b> レコードをツリー表示 (サイト構造を参照)<br>
+      <b>6</b> 子のレコードをツリー構造の中に表示
+      (アーティクルモジュールを参照)</td>
 </tr>
 <tr>
   <td>flag</td>
-  <td>Sorting flag (<code>integer</code>)</td>
-  <td><b>1</b> Sort by initial letter ascending<br>
-      <b>2</b> Sort by initial letter descending<br>
-      <b>3</b> Sort by initial two letters ascending<br>
-      <b>4</b> Sort by initial two letters descending<br>
-      <b>5</b> Sort by day ascending<br>
-      <b>6</b> Sort by day descending<br>
-      <b>7</b> Sort by month ascending<br>
-      <b>8</b> Sort by month descending<br>
-      <b>9</b> Sort by year ascending<br>
-      <b>10</b> Sort by year descending<br>
-      <b>11</b> Sort ascending<br>
-      <b>12</b> Sort descending</td>
+  <td>並べ替えのフラッグ (<code>integer</code>)</td>
+  <td><b>1</b> 最初の1文字で昇順に並べ替え<br>
+      <b>2</b> 最初の1文字で降順に並べ替え<br>
+      <b>3</b> 最初の2文字で渉儒に並べ替え<br>
+      <b>4</b> 最初の2文字で降順に並べ替え<br>
+      <b>5</b> 日で昇順に並べ替え<br>
+      <b>6</b> 日で降順に並べ替え<br>
+      <b>7</b> 月で昇順に並べ替え<br>
+      <b>8</b> 月で降順に並べ替え<br>
+      <b>9</b> 年で昇順に並べ替え<br>
+      <b>10</b> 年で降順に並べ替え<br>
+      <b>11</b> 昇順に並べ替え<br>
+      <b>12</b> 降順に並べ替え</td>
 </tr>
 <tr>
   <td>panelLayout</td>
-  <td>Panel layout (<code>string</code>)</td>
-  <td><b>search</b> show the search records menu<br>
-      <b>sort</b> show the sort records menu<br>
-      <b>filter</b> show the filter records menu<br>
-      <b>limit</b> show the limit records menu. Separate options with comma
-      (= space) and semicolon (= new line) like
-      <code>sort,filter;search,limit</code>.</td>
+  <td>パネルの配置 (<code>string</code>)</td>
+  <td><b>search</b> レコードを検索するメニューを表示<br>
+      <b>sort</b> レコードを並べ替えるメニューを表示<br>
+      <b>filter</b> レコードをフィルターするメニューを表示<br>
+      <b>limit</b> レコードのメニューを限定して表示します。オプションはsort,filter;search,limitのように、コンマ(= スペース)とセミコロン(= 改行)で区切ります。</td>
 </tr>
 <tr>
   <td>fields</td>
-  <td>Default sorting values (<code>array</code>)</td>
-  <td>One or more fields that are used to sort the table.</td>
+  <td>並べ替えの初期値 (<code>array</code>)</td>
+  <td>テーブルの並べ替えに使用する1つ以上の項目です。</td>
 </tr>
 <tr>
   <td>headerFields</td>
-  <td>Header fields (<code>array</code>)</td>
-  <td>One or more fields that will be shown in the header element (sorting mode
-      4 only).</td>
+  <td>ヘッダーの項目 (<code>array</code>)</td>
+  <td>ヘッダーの要素に表示する1つ以上の項目です。
+  (並べ替えモード4だけ)</td>
 </tr>
 <tr>
   <td>icon</td>
-  <td>Tree icon (<code>string</code>)</td>
-  <td>Path to an icon that will be shown on top of the tree (sorting mode 5 and
-      6 only).</td>
+  <td>ツリーのアイコン (<code>string</code>)</td>
+  <td>ツリーの最上部に表示するアイコンのパスです。(並べ替えモード5と6だけ)</td>
 </tr>
 <tr>
   <td>root</td>
-  <td>Root nodes (<code>array</code>)</td>
-  <td>IDs of the root records (pagemounts). This value usually takes care of
-      itself.</td>
+  <td>rootのノード (<code>array</code>)</td>
+  <td>rootのレコード(ページマウント)のIDです。この値は通常、rootのノード自身が管理します。</td>
 </tr>
 <tr>
   <td>filter</td>
-  <td>Query filter (<code>array</code>)</td>
-  <td>Allows you to add custom filters as arrays, e.g. <code>array('status=?',
-      'active')</code>.</td>
+  <td>問い合わせフィルター (<code>array</code>)</td>
+  <td>独自のフィルターを追加できます。例: <code>array('status=?', 'active')</code></td>
 </tr>
 <tr>
   <td>disableGrouping</td>
-  <td>trueまたはfalse (<code>論理値</code>)</td>
-  <td>Allows you to disable the group headers in list view and parent view.</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
+  <td>リストビューとペアレントビューで、グループのヘッダーを無効にできます。</td>
 </tr>
 <tr>
   <td>paste_button_callback</td>
-  <td>コールバック関数 (<code>配列</code>)</td>
-  <td>This function will be called instead of displaying the default paste
-      buttons. Please specify as <code>array('Class', 'Method')</code>.</td>
+  <td>コールバック関数 (<code>array</code>)</td>
+  <td>通常の貼り付けボタンを表示する代わりに、この関数を呼び出します。
+  <code>array('Class', 'Method')</code>として指定してください。</td>
 </tr>
 <tr>
   <td>child_record_callback</td>
-  <td>コールバック関数 (<code>配列</code>)</td>
-  <td>This function will be called to render the child elements (sorting mode 4
-      only). Please specify as <code>array('Class', 'Method')</code>.</td>
+  <td>コールバック関数 (<code>array</code>)</td>
+  <td>子の要素を表示するため、この関数を呼び出します(並べ替えモード4だけ)。
+  <code>array('Class', 'Method')</code>として指定してください。</td>
 </tr>
 <tr>
   <td>child_record_class</td>
-  <td>CSS class (<code>string</code>)</td>
-  <td>Allows you to add a CSS class to the parent view elements.</td>
+  <td>CSSのクラス (<code>string</code>)</td>
+  <td>ペアレントビューの要素にCSSのクラスを追加できます。</td>
 </tr>
 </table>
 
 
-#### Labels
+#### ラベル(label)
 
 <table>
 <tr>
-  <th>Key</th>
-  <th>Value</th>
-  <th>Description</th>
+  <th>キー</th>
+  <th>値</th>
+  <th>説明</th>
 </tr>
 <tr>
   <td>fields</td>
-  <td>Fields (<code>array</code>)</td>
-  <td>One or more fields that will be shown in the list.</td>
+  <td>項目 (<code>array</code>)</td>
+  <td>リストに表示する1つ以上の項目です。</td>
 </tr>
 <tr>
   <td>format</td>
-  <td>Format string (<code>string</code>)</td>
-  <td>HTML string used to format the fields that will be shown (e.g.
-      <code><strong>%s</strong></code>).</td>
+  <td>書式文字列 (<code>string</code>)</td>
+  <td>項目の書式整形に使用するHTMLの文字列です。
+  (例: <code><strong>%s</strong></code>)</td>
 </tr>
 <tr>
   <td>maxCharacters</td>
-  <td>Number of characters (<code>integer</code>)</td>
-  <td>Maximum number of characters of the label.</td>
+  <td>文字数 (<code>integer</code>)</td>
+  <td>ラベルの最大の文字数です。</td>
 </tr>
 <tr>
   <td>group_callback</td>
-  <td>コールバック関数 (<code>配列</code>)</td>
-  <td>Call a custom function instead of using the default group header
-      function.</td>
+  <td>コールバック関数 (<code>array</code>)</td>
+  <td>通常のグループのヘッダーの代わりに呼び出す独自の関数です。</td>
 </tr>
 <tr>
   <td>label_callback</td>
-  <td>コールバック関数 (<code>配列</code>)</td>
-  <td>Call a custom function instead of using the default label function.</td>
+  <td>コールバック関数 (<code>array</code>)</td>
+  <td>通常のラベルの関数の代わりに呼び出す独自の関数です。</td>
 </tr>
 </table>
 
 
-### Operations
+### 操作
 
-The operations array is divided into two sections: global operations that relate
-to all records at once (e.g. editing multiple records) and regular operations
-that relate to a particular record only (e.g. editing or deleting a record).
+操作の配列は2つのセクションに分かれています。全体的な操作は(複数を変更のような)一度にすべてのレコードに関係し、通常の操作は(レコードの変更や削除といった)特定のレコードだけに関係します。
 
 
-#### Global operations
+#### 全体的な操作(global_operations)
 
 <table>
 <tr>
-  <th>Key</th>
-  <th>Value</th>
-  <th>Description</th>
+  <th>キー</th>
+  <th>値</th>
+  <th>説明</th>
 </tr>
 <tr>
   <td>label</td>
   <td><code>&$GLOBALS['TL_LANG']</code> (<code>string</code>)</td>
-  <td>Button label. Typically a reference to the global language array.</td>
+  <td>ボタンのラベルです。一般的にグローバルな言語配列の参照です。</td>
 </tr>
 <tr>
   <td>href</td>
-  <td>URL fragment (<code>string</code>)</td>
-  <td>URL fragment that is added to the URI string when the button is clicked
-      (e.g. <code>act=editAll</code>).</td>
+  <td>URLの断片 (<code>string</code>)</td>
+  <td>URLの断片はボタンがクリックされたときに追加するURIの文字列です。
+  (例: <code>act=editAll</code>)</td>
 </tr>
 <tr>
   <td>class</td>
-  <td>CSS class (<code>string</code>)</td>
-  <td>CSS class attribute of the button.</td>
+  <td>CSSのクラス (<code>string</code>)</td>
+  <td>ボタンのCSSのクラス属性です。</td>
 </tr>
 <tr>
   <td>attributes</td>
-  <td>Additional attributes (<code>string</code>)</td>
-  <td>Additional attributes like event handler or style definitions.</td>
+  <td>追加の属性 (<code>string</code>)</td>
+  <td>イベントハンドラーやスタイルの定義といった、追加の属性です。</td>
 </tr>
 <tr>
   <td>button_callback</td>
-  <td>コールバック関数 (<code>配列</code>)</td>
-  <td>Call a custom function instead of using the default button function.
-      Please specify as <code>array('Class', 'Method')</code>.</td>
+  <td>コールバック関数 (<code>array</code>)</td>
+  <td>通常のボタンの関数を使用する代わりに呼び出す独自の関数です。
+  <code>array('Class', 'Method')</code>として指定してください。</td>
 </tr>
 </table>
 
 
-#### Regular operations
+#### 通常の操作(operations)
 
 <table>
 <tr>
-  <th>Key</th>
-  <th>Value</th>
-  <th>Description</th>
+  <th>キー</th>
+  <th>値</th>
+  <th>説明</th>
 </tr>
 <tr>
   <td>label</td>
   <td><code>&$GLOBALS['TL_LANG']</code> (<code>string</code>)</td>
-  <td>Button label. Typically a reference to the global language array.</td>
+  <td>ボタンのラベルです。一般的にグローバルな言語配列の参照です。</td>
 </tr>
 <tr>
   <td>href</td>
-  <td>URL fragment (<code>string</code>)</td>
-  <td>URL fragment that is added to the URI string when the button is clicked
-      (e.g. <code>act=edit</code>).</td>
+  <td>URLの断片 (<code>string</code>)</td>
+  <td>URLの断片はボタンがクリックされたときに追加するURIの文字列です。
+  (例: <code>act=edit</code>)</td>
 </tr>
 <tr>
   <td>icon</td>
-  <td>Icon (<code>string</code>)</td>
-  <td>Path and filename of the icon.</td>
+  <td>アイコン (<code>string</code>)</td>
+  <td>アイコンのパスとファイル名です。</td>
 </tr>
 <tr>
   <td>attributes</td>
-  <td>Additional attributes (<code>string</code>)</td>
-  <td>Additional attributes like event handler or style definitions.</td>
+  <td>追加の属性 (<code>string</code>)</td>
+  <td>イベントハンドラーやスタイルの定義といった、追加の属性です。</td>
 </tr>
 <tr>
   <td>button_callback</td>
-  <td>コールバック関数 (<code>配列</code>)</td>
-  <td>Call a custom function instead of using the default button function.
-      Please specify as <code>array('Class', 'Method')</code>.</td>
+  <td>コールバック関数 (<code>array</code>)</td>
+  <td>通常のボタンの関数を使用する代わりに呼び出す独自の関数です。
+  <code>array('Class', 'Method')</code>として指定してください。</td>
 </tr>
 </table>
 
 
-### Fields
+### 項目
 
-The fields array defines the columns of a table. Depending on these settings,
-the Contao core engine decides which type of form field to load, whether a user
-is allowed to access a certain field and whether a field can be used as sort or
-filter criteria.
+fieldsの配列は表のカラムを定義します。これらの設定によって、Contaoのコアのエンジンは読み込むフォームの項目の種類、特定の項目がユーザーにアクセスを許可しているか、項目を並べ替えやフィルターの条件に使用できるかどうかを決定します。
 
 <table>
 <tr>
-  <th>Key</th>
-  <th>Value</th>
-  <th>Description</th>
+  <th>キー</th>
+  <th>値</th>
+  <th>説明</th>
 </tr>
 <tr>
   <td>label</td>
   <td><code>&$GLOBALS['TL_LANG']</code> (<code>string</code>)</td>
-  <td>Field label. Typically a reference to the global language array.</td>
+  <td>フォームの項目のラベルです。一般的にグローバルな言語配列の参照です。</td>
 </tr>
 <tr>
   <td>default</td>
-  <td>Default value (<code>mixed</code>)</td>
-  <td>Default value that is set when a new record is created.</td>
+  <td>初期値 (<code>mixed</code>)</td>
+  <td>新しいレコードを作成する時に初期値として設定する値です。</td>
 </tr>
 <tr>
   <td>exclude</td>
-  <td>trueまたはfalse (<code>論理値</code>)</td>
-  <td>If true the field will be excluded for non-admins. It can be enabled in
-      the user group module (allowed excluded fields).</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
+  <td>trueの場合、この項目を非管理者からは除外します。ユーザーグループのモジュール(の許可する項目)で有効にできます。</td>
 </tr>
 <tr>
   <td>search</td>
-  <td>trueまたはfalse (<code>論理値</code>)</td>
-  <td>If true the field will be included in the search menu (see "sorting
-      records" -> "panelLayout").</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
+  <td>trueの場合、この項目を検索のメニューに含めます。(並べ替えのレコード → "panelLayout"を参照)</td>
 </tr>
 <tr>
   <td>sorting</td>
-  <td>trueまたはfalse (<code>論理値</code>)</td>
-  <td>If true the field will be included in the sorting menu (see "sorting
-      records" -> "panelLayout").</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
+  <td>trueの場合、この項目を並べ替えのメニューに含めます。(並べ替えのレコード → "panelLayout"を参照)</td>
 </tr>
 <tr>
   <td>filter</td>
-  <td>trueまたはfalse (<code>論理値</code>)</td>
-  <td>If true the field will be included in the filter menu (see "sorting
-      records" -> "panelLayout").</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
+  <td>trueの場合、この項目をフィルターのメニューに含めます。(並べ替えのレコード → "panelLayout"を参照)</td>
 </tr>
 <tr>
   <td>flag</td>
-  <td>Sorting mode (<code>integer</code>)</td>
-  <td><b>1</b> Sort by initial letter ascending<br>
-      <b>2</b> Sort by initial letter descending<br>
-      <b>3</b> Sort by initial X letters ascending (see length)<br>
-      <b>4</b> Sort by initial X letters descending (see length)<br>
-      <b>5</b> Sort by day ascending<br>
-      <b>6</b> Sort by day descending<br>
-      <b>7</b> Sort by month ascending<br>
-      <b>8</b> Sort by month descending<br>
-      <b>9</b> Sort by year ascending<br>
-      <b>10</b> Sort by year descending<br>
-      <b>11</b> Sort ascending<br>
-      <b>12</b> Sort descending</td>
+  <td>並べ替えのモード (<code>integer</code>)</td>
+  <td><b>1</b> 最初の1文字で昇順に並べ替え<br>
+      <b>2</b> 最初の1文字で降順に並べ替え<br>
+      <b>3</b> 最初のX文字で昇順に並べ替え(lengthを参照)<br>
+      <b>4</b> 最初のX文字で降順に並べ替え(lengthを参照)<br>
+      <b>5</b> 日で昇順に並べ替え<br>
+      <b>6</b> 日で降順に並べ替え<br>
+      <b>7</b> 月で昇順に並べ替え<br>
+      <b>8</b> 月で降順に並べ替え<br>
+      <b>9</b> 年で昇順に並べ替え<br>
+      <b>10</b> 年で降順に並べ替え<br>
+      <b>11</b> 昇順に並べ替え<br>
+      <b>12</b> 降順に並べ替え</td>
 </tr>
 <tr>
   <td>length</td>
-  <td>Sorting length (<code>integer</code>)</td>
-  <td>Allows to specify the number of characters that are used to build sorting
-      groups (flag 3 and 4).</td>
+  <td>並べ替えの長さ (<code>integer</code>)</td>
+  <td>並べ替えのグループの作成に使用する文字の数を(flagの3と4で)指定します。</td>
 </tr>
 <tr>
   <td>inputType</td>
-  <td>Field type (<code>string</code>)</td>
-  <td><b>text</b> Text field<br>
-      <b>password</b> Password field<br>
-      <b>textarea</b> Textarea<br>
-      <b>select</b> Drop-down menu<br>
-      <b>checkbox</b> Checkbox<br>
-      <b>radio</b> Radio button<br>
-      <b>radioTable</b> Table with images and radio buttons<br>
-      <b>inputUnit</b> Text field with small unit drop-down menu<br>
-      <b>trbl</b> Four text fields with a small unit drop-down menu<br>
-      <b>chmod</b> CHMOD table<br>
-      <b>pageTree</b> Page tree<br>
-      <b>fileTree</b> File tree<br>
-      <b>tableWizard</b> Table wizard<br>
-      <b>listWizard</b> List wizard<br>
-      <b>optionWizard</b> Option wizard<br>
-      <b>moduleWizard</b> Module wizard<br>
-      <b>checkboxWizard</b> Checkbox Wizard</td>
+  <td>項目の種類 (<code>string</code>)</td>
+  <td><b>text</b> テキスト入力<br>
+      <b>password</b> パスワード入力<br>
+      <b>textarea</b> テキストエリア<br>
+      <b>select</b> ドロップダウンメニュー<br>
+      <b>checkbox</b> チェックボックス<br>
+      <b>radio</b> ラジオボタン<br>
+      <b>radioTable</b> 画像とラジオボタンのある表<br>
+      <b>inputUnit</b> 小さな単位のドロップダウンメニューのあるテキスト入力<br>
+      <b>trbl</b> 小さな単位のドロップダウンメニューのある4つのテキスト入力<br>
+      <b>chmod</b> CHMODの表<br>
+      <b>pageTree</b> ページツリー<br>
+      <b>fileTree</b> ファイルツリー<br>
+      <b>tableWizard</b> テーブルウィザード<br>
+      <b>listWizard</b> 箇条書きウィザード<br>
+      <b>optionWizard</b> オプションウィザード<br>
+      <b>moduleWizard</b> モジュールウィザード<br>
+      <b>checkboxWizard</b> チェックボックスウィザード</td>
 </tr>
 <tr>
   <td>options</td>
-  <td>Options (<code>array</code>)</td>
-  <td>Options of a drop-down menu or radio button menu.</td>
+  <td>オプション (<code>array</code>)</td>
+  <td>ドロップダウンメニューやラジオボタンメニューのオプションです。</td>
 </tr>
 <tr>
   <td>options_callback</td>
-  <td>コールバック関数 (<code>配列</code>)</td>
-  <td>Callback function that returns an array of options. Please specify as
-      <code>array('Class', 'Method')</code>.</td>
+  <td>コールバック関数 (<code>array</code>)</td>
+  <td>オプションの配列を返すコールバック関数です。
+  <code>array('Class', 'Method')</code>として指定してください。</td>
 </tr>
 <tr>
   <td>foreignKey</td>
-  <td>table.field (<code>string</code>)</td>
-  <td>Get options from a database table. Returns ID as key and the field you
-      specify as value.</td>
+  <td>テーブル.項目 (<code>string</code>)</td>
+  <td>オプションをデータベースのテーブルから得ます。IDをキー、値として指定した項目を返します。</td>
 </tr>
 <tr>
   <td>reference</td>
   <td><code>&$GLOBALS['TL_LANG']</code> (<code>string</code>)</td>
-  <td>Array that holds the options labels. Typically a reference to the global
-      language array.</td>
+  <td>オプションのラベルを保持する配列です。一般にグローバルな言語配列の参照です。</td>
 </tr>
 <tr>
   <td>explanation</td>
   <td><code>&$GLOBALS['TL_LANG']</code> (<code>string</code>)</td>
-  <td>Array that holds the explanation. Typically a reference to the global
-      language array.</td>
+  <td>説明を保持する配列です。一般にグローバルな言語配列の参照です。</td>
 </tr>
 <tr>
   <td>input_field_callback</td>
-  <td>コールバック関数 (<code>配列</code>)</td>
-  <td>Executes a custom function instead of using the default input field
-      routine and passes the the DataContainer object and the label as
-      arguments.</td>
+  <td>コールバック関数 (<code>array</code>)</td>
+  <td>通常の項目の入力を処理を使用する代わりに呼び出す独自の関数で、データコンテナのオブジェクトをlabelを引数にします。</td>
 </tr>
 <tr>
   <td>eval</td>
-  <td>Field configuration (<code>array</code>)</td>
-  <td>Various configuration options. See next paragraph.</td>
+  <td>項目の構成 (<code>array</code>)</td>
+  <td>様々な構成のオプションです。次の項を参照してください。</td>
 </tr>
 <tr>
   <td>wizard</td>
-  <td>コールバック関数 (<code>配列</code>)</td>
-  <td>Call a custom function and add its return value to the input field. Please
-      specify as <code>array('Class', 'Method')</code>.</td>
+  <td>コールバック関数 (<code>array</code>)</td>
+  <td>独自の関数を呼び出して、その戻り値を項目の入力に追加します。
+  <code>array('Class', 'Method')</code>として指定してください。</td>
 </tr>
 <tr>
   <td>load_callback</td>
-  <td>Callback functions (<code>array</code>)</td>
-  <td>These functions will be called when the field is loaded. Please specify
-      each callback function as <code>array('Class', 'Method')</code>. Passes
-      the field's value and the data container as arguments. Expects the field
-      value as return value.</td>
+  <td>コールバック関数 (<code>array</code>)</td>
+  <td>項目を読み込んだときに、これらの関数を呼び出します。<code>array('Class', 'Method')</code>として、それぞれのコールバック関数を指定してください。項目の値とデータコンテナを引数とし、項目の値を戻り値とします。</td>
 </tr>
 <tr>
   <td>save_callback</td>
-  <td>Callback functions (<code>array</code>)</td>
-  <td>These functions will be called when the field is saved. Please specify
-      each callback function as <code>array('Class', 'Method')</code>. Passes
-      the field's value and the data container as arguments. Expects the field
-      value as return value. Throw an exception to display an error
-      message.</td>
+  <td>コールバック関数 (<code>array</code>)</td>
+  <td>項目を保存したときに、これらの関数を呼び出します。<code>array('Class', 'Method')</code>として、それぞれのコールバック関数を指定してください。項目の値とデータコンテナを引数とし、項目の値を戻り値とします。エラーメッセージを表示するには例外を投げます。</td>
 </tr>
 </table>
 
 
-### Evaluation
+### 評価
 
-The evaluation array configures a particular field in detail. You can e.g.
-create mandatory fields, add a date picker or define the rows and columns of a
-textarea. You can also modify the field appearance or enable data encryption.
-Each field can be validated against a regular expression.
+評価の配列は特定の項目の詳細を構成します。例えば、必須の項目の作成、日付選択の追加、テキストエリアの行と列の指定ができます。また、項目の外観を修正したり、データの暗号化を有効にするとこともできます。各項目は正規表現で検証できます。
 
 <table>
 <tr>
-  <th>Key</th>
-  <th>Value</th>
-  <th>Description</th>
+  <th>キー</th>
+  <th>値</th>
+  <th>説明</th>
 </tr>
 <tr>
   <td>helpwizard</td>
-  <td>trueまたはfalse (<code>論理値</code>)</td>
-  <td>If true the helpwizard icon will appear next to the field label.</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
+  <td>trueの場合、ヘルプウィザードのアイコンを項目のラベルの次に表示します。</td>
 </tr>
 <tr>
   <td>mandatory</td>
-  <td>trueまたはfalse (<code>論理値</code>)</td>
-  <td>If true the field cannot be empty.</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
+  <td>trueの場合、この項目の入力を必須とします。</td>
 </tr>
 <tr>
   <td>maxlength</td>
-  <td>Maximum length (<code>integer</code>)</td>
-  <td>Maximum number of characters that is allowed in the current field.</td>
+  <td>最大の長さ (<code>integer</code>)</td>
+  <td>この項目に可能な最大の文字数です。</td>
 </tr>
 <tr>
   <td>minlength</td>
-  <td>Minimum length (<code>integer</code>)</td>
-  <td>Minimum number of characters that have to be entered.</td>
+  <td>最小の長さ (<code>integer</code>)</td>
+  <td>入力しなければならない最小の文字数です。</td>
 </tr>
 <tr>
   <td>fallback</td>
-  <td>trueまたはfalse (<code>論理値</code>)</td>
-  <td>If true the field can only be assigned once per table.</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
+  <td>trueの場合、この項目はテーブルに対して一度だけ割り当てできます。</td>
 </tr>
 <tr>
   <td>rgxp</td>
-  <td>Regular expression (<code>string</code>)</td>
-  <td><b>digit</b> allows numeric characters only<br>
-      <b>alpha</b> allows alphabetic characters only<br>
-      <b>alnum</b> allows alphanumeric characters only<br>
-      <b>prcnt</b> allows numbers between 0 and 100<br>
-      <b>extnd</b> disallows <code>#&amp;()/<=></code><br>
-      <b>date</b> expects a valid date<br>
-      <b>time</b> expects avalid time<br>
-      <b>datim</b> expects a valid date and time<br>
-      <b>email</b> expects a valid e-mail address<br>
-      <b>friendly</b> expects a valid "friendly name format" e-mail address<br>
-      <b>url</b> expects a valid URL<br>
-      <b>phone</b> expects a valid phone number</td>
+  <td>正規表現 (<code>string</code>)</td>
+  <td><b>digit</b> 数字だけを許可<br>
+      <b>alpha</b> 英字だけを許可<br>
+      <b>alnum</b> 英数字だけを許可<br>
+      <b>prcnt</b> 0から100の間の数値を許可<br>
+      <b>extnd</b> <code>#&amp;()/<=></code>の文字を禁止<br>
+      <b>date</b> 有効な日付を要求<br>
+      <b>time</b> 有効な時刻を要求<br>
+      <b>datim</b> 有効な日付と時刻を要求<br>
+      <b>email</b> 有効な電子メールアドレスを要求<br>
+      <b>friendly</b> 電子メールアドレスの有効な "氏名" の形式を要求<br>
+      <b>url</b> 有効なURLを要求<br>
+      <b>phone</b> 有効な電話番号を要求</td>
 </tr>
 <tr>
   <td>cols</td>
-  <td>Columns (<code>integer</code>)</td>
-  <td>Number of columns (textarea fields only).</td>
+  <td>列 (<code>integer</code>)</td>
+  <td>列の数です。(テキストエリアだけ)</td>
 </tr>
 <tr>
   <td>rows</td>
-  <td>Rows (<code>integer</code>)</td>
-  <td>Number of rows (textarea fields only).</td>
+  <td>行 (<code>integer</code>)</td>
+  <td>行の数です。(テキストエリアだけ)</td>
 </tr>
 <tr>
   <td>wrap</td>
-  <td>Word wrapping (<code>string</code>)</td>
-  <td><b>off</b> disable word wrapping<br>
-      <b>soft</b> soft word wrapping<br>
-      <b>hard</b> hard word wrapping</td>
+  <td>ワードラップ (<code>string</code>)</td>
+  <td><b>off</b> ワードラップをしない<br>
+      <b>soft</b> ソフトワードラップ<br>
+      <b>hard</b> ハードワードラップ</td>
 </tr>
 <tr>
   <td>multiple</td>
-  <td>trueまたはfalse (<code>論理値</code>)</td>
-  <td>Make the input field multiple. Applies to text fields, select menus, radio
-      buttons and checkboxes. Required for the checkbox wizard.</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
+  <td>入力項目を複数値にします。テキスト入力、選択メニュー、ラジオボタン、チェックボックスに適用できます。チェックボックスウィザードには必要です。</td>
 </tr>
 <tr>
   <td>size</td>
-  <td>Size (<code>integer</code>)</td>
-  <td>Size of a multiple select menu or number of input fields.</td>
+  <td>サイズ (<code>integer</code>)</td>
+  <td>複数の選択が可能な選択メニューや入力項目の数の大きさです。</td>
 </tr>
 <tr>
   <td>style</td>
-  <td>Style attributes (<code>string</code>)</td>
-  <td>Style attributes (e.g. <code>border:2px</code>)</td>
+  <td>スタイル属性 (<code>string</code>)</td>
+  <td>スタイル属性です。(例: <code>border:2px</code>)</td>
 </tr>
 <tr>
   <td>rte</td>
-  <td>Rich text editor file (<code>string</code>)</td>
-  <td><b>tinyMCE</b> use file <code>config/tinyMCE.php</code><br>
-      <b>tinyFlash</b> use file <code>config/tinyFlash.php</code><br>
-      You can add your own configuration files too.</td>
+  <td>リッチテキストエディターのファイル (<code>string</code>)</td>
+  <td><b>tinyMCE</b> <code>config/tinyMCE.php</code>を使用<br>
+      <b>tinyFlash</b> <code>config/tinyFlash.php</code>を使用<br>
+      独自の構成ファイルも追加できます。</td>
 </tr>
 <tr>
   <td>submitOnChange</td>
-  <td>trueまたはfalse (<code>論理値</code>)</td>
-  <td>If true the form will be submitted when the field value changes.</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
+  <td>trueの場合、項目の値を変更したときにフォームを提出します。</td>
 </tr>
 <tr>
   <td>nospace</td>
-  <td>trueまたはfalse (<code>論理値</code>)</td>
-  <td>If true whitespace characters will not be allowed.</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
+  <td>trueの場合、空白文字の使用を禁止します。</td>
 </tr>
 <tr>
   <td>allowHtml</td>
-  <td>trueまたはfalse (<code>論理値</code>)</td>
-  <td>If true the current field will accept HTML input.</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
+  <td>trueの場合、この項目はHTMLの入力を受け入れます。</td>
 </tr>
 <tr>
   <td>preserveTags</td>
-  <td>trueまたはfalse (<code>論理値</code>)</td>
-  <td>If true no HTML tags will be removed at all.</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
+  <td>trueの場合、どのHTMLのタグも削除しません。</td>
 </tr>
 <tr>
   <td>decodeEntities</td>
-  <td>trueまたはfalse (<code>論理値</code>)</td>
-  <td>If true HTML entities will be decoded. Note that HTML entities are always
-      decoded if allowHtml is true.</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
+  <td>trueの場合、HTMLのエンティティを常にデコードします。allowHtmlがtrueの場合も、HTLのエンティティを常にデコードすることに注意してください。</td>
 </tr>
 <tr>
   <td>doNotSaveEmpty</td>
-  <td>trueまたはfalse (<code>論理値</code>)</td>
-  <td>If true the field will not be saved if it is empty.</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
+  <td>trueの場合、項目が空の場合はは保存しません。</td>
 </tr>
 <tr>
   <td>alwaysSave</td>
-  <td>trueまたはfalse (<code>論理値</code>)</td>
-  <td>If true the field will always be saved, even if its value has not changed.
-      This can be useful in conjunction with a load_callback.</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
+  <td>trueの場合、値が変更されていない場合でも項目を常に保存します。これはload_callbackと併せて使用すると役立つでしょう。</td>
 </tr>
 <tr>
   <td>spaceToUnderscore</td>
-  <td>trueまたはfalse (<code>論理値</code>)</td>
-  <td>If true any whitespace character will be replaced by an underscore.</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
+  <td>trueの場合、すべての空白文字をアンダースコアに置き換えます。</td>
 </tr>
 <tr>
   <td>unique</td>
-  <td>trueまたはfalse (<code>論理値</code>)</td>
-  <td>If true the field value cannot be saved if it exists already.</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
+  <td>trueの場合、値が既に存在すると項目の値を保存できません。</td>
 </tr>
 <tr>
   <td>encrypt</td>
-  <td>trueまたはfalse (<code>論理値</code>)</td>
-  <td>If true the field value will be stored encrypted.</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
+  <td>trueの場合、項目の値を暗号化して保存します。</td>
 </tr>
 <tr>
   <td>trailingSlash</td>
-  <td>trueまたはfalse (<code>論理値</code>)</td>
-  <td>If true a trailing slash will be added to the field value. If false, an
-      existing trailing slash will be removed from the field value.</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
+  <td>trueの場合、項目の値の末尾にスラッシュを追加します。falseの場合、項目の値の末尾にあるスラッシュを削除します。</td>
 </tr>
 <tr>
   <td>files</td>
-  <td>trueまたはfalse (<code>論理値</code>)</td>
-  <td>If true files and folders will be shown. If false, only folders will be
-      shown. Applies to file trees only.</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
+  <td>trueの場合、ファイルとフォルダーを表示します。falseの場合、フォルダーだけを表示します。ファイルツリーにだけ適用できます。</td>
 </tr>
 <tr>
   <td>filesOnly</td>
-  <td>trueまたはfalse (<code>論理値</code>)</td>
-  <td>Removes the radio buttons or checkboxes next to folders. Applies to file
-      trees only.</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
+  <td>フォルダーの隣のラジオボタンやチェックボックスを削除します。ファイルツリーにだけ適用できます。</td>
 </tr>
 <tr>
   <td>extensions</td>
-  <td>File extensions (<code>string</code>)</td>
-  <td>Limits the file tree to certain file types (comma separated list). Applies
-      to file trees only.</td>
+  <td>ファイルの拡張子 (<code>string</code>)</td>
+  <td>ファイルツリーを特定の(コンマで区切ったリストの)種類のファイルに制限します。ファイルツリーにだけ適用できます。</td>
 </tr>
 <tr>
   <td>path</td>
-  <td>Path (<code>string</code>)</td>
-  <td>Custom root directory for file trees. Applies to file trees only.</td>
+  <td>パス (<code>string</code>)</td>
+  <td>ファイルツリーに独自の独自のルートディレクトリを指定します。ファイルツリーにだけ適用できます。</td>
 </tr>
 <tr>
   <td>fieldType</td>
-  <td>Input field type (<code>string</code>)</td>
-  <td><b>checkbox</b> allow multiple selections<br>
-      <b>radio</b> allow a single selection only<br>
-      Applies to file and page trees only.</td>
+  <td>入力項目の種類 (<code>string</code>)</td>
+  <td><b>checkbox</b> 複数の選択が可能<br>
+      <b>radio</b> 1つだけ選択可能<br>
+      ファイルツリーにだけ適用できます。      
+  </td>
 </tr>
 <tr>
   <td>includeBlankOption</td>
-  <td>trueまたはfalse (<code>論理値</code>)</td>
-  <td>If true a blank option will be added to the options array. Applies to
-      drop-down menus only.</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
+  <td>trueの場合、オプションの配列に空白(非選択)の選択肢を追加します。ドロップダウンメニューだけに適用できます。</td>
 </tr>
 <tr>
   <td>blankOptionLabel</td>
-  <td>Label (<code>string</code>)</td>
-  <td>Label for the blank option (defaults to <code>-</code>).</td>
+  <td>ラベル (<code>string</code>)</td>
+  <td>空白の選択肢のラベルです。(既定値は<code>-</code>)</td>
 </tr>
 <tr>
   <td>chosen</td>
-  <td>true/false (<code>boolean</code>)</td>
-  <td>Native selects enhanced with
-      <a href="http://harvesthq.github.io/chosen/" target="_blank">Chosen</a>.</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
+  <td><a href="http://harvesthq.github.io/chosen/" target="_blank">Chosen</a>で改善した固有の選択メニューにします。</td>
 </tr>
 <tr>
   <td>findInSet</td>
-  <td>trueまたはfalse (<code>論理値</code>)</td>
-  <td>Sort by the actual option values instead of their labels.</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
+  <td>ラベルではなく選択肢の実際の値で並べ替えます。</td>
 </tr>
 <tr>
   <td>datepicker</td>
-  <td>Date picker (<code>string</code>)</td>
-  <td>Date picker configuration string.</td>
+  <td>日付選択 (<code>string</code>)</td>
+  <td>日付選択の構成の文字列です。</td>
 </tr>
 <tr>
   <td>feEditable</td>
-  <td>trueまたはfalse (<code>論理値</code>)</td>
-  <td>If true the current field can be edited in the frontend. Applies to table
-      tl_member only.</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
+  <td>trueの場合、この項目をフロントエンドで編集できます。tl_memberのテーブルだけに適用できます。</td>
 </tr>
 <tr>
   <td>feGroup</td>
-  <td>Group name (<code>string</code>)</td>
-  <td><b>personal</b> personal data<br>
-      <b>address</b> address details<br>
-      <b>contact</b> contact details<br>
-      <b>login</b> login details (table <code>tl_member</code> only)<br>
-      You can also define your own groups.</td>
+  <td>グループ名 (<code>string</code>)</td>
+  <td><b>personal</b> 個人データ<br>
+      <b>address</b> 住所の詳細<br>
+      <b>contact</b> 連絡先の詳細<br>
+      <b>login</b> ログインの詳細 (<code>tl_member</code>のテーブルだけ)<br>
+      独自のグループも定義できます。</td>
 </tr>
 <tr>
   <td>feViewable</td>
-  <td>trueまたはfalse (<code>論理値</code>)</td>
-  <td>If true the current field is viewable in the member listing module.</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
+  <td>trueの場合、この項目をメンバーリストモジュールに表示可能にします。</td>
 </tr>
 <tr>
   <td>doNotCopy</td>
-  <td>trueまたはfalse (<code>論理値</code>)</td>
-  <td>If true the current field will not be duplicated if the record is
-      duplicated.</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
+  <td>trueの場合、レコードを複製するときに、この項目を複製しません。</td>
 </tr>
 <tr>
   <td>hideInput</td>
-  <td>trueまたはfalse (<code>論理値</code>)</td>
-  <td>If true the field value will be hidden (it is still visible in the page
-      source though!).</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
+  <td>trueの場合、項目の値を隠します。(ページのソースの表示では、見えるままです!)</td>
 </tr>
 <tr>
   <td>doNotShow</td>
-  <td>trueまたはfalse (<code>論理値</code>)</td>
-  <td>If true the current field will not be shown in "edit all" or "show
-      details" mode.</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
+  <td>trueの場合、「複数を変更」や「詳細の表示」のモードで、この項目を表示しません。</td>
 </tr>
 <tr>
   <td>isBoolean</td>
-  <td>trueまたはfalse (<code>論理値</code>)</td>
-  <td>Indicates that a particular field is boolean.</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
+  <td>特定の項目が論理値であると示します。</td>
 </tr>
 <tr>
   <td>disabled</td>
-  <td>trueまたはfalse (<code>論理値</code>)</td>
-  <td>Disables the field (not supported by all field types).</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
+  <td>項目を無効にします。(すべての項目の種類でサポートしているわけではありません。)</td>
 </tr>
 <tr>
   <td>readonly</td>
-  <td>trueまたはfalse (<code>論理値</code>)</td>
-  <td>Makes the field read only (not supported by all field types).</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
+  <td>項目を読み込み専用とします。(すべての項目の種類でサポートしているわけではありません。)</td>
 </tr>
 </table>
 
 
-## Palettes
+## パレット
 
-A palette is a group of form fields which are required to edit a record. A
-palette typically does not include all columns of a table but only the ones that
-belong to a particular module or content element. Palettes can change
-dynamically depending on the user's permissions or type of element and certain
-subparts of the form (called subpalettes) can be loaded interactively via Ajax.
+パレットは、レコードを編集するのに必要なフォームの項目のグループです。
+通常、パレットはテーブルのすべての列ではなく、特定のモジュールやコンテンツ要素に属する列だけを含みます。パレットはユーザーの権限や要素の種類に依存して動的に変更でき、(サブパレットと呼ばれる)フォームのある部分をAjaxを介して対話的に読み込めます。
 
 
-### Defining groups
+### グループの定義
 
-A palette is a string of field names which are concatenated with either a
-semicolon (;) or a comma (,). Whereas the comma is just used to separate the
-field names, the semicolon indicates the beginning of a new fieldset, which can
-be expanded and collapsed.
+パレットは、セミコロン(;)またはコンマ(,)で項目を連結した文字列です。コンマは項目の名前を単に区切るために使用し、一方でセミコロンは展開と折り畳みができる新しいフィールドセットの開始を示します。
 
 ![](https://raw.github.com/contao/docs/3.1/manual/en/images/palettes.jpg)
 
-The above example is defined by the following code:
+以下のコードで上記の例を定義しています:
 
 ``` {.php}
 {title_legend},headline,alias,author;{date_legend},date,time;{teaser_legend:hide},subheadline,teaser
 ```
 
-The `title_legend` and `date_legend` placeholders will be replaced with the
-corresponding labels from the "TL_LANG" array.
+`title_legend`と`date_legend`といったプレースホルダーは、"TL_LANG"という配列の対応するラベルに置き換えらます。
 
 ``` {.php}
 $GLOBALS['TL_LANG']['tl_news']['title_legend'] = 'Title and author';
@@ -816,158 +739,135 @@ $GLOBALS['TL_LANG']['tl_news']['date_legend']  = 'Date and time';
 ```
 
 
-### Arranging fields
+### 項目の配置
 
-The Contao back end uses a simple two-column grid system to arrange input fields
-within their groups. You can apply the following CSS classes in the evaluation
-section of the Data Container Array as `tl_class` (e.g. `'tl_class'=>'w50
-wizard'`).
+Contaoのバックエンドは単純な2列のグリッドシステムを使用して、グループ内に入力項目を配置します。データコンテナ配列の評価のセクションで、`tl_class`に以下のCSSのクラスを適用できます。(例: 'tl_class'=>'w50 wizard')
 
 <table>
 <tr>
   <th>tl_class</th>
-  <th>Description</th>
+  <th>説明</th>
 </tr>
 <tr>
   <td>w50</td>
-  <td>Set the field width to 50% and float it (<code>float:left</code>).</td>
+  <td>項目の幅を50%にしてフロート(float: left)にします。</td>
 </tr>
 <tr>
   <td>clr</td>
-  <td>Clear all floats.</td>
+  <td>すべてのfloatをクリアします。</td>
 </tr>
 <tr>
   <td>wizard</td>
-  <td>Shorten the input field so there is enough room for the wizard button
-      (e.g. date picker fields).</td>
+  <td>入力項目を短くして、ウィザードのボタンに十分な場所を用意します。(例: 日付選択の項目)</td>
 </tr>
 <tr>
   <td>long</td>
-  <td>Make the text input field span two columns.</td>
+  <td>テキスト入力を2列の幅にします。</td>
 </tr>
 <tr>
   <td>m12</td>
-  <td>Add a 12 pixel top margin to the element (used for single
-      checkboxes).</td>
+  <td>要素に12ピクセルのトップマージンを追加します。(単一のチェックボックスで使用)</td>
 </tr>
 </table>
 
 
-## Callbacks
+## コールバック
 
-Callback functions are based on the event dispatcher pattern. You can register
-one or more callbacks for a certain event and when the event is triggered, the
-callback functions are being executed. Callbacks allow you to customize the
-program flow of the Contao core engine.
+コールバック関数はイベントのディスパッチャーのパターンに基づいています。特定のイベントに1つ以上のコールバックを登録でき、イベントが起きるとコールバック関数を実行します。コールバックによって、Contaoのコアのエンジンのプログラムの流れをカスタマイズできます。
 
 
-#### Global callbacks
+#### 全体的なコールバック
 
 <table>
 <tr>
-  <th>Callback</th>
-  <th>Description</th>
+  <th>コールバック</th>
+  <th>説明</th>
 </tr>
 <tr>
   <td>onload_callback</td>
-  <td>Is executed when the DataContainer object is initialized. Allows you to
-      e.g. check permissions or to modify the Data Container Array dynamically
-      at runtime.</td>
+  <td>データコンテナのオブジェクトを初期化するときに実行します。例えば権限を確認したり、データコンテナ配列を実行時に変更するといったことができます。</td>
 </tr>
 <tr>
   <td>onsubmit_callback</td>
-  <td>Is executed when a back end form is submitted. Allows you to e.g. modify
-      the form data before it is written to the database (used to calculate
-      intervals in the calendar extension).</td>
+  <td>バックエンドのフォームを提出したときに実行します。例えば、フォームのデータをデータベースに書き込む前に変更することができます。(カレンダー機能拡張で期間の計算に使用しています。)</td>
 </tr>
 <tr>
   <td>ondelete_callback</td>
-  <td>Is executed before a record is removed from the database.</td>
+  <td>データベースからレコードを削除する前に実行します。</td>
 </tr>
 <tr>
   <td>oncut_callback</td>
-  <td>Is executed after a record has been moved to a new position.</td>
+  <td>新しい位置にレコードを移動した後に実行します。</td>
 </tr>
 <tr>
   <td>oncopy_callback</td>
-  <td>Is executed after a record has been duplicated.</td>
+  <td>レコードを複製した後で実行します。</td>
 </tr>
 </table>
 
 
-#### Listing callbacks
+#### 一覧のコールバック
 
 <table>
 <tr>
-  <th>Callback</th>
-  <th>Description</th>
+  <th>コールバック</th>
+  <th>説明</th>
 </tr>
 <tr>
   <td>paste_button_callback</td>
-  <td>Allows for individual paste buttons and is e.g. used in the site structure
-      to disable buttons depending on the user's permissions (requires an
-      additional command check via load_callback).</td>
+  <td>個々の張り付けボタンに使用でき、例えばサイト構造でユーザーの権限に応じてボタンを無効にするために使用しています。(load_callbackによる追加のコマンドの検査が必要です。)</td>
 </tr>
 <tr>
   <td>child_record_callback</td>
-  <td>Defines how child elements are rendered in "parent view".</td>
+  <td>「ペアレントビュー」で子の要素を表示する方法を指定します。</td>
 </tr>
 <tr>
   <td>group_callback</td>
-  <td>Allows for individual group headers in the listing.</td>
+  <td>一覧で、個々のグループのヘッダーに使用できます。</td>
 </tr>
 <tr>
   <td>label_callback</td>
-  <td>Allows for individual labels in the listing and is e.g. used in the user
-      module to add status icons.</td>
+  <td>一覧で、個々のラベルに使用できます。例えば、ユーザーモジュールは状態のアイコンの表示に使用しています。</td>
 </tr>
 </table>
 
 
-#### Operations callbacks
+#### 操作のコールバック
 
 <table>
 <tr>
-  <th>Callback</th>
-  <th>Description</th>
+  <th>コールバック</th>
+  <th>説明</th>
 </tr>
 <tr>
   <td>button_callback</td>
-  <td>Allows for individual navigation icons and is e.g. used in the site
-      structure to disable buttons depending on the user's permissions (requires
-      an additional command check via load_callback).</td>
+  <td>個々のナビゲーションアイコンで使用できます。例えば、サイト構造でユーザーの権限に応じてボタンを無効にするために使用しています。(load_callbackによる追加のコマンドの検査が必要です。)</td>
 </tr>
 </table>
 
 
-#### Field callbacks
+#### 項目のコールバック
 
 <table>
 <tr>
-  <th>Callback</th>
-  <th>Description</th>
+  <th>コールバック</th>
+  <th>説明</th>
 </tr>
 <tr>
   <td>options_callback</td>
-  <td>Allows you to define an individual function to load data into a drop-down
-      menu or checkbox list. Useful e.g. for conditional
-      foreinKey-relations.</td>
+  <td>ドロップダウンメニューやチェックボックスのリストにデータを読み込む個々の関数を定義できます。例えば、条件付きの外部キー関係のために役立ちます。</td>
 </tr>
 <tr>
   <td>input_field_callback</td>
-  <td>Allows for the creation of individual form fields and is e.g. used in the
-      back end module "personal data" to generate the "purge data" widget.
-      Attention: the field is not saved automatically!</td>
+  <td>個々のフォームの項目の作成に使用できます。例えば、「個人データ」のバックエンドモジュールで「データの消去」のウィジェットの生成に使用しています。注意: この項目は自動的に保存しません!</td>
 </tr>
 <tr>
   <td>load_callback</td>
-  <td>Is executed when a form field is initialized and can e.g. be used to load
-      a default value.</td>
+  <td>フォームの項目を初期化するときに実行します。例えば、初期値を読み込むのに使用できます。</td>
 </tr>
 <tr>
   <td>save_callback</td>
-  <td>Is executed when a field is submitted and can e.g. be used to add an
-      individual validation routine.</td>
+  <td>項目を提出したときに実行します。例えば、個々の検証処理の追加に使用できます。</td>
 </tr>
 </table>
 

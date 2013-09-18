@@ -1,167 +1,133 @@
-# Extension Repository
+#  機能拡張リポジトリ
 
-To publish your own extension in the Extension Repository, you need a
-[contributor's account][1]. Once you are logged in, you can access the developer
-interface of the [Extension Repository][2] through the "Manage extensions" and
-"Manage translations" links.
+機能拡張リポジトリに自分の機能拡張を公開するには、[コントリビューターのアカウント][1]の取得が必要です。一旦ログインすると、"Manage extensions"と"Manage translations"のリンクを通して[機能拡張リポジトリ][2]の開発者インターフェイスにアクセスできます。
 
 
-## Adding an extension
+## 機能拡張の追加
 
-To add a new extension, follow the "Manage extensions" link and click the "Add
-extension" button. You will be redirected to a form where you can enter the
-extension details. The yellow box above contains important information about
-naming conventions, which you should read carefully.
+新しい機能拡張を追加するには、"Manage extensions"のリンクに続けて、"Add extension"のボタンをクリックします。 機能拡張の詳細を入力できるフォームに移動します。上部の黄色いボックスは命名規則についての重要な情報を含んでいますので、注意深く読まなければなりません。
 
 ![](https://raw.github.com/contao/docs/3.1/manual/en/images/add-extension.jpg)
 
-The following categories are currently available:
+以下は現在利用できるカテゴリです。
 
 <table>
 <tr>
-  <th>Category</th>
-  <th>Description</th>
+  <th>カテゴリ</th>
+  <th>説明</th>
 </tr>
 <tr>
-  <td>Application</td>
-  <td>The extension is an autonomous application.</td>
+  <td>アプリケーション</td>
+  <td>この機能拡張は自律したアプリケーションです。</td>
 </tr>
 <tr>
-  <td>Plugin</td>
-  <td>The extension is a PHP or JavaScript library.</td>
+  <td>プラグイン</td>
+  <td>この機能拡張はPHPまたはJavaScriptのライブラリです。</td>
 </tr>
 <tr>
-  <td>Theme</td>
-  <td>The extension is a theme for the back end.</td>
+  <td>テーマ</td>
+  <td>この機能拡張はバックエンド用のテーマです。</td>
 </tr>
 <tr>
-  <td>Utility</td>
-  <td>The extension is a utility program for the back end.</td>
+  <td>ユーティリティ</td>
+  <td>この機能拡張はバックエンドのためのユーティリティプログラムです。</td>
 </tr>
 <tr>
-  <td>Widget</td>
-  <td>The extension is a form widget.</td>
+  <td>ウィジェット</td>
+  <td>この機能拡張はフォームウィジェットです。</td>
 </tr>
 <tr>
-  <td>Translation</td>
-  <td>The extension is a translation for a version of Contao.</td>
+  <td>翻訳</td>
+  <td>この機能拡張はContaoのバージョン用の翻訳です。</td>
 </tr>
 <tr>
-  <td>Bundle</td>
-  <td>A set of extensions that can be installed simultaneously.</td>
+  <td>バンドル</td>
+  <td>同時にインストールできる機能拡張の集合です。</td>
 </tr>
 <tr>
-  <td>Other</td>
-  <td>The extension does not fit in any of the above categories.</td>
+  <td>その他</td>
+  <td>この機能拡張は以上のいずれのカテゴリにもあてはまりません。</td>
 </tr>
 </table>
 
 
-## Adding a release
+## リリースの追加
 
-After you have created the extension, you can add a first release. Every new
-version of the extension will be stored as separate release. Open the release
-manager with the respective navigation icon and click the "Add release" button.
+機能拡張を新しく作成した後で、最初のリリースを追加できます。機能拡張の新しいバージョンは、それぞれ別のリリースとして保持します。ナビゲーションの対応したアイコンからリリースの管理を開いて"Add release"のボタンをクリックしてください。
 
 ![](https://raw.github.com/contao/docs/3.1/manual/en/images/add-release.jpg)
 
-Version numbers in the Extension Repository consist of three numeric blocks that
-indicate the major, minor and maintenance version (e.g. `1.0.0`) as well as a
-textual development status (e.g. `beta1`).
+機能拡張リポジトリでバージョン番号は、メジャー、マイナー、保守のバージョンを示す3つの数値の部分(例: 1.0.0)と、テキストによる開発の状態(例: beta1)の構成となっています。
 
 <table>
 <tr>
-  <th>Status</th>
-  <th>Description</th>
+  <th>状態</th>
+  <th>説明</th>
 </tr>
 <tr>
   <td>alpha1 - alpha3</td>
-  <td>Indicates that the release is an alpha version.</td>
+  <td>アルファ版であることを示します。</td>
 </tr>
 <tr>
   <td>beta1 - beta3</td>
-  <td>Indicates that the release is a beta version.</td>
+  <td>ベータ版であることを示します。</td>
 </tr>
 <tr>
   <td>rc1 - rc3</td>
-  <td>Indicates that the release is a release candidate.</td>
+  <td>リリース候補であることを示します。</td>
 </tr>
 <tr>
   <td>stable</td>
-  <td>Indicates that it is a stable release for productional systems.</td>
+  <td>実運用のシステム向けの安定リリースであることを示します。</td>
 </tr>
 </table>
 
 
-## Adding files
+## ファイルの追加
 
-Next you have to add files to the new release. Open the file manager and click
-the "Add/update files" button. You can upload single files or complete .zip
-archives. Make sure to choose the correct target directory so the file paths are
-correct after the upload.
+次に、新しいリリースにファイルを追加しなければなりません。ファイルの管理を開いて、"Add/update files"のボタンをクリックします。一度に1つのファイルか、完全な.zipアーカイブをアップロードできます。アップロードした後で正しいファイルのパスになるように、忘れずに正しいアップロード先のディレクトリを選択してください。
 
 ![](https://raw.github.com/contao/docs/3.1/manual/en/images/add-files.jpg)
 
 ![](https://raw.github.com/contao/docs/3.1/manual/en/images/edit-files.jpg)
 
-## Adding files from a GitHub repository
+## Githubリポジトリからのファイルの追加
 
-The files can also be imported from a GitHub repository, if you have tagged the
-release and pushed the tag to the central GitHub repository.
+Githubのリポジトリからファイルを取り込むこともでき、そのためにはリリースにタグを付けてGithubの中央リポジトリにタグをプッシュしていなければなりません。
 
-Enter the HTTPS URL of the GitHub repository in the settings.
+設定でGitHubのリポジトリにHTTPSのURLを入力してください。
 
-You can also specify the root folder name of your repository. In this case, the
-files and folders outside of this root folder will be ignored during
-the import.
+リポジトリのルートのフォルダーの名前も指定できます。この場合、このルートのフォルダー以外のファイルやフォルダーは取り込む際に対象にしません。
 
 ![](https://raw.github.com/contao/docs/3.1/manual/en/images/github-import.jpg)
 
-If you select a tag, its files will be downloaded automatically and are then
-available just like after a manual upload.
+タグを選択した場合、そのファイルを自動的にダウンロードして、手作業でアップロードしたときとまったく同じように利用可能な状態になります。
 
 ![](https://raw.github.com/contao/docs/3.1/manual/en/images/github-import-tag.jpg)
 
-## Adding translations
+## 翻訳の追加
 
-Before you can publish an extension, you have to create at least one
-translation. Open the translation manager and click the "Add language" button.
-It is recommended to always create an English translation, because back end
-users generally only see extensions in the extension manager which are available
-in their language or in English (fallback language).
+機能拡張を公開する前に、少なくとも翻訳を1つ作成しなければなりません。翻訳管理を開いて、"Add language"のボタンをクリックします。常に英語の翻訳を作成することが望ましいです、なぜなら通常のバックエンドのユーザーには、ユーザーの言語と(代替の言語の)英語で利用可能な機能拡張だけが機能拡張管理に表示されるからです。
 
 ![](https://raw.github.com/contao/docs/3.1/manual/en/images/add-translation.jpg)
 
 ![](https://raw.github.com/contao/docs/3.1/manual/en/images/edit-translation.jpg)
 
-Completed translations can be published by clicking the respective navigation
-icon.
+完了した翻訳は対応するナビゲーションのアイコンをクリックして公開できます。
 
 
-## Adding dependencies
+## 依存関係の追加
 
-Maybe one of your extensions uses the functionality of another one like e.g.
-cron jobs. To run your extension, it is therefore required to install the cron
-extension, which is usually referred to as dependency. Those dependencies can be
-stored in the Extension Repository, so all required modules are installed
-automatically when you install a particular extension.
+公開しようとしている機能拡張は他の機能拡張の機能、例えばcronジョブを使用しているかもしれません。このような機能拡張を動作させるにはcron機能拡張、通常は依存関係として参照される機能拡張のインストールが必要となります。これらの依存関係を機能拡張リポジトリに保存できて、特定の機能拡張をインストールする時に必要なモジュールをすべて自動的にインストールできます。
 
 ![](https://raw.github.com/contao/docs/3.1/manual/en/images/add-dependency.jpg)
 
-First choose the extension that you want to add as dependency and confirm your
-choice by clicking the "Continue" button. Then select the minimum and maximum
-version that is known to work with your extension.
+まず、依存関係として加えたい機能拡張を選択し、"Continue"のボタンをクリックして選択を確認します。次に、機能拡張が動作するとわかっている最小と最大のバージョンを選択します。
 
 
-## Publishing an extension
+## 機能拡張の公開
 
-After you have created at least one release, uploaded at least one file,
-published at least one translation and added the necessary dependencies, you can
-publish the extension with the respective navigation icon. Note that you cannot
-remove the extension anymore once it has been published. To check if everything
-works as expected, log into the back end and make a test installation with the
-extension manager.
-
+少なくとも1つのリリースを作成し、少なくとも1つのファイルをアップロードし、少なくとも1つの翻訳を公開し、必要な依存関係を追加した後で、機能拡張をそれぞれのナビゲーションアイコンで公開できます。機能拡張は、一旦公開すると削除できないことに注意してください。すべての作業が期待した通りなことを確認するには、バックエンドにログインして機能拡張管理でインストールのテストしてください。
 
 [1]: https://contao.org/en/register.html
 [2]: https://contao.org/en/extension-list.html
