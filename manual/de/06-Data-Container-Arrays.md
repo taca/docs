@@ -78,6 +78,11 @@ beim Löschen von Elterndatensätzen passiert.
   <td>Verbietet das Bearbeiten der Tabelle.</td>
 </tr>
 <tr>
+  <td>notDeletable</td>
+  <td>true/false (<code>boolean</code>)</td>
+  <td>Verbietet das Löschen von Datensätzen in der Tabelle.</td>
+</tr>
+<tr>
   <td>switchToEdit</td>
   <td>true/false (<code>boolean</code>)</td>
   <td>Aktiviert die "Speichern und Bearbeiten"-Schaltfläche beim Anlegen eines
@@ -526,22 +531,12 @@ kann.
   <td>sql</td>
   <td>Tabellenkonfiguration (<code>string</code>)</td>
   <td>Bestimmt den Datentyp und seine Konfiguration in der Datenbank, z.B.
-      'sql' =>  "varchar(255) NOT NULL default ''"</td>
+      <code>varchar(255) NOT NULL default ''</code></td>
 </tr>
 <tr>
   <td>relation</td>
-  <td>Tabellenkonfiguration (<code>array</code>)</td>
-  <td>Bestimmt die Beziehung zur Elterntabelle.<br>
-      <b>type</b> (<code>string</code>)
-      <ul><li>belongsTo</li>
-      <li>hasOne</li>
-      <li>belongsToMany</li>
-      <li>hasMany</li>
-      </ul>
-      <b>load</b> (<code>string</code>)
-      <ul><li>eagerly</li>
-      <li>lazy</li>
-      </ul>
+  <td>Relations-Konfiguration (<code>array</code>)</td>
+  <td>Bestimmt die Beziehung zur Elterntabelle (vgl. Abschnitt "Relationen").
   </td>
 </tr>
 <tr>
@@ -778,8 +773,13 @@ Ausdrucks geprüft werden.
 </tr>
 <tr>
   <td>datepicker</td>
-  <td>Date-Picker (<code>string</code>)</td>
-  <td>Konfiguration des Assistenten zur Datumsauswahl.</td>
+  <td>true/false (<code>boolean</code>)</td>
+  <td>Aktiviert das Popup zur Auswahl eines Datums.</td>
+</tr>
+<tr>
+  <td>colorpicker</td>
+  <td>true/false (<code>boolean</code>)</td>
+  <td>Aktiviert das Popup zur Farbauswahl.</td>
 </tr>
 <tr>
   <td>feEditable</td>
@@ -835,6 +835,45 @@ Ausdrucks geprüft werden.
   <td>true/false (<code>boolean</code>)</td>
   <td>Das Feld kann nur gelesen werden (wird nicht von allen Feldern
       unterstützt).</td>
+</tr>
+</table>
+
+
+### Relationen
+
+Relationen definieren, ob und wie Feldwerte mit einer weiteren
+Tabelle zusammen hängen. Die referenzierte Tabelle wird im `foreignKey`
+Schlüssel definiert. Relationen ermöglichen den Model-Klassen,
+referenzierte Datensätze effizient und entwicklerfreundlich
+zu laden (siehe `Model::getRelated()`).
+
+<table>
+<tr>
+  <th>Schlüssel</th>
+  <th>Wert</th>
+  <th>Beschreibung</th>
+</tr>
+<tr>
+  <td>type</td>
+  <td>Beziehungstyp<br> (<code>string</code>)
+  <td>
+    <b>hasOne</b> Feldwert referenziert einen Kinddatensatz<br>
+    <b>hasMany</b> Feldwert referenziert mehrere Kinddatensätze
+       (serialisiert)<br>
+    <b>belongsTo</b> Feldwert referenziert eine Elterntabelle
+       (z.B. <code>pid</code>)<br>
+    <b>belongsToMany</b> Feldwert referenziert mehrere
+    Elterndatensätze (serialisiert)
+  </td>
+</tr>
+<tr>
+  <td>load</td>
+  <td>Ladeverhalten<br> (<code>string</code>)</td>
+  <td>
+      <b>lazy</b> Lädt referenzierte Datensätze erst wenn erforderlich
+         (Standard, spart RAM)<br>
+      <b>eager</b> Lädt referenzierte Datensätze automatisch (spart DB-Abfragen)
+  </td>
 </tr>
 </table>
 
