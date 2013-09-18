@@ -104,6 +104,16 @@
   <td>コールバック関数 (<code>array</code>)</td>
   <td>レコードを複製したときに、挿入したIDとデータコンテナオブジェクトを引数にしてカスタム関数を呼び出します。バージョン2.8.2で追加しました。</td>
 </tr>
+<tr>
+  <td>sql</td>
+  <td>テーブル構成 (<code>array</code>)</td>
+  <td>テーブルの構成を記述します。例:
+  <code>'keys' => array
+  		(
+				'id' => 'primary',
+				'pid' => 'index'
+			)</code></td>
+</tr>
 </table>
 
 

@@ -21,7 +21,7 @@ $GLOBALS['TL_CONFIG']['debugMode'] = false;
 $GLOBALS['TL_CONFIG']['displayErrors'] = false;
 ```
 
-変更する内容を`INSTALL TOOL START`の行の前に書いているか確認してください。そうしないと設定モジュールで削除されます。そして、 **`config.php`ファイルに設定パラメーターに保存しないでください**、なぜなら更新時に上書きされる可能性があるためです!
+変更する内容を`INSTALL SCRIPT START`の行の前に書いているか確認してください。そうしないと設定モジュールで削除されます。そして、 **`config.php`ファイルに設定パラメーターに保存しないでください**、なぜなら更新時に上書きされる可能性があるためです!
 
 
 ### データコンテナ構成のカスタマイズ
@@ -450,7 +450,7 @@ public function myGenerateFrontendUrl($arrRow, $strParams, $strUrl)
 $GLOBALS['TL_HOOKS']['generatePage'][] = array('MyClass', 'myGeneratePage');
 
 // MyClass.php
-public function myGeneratePage(Database_Result $objPage, Database_Result $objLayout, PageRegular $objPageRegular)
+public function myGeneratePage(\PageModel $objPage, \LayoutModel $objLayout, \PageRegular $objPageRegular)
 {
     // 何か実行
 }
