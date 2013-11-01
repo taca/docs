@@ -20,7 +20,7 @@
 </tr>
 <tr>
   <td>label</td>
-  <td><code>&$GLOBALS['TL_LANG']</code> (<code>string</code>)</td>
+  <td><code>&amp;$GLOBALS['TL_LANG']</code> (<code>string</code>)</td>
   <td>labelはページやファイルツリーで使用し、一般に言語配列の参照を含んでいます。</td>
 </tr>
 <tr>
@@ -270,7 +270,7 @@ listの配列はレコードを一覧表示する方法を定義します。Cont
 </tr>
 <tr>
   <td>label</td>
-  <td><code>&$GLOBALS['TL_LANG']</code> (<code>string</code>)</td>
+  <td><code>&amp;$GLOBALS['TL_LANG']</code> (<code>string</code>)</td>
   <td>ボタンのラベルです。一般的にグローバルな言語配列の参照です。</td>
 </tr>
 <tr>
@@ -308,7 +308,7 @@ listの配列はレコードを一覧表示する方法を定義します。Cont
 </tr>
 <tr>
   <td>label</td>
-  <td><code>&$GLOBALS['TL_LANG']</code> (<code>string</code>)</td>
+  <td><code>&amp;$GLOBALS['TL_LANG']</code> (<code>string</code>)</td>
   <td>ボタンのラベルです。一般的にグローバルな言語配列の参照です。</td>
 </tr>
 <tr>
@@ -348,7 +348,7 @@ fieldsの配列は表のカラムを定義します。これらの設定によ�
 </tr>
 <tr>
   <td>label</td>
-  <td><code>&$GLOBALS['TL_LANG']</code> (<code>string</code>)</td>
+  <td><code>&amp;$GLOBALS['TL_LANG']</code> (<code>string</code>)</td>
   <td>フォームの項目のラベルです。一般的にグローバルな言語配列の参照です。</td>
 </tr>
 <tr>
@@ -436,12 +436,12 @@ fieldsの配列は表のカラムを定義します。これらの設定によ�
 </tr>
 <tr>
   <td>reference</td>
-  <td><code>&$GLOBALS['TL_LANG']</code> (<code>string</code>)</td>
+  <td><code>&amp;$GLOBALS['TL_LANG']</code> (<code>string</code>)</td>
   <td>オプションのラベルを保持する配列です。一般にグローバルな言語配列の参照です。</td>
 </tr>
 <tr>
   <td>explanation</td>
-  <td><code>&$GLOBALS['TL_LANG']</code> (<code>string</code>)</td>
+  <td><code>&amp;$GLOBALS['TL_LANG']</code> (<code>string</code>)</td>
   <td>説明を保持する配列です。一般にグローバルな言語配列の参照です。</td>
 </tr>
 <tr>
@@ -511,18 +511,62 @@ fieldsの配列は表のカラムを定義します。これらの設定によ�
 <tr>
   <td>rgxp</td>
   <td>正規表現 (<code>string</code>)</td>
-  <td><b>digit</b> 数字だけを許可<br>
-      <b>alpha</b> 英字だけを許可<br>
-      <b>alnum</b> 英数字だけを許可<br>
-      <b>prcnt</b> 0から100の間の数値を許可<br>
-      <b>extnd</b> <code>#&amp;()/<=></code>の文字を禁止<br>
-      <b>date</b> 有効な日付を要求<br>
-      <b>time</b> 有効な時刻を要求<br>
-      <b>datim</b> 有効な日付と時刻を要求<br>
-      <b>email</b> 有効な電子メールアドレスを要求<br>
-      <b>friendly</b> 電子メールアドレスの有効な "氏名" の形式を要求<br>
-      <b>url</b> 有効なURLを要求<br>
-      <b>phone</b> 有効な電話番号を要求</td>
+  <td>
+    <table>
+        <tr>
+          <td><b>alnum</b></td>
+          <td>英数字だけを許可します。(ピリオド [.]、マイナス [-]、下線 [_]、スペース [ ]を含みます。)</td>
+        </tr>
+        <tr>
+          <td><b>alpha</b></td>
+          <td>英字だけを許可します。(ピリオド [.]、マイナス [-]、スペース [ ]を含みます。)</td>
+        </tr>
+        <tr>
+          <td><b>date</b></td>
+          <td>有効な日付を必要にします。</td>
+        </tr>
+        <tr>
+          <td><b>datim</b></td>
+          <td>有効な日付と時刻を必要にします。</td>
+        </tr>
+        <tr>
+          <td><b>digit</b></td>
+          <td>数字だけを許可します。(ピリオド [.]、マイナス [-]を含みます。)</td>
+        </tr>
+        <tr>
+          <td><b>email</b></td>
+          <td>有効な電子メールアドレスを必要にします。</td>
+        </tr>
+        <tr>
+          <td><b>emails</b></td>
+          <td>有効な電子メールアドレスのリストを必要にします。</td>
+        </tr>
+        <tr>
+          <td><b>extnd</b></td>
+          <td><code>#&amp;()/&lt;=&gt;</code>の文字を禁止します。</td>
+        </tr>
+        <tr>
+          <td><b>friendly</b></td>
+          <td>電子メールアドレスの有効な "氏名" の形式を必要にします。</td>
+        </tr>
+        <tr>
+          <td><b>phone</b></td>
+          <td>有効な電話番号を必要にします。(数字、スペース [ ]、プラス[+]、マイナス [-]、括弧 [()]、スラッシュ [/]を含みます。)</td>
+        </tr>
+        <tr>
+          <td><b>prcnt</b></td>
+          <td>0から100の間の数値を許可します。</td>
+        </tr>
+        <tr>
+          <td><b>url</b></td>
+          <td>有効なURLを必要にします。</td>
+        </tr>
+        <tr>
+          <td><b>time</b></td>
+          <td>有効な時刻を必要にします。</td>
+        </tr>
+    </table>
+  </td>
 </tr>
 <tr>
   <td>cols</td>
