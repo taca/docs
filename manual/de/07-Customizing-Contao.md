@@ -514,6 +514,24 @@ public function myExecutePostActions($strAction, DataContainer $dc)
 ```
 
 
+### generateBreadcrumb
+
+Der "generateBreadcrumb"-Hook ermöglicht das Modifizieren der Pfadnavigation. 
+Er übergibt das Navigations-Array und das Modul-Objekt als Argument und erwartet 
+ein Array als Rückgabewert. Hinzugefügt in Version 2.10.0
+
+``` {.php}
+// config.php
+$GLOBALS['TL_HOOKS']['generateBreadcrumb'][] = array('MyClass', 'myGenerateBreadcrumb');
+
+// MyClass.php
+public function myGenerateBreadcrumb($arrItems, \Module $objModule)
+{
+	return $arrItems;
+}
+```
+
+
 ### generateFrontendUrl
 
 Der "generateFrontendUrl"-Hook wird bei der Erstellung einer Frontend-URL
@@ -621,6 +639,23 @@ $GLOBALS['TL_HOOKS']['getPageIdFromUrl'][] = array('MyClass', 'myGetPageIdFromUr
 public function myGetPageIdFromUrl($arrFragments)
 {
     return array_unique($arrFragments);
+}
+```
+
+
+### getPageLayout
+
+Der "getPageLayout"-Hook wird vor dem Initialisieren des Frontend-Templates ausgeführt.
+Er übergibt das Seitenobjekt, das Layoutobjekt und eine Eigenreferenz als Argument und erwartet keinen Rückgabewert. Hinzugefügt in Version 3.1.0.
+
+``` {.php}
+// config.php
+$GLOBALS['TL_HOOKS']['getPageLayout'][] = array('MyClass', 'mygetPageLayout');
+
+// MyClass.php
+public function mygetPageLayout(\PageModel $objPage, \LayoutModel $objLayout, \PageRegular $objPageRegular)
+{
+    // Beliebiger Code
 }
 ```
 
