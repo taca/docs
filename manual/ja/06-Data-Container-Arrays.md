@@ -514,6 +514,10 @@ fieldsの配列は表のカラムを定義します。これらの設定によ�
   <td>
     <table>
         <tr>
+          <td><b>alias</b></td>
+          <td>有効なエイリアスを必要にします。</td>
+        </tr>
+        <tr>
           <td><b>alnum</b></td>
           <td>英数字だけを許可します。(ピリオド [.]、マイナス [-]、下線 [_]、スペース [ ]を含みます。)</td>
         </tr>
@@ -544,6 +548,10 @@ fieldsの配列は表のカラムを定義します。これらの設定によ�
         <tr>
           <td><b>extnd</b></td>
           <td><code>#&amp;()/&lt;=&gt;</code>の文字を禁止します。</td>
+        </tr>
+        <tr>
+          <td><b>folderalias</b></td>
+          <td>有効なフォルダーのURLのエイリアスを必要にします。</td>
         </tr>
         <tr>
           <td><b>friendly</b></td>
@@ -577,13 +585,6 @@ fieldsの配列は表のカラムを定義します。これらの設定によ�
   <td>rows</td>
   <td>行 (<code>integer</code>)</td>
   <td>行の数です。(テキストエリアだけ)</td>
-</tr>
-<tr>
-  <td>wrap</td>
-  <td>ワードラップ (<code>string</code>)</td>
-  <td><b>off</b> ワードラップをしない<br>
-      <b>soft</b> ソフトワードラップ<br>
-      <b>hard</b> ハードワードラップ</td>
 </tr>
 <tr>
   <td>multiple</td>
