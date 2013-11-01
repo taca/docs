@@ -957,6 +957,10 @@ http://www.domain.com/newsletters/items/james-wilson-returns.html
   <td><code>{{request_token::*}}</code></td>
   <td>このタグは現在のセッションのリクエストトークにに置き換わります。</td>
 </tr>
+<tr>
+  <td><code>{{toggle_view}}</code></td>
+  <td>携帯端末とデスクトップのレイアウトを切り替えるリンクを追加します。</td>
+</tr>
 </table>
 
 

@@ -425,6 +425,22 @@ public function myExecutePostActions($strAction, DataContainer $dc)
 ```
 
 
+### generateBreadcrumb
+
+"generateBreadcrumb"フックでパンくずナビゲーションを修正できます。フック関数はナビゲーションの項目とフロントエンドモジュールを引数とし、項目を戻り値とします。バージョン2.10.0から利用できます。
+
+``` {.php}
+// config.php
+$GLOBALS['TL_HOOKS']['generateBreadcrumb'][] = array('MyClass', 'myGenerateBreadcrumb');
+
+// MyClass.php
+public function myGenerateBreadcrumb($arrItems, \Module $objModule)
+{
+       return $arrItems;
+}
+```
+
+
 ### generateFrontendUrl
 
 "generateFrontendUrl"フックはフロントエンドのURLを再作成したときに動作します。フック関数はページオブジェクト、パラメーター引数、デフォルトのURLを引数とし、文字列を戻り値とします。バージョン2.5.8から利用可能です。
@@ -518,6 +534,22 @@ $GLOBALS['TL_HOOKS']['getPageIdFromUrl'][] = array('MyClass', 'myGetPageIdFromUr
 public function myGetPageIdFromUrl($arrFragments)
 {
     return array_unique($arrFragments);
+}
+```
+
+
+### getPageLayout
+
+"getPageLayout"フックはフロントエンドのテンプレートを初期化する前に動作します。フック関数はページのモデル、レイアウトのオブジェクト、ページオブジェクトの参照を引数とし、戻り値は不要です。バージョン3.1.0から利用できます。
+
+``` {.php}
+// config.php
+$GLOBALS['TL_HOOKS']['getPageLayout'][] = array('MyClass', 'mygetPageLayout');
+
+// MyClass.php
+public function mygetPageLayout(\PageModel $objPage, \LayoutModel $objLayout, \PageRegular $objPageRegular)
+{
+    // Beliebiger Code
 }
 ```
 
