@@ -955,7 +955,7 @@ http://www.domain.com/newsletters/items/james-wilson-returns.html
 </tr>
 <tr>
   <td><code>{{request_token::*}}</code></td>
-  <td>このタグは現在のセッションのリクエストトークにに置き換わります。</td>
+  <td>このタグは現在のセッションのリクエストトークに置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{toggle_view}}</code></td>
