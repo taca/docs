@@ -98,7 +98,7 @@
   <td>映像や音声のプレーヤーを生成します。</td>
 </tr>
 <tr>
-  <td>Youtube</td>
+  <td>YouTube</td>
   <td>ce_youtube</td>
   <td>YouTubeの映像を追加します。</td>
 </tr>
