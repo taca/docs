@@ -605,8 +605,8 @@ fieldsの配列は表のカラムを定義します。これらの設定によ�
 <tr>
   <td>rte</td>
   <td>リッチテキストエディターのファイル (<code>string</code>)</td>
-  <td><b>tinyMCE</b> <code>config/tinyMCE.php</code>を使用<br>
-      <b>tinyFlash</b> <code>config/tinyFlash.php</code>を使用<br>
+  <td><b>tinyMCE</b> <code>config/tinyMCE.php</code>を使用します。<br>
+      <b>tinyFlash</b> <code>config/tinyFlash.php</code>を使用します。<br>
       独自の構成ファイルも追加できます。</td>
 </tr>
 <tr>
@@ -801,11 +801,11 @@ Contaoのバックエンドは単純な2列のグリッドシステムを使用�
 </tr>
 <tr>
   <td>w50</td>
-  <td>項目の幅を50%にしてフロート(float: left)にします。</td>
+  <td>項目の幅を50%にしてフロート(<code>float: left</code>)にします。</td>
 </tr>
 <tr>
   <td>clr</td>
-  <td>すべてのfloatをクリアします。</td>
+  <td>すべてのfloatをクリアします。(<code>clear:both</code>)</td>
 </tr>
 <tr>
   <td>wizard</td>
