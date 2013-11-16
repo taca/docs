@@ -356,7 +356,7 @@ on the domain and his browser language.
 <tr>
   <td>www.company.com</td>
   <td>Spanish</td>
-  <td>Spanish corporate website</td>
+  <td>English corporate website</td>
 </tr>
 <tr>
   <td>www.personal-website.com</td>
@@ -382,7 +382,7 @@ there are three permission levels:
 
 
 Each level can have different permissions. By default, the owner of a page is
-allowed to edit the page itself as well as its articles, whereas a member of the
+allowed to edit the page itself as well as its articles, whereas a user of the
 group that owns a page is only allowed to edit articles. Unprivileged users have
 no writing permissions at all.
 
