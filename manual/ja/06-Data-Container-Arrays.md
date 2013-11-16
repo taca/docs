@@ -60,6 +60,26 @@
   <td>trueの場合、このテーブルは編集できません。</td>
 </tr>
 <tr>
+  <td>notDeletable</td>
+  <td>true/false (<code>boolean</code>)</td>
+  <td>trueの場合、このテーブルのレコードを削除できません。</td>
+</tr>
+<tr>
+  <td>notSortable</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
+  <td>trueの場合、このテーブルのレコードを並べ替えできません。</td>
+</tr>
+<tr>
+  <td>notCopyable</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
+  <td>trueの場合、このテーブルのレコードを複製できません。</td>
+</tr>
+<tr>
+  <td>notCreatable</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
+  <td>trueの場合、このテーブルにレコードを作成できませんが、複製はできます。</td>
+</tr>
+<tr>
   <td>switchToEdit</td>
   <td>trueまたはfalse (<code>boolean</code>)</td>
   <td>新しいレコードを追加するときに「保存して編集」のボタンを有効にします。(並べ替えモード4だけ)</td>
@@ -613,8 +633,8 @@ fieldsの配列は表のカラムを定義します。これらの設定によ�
 <tr>
   <td>rte</td>
   <td>リッチテキストエディターのファイル (<code>string</code>)</td>
-  <td><b>tinyMCE</b> <code>config/tinyMCE.php</code>を使用<br>
-      <b>tinyFlash</b> <code>config/tinyFlash.php</code>を使用<br>
+  <td><b>tinyMCE</b> <code>config/tinyMCE.php</code>を使用します。<br>
+      <b>tinyFlash</b> <code>config/tinyFlash.php</code>を使用します。<br>
       独自の構成ファイルも追加できます。</td>
 </tr>
 <tr>
@@ -782,6 +802,38 @@ fieldsの配列は表のカラムを定義します。これらの設定によ�
 </table>
 
 
+### リレーション
+
+リレーションは、データベースの項目が他のテーブルとどのように関係しているかを記述します。参照するテーブルは`foreignKey`キーで定義してください。
+リレーションは、参照しているデータセットを効率的に、そして開発者に親切に読み込むモデルのクラスを提供します。(`Model::getRelated()`を参照)
+
+<table>
+<tr>
+  <th>キー</th>
+  <th>値</th>
+  <th>説明</th>
+</tr>
+<tr>
+  <td>type</td>
+  <td>リレーションの種類<br> (<code>string</code>)
+  <td>
+    <b>hasOne</b> 子のデータセットへの値参照<br>
+    <b>hasMany</b> 複数の(シリアライズした)子のデータセットへの値参照<br>
+    <b>belongsTo</b> 親のデータセットへの値参照(例: <code>pid</code>)<br>
+    <b>belongsToMany</b> 複数の(シリアライズした)親のデータセットへの値参照<br>
+  </td>
+</tr>
+<tr>
+  <td>load</td>
+  <td>読み込みの挙動<br> (<code>string</code>)</td>
+  <td>
+      <b>lazy</b> 必要になった場合だけ参照しているレコードを読み込み(初期設定、RAMを節約)<br>
+      <b>eager</b> 自動的に参照している絵コードを読み込み(データベースの呼び出しを節約)
+  </td>
+</tr>
+</table>
+
+
 ## パレット
 
 パレットは、レコードを編集するのに必要なフォームの項目のグループです。
@@ -819,11 +871,11 @@ Contaoのバックエンドは単純な2列のグリッドシステムを使用�
 </tr>
 <tr>
   <td>w50</td>
-  <td>項目の幅を50%にしてフロート(float: left)にします。</td>
+  <td>項目の幅を50%にしてフロート(<code>float: left</code>)にします。</td>
 </tr>
 <tr>
   <td>clr</td>
-  <td>すべてのfloatをクリアします。</td>
+  <td>すべてのfloatをクリアします。(<code>clear:both</code>)</td>
 </tr>
 <tr>
   <td>wizard</td>

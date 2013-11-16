@@ -21,7 +21,7 @@ $GLOBALS['TL_CONFIG']['debugMode'] = false;
 $GLOBALS['TL_CONFIG']['displayErrors'] = false;
 ```
 
-変更する内容を`INSTALL TOOL START`の行の前に書いているか確認してください。そうしないと設定モジュールで削除されます。そして、 **`config.php`ファイルに設定パラメーターに保存しないでください**、なぜなら更新時に上書きされる可能性があるためです!
+変更する内容を`INSTALL TOOL START`の行の前に書いているか確認してください。そうしないと設定モジュールで削除されます。そして、 **`config.php`ファイルに設定パラメーターに保存しないでください**。なぜなら、このファイルは更新時に上書きされる可能性があるためです!
 
 
 ### データコンテナ構成のカスタマイズ
@@ -549,7 +549,7 @@ $GLOBALS['TL_HOOKS']['getPageLayout'][] = array('MyClass', 'mygetPageLayout');
 // MyClass.php
 public function mygetPageLayout(\PageModel $objPage, \LayoutModel $objLayout, \PageRegular $objPageRegular)
 {
-    // Beliebiger Code
+    // 何か実行
 }
 ```
 
