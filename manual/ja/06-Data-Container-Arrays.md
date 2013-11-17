@@ -39,17 +39,6 @@
   <td>Table (データベースのテーブル)、File (ローカルの設定ファイル)、Folder (ファイルマネージャー)のいずれかです。</td>
 </tr>
 <tr>
-  <td>validFileTypes</td>
-  <td>ファイルの種類 (<code>string</code>)</td>
-  <td>有効なファイルの拡張子をコンマで区切ったリストです。(ファイルツリーにだけ適用できます)</td>
-</tr>
-<tr>
-  <td>uploadScript</td>
-  <td>ファイル名 (<code>string</code>)</td>
-  <td>Name of the FancyUpload script in the system/config folder (without file
-      extension).</td>
-</tr>
-<tr>
   <td>closed</td>
   <td>trueまたはfalse (<code>boolean</code>)</td>
   <td>trueの場合、テーブルにさらにレコードを追加できません。</td>
@@ -97,7 +86,18 @@
 <tr>
   <td>oncut_callback</td>
   <td>コールバック関数 (<code>array</code>)</td>
-  <td>レコードを移動したときに、データコンテナオブジェクトを引数にしてカスタム関数を呼び出します。</td>
+  <td>レコードを複製したときに、挿入するIDとデータコンテナオブジェクトを引数に
+てカスタム関数を呼び出します。バージョン2.8.2で追加しました。</td>
+</tr>
+<tr>
+  <td>onversion_callback</td>
+  <td>コールバック関数 (<code>array</code>)</td>
+  <td>レコードの新しいバージョンを作成したときに、テーブル、挿入するID、DataContainerオブジェクトを引数にカスタム関数を呼び出します。</td>
+</tr>
+<tr>
+  <td>onrestore_callback</td>
+  <td>コールバック関数 (<code>array</code>)</td>
+  <td>レコードのバージョンを復元したときに、挿入するID、テーブル、データ配列、バージョンを引数にカスタム関数を呼び出します。</td>
 </tr>
 <tr>
   <td>oncopy_callback</td>
@@ -697,7 +697,7 @@ fieldsの配列は表のカラムを定義します。これらの設定によ�
   <td>入力項目の種類 (<code>string</code>)</td>
   <td><b>checkbox</b> 複数の選択が可能<br>
       <b>radio</b> 1つだけ選択可能<br>
-      ファイルツリーにだけ適用できます。      
+      ファイルツリーにだけ適用できます。
   </td>
 </tr>
 <tr>
