@@ -358,11 +358,11 @@ Dear ##firstname## ##lastname##,
 
 please check and update your personal data:
 
-Street: ##street## 
+Street: ##street##
 Postal: ##postal##
 City:   ##city##
-Phone:  ##phone## 
-E-mail: ##email## 
+Phone:  ##phone##
+E-mail: ##email##
 
 The Administrator
 ```
@@ -929,12 +929,12 @@ http://www.domain.com/newsletters/items/james-wilson-returns.html
 <tr>
   <td><code>{{image::*}}</code></td>
   <td>このタグは画像のサムネイルに置き換わります:
-  <code>{{image::files/image.jpg?width=200&amp;height=150}}</code>。<br />
-  <strong>width</strong>: サムネイルの幅、<br />
-  <strong>height</strong>: サムネイルの高さ、<br />
-  <strong>alt</strong>: 代替テキスト、<br />
-  <strong>class</strong>: CSSのclass、<br />
-  <strong>rel</strong>: rel属性(例えば"lightbox")、<br />
+  <code>{{image::files/image.jpg?width=200&amp;height=150}}</code>。<br>
+  <strong>width</strong>: サムネイルの幅、<br>
+  <strong>height</strong>: サムネイルの高さ、<br>
+  <strong>alt</strong>: 代替テキスト、<br>
+  <strong>class</strong>: CSSのclass、<br>
+  <strong>rel</strong>: rel属性(例えば"lightbox")、<br>
   <strong>mode</strong>: モード("proportional"、"crop"、"box")。</td>
 </tr>
 <tr>

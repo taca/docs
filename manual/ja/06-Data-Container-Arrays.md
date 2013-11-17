@@ -97,7 +97,19 @@
 <tr>
   <td>oncut_callback</td>
   <td>コールバック関数 (<code>array</code>)</td>
-  <td>レコードを移動したときに、データコンテナオブジェクトを引数にしてカスタム関数を呼び出します。</td>
+  <td>レコードを複製したときに、挿入するIDとデータコンテナオブジェクトを引数に
+てカスタム関数を呼び出します。バージョン2.8.2で追加しました。</td>
+</tr>
+<tr>
+  <td>onversion_callback</td>
+  <td>コールバック関数 (<code>array</code>)</td>
+  <td>レコードの新しいバージョンを作成したときに、テーブル、挿入するID、DataContainerオブジェクトを引数にカスタム関数を呼び出します。</td>
+</tr>
+<tr>
+  <td>onrestore_callback</td>
+  <td>コールバック関数 (<code>array</code>)</td>
+  <td>レコードのバージョンを復元したときに、挿入するID、テーブル、データ配列、
+バージョンを引数にカスタム関数を呼び出します。</td>
 </tr>
 <tr>
   <td>oncopy_callback</td>
