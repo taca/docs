@@ -313,11 +313,11 @@ Dear ##firstname## ##lastname##,
 
 please check and update your personal data:
 
-Street: ##street## 
+Street: ##street##
 Postal: ##postal##
 City:   ##city##
-Phone:  ##phone## 
-E-mail: ##email## 
+Phone:  ##phone##
+E-mail: ##email##
 
 The Administrator
 ```
