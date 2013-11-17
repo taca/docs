@@ -358,11 +358,11 @@ Dear ##firstname## ##lastname##,
 
 please check and update your personal data:
 
-Street: ##street## 
+Street: ##street##
 Postal: ##postal##
 City:   ##city##
-Phone:  ##phone## 
-E-mail: ##email## 
+Phone:  ##phone##
+E-mail: ##email##
 
 The Administrator
 ```
@@ -868,7 +868,7 @@ http://www.domain.com/newsletters/items/james-wilson-returns.html
 </tr>
 <tr>
   <td><code>{{file::*}}</code></td>
-  <td>このタグは"templates"のディレクトリにあるファイルの内容に置き換わります。(*をファイル名に置き換えてください。)<br />引数を指定することもできます。例: <code>{{file::file.php?arg1=val&arg2=val}}</code></td>
+  <td>このタグは"templates"のディレクトリにあるファイルの内容に置き換わります。(*をファイル名に置き換えてください。)<br>引数を指定することもできます。例: <code>{{file::file.php?arg1=val&arg2=val}}</code></td>
 </tr>
 </table>
 
@@ -937,12 +937,12 @@ http://www.domain.com/newsletters/items/james-wilson-returns.html
 <tr>
   <td><code>{{image::*}}</code></td>
   <td>このタグは画像のサムネイルに置き換わります:
-  <code>{{image::files/image.jpg?width=200&amp;height=150}}</code>。<br />
-  <strong>width</strong>: サムネイルの幅、<br />
-  <strong>height</strong>: サムネイルの高さ、<br />
-  <strong>alt</strong>: 代替テキスト、<br />
-  <strong>class</strong>: CSSのclass、<br />
-  <strong>rel</strong>: rel属性(例えば"lightbox")、<br />
+  <code>{{image::files/image.jpg?width=200&amp;height=150}}</code>。<br>
+  <strong>width</strong>: サムネイルの幅、<br>
+  <strong>height</strong>: サムネイルの高さ、<br>
+  <strong>alt</strong>: 代替テキスト、<br>
+  <strong>class</strong>: CSSのclass、<br>
+  <strong>rel</strong>: rel属性(例えば"lightbox")、<br>
   <strong>mode</strong>: モード("proportional"、"crop"、"box")。</td>
 </tr>
 <tr>
@@ -973,7 +973,7 @@ http://www.domain.com/newsletters/items/james-wilson-returns.html
 フラッグを使用すると、さらに挿入タグを処理できます。例えば、値を特定のPHPモジュールに渡せます。複数のフラッグを適用できます:
 
 ```
-{{ua::browser|uncached}}  
+{{ua::browser|uncached}}
 {{page::title|decodeEntities|strtoupper}}
 ```
 
