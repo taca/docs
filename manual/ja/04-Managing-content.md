@@ -903,12 +903,11 @@ http://www.domain.com/newsletters/items/james-wilson-returns.html
   <td>このタグはクリック可能な暗号化した電子メールアドレスに置き換わります。</td>
 </tr>
   <td><code>{{email_open::*}}</code></td>
-  <td>This tag will be replaced with a clickable and encrypted link to an e-mail
-      address. However, the closing <code>&lt;/a&gt;</code> will not be added.</td>
+  <td>このタグはクリック可能な暗号化した電子メールアドレスに置き換わります。しかし、閉じる<code>&lt;/a&gt;</code>を追加しません。</td>
 </tr>
 <tr>
   <td><code>{{email_url::*}}</code></td>
-  <td>This tag will be replaced by the encrypted e-mail address only.</td>
+  <td>このタグは暗号化した電子メールアドレスだけに置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{lang::*}}</code></td>
