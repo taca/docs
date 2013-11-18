@@ -817,7 +817,7 @@ http://www.domain.com/newsletters/items/james-wilson-returns.html
 </tr>
 <tr>
   <td><code>{{file::*}}</code></td>
-  <td>このタグは"templates"のディレクトリにあるファイルの内容に置き換わります。(*をファイル名に置き換えてください。)<br />引数を指定することもできます。例: `{{file::file.php?arg1=val&arg2=val}}`</td>
+  <td>このタグは"templates"のディレクトリにあるファイルの内容に置き換わります。(*をファイル名に置き換えてください。)<br />引数を指定することもできます。例: `{{file::file.php?arg1=val&amp;arg2=val}}`</td>
 </tr>
 </table>
 
