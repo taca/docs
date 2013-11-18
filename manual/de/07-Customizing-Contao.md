@@ -28,10 +28,10 @@ Konfigurationsdatei geschrieben, so dass Sie diese in der Regel nicht manuell
 bearbeiten müssen.
 
 ``` {.php}
-// Das Task Center abschalten
-unset($GLOBALS['BE_MOD']['profile']['tasks']);
+// Den Extension Creator abschalten
+unset($GLOBALS['BE_MOD']['devtools']['extension']);
 
-### INSTALL TOOL START ###
+### INSTALL SCRIPT START ###
 $GLOBALS['TL_CONFIG']['debugMode'] = false;
 $GLOBALS['TL_CONFIG']['displayErrors'] = false;
 ```
