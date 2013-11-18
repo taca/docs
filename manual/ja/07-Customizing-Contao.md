@@ -16,7 +16,7 @@ Contaoの構成はシステム構成、データコンテナ構成、言語の�
 // タスクセンターを無効にします。
 unset($GLOBALS['BE_MOD']['profile']['tasks']);
 
-### INSTALL TOOL START ###
+### INSTALL SCRIPT START ###
 $GLOBALS['TL_CONFIG']['debugMode'] = false;
 $GLOBALS['TL_CONFIG']['displayErrors'] = false;
 ```
