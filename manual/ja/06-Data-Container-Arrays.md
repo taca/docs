@@ -49,6 +49,11 @@
   <td>trueの場合、このテーブルは編集できません。</td>
 </tr>
 <tr>
+  <td>notDeletable</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
+  <td>trueの場合、このテーブルのレコードを削除できません。</td>
+</tr>
+<tr>
   <td>switchToEdit</td>
   <td>trueまたはfalse (<code>boolean</code>)</td>
   <td>新しいレコードを追加するときに「保存して編集」のボタンを有効にします。(並べ替えモード4だけ)</td>
