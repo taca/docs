@@ -76,27 +76,27 @@
 <tr>
   <td>onload_callback</td>
   <td>コールバック関数 (<code>array</code>)</td>
-  <td>データコンテナを初期化したときに、データコンテナオブジェクトを引数にしてカスタム関数を呼び出します。</td>
+  <td>データコンテナを初期化したときに、DataContainerオブジェクトを引数にしてカスタム関数を呼び出します。</td>
 </tr>
 <tr>
   <td>onsubmit_callback</td>
   <td>コールバック関数 (<code>array</code>)</td>
-  <td>レコードを更新した後で、データコンテナオブジェクトを引数にしてカスタム関数を呼び出します。</td>
+  <td>レコードを更新した後で、DataContainerオブジェクトを引数にしてカスタム関数を呼び出します。</td>
 </tr>
 <tr>
   <td>ondelete_callback</td>
   <td>コールバック関数 (<code>array</code>)</td>
-  <td>レコードを削除したときに、データコンテナオブジェクトを引数にしてカスタム関数を呼び出します。</td>
+  <td>レコードを削除したときに、DataContainerオブジェクトを引数にしてカスタム関数を呼び出します。</td>
 </tr>
 <tr>
   <td>oncut_callback</td>
   <td>コールバック関数 (<code>array</code>)</td>
-  <td>レコードを複製したときに、挿入するIDとデータコンテナオブジェクトを引数にしてカスタム関数を呼び出します。バージョン2.8.2で追加しました。</td>
+  <td>レコードを複製したときに、挿入するIDとDataContainerオブジェクトを引数にしてカスタム関数を呼び出します。バージョン2.8.2で追加しました。</td>
 </tr>
 <tr>
   <td>oncopy_callback</td>
   <td>コールバック関数 (<code>array</code>)</td>
-  <td>レコードを複製したときに、挿入するIDとデータコンテナオブジェクトを引数にしてカスタム関数を呼び出します。バージョン2.8.2で追加しました。</td>
+  <td>レコードを複製したときに、挿入するIDとDataContainerオブジェクトを引数にしてカスタム関数を呼び出します。バージョン2.8.2で追加しました。</td>
 </tr>
 <tr>
   <td>onversion_callback</td>
