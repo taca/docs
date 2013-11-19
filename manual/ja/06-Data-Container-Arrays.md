@@ -49,6 +49,11 @@
   <td>trueの場合、このテーブルは編集できません。</td>
 </tr>
 <tr>
+  <td>notDeletable</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
+  <td>trueの場合、このテーブルのレコードを削除できません。</td>
+</tr>
+<tr>
   <td>switchToEdit</td>
   <td>trueまたはfalse (<code>boolean</code>)</td>
   <td>新しいレコードを追加するときに「保存して編集」のボタンを有効にします。(並べ替えモード4だけ)</td>
@@ -86,8 +91,7 @@
 <tr>
   <td>oncut_callback</td>
   <td>コールバック関数 (<code>array</code>)</td>
-  <td>レコードを複製したときに、挿入するIDとデータコンテナオブジェクトを引数に
-てカスタム関数を呼び出します。バージョン2.8.2で追加しました。</td>
+  <td>レコードを複製したときに、挿入するIDとデータコンテナオブジェクトを引数にしてカスタム関数を呼び出します。バージョン2.8.2で追加しました。</td>
 </tr>
 <tr>
   <td>oncopy_callback</td>
