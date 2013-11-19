@@ -91,7 +91,7 @@
 <tr>
   <td>oncut_callback</td>
   <td>コールバック関数 (<code>array</code>)</td>
-  <td>レコードを複製したときに、挿入するIDとデータコンテナオブジェクトを引数にしてカスタム関数を呼び出します。バージョン2.8.2で追加しました。</td>
+  <td>レコードを移動したときに、データコンテナオブジェクトを引数にしてカスタム関数を呼び出します。バージョン2.8.2で追加しました。</td>
 </tr>
 <tr>
   <td>oncopy_callback</td>
@@ -107,11 +107,6 @@
   <td>onrestore_callback</td>
   <td>コールバック関数 (<code>array</code>)</td>
   <td>レコードのバージョンを復元したときに、挿入するID、テーブル、データ配列、バージョンを引数にカスタム関数を呼び出します。</td>
-</tr>
-<tr>
-  <td>oncopy_callback</td>
-  <td>コールバック関数 (<code>array</code>)</td>
-  <td>レコードを複製したときに、挿入したIDとデータコンテナオブジェクトを引数にしてカスタム関数を呼び出します。バージョン2.8.2で追加しました。</td>
 </tr>
 <tr>
   <td>sql</td>
@@ -622,8 +617,8 @@ fieldsの配列は表のカラムを定義します。これらの設定によ�
 <tr>
   <td>rte</td>
   <td>リッチテキストエディターのファイル (<code>string</code>)</td>
-  <td><b>tinyMCE</b> <code>config/tinyMCE.php</code>を使用です。<br>
-      <b>tinyFlash</b> <code>config/tinyFlash.php</code>を使用です。<br>
+  <td><b>tinyMCE</b> <code>config/tinyMCE.php</code>を使用します。<br>
+      <b>tinyFlash</b> <code>config/tinyFlash.php</code>を使用します。<br>
       独自の構成ファイルも追加できます。</td>
 </tr>
 <tr>
