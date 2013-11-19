@@ -132,7 +132,7 @@ $GLOBALS['TL_LANG']['tl_member']['customer_number'] = array
 
 ## TinyMCEのカスタマイズ
 
-このページではリッチテキストエディターのカスタマイズして、Contaoの次の更新で上書きされないように変更を保存する方法を説明しています。Contaoは初期状態ではTinyMCEのプラグインをすべては取り込んでいないことに注意してください。このためContaoの配布に含まれていない、あるプラグインを使用したい場合は[TinyMCEのプロジェクトのウェブサイト][4]からダウンロードして`plugins/tinymce/plugins`というフォルダーに移してください。
+このページではリッチテキストエディターのカスタマイズして、Contaoの次の更新で上書きされないように変更を保存する方法を説明しています。Contaoは初期状態ではTinyMCEのプラグインをすべては取り込んでいないことに注意してください。このためContaoの配布に含まれていない、あるプラグインを使用したい場合は[TinyMCEのプロジェクトのウェブサイト][4]からダウンロードして`plugins/tinyMCE/plugins`というフォルダーに移してください。
 
 ![](https://raw.github.com/contao/docs/2.11/manual/en/images/rich-text-editor.jpg)
 
