@@ -64,6 +64,16 @@
   <td>trueの場合、このテーブルのレコードを複製できません。</td>
 </tr>
 <tr>
+  <td>notSortable</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
+  <td>trueの場合、このテーブルのレコードを並べ替えできません。</td>
+</tr>
+<tr>
+  <td>notCopyable</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
+  <td>trueの場合、このテーブルのレコードを複製できません。</td>
+</tr>
+<tr>
   <td>notCreatable</td>
   <td>trueまたはfalse (<code>boolean</code>)</td>
   <td>trueの場合、このテーブルにレコードを作成できませんが、複製はできます。</td>
@@ -106,7 +116,7 @@
 <tr>
   <td>oncut_callback</td>
   <td>コールバック関数 (<code>array</code>)</td>
-  <td>レコードを移動したときに、データコンテナオブジェクトを引数にしてカスタム関数を呼び出します。</td>
+  <td>レコードを移動したときに、データコンテナオブジェクトを引数にしてカスタム関数を呼び出します。バージョン2.8.2で追加しました。</td>
 </tr>
 <tr>
   <td>oncopy_callback</td>
@@ -874,7 +884,7 @@ Contaoのバックエンドは単純な2列のグリッドシステムを使用�
 </tr>
 <tr>
   <td>clr</td>
-  <td>すべてのfloatをクリアします。(<code>clear:both</code>)</td>
+  <td>すべてのfloatをクリア(<code>clear:both</code>)します。</td>
 </tr>
 <tr>
   <td>wizard</td>
