@@ -64,16 +64,6 @@
   <td>trueの場合、このテーブルのレコードを複製できません。</td>
 </tr>
 <tr>
-  <td>notSortable</td>
-  <td>trueまたはfalse (<code>boolean</code>)</td>
-  <td>trueの場合、このテーブルのレコードを並べ替えできません。</td>
-</tr>
-<tr>
-  <td>notCopyable</td>
-  <td>trueまたはfalse (<code>boolean</code>)</td>
-  <td>trueの場合、このテーブルのレコードを複製できません。</td>
-</tr>
-<tr>
   <td>notCreatable</td>
   <td>trueまたはfalse (<code>boolean</code>)</td>
   <td>trueの場合、このテーブルにレコードを作成できませんが、複製はできます。</td>
