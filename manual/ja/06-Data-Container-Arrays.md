@@ -50,7 +50,7 @@
 </tr>
 <tr>
   <td>notDeletable</td>
-  <td>true/false (<code>boolean</code>)</td>
+  <td>trueまたはfalse (<code>boolean</code>)</td>
   <td>trueの場合、このテーブルのレコードを削除できません。</td>
 </tr>
 <tr>
