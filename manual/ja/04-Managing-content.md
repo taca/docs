@@ -256,7 +256,7 @@ FlashはHTMLタグの少ない一部だけをサポートしているため、�
 それぞれのニュース項目には、その参照に使用できる重複しないURL(固定リンク)があります:
 
 ```
-http://www.domain.com/news/items/james-wilson-returns.html
+http://www.example.com/news/items/james-wilson-returns.html
 ```
 
 上記のURLは"news"というページから"james-wilson-returns"というニュース項目を要求します。Contaoはページに基づいたCMSであることを忘れないでください、"news"というページが存在しなかったり、ニュースリーダーモジュールを含んでいなかったりするとニュース項目を表示しません。
@@ -310,7 +310,7 @@ http://www.domain.com/news/items/james-wilson-returns.html
 それぞれのイベントには、その参照に使用できる重複しないURL(固定リンク)があります:
 
 ```
-http://www.domain.com/event-reader/events/final-exams.html
+http://www.example.com/event-reader/events/final-exams.html
 ```
 
 上記のURLは"events"というページから"final-exams"というニュース項目を要求します。Contaoはページに基づいたCMSであることを忘れないでください、"events"というページが存在しなかったり、イベントリーダーモジュールを含んでいなかったりするとイベントを表示しません。
@@ -434,7 +434,7 @@ The Administrator
 それぞれのニュースレターには、その参照に使用できる重複しないURL(固定リンク)があります:
 
 ```
-http://www.domain.com/newsletters/items/james-wilson-returns.html
+http://www.example.com/newsletters/items/james-wilson-returns.html
 ```
 
 上記のURLは"newsletters"というページから"james-wilson-returns"というニュースレターを要求します。Contaoはページに基づいたCMSであることを忘れないでください、"newsletters"というページが存在しなかったり、ニュースレターリーダーモジュールを含んでいなかったりするとニュースレターを表示しません。
