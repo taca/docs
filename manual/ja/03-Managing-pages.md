@@ -240,7 +240,7 @@
 
 ### 複数ドメインのモード
 
-Contaoはサイト構造に複数のウェブサイトをサポートしていて、DNSと言語の設定に応じて訪問者を特定のウェブサイトのルートに自動的に移動します。"www.company.com"というドメインを使用している二か国語の企業のウェブサイトと、"www.personal.website.com"というドメインを使用している小規模の個人的なウェブサイトを運営しているとした場合、3つのウェブサイトのルートが必要です:
+Contaoはサイト構造に複数のウェブサイトをサポートしていて、DNSと言語の設定に応じて訪問者を特定のウェブサイトのルートに自動的に移動します。"www.example.com"というドメインを使用している二か国語の企業のウェブサイトと、"www.personal.example.org"というドメインを使用している小規模の個人的なウェブサイトを運営しているとした場合、3つのウェブサイトのルートが必要です:
 
 <table>
 <tr>
@@ -263,7 +263,7 @@ Contaoはサイト構造に複数のウェブサイトをサポートしてい�
 </tr>
 <tr>
   <td>個人のウェブサイト</td>
-  <td>personal-website.com</td>
+  <td>www.personal.example.org</td>
   <td>de</td>
   <td>はい</td>
 </tr>
@@ -278,22 +278,22 @@ Contaoはサイト構造に複数のウェブサイトをサポートしてい�
   <th>表示先</th>
 </tr>
 <tr>
-  <td>www.company.com</td>
+  <td>www.example.com</td>
   <td>英語</td>
   <td>英語版の企業のサイト</td>
 </tr>
 <tr>
-  <td>www.company.com</td>
+  <td>www.example.com</td>
   <td>ドイツ語</td>
   <td>ドイツ語版の企業のサイト</td>
 </tr>
 <tr>
-  <td>www.company.com</td>
+  <td>www.example.com</td>
   <td>スペイン語</td>
   <td>英語版の企業のサイト</td>
 </tr>
 <tr>
-  <td>www.personal-website.com</td>
+  <td>www.personal.example.org</td>
   <td>どれでも</td>
   <td>個人のウェブサイト</td>
 </tr>
