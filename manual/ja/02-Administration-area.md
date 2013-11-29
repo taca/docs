@@ -12,28 +12,28 @@ Contaoのコアのエンジンは3つの表示方法をサポートしていま�
 
 "リストビュー"は単一のテーブルのレコードを特定の順序で一覧表示します。その結果は通常は最初の文字でグループにまとめられます。
 
-![](https://raw.github.com/contao/docs/3.0/manual/en/images/list-view.jpg)
+![](images/list-view.jpg?raw=true)
 
 
 ### ペアレントビュー
 
 "ペアレントビュー"は親のテーブルの特定のレコードに関連した、子のテーブルのレコードを一覧表示します。親と子の関係はContaoで多数使用していて、例えばアーティクルとコンテンツ要素、ニュースアーカイブとニュース記事、スタイルシートと書式定義などです。
 
-![](https://raw.github.com/contao/docs/3.0/manual/en/images/parent-view.jpg)
+![](images/parent-view.jpg?raw=true)
 
 
 ### ツリービュー
 
 "ツリービュー"は、ファイルとフォルダーのように階層的な構造を構成する、レコードとその他のリソースを表示します。Contaoは単一の階層的なテーブル(例えば、サイト構造)に加えて、階層的な親のテーブルと関連した子のテーブル(例えば、アーティクルとページ)もサポートしています。
 
-![](https://raw.github.com/contao/docs/3.0/manual/en/images/tree-view.jpg)
+![](images/tree-view.jpg?raw=true)
 
 
 ### 並べ替えとデータのフィルター
 
 Contaoには様々な結果を絞り込む方法をサポートしていて、例えテーブルが数千の列でも状況の把握ができなくなるようなことはありません。多くの一覧表示は1つ以上の項目でフィルターして、その条件に合ったレコードだけを表示できます。加えて殆どの一覧表示では、正規表現までサポートした全文検索も提供しています。ページを表示する時間を最小限とするため、Contaoは一度には30レコードだけ表示します。
 
-![](https://raw.github.com/contao/docs/3.0/manual/en/images/sorting-and-filtering.jpg)
+![](images/sorting-and-filtering.jpg?raw=true)
 
 
 ## レコードの編集
@@ -44,39 +44,39 @@ Contaoには様々な結果を絞り込む方法をサポートしていて、�
 
 「リストビュー」はもっとも単純な表示形式で、4つの基本的な処理: 編集、複製、削除、表示を用意しています。
 
-![](https://raw.github.com/contao/docs/3.0/manual/en/images/list-view-icons.jpg)
+![](images/list-view-icons.jpg?raw=true)
 
 
 ### ペアレントビューのアイコン
 
 「ペアレントビュー」はナビゲーションのアイコンを2つの追加していて、レコードの順序を制御できます。バージョン2.7からは、順序はドラッグアンドドロップで変更できます。これは(ナビゲーションのアイコンではなく)単純にレコードをクリックしてから、新しい位置にドラッグできます。
 
-![](https://raw.github.com/contao/docs/3.0/manual/en/images/parent-view-icons.jpg)
+![](images/parent-view-icons.jpg?raw=true)
 
 
 ### ツリービューのアイコン
 
 「ツリービュー」に必要なのは階層構造を扱うための追加のアイコンです。1つのレコードの複製に加えて、すべての下位のレコードを含めた複製、レコードの後や中に貼り付けを提供していて、入れ子となった構造を作成できるようにしています。
 
-![](https://raw.github.com/contao/docs/3.0/manual/en/images/tree-view-icons.jpg)
+![](images/tree-view-icons.jpg?raw=true)
 
 
 ### 以前のバージョンの復元
 
 Contaoはレコードを保存するときに、その新しいバージョンを毎回自動的に作成しています。複数のバージョンが存在していると、フォームの上部にドロップダウンメニューを表示して、ここから以前のバージョンに戻すことができます。単純にバージョンを選択して復元のボタンをクリックします。
 
-![](https://raw.github.com/contao/docs/3.0/manual/en/images/versioning.jpg)
+![](images/versioning.jpg?raw=true)
 
 
 ### 複数のレコードの編集
 
 一度に複数のレコードを編集する能力は、Contaoを様々なコンテンツ管理システムから明らかに際立たせています。「複数を変更」のボタンをクリックすると編集モードが切り替わるので、1つ以上の変更したいレコードを選択して、それから修正したい項目を選択してください。
 
-![](https://raw.github.com/contao/docs/3.0/manual/en/images/select-multiple-records.jpg)
+![](images/select-multiple-records.jpg?raw=true)
 
-![](https://raw.github.com/contao/docs/3.0/manual/en/images/select-fields-to-edit.jpg)
+![](images/select-fields-to-edit.jpg?raw=true)
 
-![](https://raw.github.com/contao/docs/3.0/manual/en/images/edit-multiple-records.jpg)
+![](images/edit-multiple-records.jpg?raw=true)
 
 
 ## キーボードのショートカット

@@ -149,7 +149,7 @@
 
 それぞれのコンテンツ要素を保護して、ウェブサイトでゲストだけ、または特定のグループのメンバーだけに表示するようにできます。
 
-![](https://raw.github.com/contao/docs/3.0/manual/en/images/protected-element.jpg)
+![](images/protected-element.jpg?raw=true)
 
 
 ### Flashコンテンツ
@@ -320,14 +320,14 @@ http://www.example.com/event-reader/events/final-exams.html
 
 この機能はニュースアーカイブとカレンダーに使用できます。ここではカレンダーリストでの例です。
 
-![](https://raw.github.com/contao/docs/3.0/manual/en/images/rss-calendar.jpg)
+![](images/rss-calendar.jpg?raw=true)
 
 
 ### 設定
 
 1つ以上のカレンダーをグループにして、RSSやAtomのフィードに出力できます。ニュースアーカイブでも同様です。同時に、それぞれのイベントやニュースを、ティーザーだけか記事全体を出力するか選択できます。
 
-![](https://raw.github.com/contao/docs/3.0/manual/en/images/rss-settings.jpg)
+![](images/rss-settings.jpg?raw=true)
 
 
 ### XMLファイル
@@ -344,7 +344,7 @@ XMLファイルは自動的にインストールしているContaoの```share```
 
 ニュースレターの購読は、それぞれのフロントエンドモジュールによって通常は処理するので、宛先を手作業で管理する必要はありません。データのプライバシーの理由で、Contaoは[二重のオプトイン][2]による購読の登録を必要とし、購読者の電子メールのアドレスだけ保管しています。
 
-![](https://raw.github.com/contao/docs/3.0/manual/en/images/newsletter-recipients.jpg)
+![](images/newsletter-recipients.jpg?raw=true)
 
 既に宛先のリストがある場合は、CSVファイルからContaoにインポートできます。
 
@@ -392,7 +392,7 @@ The Administrator
 
 特に共有タイプのホスティングサービスでは、スクリプトの実行時間と1分に送信できる電子メールの数の両方、またはその一方について通常は制限されています。Contaoは両方の問題に、スクリプトの実行時間切れを防ぐために送信処理をいくつかの周期に分け、各周期の間に個別の待ち時間を加えて各周期の1分間の電子メールの数を制御する、といった方法で対処に努めています。
 
-![](https://raw.github.com/contao/docs/3.0/manual/en/images/sending-newsletters.jpg)
+![](images/sending-newsletters.jpg?raw=true)
 
 
 ### フロントエンドモジュール
