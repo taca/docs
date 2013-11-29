@@ -119,7 +119,7 @@
 
 それぞれのコンテンツ要素を保護して、ウェブサイトでゲストだけ、または特定のグループのメンバーだけに表示するようにできます。
 
-![](https://raw.github.com/contao/docs/2.11/manual/en/images/protected-element.jpg)
+![](images/protected-element.jpg?raw=true)
 
 
 ### Flashコンテンツ
@@ -187,7 +187,7 @@ FlashはHTMLタグの少ない一部だけをサポートしているため、�
 
 ニュースアーカイブはニュース項目をグループ化と分類、またはその一方だけを行うために使用します。それぞれのアーカイブは特定の言語や話題に関連したものにでき、投稿をRSSやAtomのフィードに出力できます。XMLファイルは自動的にインストールしているContaoのルートのフォルダーに生成します。
 
-![](https://raw.github.com/contao/docs/2.11/manual/en/images/news-feed.jpg)
+![](images/news-feed.jpg?raw=true)
 
 
 ### フロントエンドモジュール
@@ -243,7 +243,7 @@ http://www.example.com/news/items/james-wilson-returns.html
 
 カレンダーはイベントのグループ化と分類、またはその一方だけを行うために使用します。それぞれのカレンダーは特定の言語や話題に関連したものにでき、そのイベントをRSSやAtomのフィードに出力できます。XMLファイルは自動的にインストールしているContaoのルートのフォルダーに生成します。
 
-![](https://raw.github.com/contao/docs/2.11/manual/en/images/calendar-feed.jpg)
+![](images/calendar-feed.jpg?raw=true)
 
 
 ### フロントエンドモジュール
@@ -299,7 +299,7 @@ http://www.example.com/event-reader/events/final-exams.html
 
 ニュースレターの購読は、それぞれのフロントエンドモジュールによって通常は処理するので、宛先を手作業で管理する必要はありません。データのプライバシーの理由で、Contaoは[二重のオプトイン][5]による購読の登録を必要とし、購読者の電子メールのアドレスだけ保管しています。
 
-![](https://raw.github.com/contao/docs/2.11/manual/en/images/newsletter-recipients.jpg)
+![](images/newsletter-recipients.jpg?raw=true)
 
 既に宛先のリストがある場合は、CSVファイルからContaoにインポートできます。
 
@@ -347,7 +347,7 @@ The Administrator
 
 特に共有タイプのホスティングサービスでは、スクリプトの実行時間と1分に送信できる電子メールの数の両方、またはその一方について通常は制限されています。Contaoは両方の問題に、スクリプトの実行時間切れを防ぐために送信処理をいくつかの周期に分け、各周期の間に個別の待ち時間を加えて各周期の1分間の電子メールの数を制御する、といった方法で対処に努めています。
 
-![](https://raw.github.com/contao/docs/2.11/manual/en/images/sending-newsletters.jpg)
+![](images/sending-newsletters.jpg?raw=true)
 
 
 ### フロントエンドモジュール
