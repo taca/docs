@@ -7,7 +7,7 @@
 
 新しい機能拡張を追加するには、"Manage extensions"のリンクに続けて、"Add extension"のボタンをクリックします。 機能拡張の詳細を入力できるフォームに移動します。上部の黄色いボックスは命名規則についての重要な情報を含んでいますので、注意深く読まなければなりません。
 
-![](https://raw.github.com/contao/docs/3.1/manual/en/images/add-extension.jpg)
+![](images/add-extension.jpg?raw=true)
 
 以下は現在利用できるカテゴリです。
 
@@ -55,7 +55,7 @@
 
 機能拡張を新しく作成した後で、最初のリリースを追加できます。機能拡張の新しいバージョンは、それぞれ別のリリースとして保持します。ナビゲーションの対応したアイコンからリリースの管理を開いて"Add release"のボタンをクリックしてください。
 
-![](https://raw.github.com/contao/docs/3.1/manual/en/images/add-release.jpg)
+![](images/add-release.jpg?raw=true)
 
 機能拡張リポジトリでバージョン番号は、メジャー、マイナー、保守のバージョンを示す3つの数値の部分(例: `1.0.0`)と、テキストによる開発の状態(例: `beta1`)の構成となっています。
 
@@ -87,9 +87,9 @@
 
 次に、新しいリリースにファイルを追加しなければなりません。ファイルの管理を開いて、"Add/update files"のボタンをクリックします。一度に1つのファイルか、完全な.zipアーカイブをアップロードできます。アップロードした後で正しいファイルのパスになるように、忘れずに正しいアップロード先のディレクトリを選択してください。
 
-![](https://raw.github.com/contao/docs/3.1/manual/en/images/add-files.jpg)
+![](images/add-files.jpg?raw=true)
 
-![](https://raw.github.com/contao/docs/3.1/manual/en/images/edit-files.jpg)
+![](images/edit-files.jpg?raw=true)
 
 ## Githubリポジトリからのファイルの追加
 
@@ -99,19 +99,19 @@ Githubのリポジトリからファイルを取り込むこともでき、そ�
 
 リポジトリのルートのフォルダーの名前も指定できます。この場合、このルートのフォルダー以外のファイルやフォルダーは取り込む際に対象にしません。
 
-![](https://raw.github.com/contao/docs/3.1/manual/en/images/github-import.jpg)
+![](images/github-import.jpg?raw=true)
 
 タグを選択した場合、そのファイルを自動的にダウンロードして、手作業でアップロードしたときとまったく同じように利用可能な状態になります。
 
-![](https://raw.github.com/contao/docs/3.1/manual/en/images/github-import-tag.jpg)
+![](images/github-import-tag.jpg?raw=true)
 
 ## 翻訳の追加
 
 機能拡張を公開する前に、少なくとも翻訳を1つ作成しなければなりません。翻訳管理を開いて、"Add language"のボタンをクリックします。常に英語の翻訳を作成することが望ましいです、なぜなら通常のバックエンドのユーザーには、ユーザーの言語と(代替の言語の)英語で利用可能な機能拡張だけが機能拡張管理に表示されるからです。
 
-![](https://raw.github.com/contao/docs/3.1/manual/en/images/add-translation.jpg)
+![](images/add-translation.jpg?raw=true)
 
-![](https://raw.github.com/contao/docs/3.1/manual/en/images/edit-translation.jpg)
+![](images/edit-translation.jpg?raw=true)
 
 完了した翻訳は対応するナビゲーションのアイコンをクリックして公開できます。
 
@@ -120,7 +120,7 @@ Githubのリポジトリからファイルを取り込むこともでき、そ�
 
 公開しようとしている機能拡張は他の機能拡張の機能、例えばcronジョブを使用しているかもしれません。このような機能拡張を動作させるにはcron機能拡張、通常は依存関係として参照される機能拡張のインストールが必要となります。これらの依存関係を機能拡張リポジトリに保存できて、特定の機能拡張をインストールする時に必要なモジュールをすべて自動的にインストールできます。
 
-![](https://raw.github.com/contao/docs/3.1/manual/en/images/add-dependency.jpg)
+![](images/add-dependency.jpg?raw=true)
 
 まず、依存関係として加えたい機能拡張を選択し、"Continue"のボタンをクリックして選択を確認します。次に、機能拡張が動作するとわかっている最小と最大のバージョンを選択します。
 
