@@ -448,12 +448,14 @@ filter criteria.
       <b>checkbox</b> Checkbox<br>
       <b>radio</b> Radio button<br>
       <b>radioTable</b> Table with images and radio buttons<br>
+      <b>imageSize</b> Two text fields with drop-down menu<br>
       <b>inputUnit</b> Text field with small unit drop-down menu<br>
       <b>trbl</b> Four text fields with a small unit drop-down menu<br>
       <b>chmod</b> CHMOD table<br>
       <b>pageTree</b> Page tree<br>
       <b>fileTree</b> File tree<br>
       <b>tableWizard</b> Table wizard<br>
+      <b>timePeriod</b> Text field with drop-down menu<br>
       <b>listWizard</b> List wizard<br>
       <b>optionWizard</b> Option wizard<br>
       <b>moduleWizard</b> Module wizard<br>
@@ -822,6 +824,11 @@ Each field can be validated against a regular expression.
   <td>readonly</td>
   <td>true/false (<code>boolean</code>)</td>
   <td>Makes the field read only (not supported by all field types).</td>
+</tr>
+<tr>
+  <td>csv</td>
+  <td>Delimiter (<code>string</code>)</td>
+  <td>The choice of this field will not be stored as serialized string but rather as given delimiter-separated list. Example: <code>'eval' => array('csv'=>',')</td>
 </tr>
 </table>
 
