@@ -412,12 +412,14 @@ fieldsの配列は表のカラムを定義します。これらの設定によ�
       <b>checkbox</b> チェックボックス<br>
       <b>radio</b> ラジオボタン<br>
       <b>radioTable</b> 画像とラジオボタンのある表<br>
+      <b>imageSize</b> ドロップダウンメニューのある2つのテキスト入力<br>
       <b>inputUnit</b> 小さな単位のドロップダウンメニューのあるテキスト入力<br>
       <b>trbl</b> 小さな単位のドロップダウンメニューのある4つのテキスト入力<br>
       <b>chmod</b> CHMODの表<br>
       <b>pageTree</b> ページツリー<br>
       <b>fileTree</b> ファイルツリー<br>
       <b>tableWizard</b> テーブルウィザード<br>
+      <b>timePeriod</b> ドロップダウンメニューのあるテキスト入力<br>
       <b>listWizard</b> 箇条書きウィザード<br>
       <b>optionWizard</b> オプションウィザード<br>
       <b>moduleWizard</b> モジュールウィザード<br>
@@ -764,6 +766,11 @@ fieldsの配列は表のカラムを定義します。これらの設定によ�
   <td>readonly</td>
   <td>trueまたはfalse (<code>boolean</code>)</td>
   <td>項目を読み込み専用とします。(すべての項目の種類でサポートしているわけではありません。)</td>
+</tr>
+<tr>
+  <td>csv</td>
+  <td>区切り文字 (<code>string</code>)</td>
+  <td>この項目はシリアライズした文字列ではなく、指定した区切り文字のリストとして保持します。例: <code>'eval' => array('csv'=>',')</td>
 </tr>
 </table>
 
