@@ -1034,11 +1034,11 @@ Hello)</td>
   <td>このタグは翻訳したラベルに置き換わります: `{{label::CNT:au}}` や `{{label::tl_article:title:0}}`。 最初のコロンだけ二重のコロンとなっていることに注意してください。</td>
 </tr>
 <tr>
-  <td><code>{{version::*}}</code></td>
+  <td><code>{{version}}</code></td>
   <td>このタグは現在のContaoのバージョン(例えば 2.11.2)に置き換わります。</td>
 </tr>
 <tr>
-  <td><code>{{request_token::*}}</code></td>
+  <td><code>{{request_token}}</code></td>
   <td>このタグは現在のセッションのリクエストトークに置き換わります。</td>
 </tr>
 </table>
