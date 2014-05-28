@@ -995,6 +995,10 @@ Contaoは以下のタグをサポートしています:
   <td>このタグは参照しているモジュールに置き換わります。(*をモジュールのIDかエイリアスに置き換えてください。)</td>
 </tr>
 <tr>
+  <td><code>{{insert_form::*}}</code></td>
+  <td>このタグは参照しているフォームに置き換わります。(*をフォームのIDに置き換えてください。)</td>
+</tr>
+<tr>
   <td><code>{{article_teaser::*}}</code></td>
   <td>このタグはアーティクルのティーザーに置き換わります。(*をアーティクルのIDに置き換えてください。).</td>
 </tr>
@@ -1089,11 +1093,11 @@ Contaoは以下のタグをサポートしています:
   <td>このタグは翻訳したラベルに置き換わります: <code>{{label::CNT:au}}</code>や<code>{{label::tl_article:title:0}}</code>。 最初のコロンだけ二重のコロンとなっていることに注意してください。</td>
 </tr>
 <tr>
-  <td><code>{{version::*}}</code></td>
+  <td><code>{{version}}</code></td>
   <td>このタグは現在のContaoのバージョン(例えば 2.11.2)に置き換わります。</td>
 </tr>
 <tr>
-  <td><code>{{request_token::*}}</code></td>
+  <td><code>{{request_token}}</code></td>
   <td>このタグは現在のセッションのリクエストトークに置き換わります。</td>
 </tr>
 <tr>
