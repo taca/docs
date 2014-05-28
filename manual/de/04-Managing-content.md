@@ -520,9 +520,9 @@ Newsletterleser, würde der Beitrag auch nicht angezeigt.
 
 ## Formulare
 
-Mit dem Formulargenerator lassen sich interaktive Formulare erstellen,die per
-E-Mail verschickt oder in der Datenbank gespeichert werdenkönnen. Hochgeladene
-Dateien werden als Anhang versendet oder aufdem Server gespeichert. Folgende
+Mit dem Formulargenerator lassen sich interaktive Formulare erstellen, die per
+E-Mail verschickt oder in der Datenbank gespeichert werden können. Hochgeladene
+Dateien werden als Anhang versendet oder auf dem Server gespeichert. Folgende
 Datenformate werden unterstützt:
 
 <table>
@@ -642,6 +642,156 @@ enthalten:
 </table>
 
 
+### Frontend-Modul
+
+Mit dem Frontend-Module des Formulargenerators können Formulare angezeigt werden.
+Module können im Backend unter "Layout" -> "Module" konfiguriert werden und
+müssen anschließend in einem Artikel oder Seitenlayout eingebunden werden.
+
+<table>
+<tr>
+  <th>Modul</th>
+  <th>CSS-Klasse</th>
+  <th>Beschreibung</th>
+</tr>
+<tr>
+  <td>Formular</td>
+  <td>mod_form</td>
+  <td>Fügt ein Formular auf der Seite ein.</td>
+</tr>
+</table>
+
+
+### Inhaltselement
+
+Das Inhaltselement bietet dieselben Funktionen wie das Modul, lässt sich aber
+direkt im Artikel einbinden und konfigurieren. Der Formulargenerator
+stellt ein Inhaltselement zur Verfügung:
+
+<table>
+<tr>
+  <th>Inhaltselement</th>
+  <th>CSS-Klasse</th>
+  <th>Beschreibung</th>
+</tr>
+<tr>
+  <td>Formular</td>
+  <td>ce_form</td>
+  <td>Fügt ein Formular ein.</td>
+</tr>
+</table>
+
+
+## Kommentare
+
+Kommentare sind eine weiter Form von Inhalt welcher übers das Backend
+verwaltet werden kann. Kommentare können in Kalendern und News-Archiven
+aktiviert werden.
+
+
+### Frontend-Modul
+
+Mit dem Frontend-Module der Kommentar-Erweiterung können Kommentare ein- und
+ausgegeben werden. Module können im Backend unter "Layout" -> "Module"
+konfiguriert werden und müssen anschließend in einem Artikel oder Seitenlayout
+eingebunden werden.
+
+<table>
+<tr>
+  <th>Modul</th>
+  <th>CSS-Klasse</th>
+  <th>Beschreibung</th>
+</tr>
+<tr>
+  <td>Kommentare</td>
+  <td>mod_comments</td>
+  <td>Bietet Kommentare oder eine Gästebuch-Funktion.</td>
+</tr>
+</table>
+
+
+### Inhaltselement
+
+Das Inhaltselement bietet dieselben Funktionen wie das Modul, lässt sich aber
+direkt im Artikel einbinden und konfigurieren. Die Kommentar-Erweiterung
+stellt ein Inhaltselement zur Verfügung:
+
+<table>
+<tr>
+  <th>Inhaltselement</th>
+  <th>CSS-Klasse</th>
+  <th>Beschreibung</th>
+</tr>
+<tr>
+  <td>Kommentare</td>
+  <td>ce_comments</td>
+  <td>Fügt das Kommentar-Formular auf der Seite ein.</td>
+</tr>
+</table>
+
+
+### BBCode
+
+Der Besucher kann ausserdem die [BBCode Sprache][7] verwenden.
+Contao versteht folgende Tags:
+
+<table>
+<tr>
+  <th>BBCode</th>
+  <th>Beschreibung</th>
+</tr>
+<tr>
+  <td>[b][/b]</td>
+  <td>Der enthaltene Text wird fett dargestellt.</td>
+</tr>
+<tr>
+  <td>[i][/i]</td>
+  <td>Der enthaltene Text wird kursiv dargestellt.</td>
+</tr>
+<tr>
+  <td>[u][/u]</td>
+  <td>Der enthaltene Text wird unterstrichen.</td>
+</tr>
+<tr>
+  <td>[img][/img]</td>
+  <td>Ersetzen den Tag durch ein Bild (Bild-Pfad zwischen den Tags).</td>
+</tr>
+<tr>
+  <td>[code][/code]</td>
+  <td>Der enthaltene Text wird in einer Schrift mit fester Laufweite
+  dargestellt.</td>
+</tr>
+<tr>
+  <td>[color=#ff0000][/color]</td>
+  <td>Der enthaltene Text wird in der entsprechenden Farbe dargestellt.</td>
+</tr>
+<tr>
+  <td>[quote][/quote]</td>
+  <td>Stellt den entsprechenden Text als Zitat dar.</td>
+</tr>
+<tr>
+  <td>[quote=John]Hallo[/quote]</td>
+  <td>Stellt den entsprechenden Text als Zitat eines Autors dar.</td>
+</tr>
+<tr>
+  <td>[url][/url]</td>
+  <td>Die enthaltene URL wird als Link dargestellt.</td>
+</tr>
+<tr>
+  <td>[url=http://][/url]</td>
+  <td>Der enthaltene Text wird mit der entsprechenden URL verlinkt.</td>
+</tr>
+<tr>
+  <td>[email][/email]</td>
+  <td>Die enthaltene E-Mail Adresse wird als Link dargestellt.</td>
+</tr>
+<tr>
+  <td>[email=name@example.com][/email]</td>
+  <td>Der enthaltene Text wird mit der E-Mail Adresse verknüpft.</td>
+</tr>
+</table>
+
+
 ## Inserttags
 
 Inserttags sind Platzhalter, die bei der Ausgabe einer Seite durch bestimmte
@@ -662,7 +812,7 @@ ihres Alias verlinkt werden.
 </tr>
 <tr>
   <td><code>{{link::*}}</code></td>
-  <td>Dieses Tag wird mit einem Link zu einer interne Seite ersetzt (ersetzen
+  <td>Dieses Tag wird mit einem Link zu einer internen Seite ersetzt (ersetzen
       Sie * mit der ID oder dem Alias).</td>
 </tr>
 <tr>
@@ -989,6 +1139,11 @@ Dateien aus dem "templates"-Verzeichnis eingebunden werden.
       der ID des Moduls).</td>
 </tr>
 <tr>
+  <td><code>{{insert_form::*}}</code></td>
+  <td>Dieses Tag wird mit dem referenzierten Formular ersetzt (ersetzen Sie * mit
+      der ID des Formulars).</td>
+</tr>
+<tr>
   <td><code>{{article_teaser::*}}</code></td>
   <td>Dieses Tag wird mit dem Teaser eines Artikels ersetzt (ersetzen Sie * mit
       der ID des Artikels).</td>
@@ -1111,12 +1266,12 @@ z.B. das aktuelle Datum oder ein Lightbox-Bild einfügen.
       werden.</td>
 </tr>
 <tr>
-  <td><code>{{version::*}}</code></td>
+  <td><code>{{version}}</code></td>
   <td>Dieses Tag wird mit der verwendeten Contao-Version (z.B. 2.11.2)
       ersetzt.</td>
 </tr>
 <tr>
-  <td><code>{{request_token::*}}</code></td>
+  <td><code>{{request_token}}</code></td>
   <td>Dieses Tag wird mit dem zur aktuellen Session gehörenden Request-Token
       ersetzt.</td>
 </tr>
@@ -1298,3 +1453,4 @@ Verfügbare Flags:
 [1]: https://contao.org/de/extension-list.html
 [2]: http://de.wikipedia.org/wiki/Opt-in
 [3]: 04-Managing-content.md#inserttags
+[7]: http://de.wikipedia.org/wiki/BBCode
