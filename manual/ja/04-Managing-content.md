@@ -48,6 +48,11 @@
   <td>コードの断片を強調表示して画面に表示します。</td>
 </tr>
 <tr>
+  <td>Markdown</td>
+  <td>ce_markdown</td>
+  <td>MarkdownテキストからHTMLのコードを生成します。</td>
+</tr>
+<tr>
   <td>アコーディオン(単一の要素)</td>
   <td>ce_accordion</td>
   <td>単一のアコーディオンの枠を(<a href="http://mootools.net">MooTools</a>で)生成します。</td>
@@ -692,6 +697,200 @@ Contaoは以下のタグをサポートしています:
 </table>
 
 
+## Markdown
+
+Markdownは単純な文法でテキストの書式を整形できる軽量なマークアップ言語です。読み書きしやすいということとHTMLに自動的に変換できる利点があります。
+
+この文法を以下の例で理解できるでしょう:
+
+### 文法
+
+#### 段落
+
+段落は界行で区切ります:
+
+    最初の段落
+
+    二つ目の段落
+
+
+#### 見出し
+
+6つの段階の見出しがあります:
+
+    # 見出し 1
+    ## 見出し 2
+    ### 見出し 3
+    #### 見出し 4
+    ##### 見出し 5
+    ###### 見出し 6
+
+
+#### 強い強調
+
+テキストに重要なものとする印を付けます:
+
+    **強い強調**
+    __強い強調__
+
+次のHTMLのコードに変換します: `<strong>強い強調</strong>`
+
+
+#### 強調
+
+テキストを強調する印を付けます:
+
+    *強調*
+    _強調_
+
+次のHTMLのコードに変換します: `<em>強調</em>`
+
+
+#### コード
+
+コンピューターのコードの一部として印を付けます:
+
+    `等幅フォント`
+
+次のHTMLのコードに変換します: `<code>等幅フォント</code>`
+
+
+##### コードのブロック
+
+コードのブロックには、各行の前に4つのスペースを追加してください。
+
+        複数行に渡った ...
+        ... 等幅のフォント
+
+
+#### blockquote
+
+blockquoteは、行頭を大なり記号で始めると作成できます。
+
+    > これはblockquoteです。
+
+
+#### 改行
+
+行末に2つ以上のスペースを追加します:
+
+    Contaoはアクセスしやすいオープンソースの  
+    コンテンツ管理システムです。
+
+
+#### リンク
+
+リンクには**インラインと**参照**の2つの文法があります。
+
+インラインのリンクは次の様に記述します:
+
+    [Contao](https://contao.org/en)
+
+または、オプションのタイトルを付けた記述です:
+
+    [Contao](https://contao.org/en "Contao's official website")
+
+参照の形式のリンクは次の様に記述します:
+
+    [Contao's official website][1]
+    
+    [1]:https://contao.org/en
+
+参照先はドキュメントのどこにでも追加できます。
+
+
+#### 画像
+
+リンクと同様に画像には**インラインと**参照**の2つの文法があります。
+
+インライン画像は次の様に記述します:
+
+    ![Alt text](/path/to/img.jpg "Optional title")
+
+参照の形式の画像は次の様に記述します:
+
+    ![Alt text][id]
+
+    [id]: /path/to/img.jpg "Optional title"
+
+参照先はドキュメントのどこにでも追加できます。
+
+
+#### 箇条書き
+
+##### 順序なしの箇条書き
+
+順序なしの箇条書きはアスタリスクやハイフンを使用します:
+
+    * List item  
+    * List item  
+        * A nested list item
+        * A nested list item
+    * List item
+
+    - List item  
+    - List item  
+    - List item
+
+
+##### 順序付きの箇条書き
+
+順序付きの箇条書きは数字を使用します:
+
+    1. List item  
+    2. List item  
+    3. List item
+
+
+#### さらに詳しい情報
+
+Markdownについてのドキュメント一式については、この[リンク][8]の公式なウェブサイトを参照してください。
+
+
+### 拡張文法
+
+Markdownで例えば表や脚注といった、すべての種類を記述することはできません。このために、基本的な言語を補完する"Markdown Extra"というプロジェクトが存在します。
+
+この拡張文法のいくつかの例を以下に示します:
+
+
+#### 表
+
+このように表を作成できます:
+
+```
+First Header | Second Header | Third Header  
+------------ | ------------- | ------------  
+Content Cell | Content Cell  | Content Cell  
+Content Cell | Content Cell  | Content Cell  
+```
+
+コロンを追加して位置合わせもできます:
+
+```
+First Header | Second Header | Third Header  
+:----------- | :-----------: | -----------:  
+Left         | Center        | Right  
+Left         | Center        | Right  
+```
+
+
+#### 脚注
+
+このように脚注を作成できます:
+
+    That's some text with a footnote.[^1]
+
+    [^1]: And that's the footnote.
+
+脚注の内容はドキュメントのどこにでも追加できます。
+
+
+#### さらに詳しい情報
+
+Markdown Extraについてのドキュメント一式については、この[リンク][8]の公式なウェブサイトを参照してください。
+
+
 ## 挿入タグ
 
 挿入タグはページが画面を表示するときに、動的なコンテンツと置き換わるワイルドカードです。例えば、現在の日付を表示し、フロントエンドのユーザーの名前に宛て、ファイルを取り込むといったことができます。挿入タグはContaoのほとんどどこでも、キャッシュされたページでさえも使用できます。
@@ -1275,3 +1474,5 @@ Contaoは以下のタグをサポートしています:
 [2]: http://en.wikipedia.org/wiki/Opt_in_e-mail
 [3]: 04-Managing-content.md#insert-tags
 [7]: http://en.wikipedia.org/wiki/BBCode
+[8]: http://daringfireball.net/projects/markdown/syntax
+[9]: http://michelf.ca/projects/php-markdown/extra
