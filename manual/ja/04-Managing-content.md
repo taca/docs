@@ -1023,7 +1023,6 @@ Hello)</td>
 <tr>
   <td><code>{{image::*}}</code></td>
   <td>このタグは画像のサムネイルに置き換わります:
-  <code>{{image::files/image.jpg?width=200&amp;height=150}}</code>。<br />
       `{{image::files/image.jpg?width=200&amp;height=150}}`. **width**
       サムネイルの幅、 **height** サムネイルの高さ、 **alt** 代替テキスト、
       **class** CSSのclass、 **rel** rel属性(例えば"lightbox")、
