@@ -1064,7 +1064,7 @@ Contaoは以下のタグをサポートしています:
 </tr>
 <tr>
   <td><code>{{ifnlng::*}}</code></td>
-  <td>このタグはページの言語がタグの言語と一致していると完全に削除されます。言語に特定なラベルを設定するのに使用できます: <code>{{ifnlng::de}}Your name{{iflng}}{{iflng::de}}Ihr Name{{iflng}}</code>。</td>
+  <td>このタグはページの言語がタグの言語と一致していると完全に削除されます。言語に特定なラベルを設定するのに使用できます: <code>{{ifnlng::de}}Your name{{ifnlng}}{{iflng::de}}Ihr Name{{iflng}}</code>。</td>
 </tr>
 <tr>
   <td><code>{{image::*}}</code></td>
