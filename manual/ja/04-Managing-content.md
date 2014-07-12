@@ -963,12 +963,8 @@ Contaoは以下のタグをサポートしています:
   <td>このタグはfilesディレクトリの静的なURLに置き換わります。</td>
 </tr>
 <tr>
-  <td><code>{{env::script_url}}</code></td>
-  <td>このタグはscriptsディレクトリの静的なURLに置き換わります。</td>
-</tr>
-<tr>
-  <td><code>{{env::plugins_url}}</code></td>
-  <td>このタグはpluginsディレクトリの静的なURLに置き換わります。</td>
+  <td><code>{{env::assets_url}}</code></td>
+  <td>このタグはassetsディレクトリの静的なURLに置き換わります。</td>
 </tr>
 </table>
 
