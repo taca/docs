@@ -1302,13 +1302,8 @@ page name or the request string.
   <td>This tag will be replaced with the static URL of the files directory.</td>
 </tr>
 <tr>
-  <td><code>{{env::script_url}}</code></td>
-  <td>This tag will be replaced with the static URL of the scripts
-      directory.</td>
-</tr>
-<tr>
-  <td><code>{{env::plugins_url}}</code></td>
-  <td>This tag will be replaced with the static URL of the plugins
+  <td><code>{{env::assets_url}}</code></td>
+  <td>This tag will be replaced with the static URL of the assets
       directory.</td>
 </tr>
 </table>
@@ -1444,7 +1439,7 @@ the current date or including lightbox images.
   <td><code>{{ifnlng::*}}</code></td>
   <td>This tag will be completely removed if the page language matches the tag
       language. You can use it to define language-specific labels:
-      <code>{{ifnlng::de}}Your name{{iflng}}{{iflng::de}}Ihr Name{{iflng}}</code>.</td>
+      <code>{{ifnlng::de}}Your name{{ifnlng}}{{iflng::de}}Ihr Name{{iflng}}</code>.</td>
 </tr>
 <tr>
   <td><code>{{image::*}}</code></td>
@@ -1464,12 +1459,12 @@ the current date or including lightbox images.
       colon is a double colon.</td>
 </tr>
 <tr>
-  <td><code>{{version::*}}</code></td>
+  <td><code>{{version}}</code></td>
   <td>This tag will be replaced with the current Contao version (e.g.
       2.11.2).</td>
 </tr>
 <tr>
-  <td><code>{{request_token::*}}</code></td>
+  <td><code>{{request_token}}</code></td>
   <td>This tag will be replaced with the request token of the current
       session.</td>
 </tr>

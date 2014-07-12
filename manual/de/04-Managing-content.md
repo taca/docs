@@ -1309,13 +1309,8 @@ oder der Request-String ausgegeben werden.
   <td>Dieses Tag wird mit der statischen URL des Uploadverzeichnis ersetzt.</td>
 </tr>
 <tr>
-  <td><code>{{env::script_url}}</code></td>
-  <td>Dieses Tag wird mit der statischen URL des Skriptverzeichnis ersetzt.</td>
-</tr>
-<tr>
-  <td><code>{{env::plugins_url}}</code></td>
-  <td>Dieses Tag wird mit der statischen URL des Pluginsverzeichnis
-      ersetzt.</td>
+  <td><code>{{env::assets_url}}</code></td>
+  <td>Dieses Tag wird mit der statischen URL des Assets-Verzeichnis ersetzt.</td>
 </tr>
 </table>
 
@@ -1452,7 +1447,7 @@ z.B. das aktuelle Datum oder ein Lightbox-Bild einfügen.
   <td><code>{{ifnlng::*}}</code></td>
   <td>Dieses Tag wird komplett entfernt, wenn die Sprache der Seite mit der
       Tag-Sprache übereinstimmt. Sie können so sprachspezifische Bezeichnungen
-      erstellen: <code>{{ifnlng::de}}Your name{{iflng}}{{iflng::de}}Ihr Name{{iflng}}</code></td>
+      erstellen: <code>{{ifnlng::de}}Your name{{ifnlng}}{{iflng::de}}Ihr Name{{iflng}}</code></td>
 </tr>
 <tr>
   <td><code>{{image::*}}</code></td>
@@ -1473,12 +1468,12 @@ z.B. das aktuelle Datum oder ein Lightbox-Bild einfügen.
       werden.</td>
 </tr>
 <tr>
-  <td><code>{{version::*}}</code></td>
+  <td><code>{{version}}</code></td>
   <td>Dieses Tag wird mit der verwendeten Contao-Version (z.B. 2.11.2)
       ersetzt.</td>
 </tr>
 <tr>
-  <td><code>{{request_token::*}}</code></td>
+  <td><code>{{request_token}}</code></td>
   <td>Dieses Tag wird mit dem zur aktuellen Session gehörenden Request-Token
       ersetzt.</td>
 </tr>
