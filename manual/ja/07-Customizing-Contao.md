@@ -611,6 +611,32 @@ public function myImportUser($strUsername, $strPassword, $strTable)
 ```
 
 
+### isVisibleElement
+
+"isVisibleElement"フックはフロントエンドで要素を表示するかどうかを確認するときに動作します。この場合の「要素」はアーティクル、フロントエンドモジュール、コンテンツ要素のどれかです。他の3つのフック"getArticle"、getFrontendModule"、"getContentElement"と対照的に、このフックは完全なマークアップの生成を止めることができます。フック関数はインスタンスのモデルと現在の表示状態を引数とし、新しい表示状態を戻り値とします。バージョン3.2RC1から利用可能です。
+
+``` {.php}
+// config.php
+$GLOBALS['TL_HOOKS']['isVisibleElement'][] = array('MyClass', 'myIsVisibleElement');
+
+// MyClass.php
+public function myIsVisibleElement($objElement, $blnIsVisible)
+{
+    if ($objElement instanceof ContentElement)
+    {
+        // コンテンツ要素表示可能か確認
+        if ($this->myElementCanBeShownInFrontend($objElement))
+        {
+            return true;
+        }
+    }
+
+    // それ以外では表示状態の変更を望みません。
+    return $blnIsVisible;
+}
+```
+
+
 ### listComments
 
 "listComments"フックはコメントをバックエンドに一覧されるときに動作します。フック関数は現在のレコードを引数とし、文字列を戻り値とします。バージョン2.8.RC2から利用可能です。
