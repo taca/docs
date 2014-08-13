@@ -46,7 +46,7 @@ true;
 // companyの名前を英数文字だけとします。
 $GLOBALS['TL_DCA']['tl_member']['fields']['company']['eval']['rgxp'] = 'alnum';
 
-// インクルードするコンテンツ要素を管理者だけに許可します。
+// インクルードするコンテント要素を管理者だけに許可します。
 if (!$this->User->isAdmin)
 {
     unset($GLOBALS['TL_CTE']['includes']);
@@ -139,7 +139,7 @@ $GLOBALS['TL_LANG']['tl_member']['customer_number'] = array
 上の画像はリッチテキストエディターの構成ファイル`system/config/tinyMCE.php`の初期状態の内容です。構成をカスタマイズするファイルを作成するには、単純にこれをコピーして名前を変更、例えば`tinyCustom.php`とします。次に、この新しいファイルを変更して保存します。最後の段階として、`system/config/dcaconfig.php`というファイルで[[データコンテナ構成][5]を調整して、Contaoにカスタマイズしたファイルを適用する項目を指定します。
 
 ``` {.php}
-// テキストのコンテンツ要素に独自のリッチテキストエディタの構成を使用します。
+// テキストのコンテント要素に独自のリッチテキストエディタの構成を使用します。
 Use the custom RTE configuration for text elements
 $GLOBALS['TL_DCA']['tl_content']['fields']['text']['eval']['rte'] =
 'tinyCustom';
@@ -148,7 +148,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['text']['eval']['rte'] =
 
 ## クラスメソッドのオーバーライド
 
-ここではナビゲーションモジュールの動作を変更して、下位のページがなくてモジュールをまったく表示しない場合でも、常にモジュールを表示するようにしてみます。下位のページがない場合は、そのことをユーザーに通知する表示をします。もちろん、元のナビゲーションのクラスの殆どはそのままにするようにして、将来のアップデートで保守を不要にします。モジュールとコンテンツ要素のクラスはContaoのシステム構成で動的に割り当てられ、独自のバージョンと簡単に置き換えることができるようになっています。
+ここではナビゲーションモジュールの動作を変更して、下位のページがなくてモジュールをまったく表示しない場合でも、常にモジュールを表示するようにしてみます。下位のページがない場合は、そのことをユーザーに通知する表示をします。もちろん、元のナビゲーションのクラスの殆どはそのままにするようにして、将来のアップデートで保守を不要にします。モジュールとコンテント要素のクラスはContaoのシステム構成で動的に割り当てられ、独自のバージョンと簡単に置き換えることができるようになっています。
 
 
 ### 独自のクラスの作成
@@ -177,7 +177,7 @@ class ModuleMyNavigation extends ModuleNavigation
 
 ### 独自のクラスを登録
 
-モジュールとコンテンツ要素のクラスはContaoのシステム構成で動的に割り当てられ、独自のバージョンと簡単に置き換えられるようになっています。モジュールのクラスは広域な配列`FE_MOD`が保持しています。
+モジュールとコンテント要素のクラスはContaoのシステム構成で動的に割り当てられ、独自のバージョンと簡単に置き換えられるようになっています。モジュールのクラスは広域な配列`FE_MOD`が保持しています。
 
 ``` {.php}
 // xcustom/config/config.php
@@ -492,7 +492,7 @@ public function myGetAllEvents($arrEvents, $arrCalendars, $intStart, $intEnd, Mo
 
 ### getContentElement
 
-"getContentElement"フックはコンテンツ要素をレンダリングするときに動作します。フック関数はデータベースオブジェクトとバッファー文字列を引数とし、バッファー文字列を戻り値とします。バージョン2.9.0から利用可能です。
+"getContentElement"フックはコンテント要素をレンダリングするときに動作します。フック関数はデータベースオブジェクトとバッファー文字列を引数とし、バッファー文字列を戻り値とします。バージョン2.9.0から利用可能です。
 
 ``` {.php}
 // config.php
@@ -613,7 +613,7 @@ public function myImportUser($strUsername, $strPassword, $strTable)
 
 ### isVisibleElement
 
-"isVisibleElement"フックはフロントエンドで要素を表示するかどうかを確認するときに動作します。この場合の「要素」はアーティクル、フロントエンドモジュール、コンテンツ要素のどれかです。他の3つのフック"getArticle"、getFrontendModule"、"getContentElement"と対照的に、このフックは完全なマークアップの生成を止めることができます。フック関数はインスタンスのモデルと現在の表示状態を引数とし、新しい表示状態を戻り値とします。バージョン3.2RC1から利用可能です。
+"isVisibleElement"フックはフロントエンドで要素を表示するかどうかを確認するときに動作します。この場合の「要素」はアーティクル、フロントエンドモジュール、コンテント要素のどれかです。他の3つのフック"getArticle"、getFrontendModule"、"getContentElement"と対照的に、このフックは完全なマークアップの生成を止めることができます。フック関数はインスタンスのモデルと現在の表示状態を引数とし、新しい表示状態を戻り値とします。バージョン3.2RC1から利用可能です。
 
 ``` {.php}
 // config.php
@@ -624,7 +624,7 @@ public function myIsVisibleElement($objElement, $blnIsVisible)
 {
     if ($objElement instanceof ContentElement)
     {
-        // コンテンツ要素表示可能か確認
+        // コンテント要素表示可能か確認
         if ($this->myElementCanBeShownInFrontend($objElement))
         {
             return true;
@@ -788,7 +788,7 @@ public function myParseFrontendTemplate($strContent, $strTemplate)
 
 ### postDownload
 
-"postDownload"フックはダウンロードや複数ダウンロードといったコンテンツ要素で、ファイルがダウンロードした後で動作します。フック関数はファイル名を引数とし、戻り値は不要です。バージョン2.4.6から利用可能です。
+"postDownload"フックはダウンロードや複数ダウンロードといったコンテント要素で、ファイルがダウンロードした後で動作します。フック関数はファイル名を引数とし、戻り値は不要です。バージョン2.4.6から利用可能です。
 
 ``` {.php}
 // config.php
