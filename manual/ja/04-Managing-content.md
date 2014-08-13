@@ -620,8 +620,7 @@ Contaoは以下のタグをサポートしています:
 </tr>
 <tr>
   <td>[quote=John]Hello[/quote]</td>
-  <td>タグを引用したテキストと作成者の名前で置き換えます。(例: John wrote: 
-Hello)</td>
+  <td>タグを引用したテキストと作成者の名前で置き換えます。(例: John wrote: Hello)</td>
 </tr>
 <tr>
   <td>[url][/url]</td>
