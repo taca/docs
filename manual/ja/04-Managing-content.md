@@ -542,7 +542,7 @@ http://www.example.com/newsletters/items/james-wilson-returns.html
 <tr>
   <td>セキュリティ質問</td>
   <td>captcha</td>
-  <td>spamボットから保護するための単純な数学の質問(CAPTCHA)です。</td>
+  <td>フォームが人間によって提出されていると検証するための単純な数学の質問(CAPTCHA)です。</td>
 </tr>
 <tr>
   <td>提出ボタン</td>
@@ -1042,6 +1042,7 @@ Contaoは以下のタグをサポートしています:
   <td><code>{{email::*}}</code></td>
   <td>このタグはクリック可能な暗号化した電子メールアドレスに置き換わります。</td>
 </tr>
+<tr>
   <td><code>{{email_open::*}}</code></td>
   <td>このタグはクリック可能な暗号化した電子メールアドレスに置き換わります。しかし、閉じる<code>&lt;/a&gt;</code>を追加しません。</td>
 </tr>
@@ -1051,15 +1052,15 @@ Contaoは以下のタグをサポートしています:
 </tr>
 <tr>
   <td><code>{{lang::*}}</code></td>
-  <td>このタグはテキスト中の外国の単語にしるしを付けるのに使用できます: <code>{{lang::fr}}Au revoir{{lang}}</code>。これは<code><span lang="fr" xml:lang="fr">Au revoir</span></code>に置き換わります。</td>
+  <td>このタグはテキスト中の外国の単語にしるしを付けるのに使用できます: <code>{{lang::fr}}Au revoir{{lang}}</code>。これは<code>&lt;span lang="fr" xml:lang="fr"&gt;Au revoir&lt;/span&gt;</code>に置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{abbr::*}}</code></td>
-  <td>テキストに略称を付けます: <code>{{abbr::World Wide Web}}WWW{{abbr}}</code>。これは<code><abbr title="World Wide Web">WWW</abbr></code>に置き換わります。</td>
+  <td>テキストに略称を付けます: <code>{{abbr::World Wide Web}}WWW{{abbr}}</code>。これは<code>&lt;abbr title="World Wide Web"&gt;WWW&lt;/abbr&gt;</code>に置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{acronym::*}}</code></td>
-  <td>テキストに頭字語を付けます: <code>{{acronym:: Multipurpose Internet Mail Extensions}}MIME{{acronym}}</code>。これは<code><acronym title="Multipurpose Internet Mail Extensions">MIME</acronym></code>に置き換わります。</td>
+  <td>テキストに頭字語を付けます: <code>{{acronym:: Multipurpose Internet Mail Extensions}}MIME{{acronym}}</code>。これは<code>&lt;acronym title="Multipurpose Internet Mail Extensions"&gt;MIME&lt;/acronym&gt;</code>に置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{ua::*}}</code></td>
@@ -1071,8 +1072,7 @@ Contaoは以下のタグをサポートしています:
 </tr>
 <tr>
   <td><code>{{ifnlng::*}}</code></td>
-  <td>このタグはページの言語がタグの言語と一致していると完全に削除されます。言語に特定なラベルを設定するのに使用できます:
-  <code>{{ifnlng::de}}Your name{{ifnlng}}{{iflng::de}}Ihr Name{{iflng}}</code>。</td>
+  <td>このタグはページの言語がタグの言語と一致していると完全に削除されます。言語に特定なラベルを設定するのに使用できます: <code>{{ifnlng::de}}Your name{{ifnlng}}{{iflng::de}}Ihr Name{{iflng}}</code>。</td>
 </tr>
 <tr>
   <td><code>{{image::*}}</code></td>
