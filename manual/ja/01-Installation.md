@@ -236,6 +236,6 @@ Contaoを動作させるのに少し余分な設定が必要となる、主要�
 [10]: https://community.contao.org/en/
 [11]: https://contao.org/en/partners.html?search=services&for=partner_hosting
 [13]: https://contao.org/en/extension-list/view/music_academy.en.html
-[14]: https://contao.org/en/manual/3.2/system-administration.html#extension-catalog
-[15]: https://contao.org/en/manual/3.2/system-administration.html#importing-a-template
-[15]: https://contao.org/en/manual/3.2/system-administration.html#importing-a-template
+[14]: https://contao.org/en/manual/3.3/system-administration.html#extension-catalog
+[15]: https://contao.org/en/manual/3.3/system-administration.html#importing-a-template
+[15]: https://contao.org/en/manual/3.3/system-administration.html#importing-a-template
