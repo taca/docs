@@ -35,14 +35,31 @@ $GLOBALS['TL_CONFIG']['installCount'] = 0; // これで自動的なロックを�
 
 #### テンプレートのインポート
 
-テンプレートは構成済みのウェブサイトのサンプルで、サイト構造、Contaoのコアモジュールとコンテンツ要素の書式を整形するいくつかのスタイルシートを含んでいます。初期状態では"Music Academy"というテンプレートがあります。これをインポートするにはドロップダウンメニューから`music_academy.sql`を選択して、「テンプレートをインポート」のボタンをクリックしてください。
+テンプレートは設定済みのウェブサイトで、例となるページとContaoのコアモジュールとコンテント要素の書式を整形する異なるスタイルシートからなります。
 
-**テンプレートをインポートする間に既存のデータを上書きすることに注意してください!**
+バージョン3.2.11から、ダウンロードしたパッケージは見本のウェブページを夫君でいません。使用しているバージョンに応じて、新しい[*Contaoの公式なデモ*][12]か古い[*Music Academy*][13]を機能拡張としてインストールしてください。
+
+**デモのインストールの方法:**
+
+1. 新しくContaoを管理者ユーザーを作成してインストール
+2. 管理者ユーザーでバックエンドにログイン
+3. 適合する拡張を[機能拡張リポジトリを使用][14]でインストール
+4. バックエンドからログアウト
+5. 再度インストールツールを開く
+
+テンプレートをインポートするには、ドロップダウンメニューから項目を選択して、「テンプレートをインポート」をクリックしてください。
+
+**テンプレートをインポートするとき、既存のデータを置き換えます!**
 
 
 #### 管理者ユーザーの作成
 
 テンプレートをインポートしなかった場合は、Contaoにログインする管理者ユーザーを作成しなければなりません。このアカウント作成すると、インストールの処理は完了です。右下の隅にあるリンクから管理領域に移動できます。サンプルのテンプレートをインポートした場合は"k.jones"というユーザーと"kevinjones"というパスワードでログインできます。
+
+
+### Contaoのデモのインストール
+
+*デモのインストールの方法*の節[*テンプレートのインポート*][15]を参照してください。
 
 
 ### 検索エンジンが扱いやすいURLの使用
@@ -218,3 +235,7 @@ Contaoを動作させるのに少し余分な設定が必要となる、主要�
 [9]: https://github.com/contao/check
 [10]: https://community.contao.org/en/
 [11]: https://contao.org/en/partners.html?search=services&for=partner_hosting
+[13]: https://contao.org/en/extension-list/view/music_academy.en.html
+[14]: https://contao.org/en/manual/3.2/system-administration.html#extension-catalog
+[15]: https://contao.org/en/manual/3.2/system-administration.html#importing-a-template
+[15]: https://contao.org/en/manual/3.2/system-administration.html#importing-a-template
