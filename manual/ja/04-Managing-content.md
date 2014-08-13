@@ -542,7 +542,7 @@ http://www.example.com/newsletters/items/james-wilson-returns.html
 <tr>
   <td>セキュリティ質問</td>
   <td>captcha</td>
-  <td>spamボットから保護するための単純な数学の質問(CAPTCHA)です。</td>
+  <td>フォームが人間によって提出されていると検証するための単純な数学の質問(CAPTCHA)です。</td>
 </tr>
 <tr>
   <td>提出ボタン</td>
@@ -991,6 +991,10 @@ Contaoは以下のタグをサポートしています:
   <td>このタグは参照しているモジュールに置き換わります。(*をモジュールのIDかエイリアスに置き換えてください。)</td>
 </tr>
 <tr>
+  <td><code>{{insert_form::*}}</code></td>
+  <td>このタグは参照しているフォームに置き換わります。(*をフォームのIDに置き換えてください。)</td>
+</tr>
+<tr>
   <td><code>{{article_teaser::*}}</code></td>
   <td>このタグはアーティクルのティーザーに置き換わります。(*をアーティクルのIDに置き換えてください。).</td>
 </tr>
@@ -1004,7 +1008,7 @@ Contaoは以下のタグをサポートしています:
 </tr>
 <tr>
   <td><code>{{file::*}}</code></td>
-  <td>このタグは"templates"のディレクトリにあるファイルの内容に置き換わります。(*をファイル名に置き換えてください。)<br />引数を指定することもできます。例: <code>{{file::file.php?arg1=val&amp;arg2=val}}</code></td>
+  <td>このタグは"templates"のディレクトリにあるファイルの内容に置き換わります。(*をファイル名に置き換えてください。)<br>引数を指定することもできます。例: <code>{{file::file.php?arg1=val&amp;arg2=val}}</code></td>
 </tr>
 </table>
 
@@ -1040,7 +1044,7 @@ Contaoは以下のタグをサポートしています:
 </tr>
 <tr>
   <td><code>{{lang::*}}</code></td>
-  <td>このタグはテキスト中の外国の単語にしるしを付けるのに使用できます: <code>{{lang::fr}}Au revoir{{lang}}</code> これは<code>&lt;span lang="fr" xml:lang="fr"&gt;Au revoir&lt;/span&gt;</code>に置き換わります。</td>
+  <td>このタグはテキスト中の外国の単語にしるしを付けるのに使用できます: <code>{{lang::fr}}Au revoir{{lang}}</code>。これは<code>&lt;span lang="fr" xml:lang="fr"&gt;Au revoir&lt;/span&gt;</code>に置き換わります。</td>
 </tr>
 <tr>
   <td><code>{{abbr::*}}</code></td>
