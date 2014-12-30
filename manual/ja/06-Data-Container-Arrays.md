@@ -224,7 +224,7 @@ listの配列はレコードを一覧表示する方法を定義します。Cont
 <tr>
   <td>fields</td>
   <td>項目 (<code>array</code>)</td>
-  <td>リストに表示する1つ以上の項目です。</td>
+  <td>リストに表示する1つ以上の項目です。(例: <code>array('title', 'user_id:tl_user.name')</code>)</td>
 </tr>
 <tr>
   <td>format</td>
