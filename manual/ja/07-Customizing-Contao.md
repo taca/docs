@@ -760,6 +760,25 @@ public function myParseFrontendTemplate($strContent, $strTemplate)
 ```
 
 
+### parseTemplate
+
+`parseTemplate`フックはテンプレートを解析する処理の前に動作します。フック関数は(`FrontendTemplate`や`BackendTemplate`である)`Template`のインスタンスだけを引数とし、戻り値は不要です。バージョン2.10.0で|追加|しました。
+
+``` {.php}
+// config.php
+$GLOBALS['TL_HOOKS']['parseTemplate'][] = array('MyClass', 'myParseTemplate');
+
+// MyClass.php
+public function myParseTemplate($objTemplate)
+{
+    if ($objTemplate->getName() == 'mod_html')
+    {
+        // objectを修正
+    }
+}
+```
+
+
 ### postDownload
 
 "postDownload"フックはダウンロードや複数ダウンロードといったコンテント要素で、ファイルがダウンロードした後で動作します。フック関数はファイル名を引数とし、戻り値は不要です。バージョン2.4.6から利用可能です。
