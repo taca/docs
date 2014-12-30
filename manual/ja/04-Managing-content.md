@@ -1273,15 +1273,14 @@ Markdown Extraについてのドキュメント一式については、この[�
   <td>このタグはページの言語がタグの言語と一致していると完全に削除されます。言語に特定なラベルを設定するのに使用できます: <code>{{ifnlng::de}}Your name{{ifnlng}}{{iflng::de}}Ihr Name{{iflng}}</code>。</td>
 </tr>
 <tr>
-  <td><code>{{image::*}}</code></td>
-  <td>このタグは画像のサムネイルに置き換わります:
-  <code>{{image::files/image.jpg?width=200&amp;height=150}}</code>。<br>
-  <strong>width</strong>: サムネイルの幅、<br>
-  <strong>height</strong>: サムネイルの高さ、<br>
-  <strong>alt</strong>: 代替テキスト、<br>
-  <strong>class</strong>: CSSのclass、<br>
-  <strong>rel</strong>: rel属性(例えば"lightbox")、<br>
-  <strong>mode</strong>: モード("proportional"、"crop"、"box")。</td>
+  <td>このタグは画像のサムネイルに置き換わります。(*をデータベースのID、UUID、ファイルのパスに置き換えてください。):
+      <code>{{image::58ca4a90-2d30-11e4-8c21-0800200c9a66?width=200&amp;height=150}}</code>.<br>
+      <strong>width</strong>: サムネイルの幅、<br>
+      <strong>height</strong>: サムネイルの高さ、<br>
+      <strong>alt</strong>: 代替テキスト、<br>
+      <strong>class</strong>: CSSのclass、<br>
+      <strong>rel</strong>: rel属性(例えば"lightbox")、<br>
+      <strong>mode</strong>: モード("proportional"、"crop"、"box")。</td>
 </tr>
 <tr>
   <td><code>{{label::*}}</code></td>
@@ -1462,6 +1461,18 @@ Markdown Extraについてのドキュメント一式については、この[�
     <td><code>base64_decode</code></td>
     <td><a href="https://en.wikipedia.org/wiki/Base64" target="_blank">Base64アルゴリズム</a>を使用してテキストをデコードします。</td>
     <td><a target="_blank" href="http://php.net/base64_decode">PHPの関数</a></td>
+</tr>
+<tr>
+    <td><code>urlencode</code></td>
+    <td>文字列をURLエンコードをします。</td>
+    <td><a target="_blank" 
+    href="http://php.net/urlencode">PHPの関数</a></td>
+</tr>
+<tr>
+    <td><code>rawurlencode</code></td>
+    <td>RFC3986によるURLエンコードをします。</td>
+    <td><a target="_blank" 
+    href="http://php.net/rawurlencode">PHPの関数</a></td>
 </tr>
 </table>
 

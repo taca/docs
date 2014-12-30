@@ -349,6 +349,33 @@ public function myCompileDefinition($arrRow)
 ```
 
 
+### compileFormFields
+
+"compileFormFields"フックはフォームの項目を読み込む前に動作します。フォームのIDとフォームのオブジェクトを引数にし、FormFieldModelオブジェクトの配列を戻り値とします。このフックでフォームの項目を表示する前に動的に調整できます。バージョン3.2から利用加納です。
+
+``` {.php}
+// config.php
+$GLOBALS['TL_HOOKS']['compileFormFields'][] = array('MyClass', 'myCompileFormFields');
+
+// MyClass.php
+public function myCompileFormFields($arrFields, $formId, $this)
+{
+    if ($formId == 'my_form_id') 
+    {
+        foreach ($arrFields AS $objFields) 
+        {
+		if($objFields->name == 'my_form_field_1') 
+		{
+			// 何か実行
+        	}
+	}
+    }
+    
+    return $arrFields;
+}
+```
+
+
 ### createDefinition
 
 "createDefinition"フックはスタイルシートの書式定義をインポートしたときに動作します。フック関数はキー、値、元の書式定義、データ配列を引数にし、配列またはfalseを戻り値とします。バージョン2.9.4から利用可能です。
@@ -782,6 +809,25 @@ public function myParseFrontendTemplate($strContent, $strTemplate)
     }
 
     return $strContent;
+}
+```
+
+
+### parseTemplate
+
+`parseTemplate`フックはテンプレートを解析する処理の前に動作します。フック関数は(`FrontendTemplate`や`BackendTemplate`である)`Template`のインスタンスだけを引数とし、戻り値は不要です。バージョン2.10.0で|追加|しました。
+
+``` {.php}
+// config.php
+$GLOBALS['TL_HOOKS']['parseTemplate'][] = array('MyClass', 'myParseTemplate');
+
+// MyClass.php
+public function myParseTemplate($objTemplate)
+{
+    if ($objTemplate->getName() == 'mod_html')
+    {
+        // objectを修正
+    }
 }
 ```
 
