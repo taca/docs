@@ -439,6 +439,37 @@ public function myCompileDefinition($arrRow)
 ```
 
 
+### compileFormFields
+
+The "compileFormFields" hook is triggered before a form field is loaded. 
+It passes an array of FormFieldModel objects, the form ID and the form object as 
+arguments and expects the array of FormFieldModel objects as return value. 
+With this Hook form fields can be adjusted dynamically before display.
+It is available from version 3.2.
+
+``` {.php}
+// config.php
+$GLOBALS['TL_HOOKS']['compileFormFields'][] = array('MyClass', 'myCompileFormFields');
+
+// MyClass.php
+public function myCompileFormFields($arrFields, $formId, $this)
+{
+    if ($formId == 'my_form_id') 
+    {
+        foreach ($arrFields AS $objFields) 
+        {
+		if($objFields->name == 'my_form_field_1') 
+		{
+			// Do something
+        	}
+	}
+    }
+    
+    return $arrFields;
+}
+```
+
+
 ### createDefinition
 
 The "createDefinition" hook is triggered when a format definition of a style
@@ -932,6 +963,28 @@ public function myParseFrontendTemplate($strContent, $strTemplate)
     }
 
     return $strContent;
+}
+```
+
+
+### parseTemplate
+
+The `parseTemplate` hook is called before the parsing process of a template. 
+It receives a `Template` instance (can be `FrontendTemplate` or 
+`BackendTemplate`) as the only parameter and does not expect any 
+return value. Added in version 2.10.0.
+
+``` {.php}
+// config.php
+$GLOBALS['TL_HOOKS']['parseTemplate'][] = array('MyClass', 'myParseTemplate');
+
+// MyClass.php
+public function myParseTemplate($objTemplate)
+{
+    if ($objTemplate->getName() == 'mod_html')
+    {
+        // Modify object
+    }
 }
 ```
 
