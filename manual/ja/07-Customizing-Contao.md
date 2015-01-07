@@ -842,6 +842,21 @@ public function myPostUpload($arrFiles)
 }
 ```
 
+### prepareFormData
+
+"prepareFormData"フックはフォームを提出された後で動作します。フォームのデータの配列、フォームのラベルの配列、フォームのオブジェクトを引数とし、戻り値は不要です。このフックで、電子メールの配信やデータの保存といった処理の実行前にデータの変更や拡張を行えます。バージョン3.0.0から利用可能です。
+
+``` {.php}
+// config.php
+$GLOBALS['TL_HOOKS']['prepareFormData'][] = array('MyClass', 'myPrepareFormData');
+
+// MyClass.php
+public function myPrepareFormData(&$arrSubmitted, $arrLabels, $objForm)
+{
+    // 何か実行
+}
+```
+
 
 ### printArticleAsPdf
 
