@@ -904,6 +904,28 @@ public function myParseFrontendTemplate($strContent, $strTemplate)
 ```
 
 
+### parseTemplate
+
+The `parseTemplate` hook is called before the parsing process of a template. 
+It receives a `Template` instance (can be `FrontendTemplate` or 
+`BackendTemplate`) as the only parameter and does not expect any 
+return value. Added in version 2.10.0.
+
+``` {.php}
+// config.php
+$GLOBALS['TL_HOOKS']['parseTemplate'][] = array('MyClass', 'myParseTemplate');
+
+// MyClass.php
+public function myParseTemplate($objTemplate)
+{
+    if ($objTemplate->getName() == 'mod_html')
+    {
+        // Modify object
+    }
+}
+```
+
+
 ### postDownload
 
 The "postDownload" hook is triggered after a file has been downloaded with the
@@ -970,6 +992,25 @@ $GLOBALS['TL_HOOKS']['postUpload'][] = array('MyClass', 'myPostUpload');
 
 // MyClass.php
 public function myPostUpload($arrFiles)
+{
+    // Do something
+}
+```
+
+### prepareFormData
+
+The "prepareFormData" hook is triggered after a form has been submitted. 
+It passes the form data array, the form labels array and the form object as
+arguments and does not expect a return value. This way the data can be 
+changed or extended, prior to execution of actions like email distribution 
+or data storage. It is available from version 3.0.0.
+
+``` {.php}
+// config.php
+$GLOBALS['TL_HOOKS']['prepareFormData'][] = array('MyClass', 'myPrepareFormData');
+
+// MyClass.php
+public function myPrepareFormData(&$arrSubmitted, $arrLabels, $objForm)
 {
     // Do something
 }

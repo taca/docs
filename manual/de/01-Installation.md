@@ -228,8 +228,7 @@ Das Live Update umfasst folgende Funktionen:
 99% aller Live Update-Probleme sind auf unzureichende Datei-Zugriffsrechte
 zurück zu führen. Contao benötigt Schreibrechte, um Dateien und Ordner zu
 verwalten, daher sollten Sie als erstes Ihre Serverkonfiguration prüfen und
-sicherstellen, dass der Safe Mode Hack **so wie in diesem Handbuch beschrieben**
-konfiguriert ist!
+sicherstellen, dass der Safe Mode Hack **so wie in diesem Handbuch beschrieben** konfiguriert ist!
 
 
 #### Support erhalten
@@ -261,7 +260,7 @@ Ein MySQL-Dump lässt sich am einfachsten mit der Datenbankverwaltung
 Programm `mysqldump` verwenden. Melden Sie sich an "phpMyAdmin" an, wählen Sie
 die zu exportierende Datenbank und klicken Sie auf die "Export"-Schaltfläche im
 oberen Menü. Um Kompatibilitätsprobleme zwischen verschiedenen MySQL-Versionen
-zu minimieren `,ist es wichtig, die Einstellungen für den Export gemäß des
+zu minimieren, ist es wichtig, die Einstellungen für den Export gemäß des
 folgenden Screenshots anzupassen:
 
 ![](images/sql-export.jpg?raw=true)
@@ -269,7 +268,7 @@ folgenden Screenshots anzupassen:
 
 ### Datenbank importieren
 
-Öffnen Sie "phpMyAdmin" auf dem Zielserver an und erstellen Sie eine neue
+Öffnen Sie "phpMyAdmin" auf dem Zielserver und erstellen Sie eine neue
 Datenbank für Contao. Je nach Serverkonfiguration ist das eventuell nur über die
 Verwaltungsoberfläche (z.B. "Plesk" oder "cPanel") möglich. Wählen Sie die neue
 leere Datenbank aus und klicken Sie auf die "Import"-Schaltfläche im oberen
@@ -281,7 +280,7 @@ Import.
 
 ### Datenbank-Konfiguration anpassen
 
-Als letztes öffnen Sie das Contao-Installtool der neuen Installation (das
+Als Letztes öffnen Sie das Contao-Installtool der neuen Installation (das
 Passwort ist dasselbe wie für Ihre lokale Installation) und passen wenn nötig
 die Datenbank-Zugangsdaten an. Danach können Sie sich wie gewohnt mit Ihrem
 Benutzernamen im Backend anmelden.
