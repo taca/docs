@@ -936,6 +936,10 @@ Contaoは以下のタグをサポートしています:
 </tr>
 <tr>
   <td><code>{{page::rootTitle}}</code></td>
+  <td>このタグはウェブサイトの名前に置き換わります。</td>
+</tr>
+<tr>
+  <td><code>{{page::rootPageTitle}}</code></td>
   <td>このタグはウェブサイトの題名に置き換わります。</td>
 </tr>
 </table>
