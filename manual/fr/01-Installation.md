@@ -33,8 +33,7 @@ ouvrez le fichier `system/config/localconfig.php` dans un éditeur de texte,
 trouvez la ligne ci-dessous et définissez-là à `0`.
 
 ``` {.php}
-$GLOBALS['TL_CONFIG']['installCount'] = 0; // Ceci enlèvera le verrouillage 
-automatique
+$GLOBALS['TL_CONFIG']['installCount'] = 0; // Ceci enlèvera le verrouillage automatique
 ```
 
 
@@ -109,7 +108,7 @@ de réécriture par défaut est stocké dans le fichier `.htaccess.default` situ
 dans le répertoire de Contao. Renommez ce fichier en `.htaccess` afin que le 
 serveur Apache puisse le traiter, puis connectez-vous au back office et accédez 
 à la configuration du système. Sélectionnez "Ré-écrire les URLs" dans la section 
-"Configuration du front office" et enregistrez vos modifications. Maintenant 
+"Configuration du front office" et enregistrez vos modifications. Maintenant, 
 Contao génère des URLs statiques comme `home.html` au lieu de `index.php?id=12`.
 
 
@@ -347,9 +346,8 @@ activer PHP 5.
 
 Contao requiert un serveur web comme Apache ou IIS avec PHP et le support de 
 MySQL. La version minimum de PHP est 5.3.2 et la version minimale de MySQL est 
-4.1, cependant, nous vous recommandons d'utiliser MySQL 5 pour une meilleure 
-performance. Vous avez également besoin des extensions PHP "GDlib" 
-(redimensionnement d'image), "DOM" (fichiers XML) et "SOAP" (référentiel 
+5.0. Vous avez également besoin des extensions PHP "GDlib" 
+(redimensionnement d'image), "DOM" (fichiers XML), "SOAP" (référentiel 
 d'extensions) et éventuellement "mbstring" (gestion des caractères multi-octets) 
 ainsi que "mcrypt" (cryptage des données). Contao a été testé avec succès avec 
 tous les principaux navigateurs comme Firefox (à partir de la version 2) ou 
@@ -358,8 +356,8 @@ Internet Explorer (à partir de la version 8).
 
 ### Contao Check
 
-Télécharger le "Contao Check" afin de savoir si votre serveur répond aux 
-exigences du système de Contao. Le script va vérifier si vous pouvez utiliser le 
+Télécharger "Contao Check" afin de savoir si votre serveur répond aux exigences
+du système de Contao. Le script va vérifier si vous pouvez utiliser le 
 référentiel d'extensions ainsi que le "Live Update" et si vous devez utiliser le 
 "Safe Mode Hack" ou non. Selon la configuration de votre système, vous pouvez 
 mettre en place une nouvelle installation de Contao avec l'installateur web ou 
@@ -370,7 +368,7 @@ valider une installation existante.
 Extrayez le fichier Zip, téléversez le dossier `check` dans votre répertoire 
 d'installation de Contao et ouvrez-le dans un navigateur Web.
 
-[Télécharger le Contao Check][8] | [Ouvrir le projet sur GitHub][9]
+[Télécharger Contao Check][8] | [Ouvrir le projet sur GitHub][9]
 
 
 ### Paramètres FAI spécifiques
@@ -384,11 +382,11 @@ partenaires de Contao][11].
 
 
 [1]: https://contao.org/en/download.html
-[2]: http://www.winscp.com/
+[2]: http://www.winscp.net/
 [3]: http://fr.wikipedia.org/wiki/Diff
 [4]: http://www.inetrobots.com
-[5]: http://www.inetrobots.com/shop/product_info.php?info=p12_Live-Update-ID.html
-[6]: http://www.inetrobots.com/contact-us.html
+[5]: https://update.contao.org/
+[6]: https://update.contao.org/en/support.html
 [7]: https://contao.org/en/support.html
 [8]: https://github.com/contao/check/zipball/master
 [9]: https://github.com/contao/check
