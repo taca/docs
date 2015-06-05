@@ -5,7 +5,7 @@
 
 ### activateAccount
 
-"activateAccount"フックは新しいフロントエンドのアカウントを有効したときに動作します。フック関数はユーザーオブジェクトを引数にし、戻り値は不要です。バージョン2.4.3から利用可能です。
+"activateAccount"フックは新しいフロントエンドのアカウントを有効したときに動作します。このフック関数はユーザーオブジェクトを引数にし、戻り値は不要です。バージョン2.4.3から利用可能です。
 
 ```php
 // config.php
@@ -22,7 +22,7 @@ public function myActivateAccount(Database_Result $objUser)
 
 ### activateRecipient
 
-"activateRecipient"フックはニュースレターの新しい宛先を追加したときに動作します。フック関数は電子メールアドレス、宛先のID、チャンネルのIDを引数にし、戻り値は不要です。バージョン2.8.RC1から利用可能です。
+"activateRecipient"フックはニュースレターの新しい宛先を追加したときに動作します。このフック関数は電子メールアドレス、宛先のID、チャンネルのIDを引数にし、戻り値は不要です。バージョン2.8.RC1から利用可能です。
 
 ```php
 // config.php
@@ -55,7 +55,7 @@ public function myAddComment($intId, $arrSet)
 
 ### addCustomRegexp
 
-"addCustomRegexp"フックは未知の正規表現があった場合に動作します。フック関数は正規表現の名前、現在の値、ウィジェットオブジェクトを引数にし、論理値を戻り値とします。バージョン2.6.2から利用可能です。
+"addCustomRegexp"フックは未知の正規表現があった場合に動作します。このフック関数は正規表現の名前、現在の値、ウィジェットオブジェクトを引数にし、論理値を戻り値とします。バージョン2.6.2から利用可能です。
 
 ```php
 // config.php
@@ -82,7 +82,7 @@ public function myAddCustomRegexp($strRegexp, $varValue, Widget $objWidget)
 
 ### addLogEntry
 
-"addLogEntry"フックは新しいログの項目を追加したときに動作します。フック関数はメッセージ、(訳注: ログの元となった)関数、アクションを引数にし、戻り値は不要です。バージョン2.8.RC1から利用可能です。
+"addLogEntry"フックは新しいログの項目を追加したときに動作します。このフック関数はメッセージ、(訳注: ログの元となった)関数、アクションを引数にし、戻り値は不要です。バージョン2.8.RC1から利用可能です。
 
 ```php
 // config.php
@@ -98,7 +98,7 @@ public function myAddLogEntry($strText, $strFunction, $strAction)
 
 ### checkCredentials
 
-"checkCredentials"フックは間違ったパスワードでログインに失敗したときに動作します。フック関数はユーザー名、パスワードに加えてユーザーオブジェクトを引数にし、論理値を戻り値とします。バージョン2.6.0から利用可能です。
+"checkCredentials"フックは間違ったパスワードでログインに失敗したときに動作します。このフック関数はユーザー名、パスワードに加えてユーザーオブジェクトを引数にし、論理値を戻り値とします。バージョン2.6.0から利用可能です。
 
 ```php
 // config.php
@@ -121,7 +121,7 @@ public function myCheckCredentials($strUsername, $strPassword, User $objUser)
 
 ### closeAccount
 
-"closeAccount"フックはユーザーがアカウントを廃止したときに動作します。フック関数はユーザーのID、操作モード、モジュールを引数にし、戻り値は不要です。バージョン2.8.0から利用可能です。
+"closeAccount"フックはユーザーがアカウントを廃止したときに動作します。このフック関数はユーザーのID、操作モード、モジュールを引数にし、戻り値は不要です。バージョン2.8.0から利用可能です。
 
 ```php
 // config.php
@@ -140,7 +140,7 @@ public function myCloseAccount($intId, $strMode, $objModule)
 
 ### compileDefinition
 
-"compileDefinition"フックはスタイルシートの書式定義を書き込んだときに動作します。フック関数は構成配列を引数にし、文字列を戻り値とします。バージョン2.9.4から利用可能です。
+"compileDefinition"フックはスタイルシートの書式定義を書き込んだときに動作します。このフック関数は構成配列を引数にし、文字列を戻り値とします。バージョン2.9.4から利用可能です。
 
 ```php
 // config.php
@@ -162,7 +162,7 @@ public function myCompileDefinition($arrRow)
 
 ### compileFormFields
 
-"compileFormFields"フックはフォームの項目を読み込む前に動作します。フック関数はフォームののオブジェクトを引数にし、FormFieldModelオブジェクトの配列を戻り値とします。このフックで、フォームの項目を表示する前に調整できます。バージョン3.2から利用可能です。
+"compileFormFields"フックはフォームの項目を読み込む前に動作します。このフック関数はフォームののオブジェクトを引数にし、FormFieldModelオブジェクトの配列を戻り値とします。このフックで、フォームの項目を表示する前に調整できます。バージョン3.2から利用可能です。
 
 ```php
 // config.php
@@ -189,7 +189,7 @@ public function myCompileFormFields($arrFields, $formId, $this)
 
 ### createDefinition
 
-"createDefinition"フックはスタイルシートの書式定義をインポートしたときに動作します。フック関数はキー、値、元の書式定義、データ配列を引数にし、配列またはfalseを戻り値とします。バージョン2.9.4から利用可能です。
+"createDefinition"フックはスタイルシートの書式定義をインポートしたときに動作します。このフック関数はキー、値、元の書式定義、データ配列を引数にし、配列またはfalseを戻り値とします。バージョン2.9.4から利用可能です。
 
 ```php
 // config.php
@@ -210,7 +210,7 @@ public function myCreateDefinition($strKey, $strValue, $strDefinition, $arrSet)
 
 ### createNewUser
 
-"createNewUser"フックはウェブサイトに新しいフロントエンドのユーザーを登録したときに動作します。フック関数は新しいユーザーのIDとデータ配列を引数とし、戻り値は不要です。バージョン2.2.0から利用可能です。
+"createNewUser"フックはウェブサイトに新しいフロントエンドのユーザーを登録したときに動作します。このフック関数は新しいユーザーのIDとデータ配列を引数とし、戻り値は不要です。バージョン2.2.0から利用可能です。
 
 ```php
 // config.php
@@ -226,7 +226,7 @@ public function myCreateNewUser($intId, $arrData)
 
 ### executePreActions
 
-"executePreActions"フックはDCAオブジェクトを必要としないAjaxのリクエストで動作します。フック関数はアクションの名前を引数とし、戻り値は不要です。バージョン2.6.1から利用可能です。
+"executePreActions"フックはDCAオブジェクトを必要としないAjaxのリクエストで動作します。このフック関数はアクションの名前を引数とし、戻り値は不要です。バージョン2.6.1から利用可能です。
 
 ```php
 // config.php
@@ -245,7 +245,7 @@ public function myExecutePreActions($strAction)
 
 ### executePostActions
 
-"executePostActions"フックはDCAオブジェクトが必要なAjaxのリクエストで動作します。フック関数はアクションの名前とデータコンテナオブジェクトを引数とし、戻り値は不要です。バージョン2.6.1から利用可能です。
+"executePostActions"フックはDCAオブジェクトが必要なAjaxのリクエストで動作します。このフック関数はアクションの名前とデータコンテナオブジェクトを引数とし、戻り値は不要です。バージョン2.6.1から利用可能です。
 
 ```php
 // config.php
@@ -264,7 +264,7 @@ public function myExecutePostActions($strAction, DataContainer $dc)
 
 ### generateBreadcrumb
 
-"generateBreadcrumb"フックでパンくずナビゲーションを修正できます。フック関数はナビゲーションの項目とフロントエンドモジュールを引数とし、項目を戻り値とします。バージョン2.10.0から利用できます。
+"generateBreadcrumb"フックでパンくずナビゲーションを修正できます。このフック関数はナビゲーションの項目とフロントエンドモジュールを引数とし、項目を戻り値とします。バージョン2.10.0から利用できます。
 
 ```php
 // config.php
@@ -280,7 +280,7 @@ public function myGenerateBreadcrumb($arrItems, \Module $objModule)
 
 ### generateFrontendUrl
 
-"generateFrontendUrl"フックはフロントエンドのURLを再作成したときに動作します。フック関数はページオブジェクト、パラメーター引数、デフォルトのURLを引数とし、文字列を戻り値とします。バージョン2.5.8から利用可能です。
+"generateFrontendUrl"フックはフロントエンドのURLを再作成したときに動作します。このフック関数はページオブジェクト、パラメーター引数、デフォルトのURLを引数とし、文字列を戻り値とします。バージョン2.5.8から利用可能です。
 
 ```php
 // config.php
@@ -296,7 +296,7 @@ public function myGenerateFrontendUrl($arrRow, $strParams, $strUrl)
 
 ### generatePage
 
-"generatePage"フックはメインのレイアウト(fe_page)を処理する前に動作します。フック関数はページオブジェクト、レイアウトオブジェクト、自身への参照を引数とし、戻り値は不要です。バージョン2.8.RC1から利用可能です。
+"generatePage"フックはメインのレイアウト(fe_page)を処理する前に動作します。このフック関数はページオブジェクト、レイアウトオブジェクト、自身への参照を引数とし、戻り値は不要です。バージョン2.8.RC1から利用可能です。
 
 ```php
 // config.php
@@ -312,7 +312,7 @@ public function myGeneratePage(\PageModel $objPage, \LayoutModel $objLayout, \Pa
 
 ### getAllEvents
 
-"getAllEvents"フックでカレンダーとイベントモジュールの結果のセットを変更できます。フック関数は現在の結果のセット、親の項目のID、開始と終了の時刻を引数とし、結果のセット(配列)を戻り値とします。バージョン2.6.4から利用可能です。
+"getAllEvents"フックでカレンダーとイベントモジュールの結果のセットを変更できます。このフック関数は現在の結果のセット、親の項目のID、開始と終了の時刻を引数とし、結果のセット(配列)を戻り値とします。バージョン2.6.4から利用可能です。
 
 ```php
 // config.php
@@ -327,9 +327,26 @@ public function myGetAllEvents($arrEvents, $arrCalendars, $intStart, $intEnd, Mo
 ```
 
 
+### getAttributesFromDca
+
+"getAttributesFromDca"フックでフォームの項目を修正できます。このフック関数は現在のウィジェットの属性の配列とDataContainerオブジェクトを引数とし、ウィジェットの属性の配列を戻り値とします。バージョン3.2.RC1から利用可能です。
+It is available from version 3.2.RC1.
+
+```php
+// config.php
+$GLOBALS['TL_HOOKS']['getAttributesFromDca'][] = array('MyClass', 'myGetAttributesFromDca');
+
+// MyClass.php
+public function myGetAttributesFromDca($arrAttributes, $objDca)
+{
+    // 何か実行
+    return $arrAttributes;
+}
+```
+
 ### getContentElement
 
-"getContentElement"フックはコンテント要素をレンダリングするときに動作します。フック関数はデータベースオブジェクトとバッファー文字列を引数とし、バッファー文字列を戻り値とします。バージョン2.9.0から利用可能です。
+"getContentElement"フックはコンテント要素をレンダリングするときに動作します。このフック関数はデータベースオブジェクトとバッファー文字列を引数とし、バッファー文字列を戻り値とします。バージョン2.9.0から利用可能です。
 
 ```php
 // config.php
@@ -345,7 +362,7 @@ public function myGetContentElement(Database_Result $objElement, $strBuffer)
 
 ### getImage
 
-"getImage"フックはサムネイルを生成したときに動作し、独自の処理を追加できます。フック関数はパス、幅と高さ、モード、キャッシュの名前、ファイルオブジェクトを引数とし、パスを戻り値とします。バージョン2.8から利用可能です。
+"getImage"フックはサムネイルを生成したときに動作し、独自の処理を追加できます。このフック関数はパス、幅と高さ、モード、キャッシュの名前、ファイルオブジェクトを引数とし、パスを戻り値とします。バージョン2.8から利用可能です。
 
 ```php
 // config.php
@@ -361,7 +378,7 @@ public function myGetImage($image, $width, $height, $mode, $strCacheName, $objFi
 
 ### getPageIdFromUrl
 
-"getPageIdFromUrl"フックはURLの断片を評価したときに動作します。フック関数はURLの断片を引数とし、URLの断片の配列を戻り値とします。バージョン2.5.4から利用可能です。
+"getPageIdFromUrl"フックはURLの断片を評価したときに動作します。このフック関数はURLの断片を引数とし、URLの断片の配列を戻り値とします。バージョン2.5.4から利用可能です。
 
 ```php
 // config.php
@@ -377,7 +394,7 @@ public function myGetPageIdFromUrl($arrFragments)
 
 ### getPageLayout
 
-"getPageLayout"フックはフロントエンドのテンプレートを初期化する前に動作します。フック関数はページのモデル、レイアウトのオブジェクト、ページオブジェクトの参照を引数とし、戻り値は不要です。バージョン3.1.0から利用できます。
+"getPageLayout"フックはフロントエンドのテンプレートを初期化する前に動作します。このフック関数はページのモデル、レイアウトのオブジェクト、ページオブジェクトの参照を引数とし、戻り値は不要です。バージョン3.1.0から利用できます。
 
 ```php
 // config.php
@@ -393,7 +410,7 @@ public function mygetPageLayout(\PageModel $objPage, \LayoutModel $objLayout, \P
 
 ### getSearchablePages
 
-"getSearchablePages"フックは検索インデックスを再構築したときに動作します。フック関数はページの配列とルートページを引数とし、完全なURL(!)の配列を戻り値とします。バージョン2.2.0から利用可能です。
+"getSearchablePages"フックは検索インデックスを再構築したときに動作します。このフック関数はページの配列とルートページを引数とし、完全なURL(!)の配列を戻り値とします。バージョン2.2.0から利用可能です。
 
 ```php
 // config.php
@@ -425,7 +442,7 @@ public function myInitializeSystem()
 
 ### importUser
 
-"importUser"フックはデータベースにユーザー名を見つからなかったときに動作します。フック関数はユーザー名、パスワード、テーブル名を引数とし、論理値を戻り値とします。バージョン2.7.RC1から利用可能です。
+"importUser"フックはデータベースにユーザー名を見つからなかったときに動作します。このフック関数はユーザー名、パスワード、テーブル名を引数とし、論理値を戻り値とします。バージョン2.7.RC1から利用可能です。
 
 ```php
 // config.php
@@ -450,7 +467,7 @@ public function myImportUser($strUsername, $strPassword, $strTable)
 
 ### isVisibleElement
 
-"isVisibleElement"フックはフロントエンドで要素を表示するかどうかを確認するときに動作します。この場合の「要素」はアーティクル、フロントエンドモジュール、コンテント要素のどれかです。他の3つのフック"getArticle"、getFrontendModule"、"getContentElement"と対照的に、このフックは完全なマークアップの生成を止めることができます。フック関数はインスタンスのモデルと現在の表示状態を引数とし、新しい表示状態を戻り値とします。バージョン3.2RC1から利用可能です。
+"isVisibleElement"フックはフロントエンドで要素を表示するかどうかを確認するときに動作します。この場合の「要素」はアーティクル、フロントエンドモジュール、コンテント要素のどれかです。他の3つのフック"getArticle"、getFrontendModule"、"getContentElement"と対照的に、完全にマークアップの生成を止めることができます。このフック関数はインスタンスのモデルと現在の表示状態を引数とし、新しい表示状態を戻り値とします。バージョン3.2RC1から利用可能です。
 
 ```php
 // config.php
@@ -476,7 +493,7 @@ public function myIsVisibleElement($objElement, $blnIsVisible)
 
 ### listComments
 
-"listComments"フックはコメントをバックエンドに一覧されるときに動作します。フック関数は現在のレコードを引数とし、文字列を戻り値とします。バージョン2.8.RC2から利用可能です。
+"listComments"フックはコメントをバックエンドに一覧されるときに動作します。このフック関数は現在のレコードを引数とし、文字列を戻り値とします。バージョン2.8.RC2から利用可能です。
 
 ```php
 // config.php
@@ -492,7 +509,7 @@ public function myListComments($arrRow)
 
 ### loadFormField
 
-"loadFormField"フックはフォームの項目を読み込んだときに動作します。フック関数はウィジェットのオブジェクト、フォームのID、フォームのデータを引数とし、ウィジェットのオブジェクトを戻り値とします。バージョン2.5.0から利用可能です。
+"loadFormField"フックはフォームの項目を読み込んだときに動作します。このフック関数はウィジェットのオブジェクト、フォームのID、フォームのデータを引数とし、ウィジェットのオブジェクトを戻り値とします。バージョン2.5.0から利用可能です。
 
 ```php
 // config.php
@@ -509,7 +526,7 @@ public function myLoadFormField(Widget $objWidget, $strForm, $arrForm)
 
 ### loadDataContainer
 
-"loadDataContainer"フックはDCAファイルを読み込んだときに動作します。フック関数はファイル名を引数とし、戻り値は不要です。バージョン2.8.2から利用可能です。
+"loadDataContainer"フックはDCAファイルを読み込んだときに動作します。このフック関数はファイル名を引数とし、戻り値は不要です。バージョン2.8.2から利用可能です。
 
 ```php
 // config.php
@@ -525,7 +542,7 @@ public function myLoadDataContainer($strName)
 
 ### loadLanguageFile
 
-"loadLanguageFile"フックは言語ファイルを読み込んだときに動作します。フック関数はファイル名と言語を引数とし、戻り値は不要です。バージョン2.8.RC1から利用可能です。
+"loadLanguageFile"フックは言語ファイルを読み込んだときに動作します。このフック関数はファイル名と言語を引数とし、戻り値は不要です。バージョン2.8.RC1から利用可能です。
 
 ```php
 // config.php
@@ -541,7 +558,7 @@ public function myLoadLanguageFile($strName, $strLanguage)
 
 ### outputBackendTemplate
 
-"outputBackendTemplate"フックはバックエンドのテンプレートを画面に表示するときに動作します。フック関数はテンプレートの内容とテンプレート名を引数とし、テンプレートのコンテンツを戻り値とします。バージョン2.6.0から利用可能です。
+"outputBackendTemplate"フックはバックエンドのテンプレートを画面に表示するときに動作します。このフック関数はテンプレートの内容とテンプレート名を引数とし、テンプレートのコンテンツを戻り値とします。バージョン2.6.0から利用可能です。
 
 ```php
 // config.php
@@ -562,7 +579,7 @@ public function myOutputBackendTemplate($strContent, $strTemplate)
 
 ### outputFrontendTemplate
 
-"outputFrontendTemplate"フックはフロントエンドのテンプレートを画面に表示するときに動作します。フック関数はテンプレートの内容とテンプレート名を引数とし、テンプレートのコンテンツを戻り値とします。バージョン2.6.0から利用可能です。
+"outputFrontendTemplate"フックはフロントエンドのテンプレートを画面に表示するときに動作します。このフック関数はテンプレートの内容とテンプレート名を引数とし、テンプレートのコンテンツを戻り値とします。バージョン2.6.0から利用可能です。
 
 ```php
 // config.php
@@ -583,7 +600,7 @@ public function myOutputFrontendTemplate($strContent, $strTemplate)
 
 ### parseBackendTemplate
 
-"parseBackendTemplate"フックはバックエンドのテンプレートを解析したときに動作します。フック関数はテンプレートの内容とテンプレート名を引数とし、テンプレートのコンテンツを戻り値とします。バージョン2.6.0から利用可能です。
+"parseBackendTemplate"フックはバックエンドのテンプレートを解析したときに動作します。このフック関数はテンプレートの内容とテンプレート名を引数とし、テンプレートのコンテンツを戻り値とします。バージョン2.6.0から利用可能です。
 
 ```php
 // config.php
@@ -604,7 +621,7 @@ public function myParseBackendTemplate($strContent, $strTemplate)
 
 ### parseFrontendTemplate
 
-"parseFrontendTemplate"フックはフロントエンドのテンプレートを解析したときに動作します。フック関数はテンプレートの内容とテンプレート名を引数とし、テンプレートのコンテンツを戻り値とします。バージョン2.6.0から利用可能です。
+"parseFrontendTemplate"フックはフロントエンドのテンプレートを解析したときに動作します。このフック関数はテンプレートの内容とテンプレート名を引数とし、テンプレートのコンテンツを戻り値とします。バージョン2.6.0から利用可能です。
 
 ```php
 // config.php
@@ -625,7 +642,7 @@ public function myParseFrontendTemplate($strContent, $strTemplate)
 
 ### parseTemplate
 
-`parseTemplate`フックはテンプレートを解析する処理の前に動作します。フック関数は(`FrontendTemplate`や`BackendTemplate`である)`Template`のインスタンスだけを引数とし、戻り値は不要です。バージョン2.10.0で|追加|しました。
+`parseTemplate`フックはテンプレートを解析する処理の前に動作します。このフック関数は(`FrontendTemplate`や`BackendTemplate`である)`Template`のインスタンスだけを引数とし、戻り値は不要です。バージョン2.10.0で|追加|しました。
 
 ```php
 // config.php
@@ -644,7 +661,7 @@ public function myParseTemplate($objTemplate)
 
 ### postDownload
 
-"postDownload"フックはダウンロードや複数ダウンロードといったコンテント要素で、ファイルがダウンロードした後で動作します。フック関数はファイル名を引数とし、戻り値は不要です。バージョン2.4.6から利用可能です。
+"postDownload"フックはダウンロードや複数ダウンロードといったコンテント要素で、ファイルがダウンロードした後で動作します。このフック関数はファイル名を引数とし、戻り値は不要です。バージョン2.4.6から利用可能です。
 
 ```php
 // config.php
@@ -660,7 +677,7 @@ public function myPostDownload($strFile)
 
 ### postLogin
 
-"postLogin"フックはユーザーがフロントエンドにログインした後で動作します。フック関数はユーザーオブジェクトを引数とし、戻り値は不要です。バージョン2.4.3から利用可能です。
+"postLogin"フックはユーザーがフロントエンドにログインした後で動作します。このフック関数はユーザーオブジェクトを引数とし、戻り値は不要です。バージョン2.4.3から利用可能です。
 
 ``` {.php}
 // config.php
@@ -691,7 +708,7 @@ public function myPostLogout(User $objUser)
 
 ### postUpload
 
-"postUpload"フックはユーザーがバックエンドで1つ以上のファイルをアップロードした後で動作します。フック関数はファイル名の配列を引数とし、戻り値は不要です。バージョン2.6.4から利用可能です。
+"postUpload"フックはユーザーがバックエンドで1つ以上のファイルをアップロードした後で動作します。このフック関数はファイル名の配列を引数とし、戻り値は不要です。バージョン2.6.4から利用可能です。
 
 ``` {.php}
 // config.php
@@ -722,7 +739,7 @@ public function myPrepareFormData(&$arrSubmitted, $arrLabels, $objForm)
 
 ### printArticleAsPdf
 
-"printArticleAsPdf"フックはアーティクルをPDFとしてエクスポートするときに動作します。フック関数はアーティクルのテキストとアーティクルのオブジェクトを引数とし、戻り値は不要です。バージョン2.8.RC1から利用可能です。
+"printArticleAsPdf"フックはアーティクルをPDFとしてエクスポートするときに動作します。このフック関数はアーティクルのテキストとアーティクルのオブジェクトを引数とし、戻り値は不要です。バージョン2.8.RC1から利用可能です。
 
 ``` {.php}
 // config.php
@@ -739,7 +756,7 @@ public function myPrintArticleAsPdf($strArticle, Database_Result $objArticle)
 
 ### processFormData
 
-"processFormData"フックはフォームが提出された後で動作します。フック関数はデータ配列、データコンテナ配列、ファイル配列を引数とし、戻り値は不要です。バージョン2.4.4から利用可能です。
+"processFormData"フックはフォームが提出された後で動作します。このフック関数はデータ配列、データコンテナ配列、ファイル配列を引数とし、戻り値は不要です。バージョン2.4.4から利用可能です。
 
 ``` {.php}
 // config.php
@@ -755,7 +772,7 @@ public function myProcessFormData($arrPost, $arrForm, $arrFiles)
 
 ### removeOldFeeds
 
-"removeOldFeeds"フックは古いXMLファイルをContaoのディレクトリから削除するときに動作します。フック関数に引数はなく、保存するファイル名の配列を戻り値とします。バージョン2.5.8から利用可能です。
+"removeOldFeeds"フックは古いXMLファイルをContaoのディレクトリから削除するときに動作します。このフック関数に引数はなく、保存するファイル名の配列を戻り値とします。バージョン2.5.8から利用可能です。
 
 ``` {.php}
 // config.php
@@ -771,7 +788,7 @@ public function myRemoveOldFeeds()
 
 ### removeRecipient
 
-"removeRecipient"フックはニュースレターの宛先を削除するときに動作します。フック関数は電子メールアドレス、チャンネルのIDを引数とし、戻りは不要です。バージョン2.8.RC1から利用可能です。
+"removeRecipient"フックはニュースレターの宛先を削除するときに動作します。このフック関数は電子メールアドレス、チャンネルのIDを引数とし、戻りは不要です。バージョン2.8.RC1から利用可能です。
 
 ``` {.php}
 // config.php
@@ -787,7 +804,7 @@ public function myRemoveRecipient($strEmail, $arrChannels)
 
 ### replaceInsertTags
 
-"replaceInsertTags"フックは未知の挿入タグがあった場合に動作します。フック関数は挿入タグを引数とし、置き換えた値かfalseを戻り値とします。バージョン2.6.0から利用可能です。
+"replaceInsertTags"フックは未知の挿入タグがあった場合に動作します。このフック関数は挿入タグを引数とし、置き換えた値かfalseを戻り値とします。バージョン2.6.0から利用可能です。
 
 ``` {.php}
 // config.php
@@ -808,7 +825,7 @@ public function myReplaceInsertTags($strTag)
 
 ### reviseTable
 
-"reviseTable"フックはContaoがテーブルから親のいないレコードを削除するときに動作します。フック関数は現在のテーブル、新しいレコードのID、親のテーブルの名前、すべての子のテーブルを引数とし、論理値を戻り値とします(trueを返すと現在のページを再読み込みすることになります)。バージョン2.6.4から利用可能です。
+"reviseTable"フックはContaoがテーブルから親のいないレコードを削除するときに動作します。このフック関数は現在のテーブル、新しいレコードのID、親のテーブルの名前、すべての子のテーブルを引数とし、論理値を戻り値とします(trueを返すと現在のページを再読み込みすることになります)。バージョン2.6.4から利用可能です。
 
 ``` {.php}
 // config.php
@@ -824,7 +841,7 @@ public function myReviseTable($table, $new_records, $parent_table, $child_tables
 
 ### setNewPassword
 
-"setNewPassword"フックは新しいパスワードを設定した後で動作します。フック関数はユーザーオブジェクトと暗号化したパスワードを引数とし、戻り値は不要です。バージョン2.2.3から利用可能です。
+"setNewPassword"フックは新しいパスワードを設定した後で動作します。このフック関数はユーザーオブジェクトと暗号化したパスワードを引数とし、戻り値は不要です。バージョン2.2.3から利用可能です。
 
 ``` {.php}
 // config.php
@@ -840,7 +857,7 @@ public function mySetNewPassword($objUser, $strPassword)
 
 ### validateFormField
 
-"validateFormField"フックはフォームの項目が提出されたときに動作します。フック関数はウィジェットのオブジェクト、フォームのIDを引数とし、ウィジェットのオブジェクトを戻り値とします。バージョン2.5.0から利用可能です。
+"validateFormField"フックはフォームの項目が提出されたときに動作します。このフック関数はウィジェットのオブジェクト、フォームのIDを引数とし、ウィジェットのオブジェクトを戻り値とします。バージョン2.5.0から利用可能です。
 
 ``` {.php}
 // config.php
