@@ -693,6 +693,7 @@ public function myPostLogin(User $objUser)
 
 ### postLogout
 
+"postLogout"フックはユーザーがフロントエンドからログアウトした後で動作します。このフック関数はユーザーオブジェクトを引数とし、戻り値は不要です。バージョン2.4.3から利用可能です。
 
 ``` {.php}
 // config.php
