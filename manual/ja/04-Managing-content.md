@@ -697,28 +697,25 @@ Contaoは以下のタグをサポートしています:
 </table>
 
 
-### Template inheritance
+### テンプレートの継承
 
-The inheritance allow you to create a template based on a second template. This
-means that a template (child) inherits the content of a second template (parent).
+継承によって2つめのテンプレーを元にテンプレートを作成できます。これはテンプレート(子)は2つめのテンプレート(親)の内容を継承することを意味します。
 
-In order that the content of a parent template may be modified or completed
-in the child template, it must be surrounded by an element named `block`.
+親のテンプレートの修正したり、子のテンプレートで補完したり、といったことを可能にするためには、`block`という名前の要素で囲まれていなければなりません。
 
-A block is built as follows:
+ブロックは次のように構築されます:
 
 ``` {.php}
 <?php $this->block('name_of_the_block'); ?>
 
-  // Block content
+  // ブロックの内容
 
 <?php $this->endblock(); ?>
 ```
 
-The example below shows a parent template with a block surrounding the
-content of the `head` tag.
+以下は、`head`タグの内容をブロックで囲んでいる親のテンプレートの例です。
 
-Template `fe_page.html5`:
+テンプレート`fe_page.html5`:
 
 ``` {.html}
 <!DOCTYPE html>
@@ -735,10 +732,9 @@ Template `fe_page.html5`:
 </html>
 ```
 
-In the child template `fe_custom.html5`, a style sheet is added in the `head`
-tag in addition to the inherited content of the parent template `fe_page.html5`.
+子のテンプレート`fe_custom.html5`では、`head`タグに親のテンプレート`fe_page.html5`の内容の継承に加えてスタイルシートを追加しています。
 
-Template `fe_custom.html5`:
+テンプレート`fe_custom.html5`:
 
 ``` {.html}
 <?php $this->extend('fe_page'); ?>
@@ -749,12 +745,10 @@ Template `fe_custom.html5`:
 <?php $this->endblock(); ?>
 ```
 
-* The `extend()` function specifies the template name whose it inherits the
-content.
-* The `parent()` function allows to complete a block without replacing the
-inherited content.
+* `extend()`関数は内容を継承するテンプレートの生和えを指定します。
+* `parent()`関数によって継承した内容を置き換えずに補完できます。
 
-The output of the `fe_custom.html5` template will be:
+テンプレート`fe_custom.html5`による出力は次のようになります:
 
 ``` {.html}
 <!DOCTYPE html>
@@ -771,45 +765,43 @@ The output of the `fe_custom.html5` template will be:
 ```
 
 
-### Template insertion
+### テンプレートの継承
 
-A template can be inserted into another template thanks to the `insert()`
-function.
+`insert()`関数によって、テンプレートは他のテンプレートに挿入できます。
 
 ``` {.php}
 <?php $this->insert('template_name'); ?>
 ```
 
-The `insert()` function also accepts the assignment of variables as second 
-parameter.
+`insert()`関数は変数への代入を第2引数として受け付けます。
 
 ``` {.php}
 <?php $this->insert('template_name', array('key'=>'value')); ?>
+
+// これは現在のテンプレートからすべての変数を渡します。
+<?php $this->insert('template_name', $this->getData()); ?>
 ```
 
-In the example below, we would like to insert the template
-`image-copyright.html5` in the template `image.html5`.
+以下の例は、テンプレート`image-copyright.html5`を`image.html5`に挿入しようと思います。
 
-The template `image.html5` contains an `img` tag and the `insert()` function.
+テンプレート`image.html5`は`img`タグと`insert()`関数を含んでいます。
 
-Template `image.html5`:
+テンプレート`image.html5`:
 
-``` {.html}
+```html
 <img src="<?php echo $this->src; ?>" alt="<?php echo $this->alt; ?>" />
 <?php $this->insert('image-copyright', array('name'=>'Donna Evans', 'license'=>'Creative Commons')); ?>
 ```
 
-The template `image-copyright.html5` contains a `small` tag that will be inserted
-below the `img` tag in the template `image.html5`. The variables `name` and
-`license` will be replaced with the values determined in the `insert()` function.
+テンプレート`image-copyright.html5`は、テンプレート`image.html5`の`img`タグの下に挿入する`small`タグを含んでいます。変数`name`と`license`は`insert()`関数で決められた値と置き換わります。
 
-Template `image-copyright.html5`:
+テンプレート`image-copyright.html5`:
 
 ``` {.html}
 <small>Photograph by <?php echo $this->name; ?>, licensed under <?php echo $this->license; ?></small>
 ```
 
-The output of the `image.html5` template will be:
+テンプレート`image.html5`の出力は次の様になります:
 
 ``` {.html}
 <img src="files/images/house.jpg" alt="A small house in England" />
