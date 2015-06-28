@@ -138,6 +138,24 @@ public function myCloseAccount($intId, $strMode, $objModule)
 ```
 
 
+### colorizeLogEntries
+
+"colorizeLogEntries"フックはtl_logの項目のラベルのコールバックの中で動作します。このフック関数は現在の列データを保持する配列と現在恩ラベルを引数にし、HTMLの文字列を戻り値とします。独自のログのカテゴリのために独自のラベルを生成するために使用できるだけでなく、既存のラベルの修正もできます。バージョン3.3.RC1から利用できます。
+
+```php
+// config.php
+$GLOBALS['TL_HOOKS']['colorizeLogEntries'][] = array('MyClass', 'colorizeLogEntries');
+
+// MyClass.php
+public function colorizeLogEntries($row, $label)
+{
+    // 何か実行
+
+    return $label;
+}
+```
+
+
 ### compileDefinition
 
 "compileDefinition"フックはスタイルシートの書式定義を書き込んだときに動作します。このフック関数は構成配列を引数にし、文字列を戻り値とします。バージョン2.9.4から利用可能です。
@@ -343,6 +361,7 @@ public function myGetAttributesFromDca($arrAttributes, $objDca)
     return $arrAttributes;
 }
 ```
+
 
 ### getContentElement
 

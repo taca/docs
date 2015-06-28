@@ -327,7 +327,7 @@
 </tr>
 <tr>
   <td><code>{{file::*}}</code></td>
-  <td>このタグは"templates"のディレクトリにあるファイルの内容に置き換わります。(*をファイル名に置き換えてください。)<br>引数を指定することもできます。例: <code>{{file::file.php?arg1=val&amp;arg2=val}}</code> さらにファイルのUUIDを指定してパスをデータベースから取り出せます。例: <code>{{file::6939a448-9b30-11e4-bcba-079af1e9baea}}</code></td>
+  <td>このタグは"templates"のディレクトリにある.php、.tpl、.xhtml、.html5の拡張子のファイルの内容に置き換わります。(*をファイル名に置き換えてください。)<br>引数を指定することもできます。例: <code>{{file::file.php?arg1=val&amp;arg2=val}}</code> さらにファイルのUUIDを指定してパスをデータベースから取り出せます。例: <code>{{file::6939a448-9b30-11e4-bcba-079af1e9baea}}</code></td>
 </tr>
 </table>
 {% endraw %}
