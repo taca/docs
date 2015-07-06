@@ -396,7 +396,7 @@
 </tr>
 <tr>
   <td><code>{{image::*}}</code></td>
-  <td>このタグは画像のサムネイルに置き換わります。(*をデータベースのID、UUID、ファイルのパスに置き換えてください。):
+  <td>このタグは画像のサムネイルに置き換わります。(*をデータベースのID、UUID、ファイルシステムのパスに置き換えてください。):
       <code>{{image::58ca4a90-2d30-11e4-8c21-0800200c9a66?width=200&amp;height=150}}</code>.<br>
       <strong>width</strong>: サムネイルの幅、<br>
       <strong>height</strong>: サムネイルの高さ、<br>
@@ -404,6 +404,19 @@
       <strong>class</strong>: CSSのclass、<br>
       <strong>rel</strong>: rel属性(例えば"lightbox")、<br>
       <strong>mode</strong>: モード("proportional"、"crop"、"box")。</td>
+</tr>
+<tr>
+  <td><code>{{picture::*}}</code></td>
+  <td>このタグは画像と、<code>size</code>のパラメーターが有効なIDの場合は画像サイズの優先設定に依存した様々な画像のソースに置き換わります。(*をデータベースのID、UUID、ファイルシステムのパスと置き換えてください。):
+      <code>{{picture::58ca4a90-2d30-11e4-8c21-0800200c9a66?size=1&amp;template=picture_default}}</code>.<br>
+      <strong>width</strong>: サムネイルの幅<br>
+      <strong>height</strong>: サムネイルの高さ<br>
+      <strong>alt</strong>: 代替のテキスト<br>
+      <strong>class</strong>: CSSのクラス<br>
+      <strong>rel</strong>: rel属性 (例: "lightbox")<br>
+      <strong>mode</strong>: モード("proportional"、"crop"、"box")<br>
+      <strong>size</strong>: 画像サイズのID (テーマ -&gt; 画像サイズを参照)<br>
+      <strong>template</strong>: テンプレートの初期値 (picture_default)</td>
 </tr>
 <tr>
   <td><code>{{label::*}}</code></td>

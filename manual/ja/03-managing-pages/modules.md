@@ -69,6 +69,11 @@
   <td>ユーザーの登録フォームを生成します。</td>
 </tr>
 <tr>
+  <td>パスワードの変更</td>
+  <td>mod_changePassword</td>
+  <td>パスワードを変更するフォームを生成します。</td>
+</tr>
+<tr>
   <td>パスワードの紛失</td>
   <td>mod_password</td>
   <td>新しいパスワードを要求するフォームを生成します。</td>

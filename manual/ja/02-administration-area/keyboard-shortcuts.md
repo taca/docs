@@ -113,6 +113,11 @@ Contaoで作業するときの流れを高速化する、バックエンドの�
   <td>Override multiple</td>
   <td>「複数を変更」モードで選択したすべてのレコードを上書きします。</td>
 </tr>
+<tr>
+  <td><code>[Shift]</code></td>
+  <td>Select several check boxes</td>
+  <td>「複数を変更」モードでシフトキーを押したままで、いくつかのチェックボックスを選択します。</td>
+</tr>
 </table>
 
 上に示した方式のキーボードショートカットはWindowsだけで動作します。Macintoshのユーザーは`[Alt]`キーの代わりに`[Ctrl]+[⌥ Opt]`をキーボードショートカットに使用しなければなりません。加えて、Windows上のFirefoxは標準から外れています: `[Alt]+[Shift]`とキーボードショートカットを押さないといけません。
