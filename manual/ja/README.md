@@ -5,4 +5,4 @@
 
 {% include "SUMMARY.md" %}
 
-{% include "../../LICENSE.md" %}
+{% include "LICENSE.md" %}
