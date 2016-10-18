@@ -31,6 +31,10 @@ toutes les fonctionnalités.
 | mbstring      | gestion des caractères multi-octets | non         |
 | mcrypt        | cryptage des données                | non         |
 
+> #### info:: Remarque
+> En fonction de vos extensions installées, il peut être nécessaire d'augmenter 
+> la valeur de la variable PHP `max_input_vars` (par ex. `2000` ou supérieur). Sinon, les 
+> longs formulaires du back office ne peuvent pas être soumis entièrement.
 
 Contao a été testé avec succès avec tous les principaux navigateurs comme Firefox
 (à partir de la version 2) ou Internet Explorer (à partir de la version 8).
@@ -45,7 +49,7 @@ référentiel d'extensions ainsi que le "Live Update" et si vous devez utiliser 
 mettre en place une nouvelle installation de Contao avec l'installateur web ou
 valider une installation existante.
 
-![](images/contao-check-fr.jpg)
+![](images/contao-check.jpg)
 
 Extrayez le fichier Zip, téléversez le dossier `check` dans votre répertoire
 d'installation de Contao et ouvrez-le dans un navigateur Web.

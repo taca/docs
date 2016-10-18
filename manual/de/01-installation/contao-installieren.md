@@ -3,14 +3,28 @@
 Laden Sie sich zunächst das [aktuelle Contao-Archiv][1] herunter und entpacken
 Sie es auf Ihrem lokalen Rechner. Verschieben Sie die Dateien in das
 `htdocs`-Verzeichnis Ihrer XAMPP-Installation oder kopieren Sie sie mit einem
-FTP-Programm (z.B. [WinSCP][2]) auf Ihren Server. Der Basisordner heißt
-wahrscheinlich `htdocs`, `httpdocs`, `html` oder `public_html`.
+FTP-Programm (z.B. [WinSCP][2]) auf Ihren Server. Stellen Sie sicher dass auch
+die Datei `.htaccess.default` hochgeladen wird und benennen Sie diese danach
+auf `.htaccess` um. Der Basisordner heißt wahrscheinlich `htdocs`, `httpdocs`,
+`html`, `public_html` oder `www`.
 
-Wenn Sie SSH-Zugriff auf den Server haben, können Sie alternativ folgende
-Befehle verwenden:
+Wenn Sie SSH-Zugriff auf den Server haben, können Sie Contao auch direkt
+über die Kommandozeile herunterladen, beispielsweise mit `curl`. Je nach
+gewünschter Version ist die URL anzupassen.
 
+Neuste Version von Contao (4.x):
 ```bash
 curl -L http://download.contao.org | tar -xzp
+```
+
+<abbr title="Long Term Support">LTS</abbr>-Version von Contao (3.5):
+```bash
+curl -L http://download.contao.org/lts | tar -xzp
+```
+
+Eine bestimmte Version (z.B. 3.5.2):
+```bash
+curl -L http://download.contao.org/3.5.2 | tar -xzp
 ```
 
 
@@ -68,7 +82,8 @@ Vorgehen zur Installation der Demo:
 Um ein Template zu importieren, wählen Sie den Eintrag aus dem Drop-Down-Menü
 und klicken Sie auf die "Template importieren"-Schaltfläche.
 
-**Beim Import eines Templates werden bestehende Daten überschrieben!**
+> #### danger:: Achtung
+> Beim Import eines Templates werden bestehende Daten überschrieben!
 
 
 #### Administrator-Konto erstellen
@@ -103,4 +118,4 @@ speichern Sie Ihre Änderungen. Contao generiert jetzt statische URLs wie z.B.
 [2]: http://www.winscp.net
 [3]: https://contao.org/de/extension-list/view/official_demo.de.html
 [4]: https://contao.org/de/extension-list/view/music_academy.de.html
-[5]: ../05-systemadministration/erweiterungen.html#erweiterungskatalog
+[5]: ../05-systemadministration/erweiterungen.md#erweiterungskatalog
