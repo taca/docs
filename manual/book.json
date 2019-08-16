@@ -9,7 +9,7 @@
         "piwik",
         "toggle-chapters",
         "image-captions",
-        "versions",
+        "versions-select",
         "canonical-link"
     ],
     "links": {
@@ -38,7 +38,7 @@
         "versions": {
             "gitbookConfigURL": "https://raw.githubusercontent.com/contao/docs/master/manual/book.json",
             "options": [
-                { "value": "https://docs.contao.org/books/manual/4.4", "text": "Contao 4.4", "selected": true },
+                { "value": "https://docs.contao.org/books/manual/4.4", "text": "Contao 4.4" },
                 { "value": "https://docs.contao.org/books/manual/4.3", "text": "Contao 4.3" },
                 { "value": "https://docs.contao.org/books/manual/4.2", "text": "Contao 4.2" },
                 { "value": "https://docs.contao.org/books/manual/4.0", "text": "Contao 4.0" },
@@ -52,7 +52,7 @@
             ]
         },
         "canonical-link": {
-            "baseURL": "https://docs.contao.org/books/manual/4.4/en/"
+            "baseURL": "https://docs.contao.org/books/manual/current/en/"
         },
         "anchorjs": {
             "selector": "h1,h2,h3,*:not(.callout) > h4,h5"
