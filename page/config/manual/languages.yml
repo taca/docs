@@ -6,3 +6,8 @@ de:
   weight: 2
   title: 'Contao Handbuch'
   documentation_label: Handbuch
+ja:
+  languageName: Japanese
+  weight: 3
+  title: 'Contaoマニュアル'
+  documentation_label: マニュアル
