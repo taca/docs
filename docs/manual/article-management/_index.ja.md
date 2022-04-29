@@ -1,0 +1,11 @@
+---
+title: 'アーティクルの管理'
+description: 'Contao encapsulates static content in articles that are assigned to a specific page and layout area in the article management.'
+aliases:
+    - /en/article-management/
+weight: 9
+---
+
+While the previous chapters were about structuring and formatting your website, this chapter deals with creating content within these structures. Contao knows different content types, wiez. B. a text, an image or a table, and provides a specific content element for each type. The individual content elements are grouped into articles.
+
+{{% children %}}
