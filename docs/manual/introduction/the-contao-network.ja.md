@@ -1,21 +1,16 @@
 ---
-title: 'The Contao network'
-description: 'Over the years, several websites and articles about Contao have been created, partly in consultation with 
-the Contao team, partly completely self-sufficient.'
+title: 'Contaoネットワーク'
+description: '長年にわたって、Contaoについてのウェブサイトと記事が、一部はContaoチームにより、一部は完全に自立した形で、いくつも作成されています。'
 aliases:
     - /ja/introduction/the-contao-network/
 weight: 20
 ---
 
-Over the years, several websites and articles about Contao have been created, partly in consultation with the Contao 
-team, partly completely self-sufficient. Some pages contain the translation of the documentation, others are contact 
-points of local communities or offer tutorials on special topics. You can find an overview of all resources known to us 
-on the [Contao network page](https://contao.org/en/network.html).
+長年にわたって、Contaoについてのウェブサイトと記事が、一部はContaoチームにより、一部は完全に自立した形で、いくつも作成されています。ドキュメントの翻訳、ローカルのコミュニティの連絡窓口、特定の話題への指導書を含んだページがあります。私達が把握しているすべてのリソースの概要は[Contao network page](https://contao.org/en/network.html)にあります。
 
+## プロジェクトのウェブサイト
 
-## The project website
-
-The official project website [contao.org](https://contao.org/en/) is the central contact point for Contao on the web.
+公式なプロジェクトのウェブサイト[contao.org](https://contao.org/en/)は、ウェブでContaoの中心的な連絡窓口です。
 
 At the beginning there is the point `Discover`. The search for the right CMS can be quite tedious at times, so it can 
 be assumed that a visitor has already seen several CMS websites before he or she has landed on Contao. For this reason, 

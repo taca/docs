@@ -1,47 +1,47 @@
 ---
-title: 'ContaoオープンソースCMS'
-description: 'It is a CMS, i.e. a content management system under an Open Source license called Contao.'
+title: 'Contao Open Source CMS'
+description: 'それはCMS、Contaoと呼ばれるすなわちオープンソースのライセンスのコンテンツ管理システムです。'
 aliases:
     - /ja/introduction/contao-open-source-cms/
 weight: 10
 ---
 
-"Contao Open Source CMS" is the full, official name of the project and says all you need to know when you first encounter the system. It is a CMS, i.e. a content management system under an open source license called Contao. If you already know what an open source CMS is, you can skip the next two sections. Otherwise ...
+"Contao Open Source CMS"は正式名称で、公式なプロジェクトの名前であることをシステムを最初知ったときに理解していれば十分です。それはCMS、Contaoと呼ばれるオープンソースのライセンスのコンテンツ管理システムです。既にオープンソースのCMSが何か知っている場合は、次の2つの章を飛ばしても良いでしょう。そうでなければ...
 
-## Content Management System
+## コンテンツ管理システム
 
-A content management system is, by definition, a program for managing content. Within this very general category there are countless subgroups, such as
+コンテンツ管理システムは、定義により、コンテンツを管理するプログラムです。このとても一般的なカテゴリーの中には、次のような数えられないサブグループがあります。
 
-- Document Management Systems for the administration of documents,
-- Customer Relation Management Systems for the administration of customers or
-- Web Content Management Systems for the administration of websites.
+- ドキュメントの管理を行うための文書管理システム
+- 顧客の管理を行うための顧客管理システム
+- ウェブサイトの管理を行うためのWebコンテンツ管理システム
 
-Contao is a Web Content Management System because it is designed to manage online content, unlike traditional content management systems that also serve radio and print media.
+Contaoはオンラインのコンテンツを管理するために設計されているのでWebコンテンツ管理システムで、ラジオや印刷メディアにも対応する伝統的なコンテンツ管理システムとは異なります。
 
-One characteristic of a content management system is that several users can work collaboratively on a project. Changes can be tracked at any time in version management and can be undone if necessary. In advance, an administrator can define in rights management which areas and contents users can access.
+コンテンツ管理システムの特性の一つに、複数のユーザーがプロジェクトに協力して作業できることがあります。バージョン管理でいつでも変更を見つけ出し、必要な場合は元に戻せます。予め、管理者はユーザーがアクセス可能な場所やコンテンツを管理する権限を定義できます。
 
-Furthermore, a CMS supports workflows. In Contao, you can allow an editor to create content but leave the publishing of that content to the editor-in-chief. This simple workflow guarantees that content doesn't appear on the website until the editor-in-chief has reviewed it.
+さらに、CMSはワークフローをサポートします。Contaoでは、編集者にコンテンツの作成を許可し、コンテンツの公開は編集長に委ねることができます。これは編集者がレビューを済ませるまで、コンテンツをウェブサイトに表示しないという単純なワークフローです。
 
-Even if you maintain a website all by yourself and don't need any rights management or workflows, it still makes sense to use a CMS. A CMS makes your life much easier by breaking down tasks like creating and checking a form or embedding a Google Map - which means "you don't have to know how it's done technically". To use Contao, doesn't even require knowlage HTML, although it is the markup language used to create web pages.
+ウェブサイトを自分自身で保守していて権限の管理やワークフローを必要としない場合でも、CMSを使用する意味はあります。CMSはフォームを作成して確認したり、Googleマップを埋め込んだり、といった課題を分解してあなたの人生をずっと楽にします、これは「技術的にどのようになされるかを知る必要がない」ことを意味します。Contaoを使用するには、Webページを作成するマークアップ言語であるにも関わらず、HTMLの知識も必要ありません。
 
-Because Contao is installed on a web server, you have access to your data around the clock from anywhere in the world. So you can theoretically work on your website from a beautiful beach - although this could lead to problems during your family vacation.
+ContaoはWebサーバーにインストールするため、世界のどこからでも24時間中アクセスできます。ですから、美しい海岸からウェブサイトの作業も理論的には可能です、家族休暇の間には問題になるかもしれませんが。
 
-## Open Source
+## オープンソース
 
-Open source software is characterized above all by the fact that the comprehensive "free" use of the program is permitted and there is no restriction of licensees or areas of use. The openly accessible source code and freedom from license fees are essential prerequisites for free usability.
+オープンソースのソフトウェアはプログラムの使用の広範な「自由」が許可され、ライセンスや使用する地域の制限がないという事実によって特徴付けられます。オープンにアクセス可能なソースコードとライセンス費からの自由であることが、自由に使用できるための本質的な要件となります。
 
-For you as a user, this means that you can use the program as you like - even for commercial projects. It is a common misconception that Open Source software may only be used for non-commercial projects. Such a "restriction of licensees" isn't allowed in open source!
+ユーザーとしてのは、これはプログラムを好きに使用できることを意味しています、商業プロジェクトであったとしても。オープンソースのソフトウェアは非商業プロジェクトにだけ使用できるというのは、よくある誤解です。そのような「ライセンスの制限」はオープンソースでは許されません!
 
-Of all Open Source licenses, the *General Public License*, or GPL for short, is probably the best known and most frequently used. It guarantees the licensee the right to use a program
+ありとあらゆるオープンソースのライセンスの中で、*General Public License*または短くGPLは、おそらくもっとも知られ、もっとも使用されています。GPLは以下のプログラムを使用について保証するライセンスです。
 
-- to use,
-- to be changed at will,
-- to reproduce,
-- to distribute and
-- to be made publicly available.
+- 使用
+- 自由自在に変更
+- 複製
+- 配布
+- 公開して入手可能にする
 
-In addition to these rights, the GPL also creates obligations for the licensee. For example, you may not remove any existing copyright notices or pass the program on under another license.
+これらの権利に加えて、GPLはライセンスの許諾者に義務も課しています。例えば、既存の著作権表示を削除したり、別のライセンスの下でプログラムを渡したり、といったことをしてはなりません。
 
-Further details and answers to common questions about Open Source licenses can be found on the website of [ifrOSS](https://www.ifross.org/?q=en/faq-frequently-asked-questions), the Institute *for Legal Issues of Free and Open Source Software*.
+オープンソースについて、さらに詳細とよくある質問は[ifrOSS](https://www.ifross.org/?q=en/faq-frequently-asked-questions)、*自由とオープンソースのソフトウェアの法的な問題への*組織のウェブサイトにあります。
 
-Contao was initially licensed under the GPL, but is now licensed under the *Lesser General Public License*, short LGPL, which is a legal extension of the GPL. The main difference is that third party developers who write their own extensions for Contao are not required to put them under an Open Source license like they would under the GPL.
+Contaoは始めはGPLライセンスでしたが、現在は*Lesser General Public License*、短くLGPL、GPLの法的な拡張のライセンスです。主な違いは、Contaoに独自の拡張を書いている第三者の開発者が、彼らの独自の拡張をGPLのようなオープンソースでライセンスする必要がないことです。

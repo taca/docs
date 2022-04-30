@@ -7,6 +7,6 @@ weight: 1
 ---
 
 
-Here you can learn everything you need to work with Contao. This includes the system structure, basic relationships between components, using the administration area, different content elements, modules and how to use extensions.
+ここにContaoで作業をするのに必要なすべてがあります。これにはシステム構造、構成要素の間の基本関係、管理領域の使い方、様々な要素とモジュール、拡張の使い方を含んでいます。
 
 {{% children %}}
