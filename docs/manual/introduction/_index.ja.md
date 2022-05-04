@@ -1,5 +1,5 @@
 ---
-title: '一目でわかるContao'
+title: 'Contaoの概要'
 description: 'Contaoはオープンソースのライセンス、つまりLesser General Public Licenseで公開されているWebのコンテンツ管理システムです。'
 aliases:
     - /ja/introduction/
