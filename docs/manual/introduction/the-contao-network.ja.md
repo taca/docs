@@ -12,72 +12,43 @@ weight: 20
 
 公式なプロジェクトのウェブサイト[contao.org](https://contao.org/en/)は、ウェブでContaoの中心的な連絡窓口です。
 
-At the beginning there is the point `Discover`. The search for the right CMS can be quite tedious at times, so it can 
-be assumed that a visitor has already seen several CMS websites before he or she has landed on Contao. For this reason, 
-all important information is collected in one place, from the feature overview to news, online demo, events, case 
-studies and the Contao team.
+最初に`Discover`があります。望ましいCMSの探索は時にはたいへんつまらないかもしれないので、Contaoにたどりつく前にいくつかのCMSのウェブサイトを訪れいていると仮定できます。この理由により、すべての重要な情報は機能の概要からニュース、オンラインのデモ、イベント、ケーススタディ、Contaoチームまでが一箇所に集められています。
 
 ![The Contao project website](/ja/introduction/images/en/the-contao-project-website.png?classes=shadow)
 
-After the user is convinced of the system, he will usually want to download and install it himself. Consequently, 
-`Download` is the next category. In addition to the program downloads, you can find the Contao and the fanpage logo for 
-download as well as the Contao release plan in the Media section.
+システムに納得したあとで、通常は自分でダウンロードしてインストールしたいと思うでしょう。その結果として、`Download`が次のカテゴリーです。プログラムのダウンロードに加えて、Contaoとファンページのロゴのダウンロード、メディアのセクションにContaoのリリース計画があります。
 
-In the next section you will find the `Partners` list of Contao partners that can help you with your Contao project.
+次は`Partners`のセクションで、あなたのContaoのプロジェクトに役立つContaoのパートナーの一覧があります。
 
-In the section `Support`, you can get an overview of Contao, find answers to the most frequently asked questions, 
-report bugs or view the Contao network.
+`Support`のセクションにはContaoの概要、よくある質問とその答え、バグの報告、Contaoネットワークを見ることができます。
 
-Once you have installed and understood the system, you can roughly estimate what functions it offers and which ones you 
-might need to implement your own website. In this case a look or a search in the 
-[extension list](https://extensions.contao.org/) can't hurt.
+システムをインストールして理解したなら、提供している機能とウェブサイトに実装が必要かもしれない機能のおおよそを推測できることでしょう。この場合、[機能拡張のリスト](https://extensions.contao.org/)を見たり、検索してみるのも良いでしょう。
 
+## 開発環境
 
-## The Development Environment
-
-Of all the many tasks and activities involved in an Open Source project, the further development of the software is of 
-course the most important. After all, the entire network has built up around the product. And because development is so 
-important, it is driven transparently on the platform [GitHub in the monorepository contao/contao](https://github.com/contao/contao/). 
-In addition, monthly [public conference calls](https://contao.org/en/mumble-calls.html) are held, where core developers 
-can exchange information via tickets marked "up for discussion".
+オープンソースのプロジェクトに関わっている多数のタスクと活動の中で、もちろんソフトウェアをさらに開発することはもっとも重要です。最終的に、全体のネットワークは成果物の周辺に構築されました。そして開発はそれだけ重要なので、[GitHubの単一のレポジトリ: contao/contao](https://github.com/contao/contao/)をプラットフォームとして透過的に運用しています。加えて、[公開の音声会議](https://contao.org/en/mumble-calls.html)を毎月行い、コアの開発者は"up for discussion"の付いたチケットを用いて情報交換をできます。
 
 ![The development environment](/ja/introduction/images/en/the-development-environment.png?classes=shadow)
 
-In the `Code` section you will find an overview of the commits, the branches, the releases and the contributors.
+`Code`のセクションではコミット、ブランチ、リリース、貢献者の概要を見ることができます。
 
-If you want to report a bug, the `Issues` section is for that. Before you report a bug, please go through the following 
-list:
+バグを報告したい場合、`Issues`のセクションがその場所です。バクを報告する前に、以下のリストを調べてください:
 
-- the bug has already been reported by someone (reviewing the issues)
-- are you on the latest stable version of Contao
-- how to reproduce the error in a fresh Contao installation (step-by-step instructions)
-- how to reproduce the error in the [online demo of Contao](https://demo.contao.org/contao/login) (step-by-step 
-  instructions)
+- バグが既に(問題を調査している)誰かが既に報告していないかどうか。
+- Contaoの最新の安定版を使用しているかどうか。
+- 新たにインストールしたContaoでエラーを再現する方法(段階的な手順)
+- [Contaoのオンラインデモ](https://demo.contao.org/contao/login)でエラーを再現する方法(段階的な手順)
 
+## ソーシャルウェブ上のContao
 
-## Contao on the social web
+もちろん、Contaoはいわゆる「ソーシャルウェブ」、現在は多数派はFacebook、Twitter、Youtube、Instagram、Pinterestにも表示されます。Facebookには公式のファンページ[www.facebook.com/contao](https://www.facebook.com/contao)があります。定期的に更新されて、公式なアナウンスと小さな更新状況の話題が載ります。もし、まだファンでないなら、すぐになるべきなことは間違いありません。
 
-Of course, Contao is also represented in the so-called "social web", which is currently dominated by Facebook, Twitter, 
-YouTube, Instagram and Pinterest. You can find the official Contao fan page on Facebook at 
-[www.facebook.com/contao](https://www.facebook.com/contao). It is updated regularly and contains the official 
-announcements as well as small status updates on current topics. If you are not a fan yet, you should definitely become 
-one now.
+Twitterでは[twitter.com/contaocms](https://twitter.com/contaocms)に、Youtubeでは[www.youtube.com/user/contaocms](https://www.youtube.com/user/contaocms)、Instagramでは[www.instagram.com/contaocms](https://www.instagram.com/contaocms/)、Pinterestでは[www.pinterest.de/contaocms](https://www.pinterest.de/contaocms/)でContaoを見てください。
 
-On Twitter you can find Contao at [twitter.com/contaocms](https://twitter.com/contaocms), on YouTube at 
-[www.youtube.com/user/contaocms](https://www.youtube.com/user/contaocms), on Instagram at 
-[www.instagram.com/contaocms](https://www.instagram.com/contaocms/) and on Pinterest at 
-[www.pinterest.de/contaocms](https://www.pinterest.de/contaocms/).
+## ドイツ語のコミュニティ
 
+ドイツ語のコミュニティは現在最大のContaoのコミュニティで独自の基盤: [community.contao.org/de/](https://community.contao.org/de/)があります。他のContaoの熱狂者と交流して、CMSからInternet、ウェブの作業者としての人生についてのすべての話題を議論できるでしょう。英語のコミュニティは[community.contao.org/en/](https://community.contao.org/en/)にあります。
 
-## The German speaking community
-
-The German speaking community is currently the largest of all Contao communities and has its own platform, which can be 
-found at [community.contao.org/de/](https://community.contao.org/de/). There you can get in contact with other Contao 
-enthusiasts and discuss all topics around the CMS, the Internet and the life as a webworker. The english speaking 
-community can be found at [community.contao.org/en/](https://community.contao.org/en/).
-
-If you would like to meet the people you meet in this virtual world in the real world, you can do so at the conference, 
-at the camp or at the various regulars' tables. A list of events can be found on the 
-[project website](https://contao.org/en/events.html).
+バーチャルな世界で会った人々にリアルな世界で会いたい場合は会議、キャンプ、様々な常連さんのテーブルで会うことができます。イベントの一覧は[project website](https://contao.org/en/events.html)にあります。
 
 ![The english speaking Contao community](/ja/introduction/images/en/the-english-speaking-contao-community.png?classes=shadow)
