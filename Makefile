@@ -1,5 +1,8 @@
 .PHONY: build
 
+#MANUAL_URL=https://docs.contao.org/manual/
+MANUAL_URL=https://www.contaocms.jp/manual-wip/
+
 build: build-dev build-manual
 
 # Build a single documentation
@@ -17,7 +20,7 @@ build-manual:
 		--environment manual \
 		--destination ../build/manual \
 		--verbose \
-		--baseURL https://docs.contao.org/manual/
+		--baseURL $(MANUAL_URL)
 
 # Start a live reload server
 live-dev:
