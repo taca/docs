@@ -26,32 +26,31 @@ title: "Contaoマニュアル"
 
 ### ドキュメントの検索機能
 
-You can search the documentation here, but you can also use it directly in your favorite browser. For this you have to
-register the documentation as an additional search engine in your browser.
+ここでドキュメントを検索することはできますが、好みのブラウザーから直接検索することもできます。そのためには、ブラウザーに追加の検索エンジンとしてドキュメントを登録しなければなりません。
 
-{{% expand "Browser Firefox" %}}
-- Call up this page
-- Via "Actions for this page" (symbol with three dots) select "Add search engine".
-- In "Settings/Search", enter an abbreviation: e.g. `@doc`.
-- Restart the browser and search in the address bar for e.g.:
+{{% expand "Firefoxブラウザー" %}}
+- このページを表示します。
+- 「このページへのアクション」(3つのドットの記号)から「検索エンジンを追加」を選択します。
+- 「設定/検索」で略称を入力します。例: `@doc`
+- ブラウザーを再スタートして、アドレスバーで検索します。例:
 - `@docs inserttags`
 
-For newer versions:  
-- Go to this page  
-- Right click in the address bar  
-- In the context menu that opens, last line: `Add "Search Contao manual"`.  
-- In the address bar, search for e.g.: `inserttags`  
-- Below the address bar, a menu will open where you can also find the Contao icon at the bottom of the page, under `Search once with:`.  
-- Click on the Contao icon and a tag will be added to the left of the search term: `Contao manual`  
+新しいバージョンでの方法です:
+- このページに移動します。
+- アドレスバーで右クリックメニューを表示します。
+- 開いたコンテキストメニューの最後の行を選択: `"Search Contao manual"を追加`
+- アドレスバーの検索欄に入力、例: `inserttags`
+- アドレスバーの下に、`今回だけ使う検索エンジン:`の下の底部にContaoのアイコンがあるメニューが表示されます。
+- Contaoのアイコンをクリックすると、`Contaoマニュアル`の左の検索語の欄にタグが追加されます。
 {{% /expand %}}
 
-{{% expand "Browser Chrome" %}}
-- Set in "Settings/Search engine/Other search engine/Add".
-- The following information:
-- Search engine: `https://docs.contao.org/manual/`
-- Search abbreviation: e.g. `docs` (any)
-- URL with %s instead of the search query: `https://docs.contao.org/manual/de/?search=%s`
-- Restart the browser and search by typing e.g.: 
+{{% expand "Chromeブラウザー" %}}
+- "設定/検索エンジン/他の検索エンジン/追加"と移動します。
+- 以下の情報を入力します:
+- 検索エンジン: `https://docs.contao.org/manual/`
+- ショートカット: 例: `docs` (任意)
+- 検索の問い合わせの代わりに%sとしたURL: `https://docs.contao.org/manual/en/?search=%s`
+- ブラウザーを再起動して、以下を入力して検索します。例:
 - `docs inserttags`
 {{% /expand %}}
 
