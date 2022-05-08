@@ -393,6 +393,22 @@ html[lang="de"] div.notices.tip p:first-child:after {
     content: 'Tipp';
 }
 
+html[lang="ja"] div.notices.warning p:first-child:after {
+    content: '警告';
+}
+
+html[lang="ja"] div.notices.note p:first-child:after {
+    content: '注意';
+}
+
+html[lang="ja"] div.notices.idea p:first-child:after {
+    content: 'アイデア';
+}
+
+html[lang="de"] div.notices.tip p:first-child:after {
+    content: 'ヒント';
+}
+
 /* fix #172 */
 option {
     color: initial;
