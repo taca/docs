@@ -1,47 +1,39 @@
 ---
-title: "System requirements"
+title: "システム要件"
 aliases:
-    - /en/installation/system-requirements/
+    - /ja/installation/system-requirements/
 weight: 10
 ---
 
-To run Contao successfully, the web server must meet these system requirements. Contao was originally
-developed for the familiar [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle)) stack, but runs on
-any web server that provides a current version of PHP and MySQL.
+Contaoをうまく動作させるには、ウェブサーバーはこれらのシステム要件を満たしていなければなりません。Contaoは元々はおなじみの[LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle))スタックに向けて開発していましたが、最近のPHPとMySQLを提供しているウェブサーバーであれば動作します。
 
 
-## Software Recommendations
+## ソフトウェアの推奨
 
-The minimum requirements depend on whether you are installing the latest or the _Long Term Support_ version. All
-maintained versions of Contao are compatible with the latest PHP and MySQL versions. Therefore, we recommend to
-always use them.
+最小限の要件はインストールしようとしているのが最新のバージョンか_長期サポート版_のバージョンであるかに依存します。Contaoのすべての保守されているバージョンはPHPとMySQLの最新のバージョンと互換性があります。このため、常に以下の使用を推奨します。
 
-- **PHP:** Version 7.4+ (latest patch version)
-- **MySQL:** Version 8.0+ or equivalent **MariaDB** server
+- **PHP:** バージョン7.4+ (最新のパッチバージョン)
+- **MySQL:** バージョン8.0+ または同等の**MariaDB**サーバー
 
 
-### PHP Extensions
+### PHPの拡張
 
-| Extension Name | Contao 4.4 | Contao 4.9 |
+| 拡張名 | Contao 4.4 | Contao 4.9 |
 |:------------------------------------------|:-------------------------|:--------------------------------------------|
-| [DOM][ext-dom] (`ext-dom`)                | **required**             | **required**                                |
-| [PCRE][ext-pcre] (`ext-pcre`)             | **required**             | **required**                                |
-| [Intl][ext-intl] (`ext-intl`)             | recommended              | **required**                                |
-| [PDO][ext-pdo] (`ext-pdo`)                | **required**             | **required**                                |
-| [ZLIB][ext-zlib] (`ext-zlib`)             | **required**             | **required**                                |
-| [JSON][ext-json] (`ext-json`)             | **required**             | **required**                                |
-| [Curl][ext-curl] (`ext-curl`)             | **required**             | **required**                                |
-| [Mbstring][ext-mbstring] (`ext-mbstring`) | **required**             | **required**                                |
-| [GD][ext-gd] (`ext-gd`)                   | **required**<sup>1</sup> | **required**<sup>1</sup>                    |
-| [Imagick][ext-imagick] (`ext-imagick`)    | recommended<sup>1</sup>  | requires GD, Imagick or Gmagick<sup>1</sup> |
-| [Gmagick][ext-gmagick] (`ext-gmagick`)    | recommended<sup>1</sup>  | requires GD, Imagick or Gmagick<sup>1</sup> |
+| [DOM][ext-dom] (`ext-dom`)                | **必須**                 | **必須**                                |
+| [PCRE][ext-pcre] (`ext-pcre`)             | **必須**                 | **必須**                                |
+| [Intl][ext-intl] (`ext-intl`)             | 推奨                     | **必須**                                |
+| [PDO][ext-pdo] (`ext-pdo`)                | **必須**                 | **必須**                                |
+| [ZLIB][ext-zlib] (`ext-zlib`)             | **必須**                 | **必須**                                |
+| [JSON][ext-json] (`ext-json`)             | **必須**                 | **必須**                                |
+| [Curl][ext-curl] (`ext-curl`)             | **必須**                 | **必須**                                |
+| [Mbstring][ext-mbstring] (`ext-mbstring`) | **必須**                 | **必須**                                |
+| [GD][ext-gd] (`ext-gd`)                   | **必須**<sup>1</sup>     | **必須**<sup>1</sup>                    |
+| [Imagick][ext-imagick] (`ext-imagick`)    | 推奨<sup>1</sup>         | GDが必要、ImagickまたはGmagick<sup>1</sup> |
+| [Gmagick][ext-gmagick] (`ext-gmagick`)    | 推奨<sup>1</sup>         | GDが必要、ImagickまたはGmagick<sup>1</sup> |
 
 {{% notice note %}}
-<sup>1</sup> Contao automatically selects an image processing library depending on its availability.
-However, the PHP GD library must still be available.
-Using ImageMagick via the PHP Imagick or Gmagick library is recommended in all cases. ImageMagick
-offers better performance and quality. To find out which library is actually used by Contao,
-the following command can be executed:
+<sup>1</sup> Contaoは自動的に利用可能な状況に依存し絵t画像処理のライブラリを選択します。けれども、PHP GDライブラリは利用できなければなりません。すべての場合でPHPのImagickまたはGmagickライブラリを経由してImageMagickを使用することを推奨します。ImageMagickはより良い性能と品質をContaoが実際にどちらのライブラリを使用しているかは、以下のコマンドを実行して確認できます:
 ```bash
 $ vendor/bin/contao-console debug:container contao.image.imagine
 ```
@@ -59,90 +51,79 @@ $ vendor/bin/contao-console debug:container contao.image.imagine
 [ext-imagick]: https://www.php.net/manual/en/book.imagick.php
 [ext-gmagick]: https://www.php.net/manual/en/book.gmagick.php
 
-All required extensions are enabled by default in current PHP versions. However, some hosting providers
-explicitly disable them. The requirements are automatically checked during installation via the
-[Contao Manager](../../installation/contao-manager) or [Composer](https://getcomposer.org).
+現在のPHPのバージョンでは、すべての必要な拡張は初期状態で有効です。けれども、ホスティングの提供者によっては明示的に無効にしている場合があります。[Contao Manager](../../installation/contao-manager)または[Composer](https://getcomposer.org)でインストールする家庭で、これらの要件を自動的に検査します。
 
+### PHPの設定 (`php.ini`)
 
-### PHP configuration (`php.ini`)
+Contaoの理想的な操作のための推奨です。異なった設定はContaoが動作しないという意味ではありませんが、予期せぬ動作や性能の低下や遅い反応を起こす可能性があります。
 
-These are the recommended settings for the ideal operation of Contao. A different configuration does not mean
-that Contao does not work, but may cause unexpected behavior or performance degradation/slow reactions.
-
-| Configuration Name              | Web Process                | Command Line          | Notes                                                                                                                    |
+| 構成名                          | Webでの処理                | コマンド行            | 注記                                                                                                                     |
 |:--------------------------------|:---------------------------|:----------------------|:-------------------------------------------------------------------------------------------------------------------------|
-| `memory_limit`                  | minimum `256M`             | `-1`&nbsp;(unlimited) |                                                                                                                          |
-| `max_execution_time`            | minimum `30`               | `0` (unlimited)       |                                                                                                                          |
-| `file_uploads`                  | `On`                       | _not applicable_      |                                                                                                                          |
-| `upload_max_filesize`           | minimum `32M`              | _not applicable_      |                                                                                                                          |
-| `post_max_size`                 | like `upload_max_filesize` | _not applicable_      |                                                                                                                          |
-| `max_input_vars`                | `1000`                     | _not applicable_      | May need to be increased if many extensions are installed. Increase if the user access rights cannot be saved correctly. |
-| `opcache.enable`                | `1` (enabled)              | `0` (disabled)        | Disabling the opcode cache has a significant negative impact on performance.                                             |
-| `opcache.enable_cli`            | `0` (disabled)             | `0` (disabled)        |                                                                                                                          |
-| `opcache.max_accelerated_files` | `16000` empfohlen          | _not applicable_      | A lower value may cause an unnecessary slowdown.                                                                         |
+| `memory_limit`                  | `256M`以上                 | `-1`&nbsp;(無制限)    |                                                                                                                          |
+| `max_execution_time`            | `30`以上                   | `0` (無制限)          |                                                                                                                          |
+| `file_uploads`                  | `On`                       | _該当なし_            |                                                                                                                          |
+| `upload_max_filesize`           | minimum `32M`              | _該当なし_            |                                                                                                                          |
+| `post_max_size`                 | `upload_max_filesize`と同様| _該当なし_            |                                                                                                                          |
+| `max_input_vars`                | `1000`                     | _該当なし_            | 多数の拡張をインストールしている場合は増やす必要があるかもしれません。ユーザーのアクセス権が正しく保存されない場合は増やしてください。 |
+| `opcache.enable`                | `1` (有効)                 | `0` (無効)       | opcode cacheを無効にすると著しい性能の低下を招きます。                                                                        |
+| `opcache.enable_cli`            | `0` (無効)                 | `0` (無効)       |                                                                                                                               |
+| `opcache.max_accelerated_files` | `16000` 推奨               | _該当なし_            | 低い値は余計な減速をするかもしれません。                                                                                |
 | `safe_mode`                     | `Off`                      | `Off`                 |                                                                                                                          |
-| `open_basedir`                  | `NULL`                     | `NULL`                | If active, make sure that the system's temporary directory can be accessed.                                              |
+| `open_basedir`                  | `NULL`                     | `NULL`                | 有効な場合は、システムの一時ディレクトリにアクセスできることを確認してください。                                        |
 
 
-### MySQL Configuration
+### MySQLの設定
 
-- **MySQL** storage engine `InnoDB` (default since MySQL 5.7)
-- **MySQL** option `innodb_large_prefix = 1` (enabled by default since MySQL 5.7.7)
-- **MySQL** option `innodb_file_format = Barracuda` (not necessary any more since MySQL 8.0)
-- **MySQL** option `innodb_file_per_table = 1` (enabled by default since MySQL 5.6.7)
+- **MySQL** storage engine `InnoDB` (MySQL 5.7以降の初期設定)
+- **MySQL** option `innodb_large_prefix = 1` (MySQL 5.7.7以降では初期設定で有効)
+- **MySQL** option `innodb_file_format = Barracuda` (MySQL 8.0以降では不要)
+- **MySQL** option `innodb_file_per_table = 1` (MySQL 5.6.7以降では初期設定で有効)
 - **MySQL** character set `utf8mb4`
 
 
-### Minimum PHP Requirements
+### PHPの最小の要件
 
-#### Contao 4.11 and later
+#### Contao 4.11以降
 
-- **PHP** Version 7.3.0 or higher is required.
+- **PHP**バージョン7.3.0以降が必要です。
 
 
 #### Contao 4.9 (LTS)
 
-- **PHP** Version 7.2.0 or higher is required.
-- Images can be processed with the PHP extensions GD (`ext-gd`), Imagick (`ext-imagick`) or Gmagick (`ext-gmagick`). 
-Contao automatically detects and uses the best available extension.
+- **PHP**バージョンVersion 7.2.0以降が必要です。
+- 画像の処理はPHPの拡張GD(`ext-gd`)とImagick(`ext-imagick`)またはGmagick(`ext-gmagick`)で処理できます。Contaoは自動的に検出して最良の利用できる拡張を使用します。
 
 
 #### Contao 4.4 (LTS)
 
-- **PHP** Version 5.6.0 or higher is required.
-- The GD extension (`ext-gd`) is required for image processing.
+- **PHP**バージョンVersion 5.6.0以降が必要です。
+- 拡張GD(`ext-gd`)が画像の処理に必要です。
 
 {{% notice info %}}
-If a MySQL server in version **8.0.17** or higher is used, at least PHP **7.2.0** is required.
+MySQLサーバーのバージョン**8.0.17**以降を使用している場合は、少なくともPHP **7.2.0**が必要です。
 {{% /notice %}}
 
 
-### Switching the PHP version
+### PHPのバージョンの変更
 
-In case you want to switch the PHP version of an already running PHP instance, you should always run a full `composer update` after
-switching. This is especially important when switching between major versions, e.g. from PHP 7.x to 8.x - or vice versa. This ensures 
-compatibility of your installed packages with the respective PHP version, since each package (including Contao itself, installed Contao 
-extensions and other third-party packages) can require specific PHP versions and PHP extensions that it needs and is known to be compatible 
-with.
+既に動作しているPHPのバージョンを変更する場合、その後で常に`composer update`を実行しなければなりません。メジャーバージョンを変更、例えばPHP 7.xから8.xやその逆の場合は特に重要です。
+(Contao自身、インストールしたContaoの拡張、他の第3者のパッケージを含んだ)各パッケージは特定のPHPのバージョンとPHPの拡張を必要とするかもしれないので、インストールしたパッケージがそれぞれのPHPのバージョンと互換性があることを保証します。
 
-In case you are using the Contao Manager, you can run the `composer update` process in the maintenance section under _Composer Dependencies_:
+Contao Managerを使用している場合、保守のセクションで_Composerの依存関係_の下から`composer update`の処理を実行できます。
 
 ![Composer update in the Contao Manager](/ja/installation/images/en/composer-update.png?classes=shadow)
 
 
-### MySQL minimum requirements
+### MySQLの最小の要件
 
-Although Contao uses the [Doctrine DBAL](https://www.doctrine-project.org/projects/dbal.html) database abstraction layer, 
-no database server types other than MySQL (or a compatible fork like MariaDB) are currently supported.
+Contaoは[Doctrine DBAL](https://www.doctrine-project.org/projects/dbal.html)のデータベースの抽象化レイヤーを使用していますが、MySQL(または互換性のあるMariaDBのような分岐)以外のデータベースサーバーは現在サポートしていません。
 
-Contao has been successfully tested on MySQL servers version 5.1 / 5.5 with `MyISAM` table format. The use of
-of `utf8_general_*` instead of the `utf8mb4` character set results in a worse UTF8 support (e.g. no emojis).
+はMySQLサーバーのバージョン5.1 / 5.5で`MyISAM`のテーブルの形式でContaoはテストに成功しています。文字セットの`utf8mb4`の代わりに`utf8_general_*`を使用すると、UTF8のサポートが悪化(例: 絵文字がない)します。
 
-If the above recommended options cannot be enabled on your server, please configure another
-database engine and a different character set in your `app/config/config.yml` file:
+以上の推奨する選択がサーバーで有効にできない場合は、他のデータベースエンジンで異なる文字セットを`app/config/config.yml`ファイルに構成してください:
 
 {{% notice note %}}
-As of **Contao 4.8**, you can find the file under [`config/config.yml`](../../system/settings/#config-yml)  
+**Contao 4.8**以降では、[`config/config.yml`](../../system/settings/#config-yml)ファイルになります。
 {{% /notice %}}
 
 ```yml
@@ -155,16 +136,13 @@ doctrine:
                     collate: utf8_unicode_ci
 ```
 
-It is further recommended to run MySQL in "strict mode" to prevent corrupt or truncated
-data and to guarantee data integrity.
+さらにMySQLを"厳密モード"で動作することを推奨します、これによってデータの破損や切り詰めを防止し、データの一貫性を保証できます。
 
 {{% notice note %}}
-As of **Contao 4.9**, the install tool shows a warning if the database server is not running
-in strict mode.
+**Contao 4.9**以降では、データーベースサーバーが厳密モードで動作していないとインストールツールが警告を表示します。
 {{% /notice %}}
 
-To enable it, add the following to your `my.cnf` or `my.ini` file or make sure that the
-setting is adjusted accordingly:
+厳密モードを有効にするには、以下を`my.cnf`または`my.ini`に追加するか、設定が適切に調整されていることを確認してください:
 
 ```
 [mysqld]
@@ -172,9 +150,7 @@ setting is adjusted accordingly:
 sql_mode="TRADITIONAL"
 …
 ```
-
-If the setting cannot be enabled on your server, please configure the connection
-options in your `app/config/config.yml` file ({{< version-tag "4.8" >}} `config/config.yml` file):
+サーバーで設定を有効にできない場合は、接続のオプションを`app/config/config.yml`ファイル ({{< version-tag "4.8" >}}`config/config.yml`ファイル)に構成してください:
 
 ```yml
 doctrine:
@@ -182,50 +158,34 @@ doctrine:
         connections:
             default:
                 options:
-                    # Depending on the DB driver, the option key is either 1002 (pdo_mysql) or 3 (mysqli)
+                    # DBドライバーによってはオプションのキーは1002 (pdo_mysql)または3 (mysqli)
                     1002: "SET SESSION sql_mode=(SELECT CONCAT(@@sql_mode, ',TRADITIONAL'))"
 ```
 
 {{% notice "note" %}}
-The [`TRADITIONAL` SQL mode](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html#sqlmode_traditional) is a combination mode consisting of
-several SQL modes like `STRICT_TRANS_TABLES` and `STRICT_ALL_TABLES` among others. The "[Strict SQL Mode](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html#sql-mode-strict)" 
-is active when either `STRICT_TRANS_TABLES` or `STRICT_ALL_TABLES` is enabled. Strict mode (specifically `STRICT_TRANS_TABLES`) is enabled 
-by default in current versions of MySQL as well as MariaDB. However, many shared hosting environments use different settings. The advantage 
-of strict mode is that erroneous database operations will actually cause an error instead of being silently ignored by the database server, 
-leading to better data integrity and security.
+[`TRADITIONAL`SQLモード](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html#sqlmode)は、SQLのモードの中でも特に`STRICT_TRANS_TABLES`と`STRICT_ALL_TABLES`のようなモードを組み合わせたようなものです。"[厳密なSQLモード](https://dev.mysql.com/doc/refman/8.0/ja/sql-mode.html#sql-mode-strict)"は`STRICT_TRANS_TABLES`または`STRICT_ALL_TABLES`を設定すると有効になり、これは現在のMySQLとMariaDBの両方で初期設定で有効です。けれども、多くの共用のホスティング環境では異なる設定をしています。厳密モードの利点は誤ったデータベースの操作をデータベースサーバーが静かに無視する代わりに、実際にエラーとします。この結果、より良いデータの一貫性と安全性につながります。
 {{% /notice %}}
 
 
-## Web server
+## Webサーバー
 
-- Modern hosting environments of today allow customers to access their account via an SSH terminal. This is not only
-a more secure connection than traditional unencrypted FTP, but also allows efficient debugging and the development of 
-the application.
+- 今日の現代的なホスティング環境では、顧客にSSHターミナル経由でのアクセスを許可しています。これは伝統的な暗号化されていないFTPによるアクセスよりも安全であるだけではなく、アプリケーションの効率的なデバッグと開発を可能にしています。
 
-- It is recommended to use [PHP-FPM](https://php-fpm.org) or a similar FastCGI setup for the PHP stack. Contao can
-perform background tasks (such as indexing the page content) without the browser waiting for the response by using 
-[`fastcgi_finish_request()`](https://www.php.net/manual/en/function.fastcgi-finish-request.php).
+- [PHP-FPM](https://php-fpm.org)または同様なFastCGIの設定をPHPスタックで使用することを推奨します。Contaoは[`fastcgi_finish_request()`](https://www.php.net/manual/en/function.fastcgi-finish-request.php)を使用して、ブラウザーが応答を待つことなく(ページのコンテンツのインデックスといった)バックグランドのタスクを実行できます。
 
-### Hosting configuration
+### ホスティングの構成
 
-In Contao, all publicly accessible files are located in the `web/` subfolder of the installation. Set the
-document root of the installation via the admin panel of the hosting provider to this subfolder and set up a database 
-on this occasion.
+Contaoでは、すべての公開したアクセスをするファイルはインストールした場所の`web/`というサブフォルダーに配置します。
+ホスティング提供者の管理パネルから、この場所をドキュメントルートに設定して、この機会にデータベースの設定をしてください。
 
-Example: `example.com` points to the directory `/www/example/web`
+例: `example.com`はディレクトリ`/www/example/web`を指す
 
-({{< version-tag "4.12" >}} Following the Symfony standard, the public subfolder of `/web` has been renamed to 
-`/public`. If there is a `/web` directory in your installation, Contao will automatically use it instead of `/public`).
-
+({{< version-tag "4.12" >}} Symfonyの標準に従って、公開するサブフォルダー`/web`は`/public`と名前が変更になりました。インストール先に`/web`というディレクトリがある場合は、Contaoは自動的に代わりに`/public`を使用します。)
 
 {{% notice note %}}
-Therefore, a separate (sub)domain is required for each Contao installation.
+このため、それぞれのContaoのインストールには別々の(サブ)ドメインが必要です。
 {{% /notice %}}
 
-## Provider-specific settings
+## プロバイダー特有の設定
 
-There are a few major Internet service providers that offer special settings for running Contao. Fortunately, they are 
-only the exception to the rule. The provider-specific settings can be found in the German 
-[Contao forum](https://community.contao.org/de/forumdisplay.php?67-Erfahrungen-mit-Webhostern). You can get optimal 
-hosting packages for Contao from the [Contao partners](https://contao.org/en/contao-partners.html) in the service 
-category "Web hosting".
+Internetサービスのいくつかの大規模なプロバイダーではContaoを動作させるための特別な設定を用意している場合があります。幸いなことに、それらは規則の例外です。プロバイダー特有の設定はドイツ語の[Contaoフォーラム](https://community.contao.org/de/forumdisplay.php?67-Erfahrungen-mit-Webhostern)にあります。Contaoに最適なホスティングのパッケージは"Webホスティング"のカテゴリーの[Contaoパートナー](https://contao.org/en/contao-partners.html)から得ることができます。
