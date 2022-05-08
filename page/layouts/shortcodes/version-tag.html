@@ -5,6 +5,8 @@
 {{ end }}
 {{ if eq .Site.Language.Lang "de" }}
 <span class="version-tag" title="Diese Funktion ist erst ab Contao {{ $.Scratch.Get "version" }} verfügbar.">ab <strong>{{ $.Scratch.Get "version" }}</strong></span>
+{{ else if eq .Site.Language.Lang "ja" }}
+<span class="version-tag" title="この機能はContaoバージョン{{ $.Scratch.Get "version" }}以降でだけ利用可能です。"><strong>{{ $.Scratch.Get "version" }}以降</strong></span>
 {{ else }}
 <span class="version-tag" title="This feature is only available in Contao {{ $.Scratch.Get "version" }} and later.">since <strong>{{ $.Scratch.Get "version" }}</strong></span>
 {{ end }}
