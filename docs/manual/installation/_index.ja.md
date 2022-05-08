@@ -1,19 +1,15 @@
 ---
 title: "インストール"
-description: "Contaoのインストールと保守をするために知る必要があることを何でも教えます。"
+description: "ここではContaoのインストールと保守をするために知る必要があることを何でも教えます。"
 aliases:
     - /en/installation/
 weight: 2
 ---
 
-This will teach you anything you need to know in order to install and maintain Contao.
+ここではContaoのインストールと保守をするために知る必要があることを何でも教えます。
 
-The installation of Contao only takes a few minutes, thanks to the Contao Manager, given that the server is configured
-correctly and the minimum system requirements are fulfilled. However, in practice, it has been shown that there often
-can be some misconceptions and problems regarding the server configuration.
+Contao Managerのおかげで、サーバーが正しく構成されて最小限のシステム要件を満たしていれば、Contaoのインストールは数分だけしか必要としません。けれども実際には、たびたびサーバーの構成に思い違いや問題があることがわかっています。
 
-Thus this chapter describes all relevant methods of installation, gives detailed tips regarding the relocation of a
-Contao instance from your local development environment to the live web server and it shows how to update an existing
-installation.
+このため、この章ではすべてのインストールに関連した方法について述べ、Contaoのローカルの開発環境から実際のウェブサーバーへの移設、既存のインストールしたContaoを更新する方法について説明します。
 
 {{% children %}}
