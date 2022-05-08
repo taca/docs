@@ -7,6 +7,10 @@
 <div class="notices note">
   <p>This feature is available in <strong>Contao {{ $.Scratch.Get "version" }}</strong> and later.</p>
 </div>
+{{ else if eq .Site.Language.Lang "ja" }}
+<div class="notices note">
+  <p>この機能は<strong>Contao {{ $.Scratch.Get "version" }}</strong>以降で有効です。</p>
+</div>
 {{ else }}
 <div class="notices note">
   <p>Diese Funktion ist ab <strong>Contao {{ $.Scratch.Get "version" }}</strong> verfügbar.</p>
