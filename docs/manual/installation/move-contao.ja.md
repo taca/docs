@@ -1,5 +1,5 @@
 ---
-title: 'Move Contao'
+title: 'Contaoの移設'
 description: 'Moving a Contao installation is almost the same as a new installation.'
 aliases:
     - /en/installation/move-contao/

@@ -1,5 +1,5 @@
 ---
-title: 'Uninstalling extensions'
+title: '機能拡張のアンインストール'
 description: 'Uninstalling Extensions with the Contao Manager or via command line'
 aliases:
     - /ja/installation/uninstalling-extensions/

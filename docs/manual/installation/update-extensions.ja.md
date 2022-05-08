@@ -1,5 +1,5 @@
 ---
-title: 'Update extensions'
+title: '機能拡張の更新'
 description: 'Updating Extensions with the Contao Manager or via command line'
 aliases:
     - /ja/installation/update-extensions/

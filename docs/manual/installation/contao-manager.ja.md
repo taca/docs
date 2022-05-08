@@ -1,5 +1,5 @@
 ---
-title: 'About Contao Manager'
+title: 'Contao Managerについて'
 description: 'Contao Manager is a tool that provides a graphical interface to easily manage a Contao installation.'
 aliases:
     - /ja/installation/contao-manager/

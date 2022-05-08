@@ -1,5 +1,5 @@
 ---
-title: 'Update Contao'
+title: 'Contaoの更新'
 description: 'Like most Open Source projects, Contao is continuously being developed.'
 aliases:
     - /ja/installation/update-contao/

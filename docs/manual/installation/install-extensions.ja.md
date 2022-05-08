@@ -1,5 +1,5 @@
 ---
-title: 'Install extensions'
+title: '機能拡張のインストール'
 description: 'To find a suitable extension for a desired function, you have three options.'
 aliases:
     - /ja/installation/install-extensions/

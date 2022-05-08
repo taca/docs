@@ -1,5 +1,5 @@
 ---
-title: 'Install Contao'
+title: 'Contaoのインストール'
 description: 'There are two ways to install Contao on your server, one is via the graphical user interface of the 
 Contao Manager and the other is via the command line.'
 aliases:
