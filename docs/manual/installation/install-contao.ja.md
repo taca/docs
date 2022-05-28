@@ -1,33 +1,26 @@
 ---
 title: 'Contaoのインストール'
-description: 'There are two ways to install Contao on your server, one is via the graphical user interface of the 
-Contao Manager and the other is via the command line.'
+description: 'Contaoをサーバーにインストールする2つの方法があります、1つはContao Managerのグラフィカル・ユーザー・インターフェイスを使用、もう1つはコマンド行を使用する方法です。'
 aliases:
     - /ja/installation/install-contao/
 weight: 30
 ---
 
-After you have checked all requirements and set up your web server, you can now start the installation.
+すべてのシステム要件を確認し、Webサーバーの設定ができると、インストールを開始できます。
 
-There are two ways to install Contao on your server, using the graphical user interface of the 
-[ContaoManager](#installation-with-the-contao-manager) or using the command line.
+Contaoをサーバーにインストールする2つの方法があります、[Contao Manager](#installation-with-the-contao-manager)のグラフィカル・ユーザー・インターフェイスを使用する方法とコマンド行を使用する方法です。
 
+## Contao Managerでインストール
 
-## Installation with the Contao Manager
+### Contao Managerをインストール
 
+Contaoをサーバーにインストールする前に、[Contao Managerのインストールと構成](../../installation/contao-manager/#install-contao-manager)を行う必要があります。
 
-### Install Contao Manager
+### Contao ManagerでContaoをインストール
 
-Before you can install Contao on your server, you need to 
-[install and configure the Contao Manager](../../installation/contao-manager/#install-contao-manager).
+基本的な構成を完了した後で、Contaoをインストールできます。希望するバージョンと初期構成を選択して、「完了」のボタンをクリックしてください。
 
-
-### Installing Contao with the Contao Manager
-
-After the successful basic configuration, you can now install Contao. Select the desired version and the initial 
-configuration and click the "Finish" button.
-
-![Installing Contao with Contao Manager](/ja/installation/images/en/contao-manager-setup.png?classes=shadow)
+![Contao ManagerでContaoをインストール](/ja/installation/images/en/contao-manager-setup.png?classes=shadow)
 
 The installation can now take several minutes. Details about the installation process can be displayed by clicking the 
 following icon![Show/Hide Console Output](/ja/icons/konsolenausgabe.png?classes=icon).
