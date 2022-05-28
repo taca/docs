@@ -33,7 +33,7 @@ Contaoをうまく動作させるには、ウェブサーバーはこれらの�
 | [Gmagick][ext-gmagick] (`ext-gmagick`)    | 推奨<sup>1</sup>         | GDが必要、ImagickまたはGmagick<sup>1</sup> |
 
 {{% notice note %}}
-<sup>1</sup> Contaoは自動的に利用可能な状況に依存し絵t画像処理のライブラリを選択します。けれども、PHP GDライブラリは利用できなければなりません。すべての場合でPHPのImagickまたはGmagickライブラリを経由してImageMagickを使用することを推奨します。ImageMagickはより良い性能と品質をContaoが実際にどちらのライブラリを使用しているかは、以下のコマンドを実行して確認できます:
+<sup>1</sup> Contaoは自動的に利用可能な状況に依存した画像処理のライブラリを選択します。けれども、PHP GDライブラリは利用できなければなりません。すべての場合でPHPのImagickまたはGmagickライブラリを経由してImageMagickを使用することを推奨します。ImageMagickはより良い性能と品質をContaoが実際にどちらのライブラリを使用しているかは、以下のコマンドを実行して確認できます:
 ```bash
 $ vendor/bin/contao-console debug:container contao.image.imagine
 ```
