@@ -405,8 +405,12 @@ html[lang="ja"] div.notices.idea p:first-child:after {
     content: 'アイデア';
 }
 
-html[lang="de"] div.notices.tip p:first-child:after {
+html[lang="ja"] div.notices.tip p:first-child:after {
     content: 'ヒント';
+}
+
+html[lang="ja"] div.notices.info p:first-child:after {
+    content: '情報';
 }
 
 /* fix #172 */
