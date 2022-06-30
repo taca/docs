@@ -10,7 +10,7 @@ weight: 30
 
 Contaoをサーバーにインストールする2つの方法があります、[Contao Manager](#installation-with-the-contao-manager)のグラフィカル・ユーザー・インターフェイスを使用する方法とコマンド行を使用する方法です。
 
-## Contao Managerでインストール
+## Contao Managerからインストール
 
 ### Contao Managerをインストール
 
@@ -22,112 +22,90 @@ Contaoをサーバーにインストールする前に、[Contao Managerのイ�
 
 ![Contao ManagerでContaoをインストール](/ja/installation/images/en/contao-manager-setup.png?classes=shadow)
 
-The installation can now take several minutes. Details about the installation process can be displayed by clicking the 
-following icon![Show/Hide Console Output](/ja/icons/konsolenausgabe.png?classes=icon).
+インストールには数分を必要とします。インストールの処理の詳細は次のアイコン![コンソールの表示を表示/非表示](/ja/icons/konsolenausgabe.png?classes=icon)をクリックして表示できます。
 
-![Contao is installed](/ja/installation/images/en/contao-manager-background-task.png?classes=shadow)
-
-
-### Update database tables
-
-Once the Contao Manager has installed all packages, you have to [run](../contao-installtool/) the 
-[Contao install tool](../contao-installtool/) to update the database.
+![Contaoをインストールしました](/ja/installation/images/en/contao-manager-background-task.png?classes=shadow)
 
 
-## Installation via the command line
+### データベースのテーブルの更新
 
-When installing from the command line via `create-project`, a `composer update` command is executed during the 
-installation. This will cause some hosters not to be able to terminate the process due to high system load, and the 
-installation will fail. In this case you should use the [Contao Manager](#installing-contao-with-the-contao-manager).
+Contao Managerがすべてのパッケージをインストールしましたら、[Contaoインストールツール](../contao-installtool/)を[実行](../contao-installtool/)してデータベースを更新しなければなりません。
 
-You have logged on to your server with your user name and domain.
+
+## コマンド行からインストール
+
+コマンド行から`create-project`を用いてインストールするとき、`composer update`というコマンドをインストール中に実行します。ホスティングサービスによっては、高いシステム負荷のためにプロセスを完了できずに、インストールの失敗を引き起こすことがあります。この場合は[Contao Manager](#installing-contao-with-the-contao-manager)を使用しなければなりません。
+
+ユーザー名とドメインでサーバーにログインします。
 
 ```bash
 ssh user@example.com
 ```
 
-Change to the public directory of your web hosting.
+ウェブホスティングの公開ディレクトリに移動します。
 
 ```bash
 cd www
 ```
 
-### Install Composer
+### Composerのインストール
 
-[Composer](https://en.wikipedia.org/wiki/Composer_(software)) is an application-oriented package manager for the 
-PHP programming language and installs dependencies.
+[Composer](https://en.wikipedia.org/wiki/Composer_(software))は、PHPプログラミング言語と依存関係のインストールのためのアプリケーション指向のパッケージマネージャーです。
 
 {{% notice note %}}
-You can either install Composer [locally](https://getcomposer.org/doc/00-intro.md#locally) 
-or [globally](https://getcomposer.org/doc/00-intro.md#globally). 
+Composerは[ローカル](https://getcomposer.org/doc/00-intro.md#locally)にも、[全体的](https://getcomposer.org/doc/00-intro.md#globally)にもインストールできます。
  
-If you install Composer locally, you will have a `composer.phar` file in your working directory (i.e. where your project's
-`composer.json` and `composer.lock` files are located). You would then call Composer with `php composer.phar`.
- 
-If you install Composer globally, you can use the `composer` command in any directory. 
+Composerをローカルにインストールする場合、作業ディレクトリ(つまり、プロジェクトのファイル`composer.json`と`composer.lock`をおいている場所)に`composer.phar`のファイルを置くことになります。Composerを`php composer.phar`として呼び出すことになります。
+
+Composerを全体的にインストールした場合は、どのディレクトリでも`composer`コマンドを使用できます。
 {{% /notice %}}
 
+### コマンド行からContaoのインストール作業
 
-
-### Installing Contao from the command line
-
-In the second step, you install Contao using the Composer. "example" stands for the desired installation directory and 
-4.11 for the [version of Contao you want to install](https://contao.org/de/download.html).
+第2段階では、Composerを使用してContaoをインストールします。"example"は望ましいインストール先のディレクトリで、4.11は[インストールしたいContaoのバージョン](https://contao.org/de/download.html)です。
 
 ```bash
 php composer.phar create-project contao/managed-edition example 4.11
 ```
 
+### ホスティングの構成
 
-### Hosting Configuration
+Contaoでは、すべての公開してアクセス可能なファイルはインストールしたディレクトリのサブフォルダーの`/web`に配置します。このフォルダーを作成して、ドキュメントルートをこのサブフォルダーにホスティングプロバイダーの管理パネルを使用して設定してください。そして、この機会にデータベースを作成してください。
 
-In Contao, all publicly accessible files are located in the subfolder `/web` of the installation. Create this folder and 
-use the admin panel of your hosting provider to set the document root of the installation to this subfolder and create 
-a database on this occasion.
+例: `example.com`にディレクトリ`/www/example/web`を指すよう設定
 
-Example: `example.com`points to the directory `/www/example/web`
-
-({{< version-tag "4.12" >}} Following the Symfony standard, the public subfolder of `/web` has been renamed to
-`/public`. If there is a `/web` directory in your installation, Contao will automatically use it instead of `/public`).
+({{< version-tag "4.12" >}} Symfonyの標準に従い、公開サブフォルダーの`/web`は`/public`に名前を変更しました。`/web`ディレクトリがインストール先に存在する場合、Contaoは自動的に`/public`の代わりに使用します。).
 
 {{% notice note %}}
-Every Contao installation therefore requires its own (sub)domain.
+このため、それぞれのContaoのインストールでは固有の(サブ)ドメインが必要です。
 {{% /notice %}}
 
 
-### Update database tables
-After installation, you can update the database using the [Contao install tool](/ja/installation/contao-installtool/). 
+### データベースのテーブルの更新
+インストールの後で、[Contaoインストールツール](/ja/installation/contao-installtool/)を使用してデータベースを更新できます。
 
-Since Contao 4.9 you can use the following command on the command line:
+Contao 4.9からは、コマンド行で以下のコマンドも使用できます:
 
 ```bash
 php vendor/bin/contao-console contao:migrate
 ``` 
 
 {{% notice tip %}}
-You can also create a database beforehand on the command line:<br>
+事前にデータベースをコマンド行から作成することもできます:<br>
 `php vendor/bin/contao-console doctrine:database:create`
 {{% /notice %}}
 
 {{% notice info %}}
-Contao needs to know the corresponding connection data for your database. This information can either be retrieved via 
-an existing "config/parameters.yml" (currently installed using the [Contao-Install tool](/ja/installation/contao-installtool/)) 
-or via a "[.env](https://docs.contao.org/dev/getting-started/starting-development/#application-configuration)" file 
-in the root directory of your installation.<br><br> 
-For details on the necessary environment variables ([DATABASE_URL](https://docs.contao.org/dev/reference/config/#database-url) 
-and [APP_SECRET](https://docs.contao.org/dev/reference/config/#app-secret)) in a ".env" file you can find 
-[here](https://docs.contao.org/dev/getting-started/starting-development/#application-configuration).
+Contaoはデータベースに対応するデータ接続先を知っている必要があります。
+この情報は(現在は[Contaoインストールツール](/ja/installation/contao-installtool/)を使用するとインストールされる)"config/parameters.yml"ファイル、またはインストール先のルートディレクトリにある"[.env](https://docs.contao.org/dev/getting-started/starting-development/#application-configuration)"ファイルを経由して取り出します。<br><br>
+".env"ファイルで必要な環境変数([DATABASE_URL](https://docs.contao.org/dev/reference/config/#database-url)と[APP_SECRET](https://docs.contao.org/dev/reference/config/#app-secret))については[こちら](https://docs.contao.org/dev/getting-started/starting-development/#application-configuration)を参照してください。
 {{% /notice %}}
 
 
-### Creating Contao back end users
+### Contaoのバックエンドのユーザーの作成
 
-Using the [Contao-Installtool](/ja/installation/contao-installtool/), you can create your back end user. Since Contao 
-**4.10** you can use the following command on the command line:
+[Contaoインストールツール](/ja/installation/contao-installtool/)を使用して、バックエンドのユーザーを作成できます。Contao **4.10**からはコマンド行で以下のコマンドも使用できます:
 
 ```bash
 php vendor/bin/contao-console contao:user:create
 ``` 
-
-
-
