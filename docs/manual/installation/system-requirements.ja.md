@@ -186,6 +186,19 @@ Contaoでは、すべての公開したアクセスをするファイルはイ�
 このため、それぞれのContaoのインストールには別々の(サブ)ドメインが必要です。
 {{% /notice %}}
 
+{{< version-tag "4.13" >}} If your installation is still using the folder `/web` as its public directory, explicitly set it in the `composer.json`
+of the project in order to be prepared for future versions of contao:
+
+```json
+{
+  "extra": {
+    "public-dir": "web"
+  }
+}
+```
+
+see also: https://symfony.com/doc/current/configuration/override_dir_structure.html#override-the-public-directory
+
 ## プロバイダー特有の設定
 
 Internetサービスのいくつかの大規模なプロバイダーではContaoを動作させるための特別な設定を用意している場合があります。幸いなことに、それらは規則の例外です。プロバイダー特有の設定はドイツ語の[Contaoフォーラム](https://community.contao.org/de/forumdisplay.php?67-Erfahrungen-mit-Webhostern)にあります。Contaoに最適なホスティングのパッケージは"Webホスティング"のカテゴリーの[Contaoパートナー](https://contao.org/en/contao-partners.html)から得ることができます。
