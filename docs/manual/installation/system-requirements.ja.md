@@ -186,8 +186,7 @@ Contaoでは、すべての公開したアクセスをするファイルはイ�
 このため、それぞれのContaoのインストールには別々の(サブ)ドメインが必要です。
 {{% /notice %}}
 
-{{< version-tag "4.13" >}} If your installation is still using the folder `/web` as its public directory, explicitly set it in the `composer.json`
-of the project in order to be prepared for future versions of contao:
+{{< version-tag "4.13" >}} 公開ディレクトリとして引き続き`/web`を使用している場合、Contaoの将来のバージョンに備えて`composer.json`ファイルで明示的に設定してください:
 
 ```json
 {
@@ -197,7 +196,7 @@ of the project in order to be prepared for future versions of contao:
 }
 ```
 
-see also: https://symfony.com/doc/current/configuration/override_dir_structure.html#override-the-public-directory
+こちらも参照: https://symfony.com/doc/current/configuration/override_dir_structure.html#override-the-public-directory
 
 ## プロバイダー特有の設定
 
