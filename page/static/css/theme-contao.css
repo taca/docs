@@ -298,7 +298,8 @@ body[data-url*="/reference/hooks/z"] h1 {
 }
 
 /* show level 3 when parent is active */
-#sidebar ul.topics > li.parent > ul > li.active > ul {
+#sidebar ul.topics > li.parent > ul > li.active > ul,
+#sidebar ul.topics > li.parent > ul > li.parent > ul {
     display: block;
 }
 
@@ -573,4 +574,9 @@ option {
 /* Remove hr introduced in theme update */
 #prefooter > hr {
     display: none;
+}
+
+/* Introduce gap between two consecutive code examples */
+.highlight + .highlight {
+    margin-top: 0.5em;
 }
