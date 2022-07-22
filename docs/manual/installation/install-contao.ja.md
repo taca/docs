@@ -48,7 +48,7 @@ ssh user@example.com
 cd www
 ```
 
-### Composerのインストール
+### Composerのインストール {#install-composer}
 
 [Composer](https://en.wikipedia.org/wiki/Composer_(software))は、PHPプログラミング言語と依存関係のインストールのためのアプリケーション指向のパッケージマネージャーです。
 
