@@ -1,115 +1,98 @@
 ---
 title: 'Contaoの更新'
-description: 'Like most Open Source projects, Contao is continuously being developed.'
+description: '多くのオープンソースのプロジェクトのように、Contaoは途切れない開発を進めています。'
 aliases:
     - /ja/installation/update-contao/
 weight: 40
 ---
 
 
-Like most Open Source projects, Contao is under continuous development. With each update, components are updated, 
-bugs are fixed, new features are added or performance is improved. It is therefore recommended to always use the latest 
-version.
+多くのオープンソースのプロジェクトのように、Contaoは途切れない開発を進めています。それぞれの更新で、構成要素を更新し、バグを修正し、新しい機能が追加されたり、性能を改善したり、します。このため、常に最新のバージョンを使用することを推奨します。
 
 
-## The Contao update cycle
+## Contaoの更新の周期
 
-Contao follows the concept of [Semantic Versioning](https://semver.org) for the version numbers, which sounds a bit 
-technical so we will quickly get familiar with the terminology used:
-
-
-### Major release
-
-A major release is a completely new version of the software where many basic things have been changed and existing pages 
-may not work anymore. The current major release of Contao is **version 4** when writing these lines.
+Contaoは[セマンティック バージョニング](https://semver.org)の概念によるバージョン番号を使用しています。これは少し技術的なものなので、簡単に使用する用語に慣れておきましょう:
 
 
-### Minor release
+### メジャーリリース
 
-A minor release is a kind of milestone on the development path where new features have been added. Minor changes to 
-existing pages might therefore be necessary. When writing these lines, the current minor version of Contao 
-is **version 4.10**.
+メジャーリリースは多くの基本的な事項が変更された完全に新しいバージョンで、もう既存のページは動作しないかもしれません。この行を書いている時点で、現在のContaoのメジャーリリースは**バージョン4**です。
 
 
-### Bugfix release
+### マイナーリリース
 
-A bugfix release is a maintenance release whose primary purpose is to fix bugs; the current bugfix version of Contao 
-when writing these lines is **version 4.10.4**.
-
-
-### Long-Term Support Versions
-
-The [release cycle](https://contao.org/de/release-plan.html) of Contao also includes versions with 
-[Long Term Support](https://de.wikipedia.org/wiki/Support_(Dienstleistung)#Long_Term_Support). The Contao versions with extended 
-support period are provided with bug fixes for 3 years and security updates for 1 year, even if newer Contao versions have been released 
-in the meantime. An overview of all Contao versions can be found on [Wikipedia](https://de.wikipedia.org/wiki/Contao#Versionen).
+マイナーリリースは開発過程で新しい機能を追加した節目のようなものです。このため既存のページに小さな変更が必要かもしれません。この行を書いている時点で、現在のContaoのマイナーバージョンは**バージョン4.10**です。
 
 
-## Updating with the Contao Manager
+### バグ修正リリース
+
+バグ修正リリースは主な目的がバグ修正である保守リリースです。この行を書いている時点で、現在のバグ修正バージョンは**バージョン4.10.4**です。
+
+
+### 長期サポートバージョン
+
+Contaoの[リリース周期](https://contao.org/en/release-plan.html)には[長期サポート](https://de.wikipedia.org/wiki/Support_(Dienstleistung)#Long_Term_Support)も含んでいます。このContaoのバージョンはバグ修正に3年とセキュリティ修正にさらに1年の長期間のサポートを、その間に新しいContaoのバージョンのリリースがあっても提供します。Contaoのすべてのバージョンの概要は[Wikipedia](https://de.wikipedia.org/wiki/Contao#Versionen)にあります。
+
+
+## Contao Managerを使用した更新 {#updating-with-the-contao-manager}
 
 {{% notice note %}}
- Before updating Contao, it is recommended to create a backup of the `composer.json`, `composer.lock` files and the 
- database. 
+Contaoを更新する前に、`composer.json`と`composer.lock`のファイルとデータベースをバックアップすることを推奨します。
 {{% /notice %}}
 
-Log on to Contao Manager and start it.
+Contao Managerにログインして開始します。
 
-If you are updating for a [bugfix release](#bugfix-release), just click on "update packages".
+[バグ修正リリース](#bugfix-release)を更新する場合は、「パッケージを更新」をクリックするだけです。
 
-Special feature when updating for a [minor release](#minor-release): Click on the cogwheel icon at 
-"Contao Open Source CMS" and enter the desired version. Click the "Update packages" button and then "Apply changes" to 
-push the update.
+[マイナーリリース](#minor-release)を更新するときは特殊な機能: "Contao Open Source CMS"にある歯車のアイコンをクリックして、所望のバージョンを入力してください。「パッケージを更新」のボタンをクリックして、「変更を適用」をクリックして開始します。
 
-![Start update for minor release](/ja/installation/images/de/aktualisierung-fuer-minor-release-starten.png?classes=shadow)
+![マイナーリリースの更新を開始](/ja/installation/images/de/aktualisierung-fuer-minor-release-starten.png?classes=shadow)
 
-The update can now take several minutes. Details of the update process can be displayed by clicking the following 
-icon![Show/Hide Console Output](/ja/icons/konsolenausgabe.png?classes=icon).
+更新はそれから数分を必要とします。更新の処理の詳細は次のアイコン![コンソール出力の表示/非表示](/ja/icons/konsolenausgabe.png?classes=icon)をクリックすると表示できます。
 
-![Update for minor release completed](/ja/installation/images/de/aktualisierung-fuer-minor-release-abgeschlossen.png?classes=shadow)
+![マイナーリリースの更新の完了](/ja/installation/images/de/aktualisierung-fuer-minor-release-abgeschlossen.png?classes=shadow)
 
 
-### Update database tables
+### データベースのテーブルの更新
 
-Open the [Contao install tool](../contao-installtool/) and check if any changes to your database are necessary after 
-the update. If necessary, make the suggested changes and then close the install tool.
+更新の後で[Contaoインストールツール](../contao-installtool/)を開いてデータベースに変更がないかどうか確認してください。必要な場合は、推奨している変更を行ってインストールツールを閉じてください。
 
-Your Contao installation is now up to date.
+これでインストールしているContaoは最新の状態です。
 
-## Updating via the command line {#update-via-the-command-line}
+## コマンド行からの更新 {#update-via-the-command-line}
 
 {{% notice note %}}
- To update Contao via the command line you need to have Composer [installed](../install-contao/#install-composer). 
- {{% /notice %}}
-
-{{% notice note %}}
- Before updating Contao, I recommend that you make a backup of the `composer.json` and `composer.lock` files and the 
- database. 
+Contaoをコマンド行から更新するには、Composerを[インストールしている](../install-contao/#install-composer)ことが必要です。
 {{% /notice %}}
 
-When updating via the command line, a `composer update` is executed. This will fail to complete on some hosters due to 
-excessive system load, and thus the installation will fail. In this case you should use the 
-[Contao Manager](#updating-with-the-contao-manager).
+{{% notice note %}}
+Contaoを更新する前に、`composer.json`と`composer.lock`のファイルとデータベースをバックアップすることを推奨します。
+{{% /notice %}}
 
-You have logged on to your server with your user name and domain.
+コマンド行から更新するときに`composer update`を実行します。
+過剰なシステムの負荷により、ホスティングサービスによってはコマンドの完了ができず、このためインストールに失敗します。この場合は[Contao Manager](#updating-with-the-contao-manager)を使用しなければなりません。
+
+サーバーにユーザー名とドメインを指定してログインします。
 
 ```bash
 $ ssh benutzername@example.com
 ```
 
-On the console, change to the directory of your Contao installation that you want to update.
+コンソールで、更新身体Contaoのインストール先のディレクトリに移動します。
+
 
 ```bash
 $ cd www/example/
 ```
 
-When updating for a [bugfix release](#bugfix-release), it is sufficient to issue the following command.
+[バグ修正リリース](#bugfix-release)を更新するときは、次のコマンドを実行するだけで十分です。
 
 ```bash
 $ composer update
 ```
 
-If you are updating for a [minor release](#minor-release), you need to specify the desired version of the 
-`contao/manager-bundle` in the `composer.json` file
+[マイナーリリース](#minor-release)を更新する場合は、希望する`contao/manager-bundle`のバージョンを`composer.json`ファイルで指定する必要があります。
 
 ```json
 {
@@ -122,105 +105,91 @@ If you are updating for a [minor release](#minor-release), you need to specify t
 }
 ```
 
-Now trigger the update on the command line.
+それからコマンド行で更新を行います。
 
 ```bash
 $ composer update
 ```
 
-### Update database tables
+### データベースのテーブルの更新
 
-Open the [Contao install tool](../contao-installtool/) and check if any changes to your database are necessary after 
-the update. If necessary, make the suggested changes and then close the install tool.
+更新の後で[Contaoインストールツール](../contao-installtool/)を開いてデータベースに変更がないかどうか確認してください。必要な場合は、推奨している変更を行ってインストールツールを閉じてください。
 
-Instead of using the Contao install tool, (with Contao 4.9 or later) you can use the command
+Contaoインストールツールを使用する代わりに、(Contao 4.9以降では)コマンドを使用できます。
 
 ```bash
 $ vendor/bin/contao-console contao:migrate
 ```
 
-Your Contao installation is now up to date.
+これでインストールしているContaoは最新の状態です。
 
 
-## Update locally without the Composer Resolver Cloud
+## Composerリゾルバークラウドなしでローカルに更新
 
-The procedures described above in [Updating via the command line](#update-via-the-command-line) 
-and [Update with the Contao Manager](#updating-with-the-contao-manager), can also be used locally. 
-This has the advantage that, unlike the environment at your hosting, you have no problems with 
-unfulfilled system requirements such as insufficient memory, because you can set the corresponding 
-configuration as required yourself.
+上記の[コマンド行からの更新](#update-via-the-command-line)と[Contao Managerを使用した更新](#updating-with-the-contao-manager)は、ローカルに使用することも可能です。ホスティングサービスの環境と異なり、必要に応じて自身で構成を行えるので、メモリが十分でないといったシステム環境の不足するといったことがないという利点がこれにはあります。
 
+### コマンド行を使用するためのシステム要件
 
-### Requirements for using the command line
+コンピューターに何がひつようですか?
 
-What do you need on your computer?
+- 作業を行う任意のディレクトリ(作業ディレクトリ)
+- PHP、理想的にはホスティングに使用するのと同じバージョン
+- Composer (全体的に[インストール](../install-contao/#install-composer)していると仮定しています。)
+- ホスティング先にインストールしたContaoのファイル`composer.json`と`composer.lock`のコピー
 
-- any directory you work in (your working directory)
-- PHP, ideally in the same version as used on your hosting
-- Composer (we assume here that you [install](../install-contao/#install-composer) Composer globally)
-- copies of the `composer.json` and `composer.lock` of the Contao installation at your hoster
-
-What do you _not_ need?
+_必要でない_ ものは何ですか?
 
 - MySQL
-- A local Contao installation
+- ローカルにインストールしたContao
 
 
-### Perform the update
+### アップデートの実行
 
-Copy the `composer.json` and `composer.lock` from your hosting to your working directory.
-You then do essentially the same as described above in
-[Updating via the command line](#update-via-the-command-line):
- 
-Open a terminal and change to the working directory. There run
+ホスティング先にインストールしたContaoのファイル`composer.json`と`composer.lock`を作業ディレクトリにコピーします。それから[コマンド行からの更新](#update-via-the-command-line)に説明していることと本質的に同じです:
+
+ターミナルを開いて作業ディレクトリに移動します。そして次を実行します。
 
 ```bash
 $ composer update
 ```
 
-After the update has been successfully completed, copy the updated `composer.lock`.
-(and the `composer.json` if you made changes there) back to the Contao installation 
-on your hosting. 
+composer updateの実行が正しく完了した後で、更新された`composer.lock`のファイル(変更を加えたなら`composer.json`のファイル)をホスティング先にインストールしたContaoにコピーして戻します。
 
-After that you either log in via `ssh` onto your server (hosting)
+その後、サーバー(ホスティング先)に`ssh`でログインします。
 
 ```bash
 $ ssh username@example.com
 ```
 
-and let Composer install the updated packages
+Composerでパッケージの更新をインストールします。
 
 ```bash
 $ composer install
 ```
 
-or you use the Contao Manager. There you select "System maintenance", "Composer dependencies", "Installer 
-execute".
+または、Contao Managerを使用します。この場合は「保守」、「Composerの依存関係」、「インストーラーを実行」と選択してください。
 
-![composer install with the Contao Manager](/ja/installation/images/en/composer-install-using-the-contao-manager.png?classes=shadow)
+![Contao Managerでcomposer installを実行](/ja/installation/images/en/composer-install-using-the-contao-manager.png?classes=shadow)
 
-Finally you have to update the database tables. 
+最後にデータベースのテーブルを更新しなければなりません。
 
 
-### Update database tables
+### データベースのテーブルの更新
 
-Open the [Contao-Installtool](../contao-installtool/) and check if changes to your database are necessary. If necessary, 
-make the suggested changes and then close the install tool.
+[Contaoインストールツール](/ja/installation/contao-installtool/)を開いてデータベースの変更が必要かどうか確認してください。必要な場合は、推奨された変更を行ってインストールツールを閉じてください。
 
-Instead of the Contao install tool, (with Contao 4.9 or later) you can use the command line and run the command 
+Contaoインストールツールの代わりに、(Contao 4.9以降では)コマンド行を使用できます。この場合は次のコマンドを実行してください:
 
 ```bash
 $ vendor/bin/contao-console contao:migrate
 ``` 
-use.
 
-Your Contao installation is now up to date.
+これでインストールしているContaoは最新の状態となります。
 
 
-### Different PHP versions
+### 異なるバージョンのPHP
 
-If the PHP version used locally is different from the one on your hosting, you need to specify which PHP version should 
-be used in your `composer.json` file:
+ローカルで使用しているPHPのバージョンが、ホスティングで使用しているバージョンと異なる場合は、`composer.json`ファイルで使用するPHPのバージョンを指定しなければなりません:
 
 ```json 
     ...
@@ -236,18 +205,14 @@ be used in your `composer.json` file:
 ```
 
 
-### Local updates with the Contao Manager
+### Contao Managerでローカルな更新
 
-You need a local Contao installation. In this installation, you install the Contao Manager and run the update like
-described in the section [Updating with the Contao Manager](#updating-with-the-contao-manager). 
+ローカルなContaoのインストールを使用される場合はContao Managerをインストールして、[Contao Managerを使用した更新](#updating-with-the-contao-manager)に記述している方法の更新を実行します。
 
-Before doing so, make sure that the Composer Resolver Cloud is not used! You don't need it, because you can provide 
-your own server with enough memory and thus reduce the load of the resolver cloud.
+ただし、その前にComposerリゾルバークラウドを使用しないことを確認してください!  使用している自身のサーバーで十分なメモリを利用できますから、リゾルバークラウドの負荷を減らしてください。
 
-You can find the setting in the "System Check" in the "Server Configuration" section.
+これは「サーバー設定」の部分の「システム検査」に設定があります。
 
-![Disabling the Composer Resolver Cloud](/ja/installation/images/en/disable_cloud_resolver.png?classes=shadow)
+![Composerリゾルバークラウドの無効化](/ja/installation/images/en/disable_cloud_resolver.png?classes=shadow)
 
-After the successful update, transfer the `composer.json` and `composer.lock` files back to the Contao installation on 
-your hosting. The next steps on your hosting are the same as described above.
- 
+更新を成功した後で、`composer.json`と`composer.lock`のファイルをホスティングのContaoのインストールに戻します。そして、上記に記述したのと同じ段階を行います。
