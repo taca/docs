@@ -135,10 +135,10 @@ automatically generated aliases.
 
 | Alias Settings | Declaration |
 | -------------- | ----------- |
-| Unicode numbers and small letters | The alias `über-uns` is generated from the page name "About us". |
-| Unicode numbers and letters | The alias `Über-uns` is generated from the page name "About us". |
-| ASCII numbers and small letters | The alias `ueber-uns` is generated from the page name "About us". |
-| ASCII numbers and letters | The alias `Ueber-uns` is generated from the page name "About us". |
+| Unicode numbers and small letters | The alias `über-uns` is generated from the page name "Über uns". |
+| Unicode numbers and letters | The alias `Über-uns` is generated from the page name "Über uns". |
+| ASCII numbers and small letters | The alias `ueber-uns` is generated from the page name "Über uns". |
+| ASCII numbers and letters | The alias `Ueber-uns` is generated from the page name "Über uns". |
 
 For the creation of the alias, the defined language is also relevant in some cases. For instance the German word "über"
 would be converted to "ueber" while the finish word "eläinkö" would be converted to "elainko".
@@ -212,6 +212,7 @@ for multi-domain setups so that you can easily serve different favicons for diff
 Contao instance, since you can only have one _physical_ `favicon.ico` file in your document root otherwise. This will 
 enable you to show the correct favicon per domain, if any non-HTML resources are displayed in the browser directly 
 (like images or PDFs, etc.).
+You can set a favicon only once for the same domain. This must be done in the fallback language.
 
 {{% notice "warning" %}}
 Keep in mind that this will not work if you already have a physical `favicon.ico` file in your document root, as the 
@@ -225,6 +226,7 @@ Keep in mind that this feature will not add any additional meta tags to the HTML
 **Custom robots.txt content:** This allows you to define the content of the `/robots.txt` URL of your domain. This is 
 especially useful for multi-domain setups, since you can only have one _physical_ `robots.txt` file in your document 
 root otherwise. This will enable you to define different directives per domain.
+For the same domain you can set robots.txt only once. This must be done in the fallback language.
 
 {{% notice "warning" %}}
 Keep in mind that this will not work if you already have a physical `robots.txt` file in your document root, as the web 

@@ -83,6 +83,11 @@ Contaoの理想的な操作のための推奨です。異なった設定はConta
 
 ### PHPの最小の要件
 
+#### Contao 5.0 and later
+
+- **PHP**バージョン8.1.0以降が必要です。
+
+
 #### Contao 4.11以降
 
 - **PHP**バージョン7.3.0以降が必要です。
@@ -118,12 +123,12 @@ Contao Managerを使用している場合、保守のセクションで_Composer
 
 Contaoは[Doctrine DBAL](https://www.doctrine-project.org/projects/dbal.html)のデータベースの抽象化レイヤーを使用していますが、MySQL(または互換性のあるMariaDBのような分岐)以外のデータベースサーバーは現在サポートしていません。
 
-はMySQLサーバーのバージョン5.1 / 5.5で`MyISAM`のテーブルの形式でContaoはテストに成功しています。文字セットの`utf8mb4`の代わりに`utf8_general_*`を使用すると、UTF8のサポートが悪化(例: 絵文字がない)します。
+ContaoはMySQLサーバーのバージョン5.7 / 8.0で`InnoDB`のテーブルの形式でContaoはテストに成功しています。文字セットの`utf8mb4`の代わりに`utf8`を使用すると、UTF8のサポートが悪化(例: 絵文字がない)します。
 
-以上の推奨する選択がサーバーで有効にできない場合は、他のデータベースエンジンで異なる文字セットを`app/config/config.yml`ファイルに構成してください:
+以上の推奨する選択がサーバーで有効にできない場合は、他のデータベースエンジンで異なる文字セットを[`config/config.yml`](../../system/settings/#config-yml)ファイルに構成してください:
 
 {{% notice note %}}
-**Contao 4.8**以降では、[`config/config.yml`](../../system/settings/#config-yml)ファイルになります。
+**Contao 4.8**より前は`app/config/config.yml`ファイルになります。
 {{% /notice %}}
 
 ```yml
@@ -134,6 +139,7 @@ doctrine:
                 default_table_options:
                     charset: utf8
                     collate: utf8_unicode_ci
+                    collation: utf8_unicode_ci
 ```
 
 さらにMySQLを"厳密モード"で動作することを推奨します、これによってデータの破損や切り詰めを防止し、データの一貫性を保証できます。
@@ -150,7 +156,7 @@ doctrine:
 sql_mode="TRADITIONAL"
 …
 ```
-サーバーで設定を有効にできない場合は、接続のオプションを`app/config/config.yml`ファイル ({{< version-tag "4.8" >}}`config/config.yml`ファイル)に構成してください:
+サーバーで設定を有効にできない場合は、接続のオプションを`config/config.yml`ファイルに構成してください:
 
 ```yml
 doctrine:
