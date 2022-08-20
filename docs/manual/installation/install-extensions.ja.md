@@ -1,38 +1,38 @@
 ---
 title: '機能拡張のインストール'
-description: 'To find a suitable extension for a desired function, you have three options.'
+description: '必要な機能に適切な機能拡張を見つけるには、3つの方法があります。'
 aliases:
     - /ja/installation/install-extensions/
 weight: 60
 ---
 
-## Search for extensions
+## 機能拡張の検索
 
-To find a suitable extension for a desired function, you have three options.
+必要な機能に適切な機能拡張を見つけるには、3つの方法があります。
 
-### Website
+### ウェブサイト
 
-You can search for an extension on the [extensions.contao.org](https://extensions.contao.org/) website.
+機能拡張をウェブサイトの[extensions.contao.org](https://extensions.contao.org/)で検索できます。
 
-![Extensions search on extensions.contao.org](/ja/installation/images/en/extensions-contao-org.png?classes=shadow)
+![extensions.contao.orgで機能拡張を検索](/ja/installation/images/en/extensions-contao-org.png?classes=shadow)
 
 ### Contao Manager
 
-You can search for an extension directly within the Contao Manager of your installation.
+インストールしているContao Managerで直接機能拡張を検索できます。
 
-![Advanced search in Contao Manager](/ja/installation/images/en/search-extensions-in-the-contao-manager.png?classes=shadow)
+![Contao Managerでの高度な検索](/ja/installation/images/en/search-extensions-in-the-contao-manager.png?classes=shadow)
 
-### Command line
+### コマンド行
 
-You can search for an extension via the command line.
+コマンド行で機能拡張を検索できます。
 
-**Search e.g. for extensions of the vendor "codefog":**
+**例えば、"codefog"というベンダーの機能拡張を検索:**
 
 ```bash
 php composer.phar search codefog
 ```
 
-**Result of the search:**
+**検索の結果:**
 
 ```bash
 codefog/contao-haste haste extension for Contao Open Source CMS
@@ -52,50 +52,45 @@ codefog/contao-template_override template_override extension for Contao Open Sou
 codefog/contao-elements-filter elements-filter extension for Contao Open Source CMS
 ```
 
-Once you have found an extension, you can install it via the [Contao Manager](#installation-via-the-contao-manager) or
-the [command line](#installation-via-the-command-line).
+機能拡張を見つけ出したらなら、[Contao Manager](#installation-via-the-contao-manager)または[コマンド行](#installation-via-the-command-line)でインストールできます。
 
-## Install extensions
+## 機能拡張のインストール
 
-### Installation via the Contao Manager
+### Contao Managerによるインストール {#installation-via-the-contao-manager}
 
-1. Open the Contao Manager (`my-domain.com/contao-manager.phar.php`) and enter your login data.
-2. Search for the extension you want to install, then click "Add".
-3. Repeat step 2 if you want to add more extensions.
-4. Open the "Packages" tab and click "Apply changes" to start the installation process.
-5. Once finished, run the [Contao install tool](../contao-installtool/) to update the database.
+1. Contao Manager(`my-domain.com/contao-manager.phar.php`)を開いてログイン情報を入力します。
+2. インストールしたい機能拡張を検索して、「追加」をクリックします。
+3. さらに機能拡張を追加したい場合は2.を繰り返します。
+4. 「パッケージ」のタブを選択して「変更を適用」をクリックしてインストールの処理を開始します。
+5. 処理が終わりましたら、[Contaoインストールツール](../contao-installtool/)を実行してデータベースを更新します。
 
 {{% notice info %}}
-The installation process may take several minutes. Details about the running process can be displayed by clicking on the
-![Show/Hide Console Output](/ja/icons/konsolenausgabe.png?classes=icon) icon.
+インストールの処理は数分を必用とするでしょう。![コンソール出力を表示/非表示](/ja/icons/konsolenausgabe.png?classes=icon)のアイコンをクリックすると、動作中の処理をのr奉斎を表示できます。
 {{% /notice %}}
 
-#### Example
+#### 例
 
-If you want to install the extension `terminal42/contao-easy_themes`, enter "EasyThemes" in the search field, click
-"Add", …
+機能拡張の`terminal42/contao-easy_themes`をインストールしたい場合、検索欄に"EasyThemes"と入力医sて、「追加」をクリックし、...
 
-![Search for extensions in Contao Manager](/ja/installation/images/en/search-package-in-contao-manager.png?classes=shadow)
+![Contao Managerで機能拡張を検索](/ja/installation/images/en/search-package-in-contao-manager.png?classes=shadow)
 
-… then go to "Packages" and apply the changes.
+そして「パッケージ」のタブに移り、変更を適用します。
 
-![Installing extensions in Contao Manager](/ja/installation/images/en/install-package-in-contao-manager.png?classes=shadow)
+![Contao Managerで機能拡張をインストール](/ja/installation/images/en/install-package-in-contao-manager.png?classes=shadow)
 
-Once finished, run the [Contao install tool](../contao-installtool/) to update the database. The extension is now ready
-to be used.
+処理が終わりましたら、[Contaoインストールツール](../contao-installtool/)を実行してデータベースを更新します。これで機能拡張を使用する準備ができました。
 
-![Extensions installed in Contao Manager](/ja/installation/images/en/package-installed-in-the-contao-manager.png?classes=shadow)
+![Contao Managerでインストールした機能拡張](/ja/installation/images/en/package-installed-in-the-contao-manager.png?classes=shadow)
 
-### Installation via the command line
+### コマンド行からインストール {#installation-via-the-command-line}
 
-1. Log into your server via `ssh`.
-2. Navigate to your project's root directory.
-3. Run `php composer.phar require <extension>` to install a single extension or `php composer.phar require <extension1> <extension2> …`
-   to install multiple extensions.
-4. Once finished, run `contao:migrate` or use the [Contao install tool](../contao-installtool/) to update the database.
+1. `ssh`でサーバーにログインします。
+2. プロジェクトのルートディレクトリに移動します。
+3. 1つの機能拡張をインストールするには`php composer.phar require <extension>`と、複数の機能拡張をインストールするには`php composer.phar require <extension1> <extension2> …`と実行します。
+4. 処理が終わりましたら、`contao:migrate`を実行するか[Contaoインストールツール](../contao-installtool/)を使用してデータベースを更新します。
 
-#### Example
-We log in and navigate to the project root.
+#### 例
+ログインしてプロジェクトのルートに移動します。
 
 ```bash
 ssh user@example.com
@@ -105,7 +100,7 @@ ssh user@example.com
 cd www/my-project/
 ```
 
-Let's install `terminal42/contao-easy_themes`.
+`terminal42/contao-easy_themes`をインストールしましょう。
 
 ```bash
 php composer.phar require terminal42/contao-easy_themes
@@ -113,5 +108,5 @@ php vendor/bin/contao-console contao:migrate
 ```
 
 {{% notice note %}}
-The `contao:migrate` command is available in versions **4.9** and up. You can alternatively use the [Contao install tool](../contao-installtool/).
+`contao:migrate`コマンドはバージョン**4.9**以上で利用できます。その代わりに[Contaoインストールツール](../contao-installtool/)を使用できます。
 {{% /notice %}}
