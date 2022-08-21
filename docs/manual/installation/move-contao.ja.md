@@ -6,84 +6,81 @@ aliases:
 weight: 50
 ---
 
-Moving a Contao installation from one location to another (e.g. from a local installation to a live server) is almost
-the same as [installing](../install-contao) but also includes transferring the existing database and
-application related files.
+インストールしたContaoをある場所から別の場所(例えばローカルのインストールから稼働中のサーバー)に移動するのは、ほとんど[インストール](../install-contao)と同じですが、既存のデータベースとアプリケーションに関連したファイルの転送も含みます。
 
-1. [Transferring the database](#transferring-the-database)
-2. [Transferring the files](#transferring-the-files)
-3. [Installing Contao](#installing-contao)
+1. [データベースの転送](#transferring-the-database)
+2. [ファイルの転送](#transferring-the-files)
+3. [Contaoのインストール](#installing-contao)
 
 {{% notice warning %}}
-To reduce the risk of conflicts, make sure your source and target server both run the **[same PHP version](../system-requirements/#minimum-php-requirements)**.
+不一致による危険性を減らすため、元のサーバーと目的のサーバーの両方が**[同じバージョンのPHP](../system-requirements/#minimum-php-requirements)**であることを確認してください。
 {{% /notice %}}
 
 
-## Transferring the database
-### Export the database (source)
-You can either create a SQL dump with the graphical database administration tool [phpMyAdmin](https://www.phpmyadmin.net/)
-or use the `mysqldump` program from the command line.
+## テータベースの転送 {#transferring-the-database}
+
+### データベースのエクスポート (元)
+
+GUIのツール[phpMyAdmin](https://www.phpmyadmin.net/)、またはコマンド行から`mysqldump`プログラムを使用してSQLのdumpを作成できます。
 
 {{< tabs groupId="mysql-transfer" >}}
 {{% tab name="phpMyAdmin" %}}
-Log into "phpMyAdmin", select the database you want to export, select the "Export" tab in the upper menu and click "Ok".
+"phpMyAdmin"にログインして、エクスポートするデータベースを選択し、上部のメニューの"Export"タブを選択して、"Ok"をクリックしてください。
 
-You will receive a `sql` file that you can import in the next step.
+次の段階でインポートに使用できる`sql`ファイルを受け取るでしょう。
 
-![Exporting the database](/ja/installation/images/en/database-export.png?classes=shadow)
+![データベースのエクスポート](/ja/installation/images/en/database-export.png?classes=shadow)
 {{% /tab %}}
-{{% tab name="Command line" %}}
-Make sure `mysqldump` and `gzip` is installed, then run the following command (replacing "my_user" and "my_db_name" with
-your database user and database name):
+{{% tab name="コマンド行" %}}
+`mysqldump`と`gzip`をインストールしていることを確認して、("my_user"と"my_db_name"をデータベースのユーザーと名前に置き換えて)以下のコマンドを実行してください:
 
 ```bash
 mysqldump --host=localhost --user=my_user --password --hex-blob --opt my_db_name | gzip -c > my_dump.sql.gz
 ```
 
-Enter your database password if asked for.
+データベースのパスワードを聞かれたら入力してください。
 
-A `my_dump.sql.gz` file containing the dumps will be saved in the current directory that you can use in the next step.
+次の段階でインポートに使用できる`my_dump.sql.gz`ファイルをカレントディレクトリに保存します。
 {{% /tab %}}
 {{< /tabs >}}
 
 
-### Import the database (target)
+### データベースのインポート (目的)
+
 {{< tabs groupId="mysql-transfer" >}}
 {{% tab name="phpMyAdmin" %}}
-Open "phpMyAdmin" and select a new (empty) database.
+"phpMyAdmin"を開いて新しい(空の)データベースを選択します。
 
-Click on the "Import" button in the upper menu, upload the previously created SQL dump and start the import.
+上部のメニューの"Import"ボタンをクリックし、前に作成したSQLのdumpファイルをアップロードしてインポートを開始してください。
 
-![Importing the database](/ja/installation/images/en/database-import.png?classes=shadow)
+![データベースをインポート](/ja/installation/images/en/database-import.png?classes=shadow)
 {{% /tab %}}
-{{% tab name="Command line" %}}
-Copy the previously created dump file to the target machine and navigate to it.
+{{% tab name="コマンド行" %}}
+前に作成しdumpファイルを目的のサーバーにコピーして、ログインします。
 
-Make sure `mysql` and `gunzip` is installed, then run the following command (replacing "my_user" and "my_db_name" with
-your database user and database name as well as "my_dump.sql.gz" with the appropriate file name of the copied dump.):
+`mysqldump`と`gzip`をインストールしていることを確認して、("my_user"と"my_db_name"をデータベースのユーザーと名前に、また"my_dump.sql.gz"をコピーしたdumpファイルの名前に適切に置き換えて)以下のコマンドを実行してください:
 
 ```bash
 gunzip < my_dump.sql.gz | mysql --host=localhost --user=my_user --password my_db_name
 ```
 
-Enter your database password if asked for.
+データベースのパスワードを聞かれたら入力してください。
 {{% /tab %}}
 {{< /tabs >}}
 
 
-## Transferring the files
-The following files and folders need to be transferred from the source to the target machine.
+## ファイルの転送 {#transferring-the-files}
+
+以下のファイルとフォルダーを元のサーバーから目的のサーバーに転送しなければなりません。
 
 - `files`
 - `templates`
 - `composer.json`
 - `composer.lock`
 
-If you still have old extensions within `system/modules/` or if you have created a `config.yml` in the directory
-`config/` (or **before Contao 4.8** `app/config/`) or if you created Contao adjustments under `contao/` (or **before 
-Contao 4.8** `app/Resources/contao/`), then they have to be transferred as well.
+`system/modules/`にある古い機能拡張がある場合、`config/`(または**Contao 4.8より前では** `app/config/`)ディレクトリにある`config.yml`、Contaoの調整が`contao/`(または**Contao 4.8より前では**`app/Resources/contao/`)ある場合は同様に転送しなければなりません。
 
-You can use an FTP client for this task or, if you prefer the command line, use `scp`:
+この作業にはFTPクライアントを使用できますが、コマンド行が良い場合は`scp`を使用してください:
 
 ```bash
 cd /path/to/project
@@ -91,15 +88,13 @@ cd /path/to/project
 scp -r files/ templates/ composer.json composer.lock your_server:/www/project/
 ```
 
-## Installing Contao
+## Contaoのインストール {#installing-contao}
 
-1. Make sure you have correctly set up your [hosting configuration](../install-contao/#hosting-configuration).
-2. Then we let *Composer* do its work – as we also transferred the `composer.lock` file containing all package version
-   details from the original server, Composer will replicate the identical state as before.
+1. [ホスティングの構成](../install-contao/#hosting-configuration)を正しく設定していることを確認してください。
+2. その次に*Composer*に仕事をしてもらいます。元のサーバーからすべてのパッケージのバージョンを含んだ`composer.lock`ファイルを転送していますので、Composerは以前と同様の状態を再現します。
    
-   To do so, either use the [Contao Manager](../install-contao#installation-via-the-contao-manager) or the 
-   [command line](../install-contao#installation-via-the-command-line) like you would with a regular
-   installation.
-3. Run the [install tool](../contao-installtool) to configure the new database connection. 
+   これを行うには通常のインストールの様に[Contao Manager](../install-contao#installation-via-the-contao-manager)を使用するか、[コマンド行](../install-contao#installation-via-the-command-line)を使用してください。
+   
+3. [インストールツール](../contao-installtool)を使用して新しいデータベース接続を構成してください。
 
-That's it! You're now ready to use your Contao installation on a new location.
+以上!  これで新しい場所でContaoインストールツールを使用する準備ができました。
