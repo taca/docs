@@ -32,7 +32,7 @@ Contaoをサーバーにインストールする前に、[Contao Managerのイ�
 Contao Managerがすべてのパッケージをインストールしましたら、[Contaoインストールツール](../contao-installtool/)を[実行](../contao-installtool/)してデータベースを更新しなければなりません。
 
 
-## コマンド行からインストール
+## コマンド行でインストール
 
 コマンド行から`create-project`を用いてインストールするとき、`composer update`というコマンドをインストール中に実行します。ホスティングサービスによっては、高いシステム負荷のためにプロセスを完了できずに、インストールの失敗を引き起こすことがあります。この場合は[Contao Manager](#installing-contao-with-the-contao-manager)を使用しなければなりません。
 

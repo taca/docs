@@ -56,7 +56,7 @@ codefog/contao-elements-filter elements-filter extension for Contao Open Source 
 
 ## 機能拡張のインストール
 
-### Contao Managerによるインストール {#installation-via-the-contao-manager}
+### Contao Managerでインストール {#installation-via-the-contao-manager}
 
 1. Contao Manager(`my-domain.com/contao-manager.phar.php`)を開いてログイン情報を入力します。
 2. インストールしたい機能拡張を検索して、「追加」をクリックします。
@@ -65,7 +65,7 @@ codefog/contao-elements-filter elements-filter extension for Contao Open Source 
 5. 処理が終わりましたら、[Contaoインストールツール](../contao-installtool/)を実行してデータベースを更新します。
 
 {{% notice info %}}
-インストールの処理は数分を必用とするでしょう。![コンソール出力を表示/非表示](/ja/icons/konsolenausgabe.png?classes=icon)のアイコンをクリックすると、動作中の処理をのr奉斎を表示できます。
+インストールの処理は数分を必用とするでしょう。![コンソール出力を表示/非表示](/ja/icons/konsolenausgabe.png?classes=icon)のアイコンをクリックすると、動作中の処理の詳細を表示できます。
 {{% /notice %}}
 
 #### 例
@@ -82,7 +82,7 @@ codefog/contao-elements-filter elements-filter extension for Contao Open Source 
 
 ![Contao Managerでインストールした機能拡張](/ja/installation/images/en/package-installed-in-the-contao-manager.png?classes=shadow)
 
-### コマンド行からインストール {#installation-via-the-command-line}
+### コマンド行でインストール {#installation-via-the-command-line}
 
 1. `ssh`でサーバーにログインします。
 2. プロジェクトのルートディレクトリに移動します。
