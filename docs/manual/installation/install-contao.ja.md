@@ -10,7 +10,7 @@ weight: 30
 
 Contaoをサーバーにインストールする2つの方法があります、[Contao Manager](#installation-with-the-contao-manager)のグラフィカル・ユーザー・インターフェイスを使用する方法とコマンド行を使用する方法です。
 
-## Contao Managerからインストール
+## Contao Managerでインストール
 
 ### Contao Managerをインストール
 
@@ -68,7 +68,7 @@ Composerを全体的にインストールした場合は、どのディレクト
 php composer.phar create-project contao/managed-edition example 4.11
 ```
 
-### ホスティングの構成
+### ホスティングの構成 {#hosting-configuration}
 
 Contaoでは、すべての公開してアクセス可能なファイルはインストールしたディレクトリのサブフォルダーの`/web`に配置します。このフォルダーを作成して、ドキュメントルートをこのサブフォルダーにホスティングプロバイダーの管理パネルを使用して設定してください。そして、この機会にデータベースを作成してください。
 
