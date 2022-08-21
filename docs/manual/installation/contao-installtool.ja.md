@@ -1,92 +1,91 @@
 ---
 title: 'Contaoインストールツール'
-description: 'With the Contao Install Tool, you can connect to a database, update tables, import templates and create an administrator account.'
+description: 'Contaoインストールトールでデータベースへの接続、テーブルの更新、テンプレートのインポート、管理者アカウントの作成を行えます。'
 aliases:
     - /ja/installation/contao-installtool/
 weight: 90
 ---
 
-In your browser, open the URL of your Contao installation and add the `/contao/install` path to access the Install Tool.
+ブラウザーで、インストールしているContaoのURLに`/contao/install`を追加したURLを開くとインストールツールにアクセスできます。
 
 > `www.example.com/contao/install`
 
-Accept the license and create a password with which you can access the Install Tool again later.
+ライセンスに同意して、後でインストールトールのアクセスに使用するパスワードを作成してください。
 
-## Create database connection
+## データベース接続の作成
 
-The Contao Install Tool cannot create new databases itself because most shared hosting packages only allow this with the management software (e.g. Confixx, Plesk or cPanel). So, go to the management interface of your server and create a new database there. Then enter the credentials for the database in the Contao Install Tool.
+ほとんどの共有ホスティングのパッケージでは、その管理ソフトウェア(例えばConfixx、Plesk、cPanel)だけに許可しているため、Contaoインストールツール自身は新しいデータベースの作成はできません。このため、サーバーの管理ソフトウェアを使用して新しいデータベースを作成してください。そして、データベースの認証情報をContaoインストールツールに入力します。
 
-![Enter database connection for Contao](/ja/installation/images/en/installtool-database-connection.png?classes=shadow)
+![Contaoのデータベース接続の入力](/ja/installation/images/en/installtool-database-connection.png?classes=shadow)
 
-**Host:** Here you enter the domain or IP address of the database server.
+**ホスト:** ここにデータベースサーバーのドメインまたはIPアドレスを入力します。
 
-**Port number:** Here you can change the port number of the database server.
+**ポート番号:** ここでデータベースサーバーのポート番号を変更できます。
 
-**Username:** Here you enter the username for your database.
+**ユーザー名:** ここにデータベースのユーザー名を入力します。
 
-**Password:** Enter the password here.
+**パスワード:** ここにデータベースのパスワードを入力します。
 
-**Database:** Here you enter the name of the database.
+**データベース:** ここにデータベースの名前を入兎力します。
 
-## Update tables
+## テーブルの更新
 
-After you have saved the database access data, the Install Tool connects to the database and compares the tables with the current version of Contao. If an update is necessary, the Install Tool automatically presents you a list of changes that you can confirm or reject.
+データベースにアクセスするデータを保存した後で、インストールツールはデータベースに接続して現在のバージョンのContaoのテーブルと比較します。更新が必要な場合、インストールツールは承認または拒否を指定できる変更の一覧を自動的に表示します。
 
-![Confirm database changes](/ja/installation/images/en/installtool-installing-schema.png?classes=shadow)
+![データベースの変更の確認](/ja/installation/images/en/installtool-installing-schema.png?classes=shadow)
 
-Usually, you should accept the offered changes so that your tables are always up-to-date and Contao does not try to access missing fields later. For a new installation, the list of changes is usually very long since all tables have to be created first.
+通常、提案された変更を受け入れて、テーブルが常にContaoの最新の状態にあって、後でContaoが欠けている項目にアクセスしないようにすべきです。
+新しいインストールでは通常、最初はすべてのテーブルを作成しなければならないため変更の一覧はたいへん長くなります。
 
-If you have multiple applications sharing a database on your server, the Install Tool offers you the possibility to "clean up" the tables of the other applications that are not needed.
-
-{{% notice warning %}}
-Although it is technically possible to run multiple applications in one database, you should use a separate database for each application.
-{{% /notice %}}
-
-## Importing a Template
-
-At this point you can import a `.sql` file from the `/templates`directory. This will delete all existing data! If you just want to import a theme instead, please use the theme manager in the Contao back end.
+サーバーでデータベースを複数のアプリケーションが共有している場合、インストールツールは他のアプリケーションが必要とするテーブルを「除去」を提案する可能性があります。
 
 {{% notice warning %}}
-When you import a template, existing data is overwritten! 
+1つのデータベースで複数のアプリケーションを動作させることは論理的には可能ですが、それぞれのアプリケーションに別々のデータベースを使用すべきです。
 {{% /notice %}}
 
-## Create an administrator account
+## テンプレートのインポート
 
-If you did not import a template, for example if you want to create a new website with Contao, you need to create an administrator user that you can use to log in to the Contao back end later.
+この時点で`/templates`ディレクトリから`.sql`ファイルをインポートできます。これはすべての既存のデータを削除します!  テーマをインポートしたい場合はContaoのバックエンドのテーマの管理を使用してください。
 
-![Create an administrator account](/ja/installation/images/en/installtool-create-admin-account.png?classes=shadow)
+{{% notice warning %}}
+テンプレートをインポートすると、既存のデータをすべて上書きします!
+{{% /notice %}}
 
-**Username**: Here you enter the username of the administrator.
+## 管理者アカウントの作成
 
-**Name:** Enter the first and last name of the administrator here.
+テンプレートをインポートしなかった場合、例えば新しいウェブサイトをContaoで作成したい場合ですが、後でContaoのバックエンドのログインに使用する管理者ユーザーを作成しなければなりません。
 
-**e-mail address:** Here you enter the email address of the administrator.
+![管理者アカウントの作成](/ja/installation/images/en/installtool-create-admin-account.png?classes=shadow)
 
-**Password:** Here you set and confirm the password of the administrator.
+**ユーザー名**:: ここに管理者のユーザー名を入力します。
 
-After you have created the administrator user, the installation of Contao is complete and the link at the bottom right
-will redirect you to the back end.
+**名前:** ここに管理者の氏名を入力します。
 
+**電子メール:** ここに管理者の電子メールアドレスを入力します。
 
-## Reset the Install Tool {#reset-the-installtool}
+**パスワード:** ここに管理者のパスワードを入力します。
 
-There are two reasons why you might want to reset the Install Tool:
+管理者ユーザーを作成が終わると、Contaoのインストールは完了で右下のリンクからバックエンドに移動できます。
 
-1. The Install Tool has been locked.
-2. You have forgotten the Install Tool password.
+## インストールツールのリセット {#reset-the-installtool}
 
-The Install Tool is protected against [brute force attacks](https://de.wikipedia.org/wiki/Brute-Force-Methode) and is automatically locked if an incorrect password is entered more than three times in a row.
+インストールツールをリセットしたい理由は2つあります。
 
-You have three options to unlock the Install Tool:
+1. インストールツールがロックされてしまった。
+2. インストールツールのパスワードを忘れてしまった。
 
-- Via the Contao Manager by clicking on "Unlock Install Tool" in the "Maintenance" menu.![Reset the Install Tool](/ja/installation/images/en/unlock-install-tool-manager.png?classes=shadow)
-- From the command line by executing the following command in the root directory of your Contao installation:
-  
+インストールツールは[力まかせ探索](https://ja.wikipedia.org/wiki/%E5%8A%9B%E3%81%BE%E3%81%8B%E3%81%9B%E6%8E%A2%E7%B4%A2)から保護するため、連続して3回以上正しくないパスワードを入力すると自動的にロックします。
+
+インストールツールのロックを解除する3つの選択肢があります:
+
+- Contao Managerで「保守」のメニューにある「インストールトールのロックを解除「」をクリッkすします。![インストールツールをリセット](/ja/installation/images/en/unlock-install-tool-manager.png?classes=shadow)
+- コマンド行でContaoをインストールしたルートディレクトリで以下のコマンドを実行します:
+
   ```bash
   php vendor/bin/contao-console contao:install:unlock
   ```
-- By deleting the file `install_lock`in the directory `/var`on the web server.
+- ウェブサーバーの`/var`ディレクトリにある`install_lock`ファイルを削除します。
 
-A forgotten password can be reset in the local configuration (`/system/config/localconfig.php`) file.
+忘れてしまったパスワードはローカルの構成ファイル(`/system/config/localconfig.php`)でリセットできます。
 
-Search for the line with the statement `$GLOBALS['TL_CONFIG']['installPassword'] = '…';`and remove it completely from the file. Then you can set a new password when again once you reload the Install Tool.
+`$GLOBALS['TL_CONFIG']['installPassword'] = '…';`という命令文を検索して、ファイルから完全に削除してください。すると、インストールツールを再読込みすると新しいパスワードを設定できます。
