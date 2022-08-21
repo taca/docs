@@ -1,53 +1,53 @@
 ---
 title: '機能拡張のアンインストール'
-description: 'Uninstalling Extensions with the Contao Manager or via command line'
+description: 'Contao Managerまたはコマンド行から機能拡張をアンインストール'
 aliases:
     - /ja/installation/uninstalling-extensions/
 weight: 80
 ---
 
-## Uninstalling with Contao Manager
+## Contao Managerでアンインストール
 
-You first need to log in to Contao Manager. To do so, call up your domain again with the addition `/contao-manager.phar.php` and enter your access data.
+始めにContao Managerにログインしなければなりません。それには再び使用されているドメインに`/contao-manager.phar.php`を追加して呼び出し、アクセスするためのデータを入力します。
 
-If you want to uninstall the extension "terminal42/contao-easy\_themes", go to the "Packages" tab and click on the "Remove" button next to the extension. Of course you can also reserve other extensions for uninstallation.
+機能拡張の"terminal42/contao-easy\_themes"をアンインストールしたい場合、「パッケージ」のタブに切り替えて、機能拡張にある「更新」のボタンを「削除」に切り替えます。もちろん、他の機能拡張の削除も指定できます。
 
-![Mark extensions in Contao Manager for uninstallation](/ja/installation/images/en/mark-extensions-in-contao-manager-for-uninstallation.png?classes=shadow)
+![Contao Managerで機能拡張の削除を設定](/ja/installation/images/en/mark-extensions-in-contao-manager-for-uninstallation.png?classes=shadow)
 
-Click on "Apply changes" to start the uninstallation. The uninstallation can take several minutes. Details of the uninstallation process can be displayed by clicking on the following icon![Show/Hide Console Output](/ja/icons/konsolenausgabe.png?classes=icon).
+「変更を適用」をクリックするとアンインストールを開始します。アンインストールには数分を必要とします。![コンソール出力を表示/非表示](/ja/icons/konsolenausgabe.png?classes=icon)のアイコンをクリックすると、アンインストールの処理の詳細を表示できます。
 
-![Uninstalling extensions in Contao Manager](/ja/installation/images/en/uninstalling-extensions-in-contao-manager.png?classes=shadow)
+![Contao Managerで機能拡張のアンインストール](/ja/installation/images/en/uninstalling-extensions-in-contao-manager.png?classes=shadow)
 
-Once the Contao Manager has uninstalled the extension(s), you have to run the [Contao-Installtool](../contao-installtool/) to update the database if necessary.
+Contao Managerが機能拡張をアンインストールしましたら、必要な場合は[Contaoインストールツール](../contao-installtool/)を実行してデータベースを更新しなければなりません。
 
-## Uninstalling using the command line
+## コマンド行でアンインストール {#uninstalling-using-the-command-line}
 
-You have logged on to your server with your username and domain.
+サーバーにユーザー名とドメインでログインします:
 
 ```bash
 ssh username@example.com
 ```
 
-Then go to the directory of your Contao installation.
+インストールしているContaoのディレクトリに移動します。
 
 ```bash
 cd www/example/
 ```
 
-The command `remove`removes the extension from the `composer.json`and deletes the code from the project.
+`remove`コマンドが機能拡張を`composer.json`からの削除と、プロジェクトからコードの削除を行います。
 
-To remove an extension and update the `composer.lock`, the command `remove` is executed. This will cause some hosters to not be able to finish the process because of the high system load and the update will fail. In this case you should use the [Contao Manager](#uninstalling-with-contao-manager).
+機能拡張を削除するため`composer.lock`を更新するには、`remove`コマンドを実行します。いくつかのホスティング環境では、システム要件が高すぎるため、処理に失敗して更新できないかもしれません。この場合は[Contao Manager](#uninstalling-with-the-contao-manager)を使用しなければなりません。
 
-**Uninstall a single extension:**
+**1つの機能拡張を削除:**
 
 ```bash
 php composer.phar remove terminal42/contao-easy_themes
 ```
 
-**Uninstall multiple extensions:**
+**複数の機能拡張を削除:**
 
 ```bash
 php composer.phar remove terminal42/notification_center terminal42/contao-leads
 ```
 
-Once the uninstallation of the extension(s) is complete, you have to run the [Contao-Installtool](../contao-installtool/) to update the database if necessary.
+機能拡張の削除が完了しましたら、必要な場合は[Contaoインストールツール](../contao-installtool/)を実行してデータベースを更新しなければなりません。
