@@ -1,7 +1,7 @@
 .PHONY: build
 
 #MANUAL_URL=https://docs.contao.org/manual/
-MANUAL_URL=https://www.contaocms.jp/manual-wip/
+MANUAL_URL=https://www.contaocms.jp/manual/
 
 build: build-dev build-manual
 
