@@ -16,7 +16,7 @@ weight: 90
 
 ほとんどの共有ホスティングのパッケージでは、その管理ソフトウェア(例えばConfixx、Plesk、cPanel)だけに許可しているため、Contaoインストールツール自身は新しいデータベースの作成はできません。このため、サーバーの管理ソフトウェアを使用して新しいデータベースを作成してください。そして、データベースの認証情報をContaoインストールツールに入力します。
 
-![Contaoのデータベース接続の入力](/ja/installation/images/en/installtool-database-connection.png?classes=shadow)
+![Contaoのデータベース接続の入力](/ja/installation/images/ja/installtool-database-connection.png?classes=shadow)
 
 **ホスト:** ここにデータベースサーバーのドメインまたはIPアドレスを入力します。
 
@@ -32,7 +32,7 @@ weight: 90
 
 データベースにアクセスするデータを保存した後で、インストールツールはデータベースに接続して現在のバージョンのContaoのテーブルと比較します。更新が必要な場合、インストールツールは承認または拒否を指定できる変更の一覧を自動的に表示します。
 
-![データベースの変更の確認](/ja/installation/images/en/installtool-installing-schema.png?classes=shadow)
+![データベースの変更の確認](/ja/installation/images/ja/installtool-installing-schema.png?classes=shadow)
 
 通常、提案された変更を受け入れて、テーブルが常にContaoの最新の状態にあって、後でContaoが欠けている項目にアクセスしないようにすべきです。
 新しいインストールでは通常、最初はすべてのテーブルを作成しなければならないため変更の一覧はたいへん長くなります。
@@ -55,7 +55,7 @@ weight: 90
 
 テンプレートをインポートしなかった場合、例えば新しいウェブサイトをContaoで作成したい場合ですが、後でContaoのバックエンドのログインに使用する管理者ユーザーを作成しなければなりません。
 
-![管理者アカウントの作成](/ja/installation/images/en/installtool-create-admin-account.png?classes=shadow)
+![管理者アカウントの作成](/ja/installation/images/ja/installtool-create-admin-account.png?classes=shadow)
 
 **ユーザー名**:: ここに管理者のユーザー名を入力します。
 
@@ -78,7 +78,7 @@ weight: 90
 
 インストールツールのロックを解除する3つの選択肢があります:
 
-- Contao Managerで「保守」のメニューにある「インストールトールのロックを解除「」をクリッkすします。![インストールツールをリセット](/ja/installation/images/en/unlock-install-tool-manager.png?classes=shadow)
+- Contao Managerで「保守」のメニューにある「インストールトールのロックを解除「」をクリッkすします。![インストールツールをリセット](/ja/installation/images/ja/unlock-install-tool-manager.png?classes=shadow)
 - コマンド行でContaoをインストールしたルートディレクトリで以下のコマンドを実行します:
 
   ```bash

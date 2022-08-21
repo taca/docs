@@ -14,13 +14,13 @@ weight: 60
 
 機能拡張をウェブサイトの[extensions.contao.org](https://extensions.contao.org/)で検索できます。
 
-![extensions.contao.orgで機能拡張を検索](/ja/installation/images/en/extensions-contao-org.png?classes=shadow)
+![extensions.contao.orgで機能拡張を検索](/ja/installation/images/ja/extensions-contao-org.png?classes=shadow)
 
 ### Contao Manager
 
 インストールしているContao Managerで直接機能拡張を検索できます。
 
-![Contao Managerでの高度な検索](/ja/installation/images/en/search-extensions-in-the-contao-manager.png?classes=shadow)
+![Contao Managerでの高度な検索](/ja/installation/images/ja/search-extensions-in-the-contao-manager.png?classes=shadow)
 
 ### コマンド行
 
@@ -70,17 +70,17 @@ codefog/contao-elements-filter elements-filter extension for Contao Open Source 
 
 #### 例
 
-機能拡張の`terminal42/contao-easy_themes`をインストールしたい場合、検索欄に"EasyThemes"と入力医sて、「追加」をクリックし、...
+機能拡張の`terminal42/contao-easy_themes`をインストールしたい場合、検索欄に"EasyThemes"と入力して、「追加」をクリックし、...
 
-![Contao Managerで機能拡張を検索](/ja/installation/images/en/search-package-in-contao-manager.png?classes=shadow)
+![Contao Managerで機能拡張を検索](/ja/installation/images/ja/search-package-in-contao-manager.png?classes=shadow)
 
 そして「パッケージ」のタブに移り、変更を適用します。
 
-![Contao Managerで機能拡張をインストール](/ja/installation/images/en/install-package-in-contao-manager.png?classes=shadow)
+![Contao Managerで機能拡張をインストール](/ja/installation/images/ja/install-package-in-contao-manager.png?classes=shadow)
 
 処理が終わりましたら、[Contaoインストールツール](../contao-installtool/)を実行してデータベースを更新します。これで機能拡張を使用する準備ができました。
 
-![Contao Managerでインストールした機能拡張](/ja/installation/images/en/package-installed-in-the-contao-manager.png?classes=shadow)
+![Contao Managerでインストールした機能拡張](/ja/installation/images/ja/package-installed-in-the-contao-manager.png?classes=shadow)
 
 ### コマンド行でインストール {#installation-via-the-command-line}
 

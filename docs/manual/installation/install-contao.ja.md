@@ -20,11 +20,11 @@ Contaoをサーバーにインストールする前に、[Contao Managerのイ�
 
 基本的な構成を完了した後で、Contaoをインストールできます。希望するバージョンと初期構成を選択して、「完了」のボタンをクリックしてください。
 
-![Contao ManagerでContaoをインストール](/ja/installation/images/en/contao-manager-setup.png?classes=shadow)
+![Contao ManagerでContaoをインストール](/ja/installation/images/ja/contao-manager-setup.png?classes=shadow)
 
 インストールには数分を必要とします。インストールの処理の詳細は次のアイコン![コンソールの表示を表示/非表示](/ja/icons/konsolenausgabe.png?classes=icon)をクリックして表示できます。
 
-![Contaoをインストールしました](/ja/installation/images/en/contao-manager-background-task.png?classes=shadow)
+![Contaoをインストールしました](/ja/installation/images/ja/contao-manager-background-task.png?classes=shadow)
 
 
 ### データベースのテーブルの更新
