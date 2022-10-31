@@ -1,5 +1,5 @@
 ---
-title: 'Edit Records'
+title: 'レコードの編集'
 description: 'To enable the comfortable editing of data is one of the main tasks of a CMS - at least it should be.'
 aliases:
     - /ja/administration-area/edit-data-records/

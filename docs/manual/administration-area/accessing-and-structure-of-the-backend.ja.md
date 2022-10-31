@@ -1,51 +1,51 @@
 ---
-title: 'Accessing and structure of the back end'
-description: 'In the administration area, the so-called back end, you can do all the work related to the administration of your website.'
+title: 'バックエンドへのアクセスと構造'
+description: '管理領域、いわゆるバックエンドではウェブサイトの管理に関係するすべての作業を行えます。'
 aliases:
   - /ja/administration-area/call-and-structure-of-the-backend/
   - /ja/administration-area/accessing-and-structure-of-the-backend/
 weight: 10
 ---
 
-## Accessing the back end
+## バックエンドへのアクセス
 
-You can access the back end of your Contao installation by appending `/contao` the URL of your website. The complete address looks like this:
+ウェブサイトのURLに`/contao`を追加して、Contaoのバックエンドにアクセスできます。完全なアドレスは次のようになります:
 
 `https://www.example.com/contao/`
 
-Enter your `Username` and your `Password`. The default language of the browser is also used for the back end. Confirm your entries by clicking the button `Continue`.
+`ユーザー名`と`パスワード`を入力してください。ブラウザーの初期設定の言語も使用します。`続ける`のボタンをクリックして入力を確認してください。
 
-![Registration in the Contao back end](/ja/administration-area/images/en/contao-call-the-backend.png?classes=shadow)
+![Contaoのバックエンドの記名](/ja/administration-area/images/en/contao-call-the-backend.png?classes=shadow)
 
-The back end login is [protected](https://en.wikipedia.org/wiki/Brute-force_search) against [brute force attacks](https://en.wikipedia.org/wiki/Brute-force_attack) with a time delay mechanism. If you enter an incorrect password more than three times in a row, your account will automatically be locked for 5 minutes. This prevents a hacker from trying a large number of passwords in succession until he finds the right one.
+バックエンドのログインは[総当り攻撃](https://ja.wikipedia.org/wiki/%E7%B7%8F%E5%BD%93%E3%81%9F%E3%82%8A%E6%94%BB%E6%92%83)から時間遅延の方法で保護しています。パスワードを連続して3回誤って入力すると、自動的にアカウントを5分間ロックします。これにより、正しいパスワードを見つけるまで連続して多数のパスワードをクラッカーが試すことを防止します。
 
-## Structure of the back end
+## バックエンドの構造
 
-The back end is divided into three areas. At the top is the info area, on the left is the navigation and on the right is the work area.
+バックエンドは3つの領域に別れています。最上部は情報の領域、左はナビゲーション、右が作業領域です。
 
-![Distribution of the Contao back end](/ja/administration-area/images/en/contao-dashboard.png?classes=shadow)
+![Contaoのバックエンドの配分](/ja/administration-area/images/en/contao-dashboard.png?classes=shadow)
 
-### The information area
+### 情報の領域
 
-The info area shows some important links that are needed when working with Contao.
+情報の領域はContaoで作業するときに必要な、いくつかの重要なリンクを表示します。
 
-**Homepage:** A click on the Contao logo takes you back to the homepage of the back end.
+**ホームページ:** Contaoのロゴをクリックするとバックエンドのホームページに移動します。
 
-**Notes:** Clicking on this link opens a modal and displays possible hints (e.g. maintenance mode).
+**Notes:** このリンクをクリックするとモーダルなウィンドウを開いて、できるだけのヒントを表示します。(例: 保守モード)
 
-**Debug Mode:** Clicking on this link will switch the [debug mode](/ja/system/debug-mode/) on or off.{{< version "4.8" >}}
+**デバッグモード:** このリンクをクリックすると[デバッグモード](/ja/system/debug-mode/)のオンとオフを切り替えます。{{< version "4.8" >}}
 
-**Preview:** This link opens the frontend, i.e. the actual website, in a new window. If you edit a specific page or article in the back end, you will be automatically forwarded to the corresponding page in the frontend.
+**プレビュー:** This link opens the frontend, i.e. the actual website, in a new window. If you edit a specific page or article in the back end, you will be automatically forwarded to the corresponding page in the frontend.
 
-**User:** When you click on User, the following links are displayed:
+**ユーザー:** ユーザーをクリックすると、以下のリンクを表示します:
 
-**Profile:** This link leads to the personal settings of your user account. There you can change your password or change the language.
+**プロフィール:** This link leads to the personal settings of your user account. There you can change your password or change the language.
 
-**Log out:** Log out of the back end here.
+**ログアウト:** Log out of the back end here.
 
-**Security:** Activate the two-factor authentication for your back end.{{< version "4.6" >}}
+**セキュリティ:** Activate the two-factor authentication for your back end.{{< version "4.6" >}}
 
-### The navigation area
+### ナビゲーションの領域
 
 The navigation area contains links to the different back end modules, each of which fulfills a specific task. For a better overview, the modules are organized in groups that you can expand and collapse as needed.
 
@@ -57,7 +57,7 @@ The navigation area contains links to the different back end modules, each of wh
 
 **System:** This group contains different modules for the configuration and maintenance of your Contao installation and the file management.
 
-### The workspace
+### 作業領域
 
 In the workspace, you do all your work within Contao. Depending on the module, different functions are available.
 

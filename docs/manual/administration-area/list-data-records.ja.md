@@ -1,18 +1,20 @@
 ---
-title: 'List data records'
-description: 'Contao stores all information about your website in its database. This includes back end data like users, modules, pages or articles as well as front end data like guestbook entries or comments.'
+title: 'データのレコードの一覧'
+description: 'Contaoはウェブサイトについてのすべての情報をデータベースに保管します。これはゲストブックの入力やコメントのようなフロントエンドのデータだけではなく、ユーザー、モジュール、ページ、アーティクルの様なバックエンドのデータも含んでいます。'
 aliases:
     - /ja/administration-area/list-data-records/
 weight: 30
 ---
 
-Contao stores all information about your website in its database. This includes back end data like users, modules, pages or articles as well as frontend data like guestbook entries or comments. All this data is collected in different tables and can be listed, searched, copied, moved, deleted or edited in the back end.
+Contaoはウェブサイトについてのすべての情報をデータベースに保管します。これはゲストブックの入力やコメントのようなフロントエンドのデータだけではなく、ユーザー、モジュール、ページ、アーティクルの様なバックエンドのデータも含んでいます。このすべてのデータは様々なテーブルにまとめられていてバックエンドでリスト、検索、複製、移動、削除、編集を行えます。
 
-## The different views
+## 様々なビュー
 
-The three most common forms of listings, which are called views below, are the simple list ("List View"), the list grouped by the parent table ("Parent View") and the tree view ("Tree View").
+リストする3つのもっとも共通な形式は、以下でビューと呼んでいる単純なリスト("リスト表示")、親のテーブルでグループ化したリスト("ペアレントビュー")、ツリー表示("ツリービュー")です。
 
-### List View
+### リストビュー
+
+
 
 These are records from a single table that are listed in a certain order, usually alphabetically, and the rows are grouped by their first letter.
 

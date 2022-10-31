@@ -1,5 +1,5 @@
 ---
-title: "Keyboard shortcuts"
+title: "キーボードのショートカット"
 description: "To speed up the workflow when working with Contao, there are several keyboard shortcuts in the back end, 
 with which certain commands can be called directly."
 aliases:

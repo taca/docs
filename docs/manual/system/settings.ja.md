@@ -1,59 +1,47 @@
 ---
-title: Settings
+title: 設定
 aliases:
     - /ja/system/settings/
 weight: 10
 ---
 
+システムの設定はゆっくりと、しかし確実にバックエンドから離れつつあります。基本的なシステム設定はアプリケーションとしてのContaoに影響するので、誤った設定はシステムを動作しない状態にする可能性があります。
+そうなってしまうと、もうログインもできなくなるため、設定を戻したりシステムを復元することもできなくなります。このため、ほとんどの設定はContaoの外部で`config.yml`ファイルで構成するか、将来的にはContao Managerで構成できるようになるでしょう。
 
-The system settings slowly but surely leave the backend. Basic system settings influence Contao as an application and 
-therefore there is a chance that a wrong setting will render the system non-functional. If this happens, you will not 
-be able to undo the settings and restore the system because you will not be able to log in anymore. For this reason, 
-most settings are configured outside of Contao via the `config.yml`, or can be configured via the Contao Manager in the future.
+## 設定
 
+### 全体的な構成
 
-## Settings
-
-
-### Global configuration
-
-**E-mail address of the system administrator:** This is the address to which notifications about e.g. locked accounts or 
-newly registered users are sent. You can also use the following notation to add a name to the email address:
+**システム管理者の電子メールアドレス:** これはロックされたアカウントや新しく登録したユーザーへの通知の送信元のメールアドレスです。以下の表記法で電子メールアドレスに名前を追加できます:
 
 ```text
 Kevin Jones [kevin.jones@example.com]
 ```
 
 
-### Date and time
+### 日付と時刻
 
-**Date and time format:** All date and time formats must be entered as used with the PHP 
-[date](https://www.php.net/manual/de/function.date.php) function. Contao processes only numeric formats in the backend, 
-i.e. the letters j, d, m, n, y, Y, g, G, h, H, i and s.
+**日付と時刻の書式:** すべての日付と時刻の書式はPHPの[date](https://www.php.net/manual/function.date.php)関数で使用する書式で入力しなければなりません。バックエンドでContaoは数値の書式だけを処理します。すなわち、j、d、m、n、y、Y、g、G、h、H、i、sの文字です。
 
-Here are some examples of valid date and time specifications:
+ここに有効な日付と時刻の形式の例です:
 
-| Information | Explanation |
+| 書式 | 説明 |
 | ----------- | ----------- |
-| Y-m-d | YYYY-MM-DD, international ISO-8601, for example `2005-01-28` |
-| m/d/Y | MM/DD/YYYY, English format, for example `01/28/2005` |
-| d.m.Y | DD.MM.YYYY, German format, for example `28.01.2005` |
-| y-n-j | YY-M-D, without leading zeros, e.g. `05-1-28` |
-| Ymd | YYYYMMDD, Unix timestamp, for example `20050128` |
-| H:i:s | 24 hours, minutes and seconds, e.g. `20:36:59` |
-| g:i | 12 hours without leading zeros and minutes, e.g. `8:36` |
+| Y-m-d | YYYY-MM-DD、国際標準のISO-8601。例: `2005-01-28` |
+| m/d/Y | MM/DD/YYYY、英語の書式。例: `01/28/2005` |
+| d.m.Y | DD.MM.YYYY、ドイツ語の書式。例: `28.01.2005` |
+| y-n-j | YY-M-D、先行するゼロなし。 例: `05-1-28` |
+| Ymd | YYYYMMDD、Unixのタイムスタンプ。例: `20050128` |
+| H:i:s | 24時間表記で時間に分と秒。例: `20:36:59` |
+| g:i | 12時間表記で先行するゼロなしで時間と分。例: `8:36` |
 
-**Time zone:** You should set the timezone before you create your website because Contao stores all dates as 
-[Unix timestamps](https://www.php.net/time) and Contao will not adjust these, if the timezone is changed.
+**タイムゾーン:** ウェブサイトを作成する前にタイムゾーンを設定しなければなりません。なぜなら、Contaoはすべての日付を[Unixタイムスタンプ](https://www.php.net/time)で保存し、タイムゾーンが変わっても調整しないためです。
 
+### バックエンドの構成
 
-### Back end configuration
+**要素を折り畳まない:** ペアレント表示では、明瞭さの理由で要素を折りたたんだ状態で表示します。必要な場合はナビゲーションのアイコンを使用して個々の要素を広げるこたおができます。このオプションを選択すると、この機能を完全に無効にします。
 
-**Do not collapse elements:** In the "Parent View", Contao displays the elements in a shortened form for clarity 
-reasons. Individual elements can be unfolded using a navigation icon if needed. Select this option to disable the 
-feature completely.
-
-**Items per page:** In the [Listing Records](/ja/administration-area/list-data-records/#sort-and-filter-records) 
+**1ページの項目数:** In the [データのレコードの一覧](/ja/administration-area/list-data-records/#sort-and-filter-records) 
 section, you learned that Contao limits the number of records per page to 30 by default. You can change this value here. 
 Higher values mean a longer loading time.
 

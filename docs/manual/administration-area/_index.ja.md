@@ -1,12 +1,9 @@
 ---
 title: "管理領域"
-description: "In the administration area, the so-called back end, you can do all the work related to the administration 
-of your website."
-weight: 3
+description: "Contaoは2つの部分に分けられます。管理領域、いわゆるバックエンドではウェブサイトの管理に関係するすべての作業を行えます。"
+weight: 4
 ---
 
-Contao is divided into two parts. In the administration area, the so-called back end, you can do all the work related 
-to the administration of your website. Typical back end tasks are for example writing articles or creating news items. 
-On the actual website, the so-called front end, visitors can then read these articles or news items.
+Contaoは2つの部分に分けられます。管理領域、いわゆるバックエンドではウェブサイトの管理に関係するすべての作業を行えます。典型的なバックエンドの作業の例としては、アーティクルを書くことやニュースの項目を作成があります。実際のウェブサイト、いわゆるフロントエンドではウェブサイトのアクセス者がこれらのアーティクルやニュースの項目を読むことができます。
 
 {{% children %}}
