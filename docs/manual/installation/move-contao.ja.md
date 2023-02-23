@@ -73,12 +73,20 @@ gunzip < my_dump.sql.gz | mysql --host=localhost --user=my_user --password my_db
 
 以下のファイルとフォルダーを元のサーバーから目的のサーバーに転送しなければなりません。
 
-- `files`
-- `templates`
-- `composer.json`
-- `composer.lock`
+- `files`                           (ファイル)
+- `templates`                       (テンプレート)
+- `composer.json`                   (希望する依存関係)
+- `composer.lock`                   (実際にインストールした依存関係)
+- `system/config/localconfig.php`   (環境設定)
 
-`system/modules/`にある古い機能拡張がある場合、`config/`(または**Contao 4.8より前では** `app/config/`)ディレクトリにある`config.yml`、Contaoの調整が`contao/`(または**Contao 4.8より前では**`app/Resources/contao/`)ある場合は同様に転送しなければなりません。
+以下のファイルとフォルダーが該当する場合は元のサーバーから目的のサーバーに転送しなければなれいません。
+
+- `config`  (または **Contao 4.8** より前では`app/config/`)         
+- `contao`  (または **Contao 4.8** より前では`app/Resources/contao/`
+- `src`
+- `.env*`
+
+未だに`system/modules/`に古い機能拡張があるか、古いシステム構成が`system/config/`にある場合は、これらも併せて転送しなければなりません。
 
 この作業にはFTPクライアントを使用できますが、コマンド行が良い場合は`scp`を使用してください:
 
