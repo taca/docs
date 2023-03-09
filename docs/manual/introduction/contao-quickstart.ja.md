@@ -46,7 +46,7 @@ Contaoはページを基本としたコンテンツ管理システムで、こ�
 
 ページレイアウトで有効にした配置領域の中に、ページが呼び出されてフロントエンドのHTMLを生成するときに実行するフロントエンドモジュールをいくつでも置くことができます。
 
-![The front end modules](/de/introduction/images/en/the-front end-modules.png?classes=shadow)
+![The front end modules](/de/introduction/images/en/the-front-end-modules.png?classes=shadow)
 
 ページレイアウトと同様に、フロントエンドモジュールはマウスをクリックして作成と構成できます。Contaoにはナビゲーションメニューの作成、ユーザーの管理、フォームの挿入といった何種類かのフロントエンドモジュールが用意してあります。加えて、機能拡張でフロントエンドモジュールをいくつでも追加できます。
 
