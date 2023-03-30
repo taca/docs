@@ -46,7 +46,7 @@ Contaoでは、すべての公開したアクセスをするファイルはイ�
 
 **例:** `example.com`はディレクトリ`/www/example/web`を指す
 
-({{< version-tag "4.12" >}} Symfonyの標準に従って、公開するサブフォルダー`/web`は`/public`と名前が変更になりました。インストール先に`/web`というディレクトリがある場合は、Contaoは自動的に代わりに`/public`を使用します。)
+({{< version-tag "4.12" >}} Symfonyの標準に従って、公開するサブフォルダー`/web`は`/public`と名前が変更になりました。インストール先に`/web`というディレクトリがある場合は、Contaoは自動的に代わりに`/public`を使用します。`/web`から`/public`に変更するときは、composer.jsonでも指定しなければなりません。)
 
 {{% notice note %}}
 すべてのContaoのインストールには別々の(サブ)ドメインが必要です。
