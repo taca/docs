@@ -113,13 +113,13 @@ cd contao
 When cloning, you install the Hugo Learn theme as a submodule of git.
 
 ```bash
-git clone --recurse-submodules git@github.com:YOUR-GITHUB-USERNAME/docs.git
+git clone --recurse-submodules git@github.com:YOUR-GITHUB-USERNAME/docs.git ./
 ```
 
 or
 
 ```bash
-git clone --recurse-submodules https://github.com/YOUR-GITHUB-USERNAME/docs.git
+git clone --recurse-submodules https://github.com/YOUR-GITHUB-USERNAME/docs.git ./
 ```
 
 
@@ -173,12 +173,6 @@ message `This branch is 7 commits behind contao:main.`.
 
 So before you make any changes to the docs, you can make sure that your fork is synchronized with the original repository. 
 repository.
-
-Switch to the clone of the forked repository with `cd`.
-
-```bash
-cd docs
-```
 
 Add the original repository once as a new remote repository and specify it as the upstream repository.
 
