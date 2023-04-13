@@ -31,7 +31,13 @@ weight: 10
 
 **ホームページ:** Contaoのロゴをクリックするとバックエンドのホームページに移動します。
 
-**Notes:** このリンクをクリックするとモーダルなウィンドウを開いて、できるだけのヒントを表示します。(例: 保守モード)
+**マニュアル:** このリンクをクリックするとマニュアルを開きます。
+
+**お気に入りに保存:** {{< version-tag "5.1" >}} このリンクをクリックすると、バックエンドのURLをお気に入りに保存できます。既存のお気に入りのリンクはナビゲーション領域に表示します。
+
+**注意:** このリンクをクリックするとモーダルなウィンドウを開いて、できるだけのヒントを表示します。(例: 保守モード)
+
+**デザイン:** {{< version-tag "5.1" >}} ライトモードとダークモードを選択できます。
 
 **デバッグモード:** このリンクをクリックすると[デバッグモード](/ja/system/debug-mode/)のオンとオフを切り替えます。{{< version "4.8" >}}
 
@@ -39,11 +45,13 @@ weight: 10
 
 **ユーザー:** ユーザーをクリックすると、以下のリンクを表示します:
 
-**プロフィール:** This link leads to the personal settings of your user account. There you can change your password or change the language.
+  + **プロフィール:** This link leads to the personal settings of your user account. There you can change your password or change the language.
 
-**ログアウト:** Log out of the back end here.
+  + **セキュリティ:** Activate the two-factor authentication for your back end.{{< version "4.6" >}}
 
-**セキュリティ:** Activate the two-factor authentication for your back end.{{< version "4.6" >}}
+  + **お気に入り:** {{< version-tag "5.1" >}} This link will take you to your favorite management.
+
+  + **ログアウト:** Log out of the back end here.
 
 ### ナビゲーションの領域
 
