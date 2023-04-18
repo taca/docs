@@ -929,7 +929,7 @@ With a minutely cronjob this would mean that at most 600 emails are sent per hou
 
 {{< version "4.10" >}}
 
-The Swiftmaielr Bundle is not available anymore by default since Contao **4.10**. Instead the [Symfony Mailer][SymfonyMailer] component is
+The Swiftmailer Bundle is not available anymore by default since Contao **4.10**. Instead the [Symfony Mailer][SymfonyMailer] component is
 used. In order to send emails asynchronously in this case we can make use of the [Symfony Messenger][SymfonyMessenger] component, which must
 be installed first via Composer:
 
@@ -994,6 +994,11 @@ aforementioned `--time-limit=1` option will cause the process to exit after one 
 [Symfony documentation](https://symfony.com/doc/current/messenger.html#consuming-messages-running-the-worker).
 {{% /notice %}}
 
+{{% notice "note" %}}
+It may be that mails are processed with a time delay,
+if the cronjob doesn't have any specification for the timezone and then uses the default `UTC`.
+Therefore, the local time zone should either be set globally on the server or explicitly in the cronjob.
+{{% /notice %}}
 
 
 [SymfonyMailer]: https://symfony.com/doc/4.4/mailer.html#transport-setup
