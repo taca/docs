@@ -47,11 +47,11 @@ Contao Managerにログインして開始します。
 
 [マイナーリリース](#minor-release)を更新するときは特殊な機能: "Contao Open Source CMS"にある歯車のアイコンをクリックして、所望のバージョンを入力してください。「パッケージを更新」のボタンをクリックして、「変更を適用」をクリックして開始します。
 
-![マイナーリリースの更新を開始](/ja/installation/images/ja/start-update-for-minor-release.png?classes=shadow)
+![マイナーリリースの更新を開始]({{% asset "images/ja/start-update-for-minor-release.png" %}}?classes=shadow)
 
 更新はそれから数分を必要とします。更新の処理の詳細は次のアイコン![コンソール出力の表示/非表示](/ja/icons/konsolenausgabe.png?classes=icon)をクリックすると表示できます。
 
-![マイナーリリースの更新の完了](/ja/installation/images/ja/update-for-minor-release-completed.png?classes=shadow)
+![マイナーリリースの更新の完了]({{% asset "images/ja/update-for-minor-release-completed.png" %}}?classes=shadow)
 
 
 ### データベースのテーブルの更新
@@ -169,7 +169,7 @@ $ composer install
 
 または、Contao Managerを使用します。この場合は「保守」、「Composerの依存関係」、「インストーラーを実行」と選択してください。
 
-![Contao Managerでcomposer installを実行](/ja/installation/images/ja/composer-install-using-the-contao-manager.png?classes=shadow)
+![Contao Managerでcomposer installを実行]({{% asset "images/ja/composer-install-using-the-contao-manager.png" %%}?classes=shadow)
 
 最後にデータベースのテーブルを更新しなければなりません。
 
@@ -213,6 +213,6 @@ $ vendor/bin/contao-console contao:migrate
 
 これは「サーバー設定」の部分の「システム検査」に設定があります。
 
-![Composerリゾルバークラウドの無効化](/ja/installation/images/ja/disable_cloud_resolver.png?classes=shadow)
+![Composerリゾルバークラウドの無効化]({{% asset "images/ja/disable_cloud_resolver.png" %}}?classes=shadow)
 
 更新を成功した後で、`composer.json`と`composer.lock`のファイルをホスティングのContaoのインストールに戻します。そして、上記に記述したのと同じ段階を行います。

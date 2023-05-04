@@ -29,7 +29,7 @@ GUIのツール[phpMyAdmin](https://www.phpmyadmin.net/)、またはコマンド
 
 次の段階でインポートに使用できる`sql`ファイルを受け取るでしょう。
 
-![データベースのエクスポート](/ja/installation/images/en/database-export.png?classes=shadow)
+![データベースのエクスポート]({{% asset "images/manual/installation/ja/database-export.png" %}}?classes=shadow)
 {{% /tab %}}
 {{% tab name="コマンド行" %}}
 `mysqldump`と`gzip`をインストールしていることを確認して、("my_user"と"my_db_name"をデータベースのユーザーと名前に置き換えて)以下のコマンドを実行してください:
@@ -53,7 +53,7 @@ mysqldump --host=localhost --user=my_user --password --hex-blob --opt my_db_name
 
 上部のメニューの"Import"ボタンをクリックし、前に作成したSQLのdumpファイルをアップロードしてインポートを開始してください。
 
-![データベースをインポート](/ja/installation/images/en/database-import.png?classes=shadow)
+![データベースをインポート]({{% asset "images/manual/installation/ja/database-import.png" %}}?classes=shadow)
 {{% /tab %}}
 {{% tab name="コマンド行" %}}
 前に作成しdumpファイルを目的のサーバーにコピーして、ログインします。

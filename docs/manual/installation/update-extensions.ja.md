@@ -12,7 +12,7 @@ weight: 70
 
 機能拡張の"terminal42/contao-easy\_themes"を更新したい場合、「パッケージ」のタブに切り替えて、機能拡張にある「更新」のボタンをクリックします。もちろん、他の機能拡張の更新も指定できます。「変更を適用」をクリックすると更新を開始します。更新には数分を必要とします。![コンソール出力を表示/非表示](/ja/icons/konsolenausgabe.png?classes=icon)のアイコンをクリックすると、更新の処理の詳細を表示できます。
 
-![Contao Managerで機能拡張を更新](/ja/installation/images/ja/update-extensions-in-contao-manager.png?classes=shadow)
+![Contao Managerで機能拡張を更新]({{% asset "images/ja/update-extensions-in-contao-manager.png" %}}?classes=shadow)
 
 Contao Managerが機能拡張を更新しましたら、必要な場合は[Contaoインストールツール](../contao-installtool/)を実行してデータベースを更新しなければなりません。
 

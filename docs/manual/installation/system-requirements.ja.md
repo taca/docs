@@ -118,7 +118,7 @@ MySQLサーバーのバージョン**8.0.17**以降を使用している場合�
 
 Contao Managerを使用している場合、保守のセクションで_Composerの依存関係_の下から`composer update`の処理を実行できます。
 
-![Composer update in the Contao Manager](/ja/installation/images/en/composer-update.png?classes=shadow)
+![Composer update in the Contao Manager]({{% asset "images/manual/installation/ja/composer-update.png" %}}?classes=shadow)
 
 
 ### MySQLの最小の要件

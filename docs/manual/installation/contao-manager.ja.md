@@ -69,7 +69,7 @@ Contao Managerは1つのファイルで構成されていて、[contao.orgから
 
 次に、ブラウザーを使用して`www.example.com/contao-manager.phar.php`というURLにアクセスしてください。Contao Managerの開始ページを表示を表示します。
 
-![Contao Managerの開始ページ](/ja/installation/images/ja/welcomepage-contao-manager.png?classes=shadow)
+![Contao Managerの開始ページ]({{% asset "images/manual/installation/ja/welcomepage-contao-manager.png" %}}?classes=shadow)
 
 ### 基本的な構成
 
@@ -81,7 +81,7 @@ Contao Managerは自身のデータベースを必要としません。Contao Ma
 
 Contao Managerはバックグラウンドのプロセスを正しく動作させるために、PHPの実行ファイルのパスとその他のサーバーの情報を必要とします。パスは通常Contao Managerが自動的に検出します。
 
-![サーバー構成](/ja/installation/images/ja/server-configuration.png?classes=shadow)
+![サーバー構成]({{% asset "images/manual/installation/ja/server-configuration.png" %}}?classes=shadow)
 
 #### Composerリゾルバークラウド
 
