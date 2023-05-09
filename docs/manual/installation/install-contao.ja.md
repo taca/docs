@@ -18,7 +18,7 @@ Contaoをサーバーにインストールする前に、[Contao Managerのイ�
 
 ### Contao ManagerでContaoをインストール
 
-基本的な構成を完了した後で、Contaoをインストールできます。希望するバージョンと初期構成を選択して、「完了」のボタンをクリックしてください。
+基本的な構成を完了した後で、Contaoをインストールできます。希望するバージョンと初期構成を選択して、「インストール」のボタンをクリックしてください。
 
 ![Contao ManagerでContaoをインストール]({{% asset "images/manual/installation/ja/contao-manager-setup.png" %}}?classes=shadow)
 

@@ -14,7 +14,7 @@ weight: 60
 
 機能拡張をウェブサイトの[extensions.contao.org](https://extensions.contao.org/)で検索できます。
 
-![extensions.contao.orgで機能拡張を検索](/ja/installation/images/ja/extensions-contao-org.png?classes=shadow)
+![extensions.contao.orgで機能拡張を検索]({{% asset "images/ja/extensions-contao-org.png"?classes=shadow)
 
 ### Contao Manager
 
