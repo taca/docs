@@ -169,7 +169,7 @@ $ composer install
 
 または、Contao Managerを使用します。この場合は「保守」、「Composerの依存関係」、「インストーラーを実行」と選択してください。
 
-![Contao Managerでcomposer installを実行]({{% asset "images/ja/composer-install-using-the-contao-manager.png" %%}?classes=shadow)
+![Contao Managerでcomposer installを実行]({{% asset "images/ja/composer-install-using-the-contao-manager.png" %}}?classes=shadow)
 
 最後にデータベースのテーブルを更新しなければなりません。
 
