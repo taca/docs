@@ -15,7 +15,7 @@ weight: 10
 
 `ユーザー名`と`パスワード`を入力してください。ブラウザーの初期設定の言語も使用します。`続ける`のボタンをクリックして入力を確認してください。
 
-![Contaoのバックエンドの記名](/ja/administration-area/images/en/contao-call-the-backend.png?classes=shadow)
+![Contaoのバックエンドの記名]({{% asset "images/manual/administration-area/en/contao-call-the-backend.png" %}}?classes=shadow)
 
 バックエンドのログインは[総当り攻撃](https://ja.wikipedia.org/wiki/%E7%B7%8F%E5%BD%93%E3%81%9F%E3%82%8A%E6%94%BB%E6%92%83)から時間遅延の方法で保護しています。パスワードを連続して3回誤って入力すると、自動的にアカウントを5分間ロックします。これにより、正しいパスワードを見つけるまで連続して多数のパスワードをクラッカーが試すことを防止します。
 
@@ -23,7 +23,7 @@ weight: 10
 
 バックエンドは3つの領域に別れています。最上部は情報の領域、左はナビゲーション、右が作業領域です。
 
-![Contaoのバックエンドの配分](/ja/administration-area/images/en/contao-dashboard.png?classes=shadow)
+![Contaoのバックエンドの配分]({{% asset "images/manual/administration-area/en/contao-dashboard.png" %}}?classes=shadow)
 
 ### 情報の領域
 
@@ -79,7 +79,7 @@ You can access the front end preview via the "Preview" link in [the information 
 The front end preview can be recognized on the one hand by the front end preview bar and on the other hand by `
 preview.php` in the URL.
 
-![Front end preview](/ja/administration-area/images/en/front-end-preview-bar.png?classes=shadow)
+![Front end preview]({{% asset "images/manual/administration-area/en/front-end-preview-bar.png" %}}?classes=shadow)
 
 {{< version-tag "4.13" >}}  **Copy URL:** When you click on the link, the URL without `preview.php` is copied to the clipboard and can be pasted at 
 the desired position.

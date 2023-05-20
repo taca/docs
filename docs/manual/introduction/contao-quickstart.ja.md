@@ -26,7 +26,7 @@ Contaoはページを基本としたコンテンツ管理システムで、こ�
 
 ページ構造は階層的に構成されていて、ページを入れ子にしてサブページをいくつでも作成できます。Contaoは階層構造からフロントエンドにすべてのメインとサブページのナビゲーションメニューを自動的に作成します。バックエンドで新しいページを追加したり、ページの順序の変更すると、変更は即座にウェブサイトに反映します。
 
-![The page structure](/ja/introduction/images/en/the-page-structure.png?classes=shadow)
+![The page structure]({{% asset "images/manual/introduction/en/the-page-structure.png" %}}?classes=shadow)
 
 
 ## 各ページにページレイアウトが存在
@@ -46,7 +46,7 @@ Contaoはページを基本としたコンテンツ管理システムで、こ�
 
 ページレイアウトで有効にした配置領域の中に、ページが呼び出されてフロントエンドのHTMLを生成するときに実行するフロントエンドモジュールをいくつでも置くことができます。
 
-![The front end modules](/de/introduction/images/en/the-front-end-modules.png?classes=shadow)
+![The front end modules]({{% asset "images/manual/introduction/en/the-front-end-modules.png" %}}?classes=shadow)
 
 ページレイアウトと同様に、フロントエンドモジュールはマウスをクリックして作成と構成できます。Contaoにはナビゲーションメニューの作成、ユーザーの管理、フォームの挿入といった何種類かのフロントエンドモジュールが用意してあります。加えて、機能拡張でフロントエンドモジュールをいくつでも追加できます。
 
@@ -63,7 +63,7 @@ Contaoはページを基本としたコンテンツ管理システムで、こ�
 
 ここまではページ構造とデザインについてだけでしたが、実際のコンテンツをContaoはアーティクルに保持します。各アーティクルはテキスト、画像、表といったそれぞれのコンテントタイプの入出力を提供するコンテント要素から構成されます。
 
-![バックエンドのコンテント要素: リスティング](/ja/introduction/images/en/the-content-element-listing-in-the-back-end.png?classes=shadow)
+![バックエンドのコンテント要素: リスティング]({{% asset "images/manual/layout/introduction/en/the-content-element-listing-in-the-back-end.png" %}}?classes=shadow)
 
 コンテント要素の概念には多数の利点があります。たとえば、リッチテキストエディターに比べて、それぞれの要素を別々に生成するため冗長または不正なHTMLコードの危険性は低減できます。また、個々の要素をアーティクルの間に移動したり、要素の順序を変更することも簡単にできます。Ajaxのおかげで、要素の順序の変更はドラッグ&amp;ドロップですら可能です。
 

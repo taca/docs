@@ -14,7 +14,7 @@ weight: 80
 
 ![Contao Managerで機能拡張の削除を設定]({{% asset "images/manual/installation/ja/mark-extensions-in-contao-manager-for-uninstallation.png" %}}?classes=shadow)
 
-「変更を適用」をクリックするとアンインストールを開始します。アンインストールには数分を必要とします。![コンソール出力を表示/非表示](/ja/icons/konsolenausgabe.png?classes=icon)のアイコンをクリックすると、アンインストールの処理の詳細を表示できます。
+「変更を適用」をクリックするとアンインストールを開始します。アンインストールには数分を必要とします。![コンソール出力を表示/非表示]({{% asset "icons/konsolenausgabe.png" %}}?classes=icon)のアイコンをクリックすると、アンインストールの処理の詳細を表示できます。
 
 ![Contao Managerで機能拡張のアンインストール]({{% asset "images/manual/installation/ja/uninstalling-extensions-in-contao-manager.png" %}}?classes=shadow)
 

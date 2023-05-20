@@ -22,7 +22,7 @@ Contaoをサーバーにインストールする前に、[Contao Managerのイ�
 
 ![Contao ManagerでContaoをインストール]({{% asset "images/manual/installation/ja/contao-manager-setup.png" %}}?classes=shadow)
 
-インストールには数分を必要とします。インストールの処理の詳細は次のアイコン![コンソールの表示を表示/非表示](/ja/icons/konsolenausgabe.png?classes=icon)をクリックして表示できます。
+インストールには数分を必要とします。インストールの処理の詳細は次のアイコン![コンソールの表示を表示/非表示]({{% asset "icons/konsolenausgabe.png" %}}?classes=icon)をクリックして表示できます。
 
 ![Contaoをインストールしました]({{% asset "images/manual/installation/ja/contao-manager-background-task.png" %}}?classes=shadow)
 

@@ -65,7 +65,7 @@ codefog/contao-elements-filter elements-filter extension for Contao Open Source 
 5. 処理が終わりましたら、[Contaoインストールツール](../contao-installtool/)を実行してデータベースを更新します。
 
 {{% notice info %}}
-インストールの処理は数分を必用とするでしょう。![コンソール出力を表示/非表示](/ja/icons/konsolenausgabe.png?classes=icon)のアイコンをクリックすると、動作中の処理の詳細を表示できます。
+インストールの処理は数分を必用とするでしょう。![コンソール出力を表示/非表示]({{% asset "icons/konsolenausgabe.png" %}}?classes=icon)のアイコンをクリックすると、動作中の処理の詳細を表示できます。
 {{% /notice %}}
 
 #### 例

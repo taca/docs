@@ -14,7 +14,7 @@ weight: 20
 
 最初に`Discover`があります。望ましいCMSの探索は時にはたいへんつまらないかもしれないので、Contaoにたどりつく前にいくつかのCMSのウェブサイトを訪れいていると仮定できます。この理由により、すべての重要な情報は機能の概要からニュース、オンラインのデモ、イベント、ケーススタディ、Contaoチームまでが一箇所に集められています。
 
-![The Contao project website](/ja/introduction/images/en/the-contao-project-website.png?classes=shadow)
+![The Contao project website]({{% asset "images/manual/introduction/en/the-contao-project-website.png" %}}?classes=shadow)
 
 システムに納得したあとで、通常は自分でダウンロードしてインストールしたいと思うでしょう。その結果として、`Download`が次のカテゴリーです。プログラムのダウンロードに加えて、Contaoとファンページのロゴのダウンロード、メディアのセクションにContaoのリリース計画があります。
 
@@ -28,7 +28,7 @@ weight: 20
 
 オープンソースのプロジェクトに関わっている多数のタスクと活動の中で、もちろんソフトウェアをさらに開発することはもっとも重要です。最終的に、全体のネットワークは成果物の周辺に構築されました。そして開発はそれだけ重要なので、[GitHubの単一のレポジトリ: contao/contao](https://github.com/contao/contao/)をプラットフォームとして透過的に運用しています。加えて、[公開の音声会議](https://contao.org/en/mumble-calls.html)を毎月行い、コアの開発者は"up for discussion"の付いたチケットを用いて情報交換をできます。
 
-![The development environment](/ja/introduction/images/en/the-development-environment.png?classes=shadow)
+![The development environment]({{% asset "images/manual/introduction/en/the-development-environment.png" %}}?classes=shadow)
 
 `Code`のセクションではコミット、ブランチ、リリース、貢献者の概要を見ることができます。
 
@@ -51,4 +51,4 @@ Twitterでは[twitter.com/contaocms](https://twitter.com/contaocms)に、Youtube
 
 バーチャルな世界で会った人々にリアルな世界で会いたい場合は会議、キャンプ、様々な常連さんのテーブルで会うことができます。イベントの一覧は[project website](https://contao.org/en/events.html)にあります。
 
-![The english speaking Contao community](/ja/introduction/images/en/the-english-speaking-contao-community.png?classes=shadow)
+![The english speaking Contao community]({{% asset "images/manual/introduction/en/the-english-speaking-contao-community.png" %}}?classes=shadow)

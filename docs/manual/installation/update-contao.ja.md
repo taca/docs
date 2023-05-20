@@ -49,7 +49,7 @@ Contao Managerにログインして開始します。
 
 ![マイナーリリースの更新を開始]({{% asset "images/ja/start-update-for-minor-release.png" %}}?classes=shadow)
 
-更新はそれから数分を必要とします。更新の処理の詳細は次のアイコン![コンソール出力の表示/非表示](/ja/icons/konsolenausgabe.png?classes=icon)をクリックすると表示できます。
+更新はそれから数分を必要とします。更新の処理の詳細は次のアイコン![コンソール出力の表示/非表示]({{% asset "icons/konsolenausgabe.png" %}}?classes=icon)をクリックすると表示できます。
 
 ![マイナーリリースの更新の完了]({{% asset "images/ja/update-for-minor-release-completed.png" %}}?classes=shadow)
 
