@@ -2,7 +2,7 @@
 title: レイアウト
 description: 'The Layout navigation pane.'
 aliases:
-    - /en/layout/
+    - /ja/layout/
 weight: 7
 ---
 
