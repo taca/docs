@@ -9,7 +9,6 @@ title: "Contaoマニュアル"
 - [Andreas (@aschempp)](https://github.com/aschempp)
 - [David (@bytehead)](https://github.com/bytehead)
 - [Fritz Michael (@fritzmg)](https://github.com/fritzmg)
-- [Jim (@sheeep)](https://github.com/sheeep)
 - [Leo (@leofeyer)](https://github.com/leofeyer)、創始者
 - [Martin (@ausi)](https://github.com/ausi)
 - [Moritz (@m-vo)](https://github.com/m-vo)
