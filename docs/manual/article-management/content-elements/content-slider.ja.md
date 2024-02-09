@@ -3,7 +3,9 @@ title: 'Content slider'
 description: 'Content elements in the area content slider.'
 aliases:
     - /ja/article-management/content-elements/content-slider/
-weight: 23
+hidden: true
+type: redirect
+target: "/ja/article-management/content-elements/legacy-element/"
 ---
 
 

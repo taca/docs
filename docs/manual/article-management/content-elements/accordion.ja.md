@@ -3,7 +3,9 @@ title: 'Accordion'
 description: 'Content elements in the area accordion.'
 aliases:
     - /ja/article-management/content-elements/accordion/
-weight: 22
+hidden: true
+type: redirect
+target: "/ja/article-management/content-elements/legacy-elements/"
 ---
 
 

@@ -35,7 +35,7 @@ your preferred organizational approach.
 
 The operation of the Theme Manager works just like most other back end modules, using navigation icons.
 
-![Navigation icons in the Theme Manager]({{% asset "images/manual/layout/theme-manager/en/navigation-icons-in-the-theme-manager.png" %}}?classes=shadow)
+![Navigation icons in the Theme Manager]({{% asset "images/manual/layout/theme-manager/ja/navigation-icons-in-the-theme-manager.png" %}}?classes=shadow)
 
 - ![Edit Theme]({{% asset "icons/edit.svg" %}}?classes=icon) Edit Theme
 - ![Delete Theme]({{% asset "icons/delete.svg" %}}?classes=icon) Delete a theme
@@ -86,7 +86,7 @@ process.
 Contao then performs a series of checks to detect possible incompatibilities between the theme and your Contao 
 installation.
 
-![The theme data is checked]({{% asset "images/manual/layout/theme-manager/en/the-theme-data-is-checked.png" %}}?classes=shadow)
+![The theme data is checked]({{% asset "images/manual/layout/theme-manager/ja/the-theme-data-is-checked.png" %}}?classes=shadow)
 
 The review shall include in particular
 
@@ -109,11 +109,9 @@ end: "Activate" refers to the assignment of one of the page layouts of the new t
 As you already know from the previous instructions, the merging of design and content takes place in the Page 
 Structure, and the Page Layout determines the layout of a page.
 
-For illustration purposes, the theme "[Contao Official Demo](https://packagist.org/packages/contao/official-demo)" was 
-imported and the page layout "2 columns - \[ default \]" was assigned to the starting point of the website in the page 
-structure.
+For illustration purposes, the "[Contao Demo](https://github.com/contao/contao-demo)" theme.
 
-![Contao Official Demo]({{% asset "images/manual/layout/theme-manager/en/contao-official-demo.png" %}}?classes=shadow)
+![Contao Official Demo]({{% asset "images/manual/layout/theme-manager/ja/contao-official-demo.png" %}}?classes=shadow)
 
 
 ## Sources of supply for themes
@@ -122,7 +120,7 @@ The easiest way to find commercial themes is to use Google, for example by using
 or without a hyphen). The company Feyer Media GmbH &amp; Co KG by Contao initiator Leo Feyer offers commercial themes 
 that were partly created by himself and partly by other providers. There is also an online demo of these themes where 
 you can quickly get an impression of the designs. Another provider of themes is the company 
-[RockSolid Themes](https://rocksolidthemes.com/en/contao/themes) from core developer Martin Auswöger.
+[RockSolid Themes](https://rocksolidthemes.com/ja/contao/themes) from core developer Martin Auswöger.
 
 Despite all the theme euphoria, it should also be said that themes - just like third-party extensions - are always a 
 potential gateway for hackers. After all, you upload files from other people to your server without knowing exactly 
