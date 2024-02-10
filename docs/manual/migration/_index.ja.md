@@ -1,5 +1,5 @@
 ---
-title: "Update and Migration"
+title: "アップデートと移行"
 description: "Update and migration of a Contao installation to a higher major version."
 url: "migration"
 aliases:
