@@ -1,109 +1,106 @@
 ---
-title: "Install Contao - Quick start"
-description: "The first steps to installing Contao with the Contao Manager."
+title: "Contaoのインストール - クイックスタート"
+description: "Contao ManagerでContaoインストールする最初の一歩です。"
 aliases:
 - /ja/installation/quickstart/
 weight: 15
 ---
 
-We assume here that you want to install either the latest version or the [Long Term Support Version](https://docs.contao.org/manual/en/installation/update-contao/#long-term-support-versions) with the Contao Manager.
-This is the easiest and recommended way for beginners.
+ここでは最新のバージョンまたは[長期サポート版](https://docs.contao.org/manual/en/installation/update-contao/#long-term-support-versions)をContao Managerでインストールしたい場合を前提としています。
+これはもっとも簡単で初心者に推奨できる方法です。
 
-## Hosting configuration
+## ホスティングの構成
 
-You configure the hosting via the admin panel of your hosting provider.
+ホスティングサービスの提供者が用意している管理パネルでホスティング(Webサーバー)を構成します。
 
-### Root directory (document root)
+### ルートディレクトリ (ドキュメントルート)
 
-In Contao, all publicly accessible files are located in the `/public` subfolder of the installation. Create a
-folder called `public` and set the root directory (document root) of the installation to this subfolder via the admin panel
-of the hosting provider to this subfolder.
+Contaoでは、公開してアクセス可能なすべてのファイルはインストール先の`/public`というサブフォルダーに配置します。
+`public`というフォルダーを作成して、このサブフォルダーをルートディレクトリ(ドキュメントルート)に、ホスティングサービスの提供者が用意している管理パネルで設定してください。
 
-**Example:** `example.com` points to the directory `/www/example/public`.
+**例:** `example.com`は`/www/example/public`を指すようにします。
 
-### Database
+### データベース
 
-Contao requires a [MySQL](../../installation/system-requirements/#mysql-minimum-requirements) database for operation, which you 
-should ideally create right away. Its login credentials will be needed later.
+Contaoは[MySQL](../../installation/system-requirements/#mysql-minimum-requirements)データベースをその動作に必要とし、データベースは完全に正しい方法で作成しなければなりません。
+データベースの認証情報は後で必要となります。
 
 
-## Installing the Contao Manager
+## Contao Managerのインストール
 
-The [Contao Manager](../../installation/contao-manager/) consists of a single file which can be downloaded from 
-[contao.org](https://contao.org/en/download). After a successful download you will receive a file called `contao-manager.phar`. 
-Transfer this file to the `public` directory on your web server.
+[Contao Manager](../../installation/contao-manager/)は[contao.org](https://contao.org/en/download)からダウンロードできる単一のファイルで構成されています。
+ダウンロードに成功すると、`contao-manager.phar`というファイルを取得できます。
+このファイルをWebサーバーの`public`ディレクトリに転送してください。
 
 {{% notice info %}}
-`.phar` files are not executed by all hosting providers. For best compatibility, add the `.php` file extension 
-<b>after the upload</b> (i.e. rename the file <b>on the server</b> to `contao-manager.phar.php`).
+すべてのホスティング提供者で`.phar`ファイルを実効できるとは限りません。
+最良の互換性のためには<b>アップロードした後で</b>`.php`という拡張子を追加してください。(つまり、<b>サーバー上の</b>ファイルを`contao-manager.phar.php`と名前を変更します。)
 {{% /notice %}}
 
-## Call Contao Manager
+## Contao Managerの呼び出し
 
-Now call up the URL `www.example.com/contao-manager.phar.php` with your browser, replacing `www.example.com` with your domain.
-You should see the welcome page of the Contao Manager.
+では、`www.example.com/contao-manager.phar.php`というURLの`www.example.com`を使用されているドメインに置き換えてブラウザーでアクセスしましょう。
+Contao Managerの「ようこそ!」画面が表示されるはずです。
 
-![Welcome page of the Contao Manager]({{% asset "images/manual/installation/en/welcomepage-contao-manager.png" %}}?classes=shadow)
+![Contao Managerにようこそ]({{% asset "images/manual/installation/en/welcomepage-contao-manager.png" %}}?classes=shadow)
 
-### Basic configuration
+### 基本的な構成
 
-Before you install Contao you need to configure the manager itself. To do this create a new user by
-assigning a username and password. Username and password are independent of the later Contao installation!
-
-
-### Server configuration
-
-The Contao Manager needs the path to the PHP binary and other server information to run background processes correctly. 
-Usually, this information is detected automatically.
-
-![Server configuration]({{% asset "images/manual/installation/en/server-configuration.png" %}}?classes=shadow)
+Contaoをインストールする前に、Contao Manager自身を構成しなければなりません。
+そのためにはユーザー名とパスワードを指定して、新しいユーザーを作成してください。
+ユーザー名とパスワードはインストールする、Contaoのものとは無関係です!
 
 
-### Composer Resolver Cloud
+### サーバーの構成
 
-The [Composer Resolver Cloud](https://composer-resolver.cloud/) allows the installation of Composer dependencies even 
-if the server does not have enough memory. Please note that your package information is sent to a 
-[Contao Association](https://association.contao.org/) cloud service for dependency resolution.
+Contao Managerはバックグラウンドの処理を正しく行うために、PHPのバイナリのパスとその他のサーバーの情報を必要とします。
+通常、これは自動的に検出します。
 
-
-### Installing Contao with the Contao Manager
-
-After the successful basic configuration, Contao can now be installed. To do this, select the desired version
-and the initial configuration and click on the "Install" button.
-
-Optionally, you can also install the Contao "[sample website](https://demo.contao.org/)".
-
-![Installing Contao with the Contao Manager]({{% asset "images/manual/installation/en/contao-manager-setup.png" %}}?classes=shadow)
-
-The installation may now take several minutes. Details of the installation process can be viewed by clicking on the following 
-icon ![Show/hide console output]({{% asset "icons/konsolenausgabe.png" %}}?classes=icon).
+![サーバー構成]({{% asset "images/manual/installation/en/server-configuration.png" %}}?classes=shadow)
 
 
+### Composerリゾルバークラウド
 
-![Contao is being installed]({{% asset "images/manual/installation/en/contao-manager-background-task.png" %}}?classes=shadow)
-
-
-### Updating database tables
-
-Once the Contao Manager has installed all packages, the database needs to be updated. To do this 
-the [Contao-Installtool](../contao-installtool/) has to be started (Contao 4.13 LTS) or the required information has to be entered 
-directly in the Contao Manager (Contao 5.x). 
+[Composerリゾルバークラウド](https://composer-resolver.cloud/)によって、例えサーバーに十分なメモリーがなくてもComposerの依存関係をインストールできます。
+なお、パッケージの情報は依存奸計の怪傑のために、[Contao Association](https://association.contao.org/)のクラウドサービスに送られることに注意してください。
 
 
-## Create an administrator account
+### Contao ManagerでContaoをインストール
 
-Finally, you need to create an administrator user with which you can log in to the Contao back end later.
+基本的な構成をした後、Contaoをインストールできます。
+このためには、期待するバージョンと最初の構成を選択して、「インストール」のボタンをクリックします。
 
-![Create an administrator account]({{% asset "images/manual/installation/en/installtool-create-admin-account.png" %}}?classes=shadow)
+選択肢として、Contaoの"[サンプルのウェブサイト](https://demo.contao.org/)"もインストールできます。
 
-**User name:** Here you define the user name of the administrator.
+![Contao ManagerでContaoをインストール]({{% asset "images/manual/installation/en/contao-manager-setup.png" %}}?classes=shadow)
 
-**Name:** Here you enter the first and last name of the administrator.
+インストールはここから数分間かかることでしょう。
+インストールの処理の詳細は次のアイコン![コンソール出力の表示/非表示]({{% asset "icons/konsolenausgabe.png" %}}?classes=icon)をクリックすることで表示できます。
 
-**E-mail address:** Here you enter the e-mail address of the administrator.
 
-**Password:** Here you set the password of the administrator and confirm it.
+![Contaoをインストール中]({{% asset "images/manual/installation/en/contao-manager-background-task.png" %}}?classes=shadow)
 
-After you have created the administrator user, the installation of Contao is complete.  
-The link at the bottom right will take you to the back end. There you can create 
-[the first start page](../../guides/add-first-index-page/).
+
+### データベースのテーブルの更新
+
+Contao Managerがすべてのパッケージをインストールしましたら、データベースを更新する必要があります。
+このためには、[Contaoインストールツール](../contao-installtool/)を開始する(Contao 4.13 LTS)か、Contao Managerに直接必要な情報を入力します(Contao 5.x)。
+
+
+## 管理者アカウントの作成
+
+最後に、後でContaoのバックエンドにログインできる管理者のユーザーを作成しなければなりません。
+
+![管理者アカウントの作成]({{% asset "images/manual/installation/en/installtool-create-admin-account.png" %}}?classes=shadow)
+
+**ユーザー名:** 管理者のユーザー名を入力します。
+
+**名前:** 管理者の姓名を入力します。
+
+**電子メールアドレス:** 管理者の電子メールアドレスを入力します。
+
+**パスワード:** 管理者のパスワードと、その確認を入力します。
+
+管理者ユーザーのアカウントを作成すると、Contaoのインストールは完了です。
+右下のボタンのリンクからバックエンドに進めます。
+そこで[最初のスタートページ](../../guides/add-first-index-page/)を作成できます。

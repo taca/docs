@@ -1,5 +1,5 @@
 ---
-title: 'Site structure'
+title: 'サイト構造'
 description: 'To use Contao effectively, it is important that you understand the basic principles and the structure of the system.'
 url: "site-structure"
 aliases:
