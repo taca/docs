@@ -1,49 +1,42 @@
 ---
 title: "アップデートと移行"
-description: "Update and migration of a Contao installation to a higher major version."
+description: "インストールしたContaoを高いメジャーバージョンにアップグレードと移行します。"
 url: "migration"
 aliases:
     - /ja/migration/
 weight: 3
 ---
 
-This section explains how to update and migrate existing Contao instances to higher "major versions" - e.g. updating from Contao 3 to 4 or
-4 to 5, etc.
+この節では既存のインストールしているContaoを高い「メジャーバージョン」、つまりContao 3から4やContao 4から5に更新と移行を行う方法を説明します。
 
 
-## General
+## 概要
 
-Generally you always need to make sure to update to the newest version of your _current_ major version first, before trying to update to the
-next major version. You also must not skip major versions. For example if the version of your current Contao instance is `3.2.10` then you
-need to update first to Contao `3.5.40` (the newest Contao 3 version) before you can update to Contao `4.13.x`. If your current version is
-`4.10.2` then you need to first update to `4.13.x` bevor you can update to Contao `5.x`, etc. This ensures that all necessary migrations are
-automatically executed in order to upgrade a Contao version properly (mainly regarding the database).
+一般に、次のメジャーバージョンに更新しようとする前に、最初に _現在の_ メジャーバージョンの最新版に確実に更新してください。
+また、メジャーバージョンを飛ばさないでください。例えば、現在員ストーリしているContaoのバージョンが`3.2.10`の場合は、Contao `4.13.x`に更新する前に(最新のContao 3のバージョンである)`3.5.40`に更新しなければなりません。
+現在のバージョンが`4.10.2`の場合は、Contao `5.x`に更新する前に`4.13.x`に更新しなければなりません、といった具合です。
+こうすることで、Contaoのバージョンを適切に(主にデータベースについて)更新するための必要な移行処理を自動的に実効できます。
 
-Each Contao version update (major as well as minor) can include updates to template files. However, when updating to a new major version it
-is particulary important to check your customised templates within the `templates/` folder as it is likely that they will need to be
-adjusted.
+それぞれのContaoの(マイナーだけでなくメジャーな)バージョンの更新には、テンプレートのファイルの更新も含まれる場合があります。また一方、新しいメジャーバージョンに更新するときは、`templates/`フォルダーにあるカスタマイズしたテンプレートは調整が必要となる可能性が高いので、それらを確認することもたいへん重要です。
 
-There can also be backwards breaking changes regarding the PHP framework itself, so you might need to adjust your own PHP code as well.
-Usually such changes are documented in the `UPGRADE.md` of the `contao/core-bundle`. You will also see deprecation notices when running your
-Contao instance in the debug mode.
+また、PHPのフレームワーク自身についても後方互換性のない変更を伴うことがありますので、独自のPHPのコードも調整が必要になる可能性があります。
+通常、そのような変更は`contao/core-bundle`の`UPGRADE.md`に記述しています。デバッグモードでContaoを動作させると、非推奨の注意を確認できるでしょう。
 
 
-## Contao `3.5` to `4.x`
+## Contao `3.5`から`4.x`
 
-1. Create a copy of your Contao 3.5 database.
-2. Create a new [Contao 4 installation][ContaoInstallation].
-3. Use the database credentials for the previously created copy.
-4. Copy the following files from the original Contao 3 instance:
+1. Contao 3.5のデータベースをコピーします。
+2. 新しい[Contao 4のインストール][ContaoInstallation]を作成します。
+3. 先に作成したコピーのデータベースの認証情報を使用します。
+4. 以下のファイルを元のContao 3のインストールからコピーします。
     * `files/`
     * `system/config/dcaconfig.php`
     * `system/config/langconfig.php`
     * `system/config/initconfig.php`
     * `system/config/localconfig.php`
     * `templates/`
-5. Point the domain of your Contao installation to the `public/` folder in your web server's settings
-(see [hosting configuration][HostingConfig]).
-6. Open the [Contao Install Tool][ContaoInstallTool] in your browser or use the `vendor/bin/contao-console contao:migrate` command on the 
-console in order to start the database migration. _Note:_ do not delete any tables or fields at this point.
+5. Webサーバーの設定でContaoのインストールのドメインが`public/`フォルダーを指すようにします。([ホスティングの構成][HostingConfig]を参照).
+6. [Contaoインストールツール][ContaoInstallTool]をブラウザーで開くか、コンソールで`vendor/bin/contao-console contao:migrate`コマンドを使用してデータベースの移行を開始してください。 _注意:_ この段階ではテーブルや項目を削除しないでください。
 
 
 ### Extensions
@@ -182,7 +175,7 @@ vendor/bin/contao-console contao:migrate
 
 [ContaoInstallation]: /ja/installation/install-contao/
 [ContaoInstallTool]: /ja/installation/contao-installtool/
-[HostingConfig]: /ja/installation/system-requirements/#hosting-configuration
+[HostingConfig]: /ja/installation/system-requirements/#ホスティングの構成
 [ContaoManager]: /ja/installation/contao-manager/
 [TwigTemplates]: /ja/layout/templates/twig/
 [ConfigTranslations]: https://docs.contao.org/dev/getting-started/starting-development/#contao-configuration-translations
