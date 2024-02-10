@@ -207,11 +207,11 @@ $ vendor/bin/contao-console contao:migrate
 
 ### Contao Managerでローカルな更新
 
-ローカルなContaoのインストールを使用される場合はContao Managerをインストールして、[Contao Managerを使用した更新](#updating-with-the-contao-manager)に記述している方法の更新を実行します。
+ローカルなContaoのインストールを使用される場合はContao Managerをインストールして、[Contao Managerを使用した更新](#updating-with-the-contao-manager)の節に記述している方法の更新を実行します。
 
 ただし、その前にComposerリゾルバークラウドを使用しないことを確認してください!  使用している自身のサーバーで十分なメモリを利用できますから、リゾルバークラウドの負荷を減らしてください。
 
-これは「サーバー設定」の部分の「システム検査」に設定があります。
+これは「サーバー設定」の節の「システム検査」に設定があります。
 
 ![Composerリゾルバークラウドの無効化]({{% asset "images/ja/disable_cloud_resolver.png" %}}?classes=shadow)
 

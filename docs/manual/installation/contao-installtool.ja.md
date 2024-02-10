@@ -84,7 +84,7 @@ weight: 90
   ```bash
   php vendor/bin/contao-console contao:install:unlock
   ```
-- ウェブサーバーの`/var`ディレクトリにある`install_lock`ファイルを削除します。
+- Webサーバーの`/var`ディレクトリにある`install_lock`ファイルを削除します。
 
 忘れてしまったパスワードはローカルの構成ファイル(`/system/config/localconfig.php`)でリセットできます。
 

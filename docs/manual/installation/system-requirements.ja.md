@@ -5,7 +5,7 @@ aliases:
 weight: 10
 ---
 
-Contaoをうまく動作させるには、ウェブサーバーはこれらのシステム要件を満たしていなければなりません。Contaoは元々はおなじみの[LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle))スタックに向けて開発していましたが、最近のPHPとMySQLを提供しているウェブサーバーであれば動作します。
+Contaoをうまく動作させるには、Webサーバーはこれらのシステム要件を満たしていなければなりません。Contaoは元々はおなじみの[LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle))スタックに向けて開発していましたが、最近のPHPとMySQLを提供しているWebサーバーであれば動作します。
 
 
 ## ソフトウェアの推奨
@@ -206,11 +206,9 @@ Contaoでは、すべての公開したアクセスをするファイルはイ�
 
 こちらも参照: https://symfony.com/doc/current/configuration/override_dir_structure.html#override-the-public-directory
 
-### Web server configuration
+### Webサーバーの構成
 
-Within the configuration of your web server you will need to make sure that all requests are processed by the `index.php` in the public
-directory, typically via URL rewriting. How to achieve this depends on the type of web server you are running. The most common ones are
-Apache and NGINX:
+Webサーバーの構成の中で、すべての要求を公開ディレクトリにある`index.php`で処理するように、通常はURLの書き換えで行わなければなりません。この方法は動作しているWebサーバーの種類に依存します。もっとも一般的なのはApacheとNGINXです:
 
 {{< tabs groupId="web-server-config" >}}
 
