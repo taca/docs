@@ -1,5 +1,5 @@
 ---
-title: 'Contaoネットワーク'
+title: 'Contaoのネットワーク'
 description: '長年にわたって、Contaoについてのウェブサイトと記事が、一部はContaoチームにより、一部は完全に自立した形で、いくつも作成されています。'
 aliases:
     - /ja/introduction/the-contao-network/

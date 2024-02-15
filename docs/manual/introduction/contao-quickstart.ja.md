@@ -1,5 +1,5 @@
 ---
-title: 'Contaoクイックスタート'
+title: 'Contaoをクイックスタート'
 description: 'この章では、Contaoの基本的な概念と機能を簡潔に学ぶことができます。'
 aliases:
     - /ja/introduction/contao-quickstart/

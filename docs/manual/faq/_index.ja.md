@@ -1,6 +1,6 @@
 ---
-title: "質問と回答"
-description: "Answers to the most frequently asked questions"
+title: "質問と答え"
+description: "よくある質問と答え"
 aliases:
     - /en/faq/
 weight: 90
