@@ -18,7 +18,7 @@ If the record set to be edited is very long and divided into individual sections
 down endlessly (e.g. when setting up a user group). This is now a thing of the past, as the sticky tab navigation list. 
 This navigation list is automatically created from all legends in a record set.
 
-![The sticky tab navigation list]({{% asset "images/manual/administration-area/ja/the-sticky-tab-navigation-list.png" %}}?classes=shadow)
+![The sticky tab navigation list]({{% asset "images/manual/administration-area/en/the-sticky-tab-navigation-list.png" %}}?classes=shadow)
 
 
 ## The Picker
@@ -29,19 +29,19 @@ Here are a few examples:
 
 **When inserting or editing a link in a content element**
 
-![Insert oor edit Link]({{% asset "images/manual/administration-area/ja/insert-or-edit-link.png" %}}?classes=shadow)
+![Insert or edit Link]({{% asset "images/manual/administration-area/en/insert-or-edit-link.png" %}}?classes=shadow)
 
 {{< version-tag "5.3" >}} **When editing an image size in a content element**
 
-![Edit the image size]({{% asset "images/manual/administration-area/ja/edit-the-image-size.png" %}}?classes=shadow)
+![Edit the image size]({{% asset "images/manual/administration-area/en/edit-the-image-size.png" %}}?classes=shadow)
 
 **When editing a source element in a content element**
 
-![Edit source element]({{% asset "images/manual/administration-area/ja/edit-source-element.png" %}}?classes=shadow)
+![Edit source element]({{% asset "images/manual/administration-area/en/edit-source-element.png" %}}?classes=shadow)
 
 {{< version-tag "5.3" >}} **When editing a redirect target in a news item or an event of the type "Page" or "Article"**
 
-![Edit redirect target]({{% asset "images/manual/administration-area/ja/edit-redirect-target.png" %}}?classes=shadow)
+![Edit redirect target]({{% asset "images/manual/administration-area/en/edit-redirect-target.png" %}}?classes=shadow)
 
 
 ## Options when saving
@@ -64,10 +64,14 @@ element you are currently editing. You will be taken directly to the editing mas
 **Save and edit:** This button is only available when creating new elements. Clicking on it will save your entries and 
 take you directly to the Parent View of the child records.
 
+{{< version-tag "5.3" >}} **Save and edit child elements:** This button is only available when creating 
+[nested content elements](/en/article-management/content-elements/#nested-content-element). When you click on it, 
+your entries are saved and you are taken directly to the editing view for the child elements.
+
 **Save and back:** Clicking this button will save your entries and close the form. You will be forwarded to the parent 
 page, e.g. from a content element directly to the article overview.
 
-Go to the [keyboard shortcuts in edit mode](/ja/administration-area/back-end-keyboard-shortcuts/#keyboard-shortcuts-in-edit-mode).
+Go to the [keyboard shortcuts in edit mode](/en/administration-area/back-end-keyboard-shortcuts/#keyboard-shortcuts-in-edit-mode).
 
 
 ## Edit multiple records at once
@@ -76,7 +80,7 @@ In Contao, you can easily edit multiple records at once instead of having to acc
 Just click on the link `Edit multiple`. As you can see, the navigation icons are automatically replaced by checkboxes 
 that let you select the records you want to edit.
 
-![Editing Multiple Records]({{% asset "images/manual/administration-area/ja/edit-multiple.png" %}}?classes=shadow)
+![Editing Multiple Records]({{% asset "images/manual/administration-area/en/edit-multiple.png" %}}?classes=shadow)
 
 **Edit:** The selected records can be edited.
 
@@ -90,7 +94,7 @@ that let you select the records you want to edit.
 
 **Generate aliases:** The aliases of the selected records will be regenerated.
 
-Go to the [keyboard shortcuts in "Edit multiple" mode](/ja/administration-area/back-end-keyboard-shortcuts/#keyboard-shortcuts-in-edit-multiple-mode).
+Go to the [keyboard shortcuts in "Edit multiple" mode](/en/administration-area/back-end-keyboard-shortcuts/#keyboard-shortcuts-in-edit-multiple-mode).
 
 Use the override function carefully, because all existing values of the selected data sets are actually replaced by the 
 new value!
@@ -98,19 +102,19 @@ new value!
 Clicking `Override` or `Edit` takes you to the overview of the fields in the table, where you can select the fields you 
 want to overwrite or edit and click `Continue`.
 
-![Select the input fields to be edited]({{% asset "images/manual/administration-area/ja/edit-multiple-available-fields.png" %}}?classes=shadow)
+![Select the input fields to be edited]({{% asset "images/manual/administration-area/en/edit-multiple-available-fields.png" %}}?classes=shadow)
 
 Now you can see the selected input fields of the selected data sets and can easily change them in a single step. Even 
 when editing several data sets, you will of course only see the input fields that you actually need for your project.
 
-![Only the selected input fields are displayed]({{% asset "images/manual/administration-area/ja/edit-multiple-edit-fields.png" %}}?classes=shadow)
+![Only the selected input fields are displayed]({{% asset "images/manual/administration-area/en/edit-multiple-edit-fields.png" %}}?classes=shadow)
 
 Similar to this example, you could have used the "Override" function to override the language of all pages with a new 
 value in one go. And the function can do even more: You might find yourself in the situation that you have created a 
 new member group and now want to add it to the access rights of several page additions without deleting the existing 
 assignment. You can also do this with the "Overwrite" function by selecting the appropriate update mode.
 
-![Selecting the update mode when overwriting data records]({{% asset "images/manual/administration-area/ja/edit-multiple-override.png" %}}?classes=shadow)
+![Selecting the update mode when overwriting data records]({{% asset "images/manual/administration-area/en/edit-multiple-override.png" %}}?classes=shadow)
 
 **Add selected values:** The existing values are retained and are supplemented by the newly selected values. A page that 
 already has the group *Piano Students* assigned would have the groups *Piano Students* and *Violin Students* after 
@@ -129,9 +133,9 @@ Contao automatically creates a new version of the edited data set each time you 
 changes. As soon as more than one version is available, a drop-down menu appears above the input mask listing the 
 different versions, their date and creator. With a click on `Restore` you can restore a previous version.
 
-![Restore previous versions of a record]({{% asset "images/manual/administration-area/ja/contao-edit-versions.png" %}}?classes=shadow)
+![Restore previous versions of a record]({{% asset "images/manual/administration-area/en/contao-edit-versions.png" %}}?classes=shadow)
 
 Clicking on the icon ![Show differences]({{% asset "icons/diff.svg" %}}?classes=icon) next to the drop-down menu will 
 display the differences between the current and the selected version.
 
-![Differences between the selected versions]({{% asset "images/manual/administration-area/ja/contao-edit-diff-view.png" %}}?classes=shadow)
+![Differences between the selected versions]({{% asset "images/manual/administration-area/en/contao-edit-diff-view.png" %}}?classes=shadow)

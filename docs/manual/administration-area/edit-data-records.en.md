@@ -29,7 +29,7 @@ Here are a few examples:
 
 **When inserting or editing a link in a content element**
 
-![Insert oor edit Link]({{% asset "images/manual/administration-area/en/insert-or-edit-link.png" %}}?classes=shadow)
+![Insert or edit Link]({{% asset "images/manual/administration-area/en/insert-or-edit-link.png" %}}?classes=shadow)
 
 {{< version-tag "5.3" >}} **When editing an image size in a content element**
 
