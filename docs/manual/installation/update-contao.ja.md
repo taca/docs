@@ -47,7 +47,7 @@ Contao Managerにログインして開始します。
 
 [マイナーリリース](#minor-release)を更新するときは特殊な機能: "Contao Open Source CMS"にある歯車のアイコンをクリックして、所望のバージョンを入力してください。「パッケージを更新」のボタンをクリックして、「変更を適用」をクリックして開始します。
 
-![マイナーリリースの更新を開始]({{% asset "images/ja/start-update-for-minor-release.png" %}}?classes=shadow)
+![マイナーリリースの更新を開始]({{% asset "images/manual/installation/ja/manager-update-contao.png" %}}?classes=shadow)
 
 更新はそれから数分を必要とします。更新の処理の詳細は次のアイコン![コンソール出力の表示/非表示]({{% asset "icons/konsolenausgabe.png" %}}?classes=icon)をクリックすると表示できます。
 
