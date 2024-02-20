@@ -213,15 +213,14 @@ Webサーバーの構成の中で、すべての要求を公開ディレクト�
 {{< tabs groupId="web-server-config" >}}
 
 {{% tab name="Apache" %}}
-Contao provides a [default `.htaccess`](https://github.com/contao/contao/blob/5.0.7/manager-bundle/skeleton/public/.htaccess) file in the 
-public directory in case you are using Apache as your web server. You will need to make sure that the `AllowOverride All` directive for your
-`Directory` in your `VirtualHost` definition is set, so that the `.htaccess` is actually processed by Apache. Furthermore you will need 
-`mod_rewrite` to be enabled in your Apache web server so that URLs like `https://example.com/contao/install` will work. If either of these 
-conditions are not met, only URLs like `https://example.com/index.php/contao/install` will work.
+ApacheをWebサーバーとして使用している場合、Contaoは公開ディレクトリの[初期設定の`.htaccess`](https://github.com/contao/contao/blob/5.0.7/manager-bundle/skeleton/public/.htaccess)ファイルを提供します。
+`VirtualHost`の定義の中の`Directory`で`AllowOverride All`の指示が有効となっていることを確認してください、これでApacheは実際に`.htaccess`を処理します。
+さらに、`https://example.com/contao/install`といったURLが動作するように、Apache Webサーバーで`mod_rewrite`が有効となっていることも確認してください。
+これらのどちらかの条件を満たしていないと、`https://example.com/index.php/contao/install`といったURLだけが動作することになります。
 
-You will also need to enable the `Options SymLinksIfOwnerMatch` directive for your `Directory` as Contao uses symlinks.
+Contaoはシンボリックリンクを使用するので、`Directory`で`Options SymLinksIfOwnerMatch`の指示も有効にしなければなりません。
 
-The minimum `VirtualHost` configuration would look like this for example (exchange `…/public` for `…/web` in Contao 4.9 or older):
+`VirtualHost`の最小限の構成は、この例のようになります(Contao 4.9から前のバージョンでは`…/public`を`…/web`に置き換えてください。):
 
 ```
 <VirtualHost *:80>
@@ -240,10 +239,9 @@ The minimum `VirtualHost` configuration would look like this for example (exchan
 {{% /tab %}}
 
 {{% tab name="NGINX" %}}
-Most importantly you need to make sure that all requests not pointing to an actual file are passed along to be processed by the application
-via `try_files $uri /index.php$is_args$args;`.
+もっとも重要なことは、実際のファイルを指していないすべての要求を`try_files $uri /index.php$is_args$args;`を経由でアプリケーションに渡して処理することです。
 
-The minimum `server` definition could look like this for example (exchange `…/public` for `…/web` in Contao 4.9 or older):
+最小限の`server`の定義は、この例のようになります(Contao 4.9から前のバージョンでは`…/public`を`…/web`に置き換えてください。):
 
 ```
 server {
@@ -273,15 +271,15 @@ server {
 }
 ```
 
-Typically a complete NGINX configuration will contain more entries, e.g. in order to disable "not found logging" for special resources like
-the `favicon.ico` or other static resources. In many cases a default NGINX configuration will also contain special handling for image
-resources. It is important that you also add `try_files $uri /index.php$is_args$args;` to these directives, i.e. you need to make sure that
-any requests to files that do not exist (yet) are processed by the application, otherwise Contao's deferred image generation will not work.
+通常、完全なNGINXの構成はより多くの事項、例えば`favicon.ico`のような特別なリソースや他の静的なリソースで"not found logging"を無効にするための項目を含んでいます。
+多くの場合にNGINXの初期設定は画像のリソースのための特別な処理も含んでいます。
+これらに`try_files $uri /index.php$is_args$args;`も追加することも重要です。
+つまり、(まだ)存在していないファイルへの要求をアプリケーションで処理することが重要で、そうしないとContaoの画像生成の遅延は動作しません。
 {{% /tab %}}
 
 {{< /tabs >}}
 
-You can also find more information about the configuration of your web server in the [Symfony documentation][SymfonyWebServerConfiguration].
+Webサーバーの構成についてさらに詳しい情報は[Symfonyのドキュメント][SymfonyWebServerConfiguration]にもあります。
 
 
 ## プロバイダー特有の設定
