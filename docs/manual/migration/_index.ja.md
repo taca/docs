@@ -39,28 +39,21 @@ weight: 3
 6. [Contaoインストールツール][ContaoInstallTool]をブラウザーで開くか、コンソールで`vendor/bin/contao-console contao:migrate`コマンドを使用してデータベースの移行を開始してください。 _注意:_ この段階ではテーブルや項目を削除しないでください。
 
 
-### Extensions
+### 機能拡張
 
-Contao 4 still supports Contao 3 extensions, so these could be copied over from `system/modules/`. However, for such an upgrade you should
-check whether there are more current versions of these extensions available directly via Composer (or the Contao Manager). Failing that you
-should evaluate whether any given extension is still necessary and could otherwise be discarded.
+Contao 4は、まだContao 3の機能拡張をサポートしているので、`system/modules/`にコピーできるかもしれません。しかし、そのようなアップグレードでは、これらの機能拡張のより新しいバージョンが利用できるかどうかをComposer(またはContao Manager)で確認すべきです。もしそれができなかった場合はそれでも機能拡張が必要かどうかと破棄できるかどうかを評価しなければなりません。
 
-After installing one more more extensions you can again open the Install Tool or use the `contao:migrate` command in order to run any
-migrations and database updates that these extensions might provide.
+機能拡張をインストールした後で、インストールツールまたは`contao:migrate`コマンドを使用して、機能拡張が提供する移行とデータベースの更新を実行してください。
 
 
 ## Contao `4.13` to `5.x`
 
-Structurally there aren't many changes between Contao 4 and 5. Even the `composer.json` of the `contao/managed-edition` is largely
-identical with Contao `4.13`. However, depending on which Contao versions your current instance was started with and which customisations
-have been made, there might be some additional steps to take before you can update to Contao 5.
+Contao 4と5は構造的にはあまり変更はありません。`contao/managed-edition`の`composer.json`でさえ、Contao 4.13と大部分は同じです。しかし、移行を始める現在のContaoのバージョンと行っているカスタマイズによっては、Contao 5に更新する前に追加の手順が必世になるかもしれません。
 
 
-### Change Version Requirement
+### バージョンの必要条件の変更
 
-In principal you only need to update the version requirement of the Contao packages in your `composer.json` to `^5.0` or `5.0.*` 
-respectively, in order to update from Contao `4.13` to `5.0`. e.g. you will have to change `"contao/news-bundle": "^4.13"` to
-`"contao/news-bundle": "^5.0"` etc., whereas `"contao/manager-bundle": "4.13.*"` must be changed to `"contao/manager-bundle": "5.0.*"`.
+理論的には、Contao `4.13`を`5.0`に更新するには、`composer.json`でContaoパッケージのバージョンの必要条件をそれぞれ`^5.0`または`5.0.*`と更新することだけが必要です。例えば、`"contao/news-bundle": "^4.13"`を`"contao/news-bundle": "^5.0"`などとする一方、`"contao/manager-bundle": "4.13.*"`は`"contao/manager-bundle": "5.0.*"`と変更しなければなりません。
 
 ```json
 {
