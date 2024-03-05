@@ -285,3 +285,10 @@ Webサーバーの構成についてさらに詳しい情報は[Symfonyのドキ
 ## プロバイダー特有の設定
 
 Internetサービスのいくつかの大規模なプロバイダーではContaoを動作させるための特別な設定を用意している場合があります。幸いなことに、それらは規則の例外です。プロバイダー特有の設定はドイツ語の[Contaoフォーラム](https://community.contao.org/de/forumdisplay.php?67-Erfahrungen-mit-Webhostern)にあります。Contaoに最適なホスティングのパッケージは"Webホスティング"のカテゴリーの[Contaoパートナー](https://contao.org/en/contao-partners.html)から得ることができます。
+
+{{% notice "note" %}}
+1クリックのインストールを提供しているホスティングの提供者もあります。しかし、最大の使い勝手の良さのためには、Contao Managerまたはコンソールを使用することを推奨します。
+{{% /notice %}}
+
+[SymfonyWebServerConfiguration]: https://symfony.com/doc/current/setup/web_server_configuration.html
+

@@ -6,8 +6,7 @@ aliases:
 weight: 15
 ---
 
-ここでは最新のバージョンまたは[長期サポート版](https://docs.contao.org/manual/en/installation/update-contao/#long-term-support-versions)をContao Managerでインストールしたい場合を前提としています。
-これはもっとも簡単で初心者に推奨できる方法です。
+ここでは最新のバージョンまたは[長期サポート版](https://docs.contao.org/manual/en/installation/update-contao/#long-term-support-versions)をContao Managerでインストールしたい場合を前提としています。これはもっとも簡単で初心者に推奨できる方法です。1クリックのインストールを提供しているホスティングの提供者もあります。しかし、最大の使い勝手の良さのためには、Contao Managerまたはコンソールを使用することを推奨します。
 
 ## ホスティングの構成
 
