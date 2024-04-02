@@ -18,20 +18,22 @@ Contaoをうまく動作させるには、Webサーバーはこれらのシス�
 
 ### PHPの拡張
 
-| 拡張名                                    | Contao 4.4以降           | Contao 4.9以降                              | Contao 4.13以降                             |
-|:------------------------------------------|:-------------------------|:--------------------------------------------|:--------------------------------------------|
-| [DOM][ext-dom] (`ext-dom`)                | **必須**                 | **必須**                                    | **必須**                                    |
-| [PCRE][ext-pcre] (`ext-pcre`)             | **必須**                 | **必須**                                    | **必須**                                    |
-| [Intl][ext-intl] (`ext-intl`)             | 推奨                     | **必須**                                    | **必須**                                    |
-| [PDO][ext-pdo] (`ext-pdo`)                | **必須**                 | **必須**                                    | **必須**                                    |
-| [ZLIB][ext-zlib] (`ext-zlib`)             | **必須**                 | **必須**                                    | **必須**                                    |
-| [JSON][ext-json] (`ext-json`)             | **必須**                 | **必須**                                    | **必須**                                    |
-| [Curl][ext-curl] (`ext-curl`)             | **必須**                 | **必須**                                    | **必須**                                    |
-| [Mbstring][ext-mbstring] (`ext-mbstring`) | **必須**                 | **必須**                                    | **必須**                                    |
-| [GD][ext-gd] (`ext-gd`)                   | **必須**<sup>1</sup>     | **必須**<sup>1</sup>                        | **必須**<sup>1</sup>                        |
-| [Imagick][ext-imagick] (`ext-imagick`)    | 推奨<sup>1</sup>         | GDが必要、ImagickまたはGmagick<sup>1</sup>  | GDが必要、ImagickまたはGmagick<sup>1</sup>  |
-| [Gmagick][ext-gmagick] (`ext-gmagick`)    | 推奨<sup>1</sup>         | GDが必要、ImagickまたはGmagick<sup>1</sup>  | GDが必要、ImagickまたはGmagick<sup>1</sup>  |
-| [File Information][ext-fileinfo] (`ext-fileinfo`) | -                | -                                           | **必須**                                    |
+| 拡張名                                            | Contao 4                                    | Contao 5                                    |
+|:--------------------------------------------------|:--------------------------------------------|:--------------------------------------------|
+| [DOM][ext-dom] (`ext-dom`)                        | **必須**                                    | **必須**                                    |
+| [PCRE][ext-pcre] (`ext-pcre`)                     | **必須**                                    | **必須**                                    |
+| [Intl][ext-intl] (`ext-intl`)                     | **必須**                                    | **必須**                                    |
+| [PDO][ext-pdo] (`ext-pdo`)                        | **必須**                                    | **必須**                                    |
+| [ZLIB][ext-zlib] (`ext-zlib`)                     | **必須**                                    | **必須**                                    |
+| [JSON][ext-json] (`ext-json`)                     | **必須**                                    | **必須**                                    |
+| [Curl][ext-curl] (`ext-curl`)                     | **必須**                                    | **必須**                                    |
+| [Mbstring][ext-mbstring] (`ext-mbstring`)         | **必須**                                    | **必須**                                    |
+| [GD][ext-gd] (`ext-gd`)                           | **必須**    <sup>1</sup>                    | **必須**<sup>1</sup>                        |
+| [Imagick][ext-imagick] (`ext-imagick`)            | requires GD, Imagick or Gmagick<sup>1</sup> | requires GD, Imagick or Gmagick<sup>1</sup> |
+| [Gmagick][ext-gmagick] (`ext-gmagick`)            | requires GD, Imagick or Gmagick<sup>1</sup> | requires GD, Imagick or Gmagick<sup>1</sup> |
+| [File Information][ext-fileinfo] (`ext-fileinfo`) | **必須**                                    | **必須**                                    |
+| [Sodium][ext-sodium] (`ext-sodium`)               | -                                           | PHP 8.3以降で**必須**<sup>2</sup>           |
+
 
 {{% notice note %}}
 <sup>1</sup> Contaoは自動的に利用可能な状況に依存した画像処理のライブラリを選択します。けれども、PHP GDライブラリは利用できなければなりません。すべての場合でPHPのImagickまたはGmagickライブラリを経由してImageMagickを使用することを推奨します。ImageMagickはより良い性能と品質をContaoが実際にどちらのライブラリを使用しているかは、以下のコマンドを実行して確認できます:
@@ -52,8 +54,13 @@ $ vendor/bin/contao-console debug:container contao.image.imagine
 [ext-imagick]: https://www.php.net/manual/en/book.imagick.php
 [ext-gmagick]: https://www.php.net/manual/en/book.gmagick.php
 [ext-fileinfo]: https://www.php.net/manual/en/book.fileinfo.php
+[ext-sodium]: https://www.php.net/manual/en/book.sodium.php
 
 現在のPHPのバージョンでは、すべての必要な拡張は初期状態で有効です。けれども、ホスティングの提供者によっては明示的に無効にしている場合があります。[Contao Manager](../../installation/contao-manager)または[Composer](https://getcomposer.org)でインストールする家庭で、これらの要件を自動的に検査します。
+
+{{% notice tip %}}
+q<sup>2</sup> PHPのSodium拡張を利用できない環境の場合、この要件にはプロジェクトの`composer.json`ファイルに`paragonie/sodium_compat_ext_sodium`パッケージを追加して対処できます。
+{{% /notice %}}
 
 ### PHPの設定 (`php.ini`)
 
