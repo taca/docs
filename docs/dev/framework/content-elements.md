@@ -141,7 +141,7 @@ use Contao\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-#[AsContentElement(category:'texts')]
+#[AsContentElement(category: 'texts')]
 class ExampleController extends AbstractContentElementController
 {
     protected function getResponse(Template $template, ContentModel $model, Request $request): Response
@@ -151,7 +151,8 @@ class ExampleController extends AbstractContentElementController
 }
 ```
 
-The above example only defines the mandatory `category` attribute. If you wish you can also define the other options of the service tag:
+The above example only defines the `category` attribute (which is actually optional for the PHP attribute - the default 
+category is `miscellaneous`). If you wish you can also define the other options of the service tag:
 
 ```php
 // src/Controller/ContentElement/ExampleController.php
@@ -164,7 +165,7 @@ use Contao\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-#[AsContentElement('example', category:'texts', template:'ce_example', renderer:'forward', method:'__invoke')]
+#[AsContentElement('example', 'texts', 'ce_example', '__invoke', 'forward')]
 class ExampleController extends AbstractContentElementController
 {
     protected function getResponse(Template $template, ContentModel $model, Request $request): Response
@@ -173,6 +174,8 @@ class ExampleController extends AbstractContentElementController
     }
 }
 ```
+
+However, it is recommended to only define what you need and otherwise leave the defaults.
 {{% /tab %}}
 
 {{% tab name="Annotation" %}}
@@ -203,7 +206,8 @@ class ExampleController extends AbstractContentElementController
 }
 ```
 
-The above example only defines the mandatory `category` attribute. If you wish you can also define the other options of the service tag:
+The above example only defines the mandatory `category` attribute. If you wish you can also define the other options of 
+the service tag:
 
 ```php
 // src/Controller/ContentElement/ExampleController.php
@@ -217,7 +221,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * @ContentElement("example", category="texts", template="ce_example", renderer="forward", method="__invoke")
+ * @ContentElement("example", "texts", "ce_example", "__invoke", "forward")
  */
 class ExampleController extends AbstractContentElementController
 {
@@ -227,6 +231,8 @@ class ExampleController extends AbstractContentElementController
     }
 }
 ```
+
+However, it is recommended to only define what you need and otherwise leave the defaults.
 {{% /tab %}}
 
 {{% tab name="YAML" %}}
@@ -260,7 +266,8 @@ class ExampleController extends AbstractContentElementController
 }
 ```
 
-The above example only defines the mandatory `category` attribute. If you wish you can also define the other options of the service tag:
+The above example only defines the mandatory `category` attribute. If you wish you can also define the other options of 
+the service tag:
 
 ```yaml
 # config/services.yaml
@@ -274,6 +281,8 @@ services:
                 renderer: forward
                 method: __invoke
 ```
+
+However, it is recommended to only define what you need and otherwise leave the defaults.
 {{% /tab %}}
 
 {{< /tabs >}}
@@ -281,7 +290,7 @@ services:
 You can also use class constants within attributes and annotations. This can be helpful to make the module's type a reusable reference:
 
 ```php
-#[AsContentElement(ExampleController::TYPE, 'miscellaneous')]
+#[AsContentElement(ExampleController::TYPE)]
 class ExampleController extends AbstractContentElementController
 {
     public const TYPE = 'my_element';
