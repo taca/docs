@@ -132,11 +132,11 @@ Each field can be validated against a regular expression.
 | alwaysSave         | true/false (`bool`)           | If true the field will always be saved, even if its value has not changed. This can be useful in conjunction with a load_callback.                                       |
 | blankOptionLabel   | Label (`string`)                 | Label for the blank option (defaults to `-`).                                                                                                                         |
 | chosen             | true/false (`bool`)           | Native selects enhanced with [Chosen](http://harvesthq.github.io/chosen/).                                                                                               |
-| collapseUncheckedGroups | true/false (`bool`) | {{< version "4.13" >}} If true all option groups without at least one checked option will be collapsed. The first group of options will not be collapsed if there are no options selected at all. Applies to checkbox widgets with a nested array of options only.                                                                                                                  |
+| collapseUncheckedGroups | true/false (`bool`) | {{< version-tag "4.13" >}} If true all option groups without at least one checked option will be collapsed. The first group of options will not be collapsed if there are no options selected at all. Applies to checkbox widgets with a nested array of options only.                                                                                                                  |
 | colorpicker        | true/false (`bool`)           | If true the current field will have a `mooRainbow` color picker.                                                                                                         |
 | cols               | Columns (`integer`)              | Number of columns (used for `textarea`, `radioTable` and `tableWizard` fields).                                                                                                                                |
 | csv                | Delimiter (`string`)             | The choice of this field will not be stored as serialized string but rather as given delimiter-separated list. Example: `'eval' => ['csv'=>',']`                 |
-| customRgxp        | Regular expression (`string`) | {{< version "4.11" >}} Custom regular expression to be used when using `'rgxp' => 'custom'` |
+| customRgxp        | Regular expression (`string`) | {{< version-tag "4.11" >}} Custom regular expression to be used when using `'rgxp' => 'custom'` |
 | customTpl        | Filename (`string`) | Use own template for this input field `'customTpl' => 'template-file-name'` |
 | datepicker         | true/false (`bool`)           | If true the current field will have a [MooTools-DatePicker](https://github.com/arian/mootools-datepicker).                                                                                                                             |
 | dcaPicker          | true/false (`bool`)           | If true the general purpose picker will be shown. Allows to pick different records from the system and return them as an insert tag.                                     |
@@ -162,7 +162,7 @@ Each field can be validated against a regular expression.
 | isBoolean          | true/false (`bool`)           | Indicates that a particular field is boolean.                                                                                                                            |
 | isGallery          | true/false (`bool`)     | Displays selected files of a `fileTree` widget as an image gallery. |
 | isHexColor         | true/false (`bool`)              | Defines the input as being a color definition in Hex notation. Invalid characters will automatically be removed. |
-| isSortable         | true/false (`bool`)           | {{< version "4.10" >}} Enable sorting for the selected items. Applies to file trees and pickers.                                                                              |
+| isSortable         | true/false (`bool`)           | {{< version-tag "4.10" >}} Enable sorting for the selected items. Applies to file trees and pickers.                                                                              |
 | mandatory          | true/false (`bool`)           | If true the field cannot be empty.                                                                                                                                       |
 | maxlength          | Maximum length (`integer`)       | Maximum number of characters that is allowed in the current field.                                                                                                       |
 | maxval             | Maximum value (`integer`)        | Maximum number value to be checked (upper bound).                                                                                                                        |
@@ -188,7 +188,8 @@ Each field can be validated against a regular expression.
 | unique             | true/false (`bool`)           | If true the field value cannot be saved if it exists already.                                                                                                            |
 | uploadFolder       | Path (`string`)                  | The target path for file uploads of the `upload` widget.                                                                                                              |
 | useRawRequestData  | true/false (`bool`)           | If true the raw request data from the Symfony request is used. **Warning:** input filtering is bypassed! Make sure the data is never output anywhere in the back end unescaped which it would if you added the field to a regular back end list view for example. |
-| versionize         | true/false (`bool`)           | If false skip this field in the versioning. Default `true`.
+| versionize         | true/false (`bool`)           | If false skip this field in the versioning. Default `true`. |
+| basicEntities | true/false (`bool`) | {{< version-tag "5.0" >}} If true converts basic entities like `&shy;`, `&amp;` etc. back to their Contao representation `[&]`, `[-]` etc. when editing and vice versa when saving. |
 
 {{% notice warning %}}
 Using the `encrypt` option is deprecated and its internal implementation relies 
@@ -226,8 +227,8 @@ can be [registered using a hook][3].
 | language    | expects a valid language code (e.g. "de-CH")                                                                      |
 | google+     | expects a Google+ ID or vanity name                                                                               |
 | fieldname   | expects a valid field name (added in version 3.5.16 / 4.2.3)                                                      |
-| httpurl     | {{< version "4.11" >}} expects a valid absolute URL (beginning with `http://` or `https://`)                      |
-| custom      | {{< version "4.11" >}} enables you to define a custom regular expression under the `customRgxp` evaluation key e.g. `'eval' => ['rgxp' => 'custom', 'customRgxp' => '/^[1-9]\d*$/']` |
+| httpurl     | {{< version-tag "4.11" >}} expects a valid absolute URL (beginning with `http://` or `https://`)                      |
+| custom      | {{< version-tag "4.11" >}} enables you to define a custom regular expression under the `customRgxp` evaluation key e.g. `'eval' => ['rgxp' => 'custom', 'customRgxp' => '/^[1-9]\d*$/']` |
 
 
 #### Meta Wizard Fields
@@ -309,7 +310,7 @@ the Doctrine Database Abstraction Layer.
 | `['type' => 'string', 'length' => 1, 'fixed' => true, 'default' => '']`     | `CHAR(1) NOT NULL DEFAULT ''`     |
 | `['type' => 'integer', 'notnull' => false, 'unsigned' => true]`             | `INT UNSIGNED NULL`               |
 | `['type' => 'binary', 'length' => 16, 'fixed' => true, 'notnull' => false]` | `BINARY(16) NULL`                 |
-
+| `['type' => 'string', 'length' => 64, 'default' => '', 'customSchemaOptions' => ['collation' => 'ascii_bin']]` | `VARCHAR(64) COLLATE ascii_bin NOT NULL default ''` |
 
 
 [1]: https://docs.contao.org/books/manual/current/en/02-administration-area/listing-records.html
