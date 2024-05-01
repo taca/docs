@@ -156,7 +156,7 @@ process library. Any image exceeding this value will not be processed.
 **Upload file types:** Here you can define which file types can be uploaded to your server.
 
 **Maximum upload file size:** Here you can define the maximum size of a file that can be uploaded to your server using 
-the file manager. The entry is in bytes (1 MiB = 1024 KiB = 1,048,567 bytes). Larger files will be rejected.
+the file manager. The entry is in bytes (1 MiB = 1024 KiB = 1,048,576 bytes). Larger files will be rejected.
 
 **Maximum image width:** When uploading images, the file manager automatically checks the width of the image and 
 compares it with the width you set here. If an image exceeds the maximum width, it will be reduced automatically.
@@ -945,7 +945,7 @@ The following is a comprehensive list of localconfig configurations still in use
 | --- | --- |
 | `adminEmail` | [E-mail address of the system administrator](#global-configuration). |
 | `allowedDownload` | [Download file types](#files-and-images). |
-| `allowedAttributes` | [Allowed HTML attributes](##security-settings). |
+| `allowedAttributes` | [Allowed HTML attributes](#security-settings). |
 | `allowedTags` | [Allowed HTML tags](#security-settings). |
 | `characterSet` | Character set used by Contao. _(deprecated)_ Use the parameter `kernel.charset` instead. Default: `UTF-8` |
 | `dateFormat` | [Date format](#date-and-time). |
@@ -1040,6 +1040,32 @@ the database user name, database password, host name, port and database name tha
 The format of this variable is the following: `DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name"`.
 It is used by default for the Doctrine configuration: `doctrine.dbal.url: '%env(DATABASE_URL)%'`.
 
+#### Convert your database parameters
+
+The following tool runs in your browser and helps you to convert the variables of the parameters.yml or the DATABASE_URL. No data will be transmitted.
+
+<form autocomplete="off" class="env-converter">
+  <div class="env-widget">
+    <input type="text" id="database_user" name="user" autocapitalize="none" placeholder=" ">
+    <label for="database_user">Username</label>
+  </div>
+  <div class="env-widget">
+    <input type="password" id="database_password" name="password" autocapitalize="none" placeholder=" ">
+    <label for="database_password">Password</label>
+  </div>
+  <div class="env-widget">
+    <input type="text" id="database_host" name="server" required="required" autocapitalize="none" placeholder=" ">
+    <label for="database_host">Server (:Port)</label>
+  </div>
+  <div class="env-widget separator">
+    <input type="text" id="database_name" name="database" required="required" autocapitalize="none" placeholder=" ">
+    <label for="database_name">Database Name</label>
+  </div>
+  <div class="env-widget">
+    <input type="url" id="database_url" name="url" placeholder="mysql://user:password@server:port/database" required="required" autocapitalize="none">
+    <label for="database_url" class="placeholder-active">DATABASE_URL</label>
+  </div>
+</form>
 
 ### `MAILER_DSN`
 
@@ -1052,6 +1078,38 @@ See the [Symfony Mailer Documentation][SymfonyMailer] for more information.
 The variable was previously called `MAILER_URL`. Since Contao **5.0** only `MAILER_DSN` will be supported.
 {{% /notice %}}
 
+#### Convert your mail parameters
+
+The following tool runs in your browser and helps you to convert your mail parameters into the `MAILER_DSN` or the `config.yml`-variant. No data will be transmitted.
+
+<form autocomplete="off" class="env-converter">
+  <div class="env-widget">
+    <input type="text" id="mailer_user" name="mailer_user" autocapitalize="none" placeholder=" ">
+    <label for="mailer_user">Username</label>
+  </div>
+  <div class="env-widget">
+    <input type="password" id="mailer_password" name="mailer_password" autocapitalize="none" placeholder=" ">
+    <label for="mailer_password">Password</label>
+  </div>
+  <div class="env-widget">
+    <input type="text" id="mailer_host" name="mailer_host" required="required" autocapitalize="none" placeholder=" ">
+    <label for="mailer_host">Host</label>
+  </div>
+  <div class="env-widget separator">
+    <input type="number" id="mailer_port" name="mailer_port" min="25" max="65535" required="required" placeholder=" ">
+    <label for="mailer_port">Port</label>
+  </div>
+  <div class="env-widget">
+    <input type="url" id="mailer_dsn" name="mailer_dsn" placeholder="smtp://user:pass@smtp.example.com:port"
+           required="required" autocapitalize="none" readonly>
+    <label for="mailer_dsn" class="placeholder-active">MAILER_DSN</label>
+  </div>
+  <div class="env-widget">
+    <input type="url" id="mail_config_value" name="mail_config_value" placeholder="smtp://user:pass@smtp.example.com:port"
+           required="required" autocapitalize="none" readonly>
+    <label for="mail_config_value" class="placeholder-active">config.yml</label>
+  </div>
+</form>
 
 ### `COOKIE_ALLOW_LIST`
 
@@ -1267,6 +1325,8 @@ smtp://<USERNAME>:<PASSWORD>@<HOSTNAME>:<PORT>
 
 Replace the `<PLACEHOLDER>` with the information of the SMTP server used, or remove them accordingly. See also the 
 information in the official [Symfony documentation][SymfonyMailer].
+
+You can use this [Tool](#convert-your-mail-parameters) to encode your parameters. 
 
 {{% notice warning %}}
 If your username or password contains special characters, they need to be "url encoded". There are several online
