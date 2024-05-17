@@ -1,7 +1,7 @@
 ---
 title: "Save form data"
 description: "Save transferred form data in a database table."
-url: "/en/guides/save-form-data"
+url: "/ja/guides/save-form-data"
 aliases:
   - /ja/guides/save-form-data/
 weight: 95
@@ -100,6 +100,7 @@ class PrepareFormDataListener
         }
 
         // Mandatory fields
+        $submittedData['tstamp'] = time();
         $submittedData['pid'] = self::CALENDAR_ID;
         $submittedData['author'] = self::AUTHOR_ID;
 
