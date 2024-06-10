@@ -197,7 +197,7 @@ Now it is time to do some ground work for the extension:
 3. Configure the `composer.json` for the Contao Manager Plugin.
 
 Creating the bundle class is simple enough. The name of the bundle class can be freely
-choosen - typically it will have the same name as your top-level subnamespace, or
+chosen - typically it will have the same name as your top-level subnamespace, or
 even a combination of your complete top-level namespace. For example:
 
 ```php
@@ -215,8 +215,8 @@ class ContaoExampleBundle extends Bundle
 }
 ```
 
-In this example we also override the `getPath` method in order to take advantage of the new recommended bundle structure
-where there is no `src/Resources/` folder anymore.
+In this example we also override the `getPath` method in order to take advantage of the 
+[recommended bundle structure][SymfonyBundleDirectoryStructure] where there is no `src/Resources/` folder anymore.
 
 {{% notice "note" %}}
 Starting with Symfony 6 (Contao 5) you can instead extend from `Symfony\Component\HttpKernel\Bundle\AbstractBundle`
@@ -369,16 +369,26 @@ class ContaoExampleBundle extends AbstractBundle
 {{% /tab %}}
 {{< /tabs >}}
 
-Now, services can be registered as usual in your `config/services.yaml`.
+Now services can be registered as usual in your `config/services.yaml`. The following example would enable
+[autowire][SymfonyAutowiring] and [autoconfigure][SymfonyAutoconfiguration] by default for all registered services. It
+will also automatically register every PHP class in your `src/` folder as a service. This will enable you to create
+services on-the-fly and use PHP attributes for tagging your services.
 
-{{% notice tip %}}
-In order to take advantage of service annotations and attributes enable [auto-configuration](https://symfony.com/doc/current/service_container.html#the-autoconfigure-option)
-for your services.
-```yml
+```yaml
 services:
     _defaults:
+        autowire: true
         autoconfigure: true
+    
+    Somevendor\ContaoExampleBundle\:
+        resource: ../src
+        exclude: ../src/{ContaoManager,DependencyInjection}
 ```
+
+{{% notice info %}}
+Keep in mind that Symfony [recommends](https://symfony.com/doc/current/service_container/autowiring.html#public-and-reusable-bundles) 
+to explicitly configure services in public and reusable bundles. Within the Contao ecosystem of extensions as bundles
+issues are unlikely to occur, but depending on your use-case explicit service configuration might be required.
 {{% /notice %}}
 
 
@@ -446,6 +456,8 @@ push any changes you make back to the origin branch using your SSH key.
 [4]: /framework/manager-plugin/
 [5]: /getting-started/starting-development/
 [6]: https://symfony.com/doc/current/bundles/extension.html
-(https://symfony.com/doc/current/bundles/extension.html#creating-an-extension-class): https://symfony.com/doc/current/bundles/extension.html#creating-an-extension-class
 [8]: /framework/manager-plugin/#the-routingplugininterface
 [9]: /guides/publishing-bundles/
+[SymfonyBundleDirectoryStructure]: https://symfony.com/doc/5.x/bundles/best_practices.html#directory-structure 
+[SymfonyAutowiring]: https://symfony.com/doc/current/service_container.html#the-autowire-option
+[SymfonyAutoconfiguration]: https://symfony.com/doc/current/service_container.html#the-autoconfigure-option
