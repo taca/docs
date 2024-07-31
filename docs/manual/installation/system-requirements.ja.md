@@ -132,13 +132,13 @@ Contaoは[Doctrine DBAL](https://www.doctrine-project.org/projects/dbal.html)の
 
 ContaoはMySQLサーバーのバージョン5.7 / 8.0で`InnoDB`のテーブルの形式でContaoはテストに成功しています。文字セットの`utf8mb4`の代わりに`utf8`を使用すると、UTF8のサポートが悪化(例: 絵文字がない)します。
 
-以上の推奨する選択がサーバーで有効にできない場合は、他のデータベースエンジンで異なる文字セットを[`config/config.yml`](../../system/settings/#config-yml)ファイルに構成してください:
+以上の推奨する選択がサーバーで有効にできない場合は、他のデータベースエンジンで異なる文字セットを[`config/config.yaml`](../../system/settings/#config-yaml)ファイルに構成してください:
 
 {{% notice note %}}
-**Contao 4.8**より前は`app/config/config.yml`ファイルになります。
+**Contao 4.8**より前は`app/config/config.yaml`ファイルになります。
 {{% /notice %}}
 
-```yml
+```yaml
 doctrine:
     dbal:
         connections:
@@ -163,9 +163,9 @@ doctrine:
 sql_mode="TRADITIONAL"
 …
 ```
-サーバーで設定を有効にできない場合は、接続のオプションを`config/config.yml`ファイルに構成してください:
+サーバーで設定を有効にできない場合は、接続のオプションを`config/config.yaml`ファイルに構成してください:
 
-```yml
+```yaml
 doctrine:
     dbal:
         connections:

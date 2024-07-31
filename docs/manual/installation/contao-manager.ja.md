@@ -152,10 +152,10 @@ php vendor/bin/contao-console security:encode-password 'my_1._pA~~~w0rd'
 
 ### ».phar«という名前を変更できますか?
 
-はい、変えたいと思うどのような名前も使用できます。けれども、バックエンドからContao Managerにアクセスできなくなってしまいます。この場合、[config.yml](/ja/system/settings/#config-yml)を適切に変更できます。その後、Contao Manager("保守" &gt; "アプリケーションキャッシュ" &gt; "実稼働用のキャシュを再構築")か、コンソールを使用してアプリケーションキャッシュを一旦消去する必要があります。
+はい、変えたいと思うどのような名前も使用できます。けれども、バックエンドからContao Managerにアクセスできなくなってしまいます。この場合、[config.yaml](/ja/system/settings/#config-yaml)を適切に変更できます。その後、Contao Manager("保守" &gt; "アプリケーションキャッシュ" &gt; "実稼働用のキャシュを再構築")か、コンソールを使用してアプリケーションキャッシュを一旦消去する必要があります。
 
-```yml
-# config/config.yml
+```yaml
+# config/config.yaml
 contao_manager:
     manager_path: your-name.phar.php
 ```

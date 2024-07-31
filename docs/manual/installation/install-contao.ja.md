@@ -98,7 +98,7 @@ php vendor/bin/contao-console contao:migrate
 
 {{% notice info %}}
 Contaoはデータベースに対応するデータ接続先を知っている必要があります。
-この情報は(現在は[Contaoインストールツール](/ja/installation/contao-installtool/)を使用するとインストールされる)"config/parameters.yml"ファイル、またはインストール先のルートディレクトリにある"[.env](https://docs.contao.org/dev/getting-started/starting-development/#application-configuration)"ファイルを経由して取り出します。<br><br>
+この情報は(現在は[Contaoインストールツール](/ja/installation/contao-installtool/)を使用するとインストールされる)"config/parameters.yaml"ファイル、またはインストール先のルートディレクトリにある"[.env](https://docs.contao.org/dev/getting-started/starting-development/#application-configuration)"ファイルを経由して取り出します。<br><br>
 ".env"ファイルで必要な環境変数([DATABASE_URL](https://docs.contao.org/dev/reference/config/#database-url)と[APP_SECRET](https://docs.contao.org/dev/reference/config/#app-secret))については[こちら](https://docs.contao.org/dev/getting-started/starting-development/#application-configuration)を参照してください。
 {{% /notice %}}
 
