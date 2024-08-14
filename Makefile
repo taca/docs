@@ -12,7 +12,8 @@ build-dev:
 		--environment dev \
 		--destination ../build/dev \
 		--logLevel info \
-		--baseURL https://docs.contao.org/dev/
+		--baseURL https://docs.contao.org/dev/ \
+		--minify
 
 build-manual:
 	cd page; hugo \
@@ -20,7 +21,7 @@ build-manual:
 		--environment manual \
 		--destination ../build/manual \
 		--logLevel info \
-		--baseURL $(MANUAL_URL)
+		--baseURL $(MANUAL_URL) --minify
 
 # Start a live reload server
 live-dev:

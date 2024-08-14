@@ -118,13 +118,14 @@ class Example
 
 {{< version "4.13" >}}
 
-The `contao.cache.entity_tags` service helps you tag responses and invalidate cache tags based on entity and model
-classes and instances. Contao uses a naming convention for database related tags: A tag `contao.db.tl_content.5` targets
-the content element with the ID 5, while `contao.db.tl_content` would target *all* content elements.
+The `contao.cache.entity_tags` (`Contao\CoreBundle\Cache\EntityCacheTags`) service helps you tag responses and 
+invalidate cache tags based on entity and model classes and instances. Contao uses a naming convention for database 
+related tags: A tag `contao.db.tl_content.5` targets the content element with the ID 5, while `contao.db.tl_content` 
+would target *all* content elements.
 
-#### Tagging
+### Tagging
 
-Instead of composing this tags yourself, let the service handle this for you by passing in class names or entity/model 
+Instead of composing these tags yourself, let the service handle this for you by passing in class names or entity/model 
 instances into one of its `tagWith()` methods:
 
 ```php
@@ -141,7 +142,7 @@ $entityCacheTags->tagWith(Blog::class);
 
 Tagging works with entity/model class names, objects and collections. You can also safely pass in `null`.
 
-#### Invalidating
+### Invalidating
 
 Analogous to tagging, you can also use the service to invalidate certain cache tags. This, again, works with
 entity/model class names, objects and collections as well as `null`:
@@ -207,8 +208,7 @@ class Example
 
 ## Router
 
-This service from symfony handles any routing task and can be ued to generate URLs
-to routes in your services.
+This service from Symfony handles any routing task and can be used to generate URLs to routes in your services.
 
 ```php
 use App\Controller\ExampleController;
@@ -787,6 +787,39 @@ class ExampleService
         ;
 
         $this->mailer->send($email);
+    }
+}
+```
+
+
+## PageFinder
+
+{{< version "5.3" >}}
+
+The `contao.routing.page_finder` service provides some utility methods in order to find pages from the site structure 
+for a hostname, a request, etc. Since Contao **5.4.** this service also provies a `getCurrentPage()` method to get the 
+current (or given) request's page (instead of having to access `$GLOBALS['objPage']`).
+
+```php
+namespace App;
+
+use Contao\CoreBundle\Routing\PageFinder;
+
+class ExampleService
+{
+    public function __construct(private readonly PageFinder $pageFinder)
+    {
+    }
+
+    public function __invoke(): void
+    {
+        // The root page for the given domain (and optional language)
+        $rootPageForHost = $this->pageFinder->findRootPageForHostAndLanguage('example.com');
+
+        // The current request's page, if applicable
+        $currentPage = $this->pageFinder->getCurrentPage();
+
+        // …
     }
 }
 ```
