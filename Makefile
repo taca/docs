@@ -21,7 +21,8 @@ build-manual:
 		--environment manual \
 		--destination ../build/manual \
 		--logLevel info \
-		--baseURL $(MANUAL_URL) --minify
+		--baseURL $(MANUAL_URL) \
+		--minify
 
 # Start a live reload server
 live-dev:
