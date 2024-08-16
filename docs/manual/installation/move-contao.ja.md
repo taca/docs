@@ -105,4 +105,8 @@ scp -r files/ templates/ composer.json composer.lock your_server:/www/project/
    
 3. [インストールツール](../contao-installtool)を使用して新しいデータベース接続を構成してください。
 
+{{% notice note %}}
+If you have not moved to another server and have simply created a 1:1 copy on the same server, make sure to delete and recreate the application cache via the Contao Manager after adjusting the database connection to ensure that the changes are applied correctly and that you are on the correct database.
+{{% /notice %}}
+
 以上!  これで新しい場所でContaoインストールツールを使用する準備ができました。
