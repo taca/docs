@@ -79,6 +79,7 @@ Contaoの理想的な操作のための推奨です。異なった設定はConta
 | `opcache.max_accelerated_files` | `16000` 推奨               | _該当なし_            | 低い値は余計な減速をするかもしれません。                                                                                |
 | `safe_mode`                     | `Off`                      | `Off`                 |                                                                                                                          |
 | `open_basedir`                  | `NULL`                     | `NULL`                | 有効な場合は、システムの一時ディレクトリにアクセスできることを確認してください。                                        |
+| `opcache.save_comments`         | `On`                       | _not applicable_      | これはPHPファイルでアノテーションを読むために必要です。                                                                  |
 
 
 ### MySQLの設定
