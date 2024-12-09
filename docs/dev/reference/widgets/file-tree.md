@@ -1,5 +1,5 @@
 ---
-title: "File tree"
+title: File Tree
 description: Render a file picker
 ---
 
@@ -40,23 +40,23 @@ This table only shows the options relevant to the core functionality of this wid
 A single image file picker.
 
 ```php
-// ...
+// …
 'singleSRC' => [
-    'exclude'   => true,
+    'exclude' => true,
     'inputType' => 'fileTree',
-    'eval'      => [
+    'eval' => [
         'filesOnly'  => true,
         'fieldType'  => 'radio',
         'extensions' => '%contao.image.valid_extensions%',
     ],
-    'sql'       => [
+    'sql' => [
         'type' => 'binary',
         'length' => 16,
         'fixed' => true,
         'notnull' => false,
     ],
 ],
-// ...
+// …
 ```
 {{% /tab %}}
 
@@ -66,21 +66,27 @@ An image gallery picker, allows picking multiple images, display them in the bac
 
 
 ```php
-// ...
+use Doctrine\DBAL\Platforms\MySQLPlatform;
+
+// …
 'multiSRC' => [
-    'exclude'   => true,
+    'exclude' => true,
     'inputType' => 'fileTree',
-    'eval'      => [
-        'fieldType'  => 'checkbox',
-        'files'      => true,
-        'isGallery'  => true,
-        'multiple'   => true,
+    'eval' => [
+        'fieldType' => 'checkbox',
+        'files' => true,
+        'isGallery' => true,
+        'multiple' => true,
         'extensions' => '%contao.image.valid_extensions%',
         'orderField' => 'orderSRC',
     ],
-    'sql'       => "blob NULL",
+    'sql' => [
+        'type' => 'blob',
+        'length' => MySQLPlatform::LENGTH_LIMIT_BLOB,
+        'notnull' => false,
+    ],
 ],
-// ...
+// …
 ```
 
 {{% /tab %}}
@@ -90,17 +96,23 @@ An image gallery picker, allows picking multiple images, display them in the bac
 A folder picker.
 
 ```php
-// ...
+use Doctrine\DBAL\Platforms\MySQLPlatform;
+
+// …
 'folders' => [
     'inputType' => 'fileTree',
-    'eval'      => [
-        'files'     => false,
+    'eval' => [
+        'files' => false,
         'fieldType' => 'checkbox',
-        'multiple'  => true,
+        'multiple' => true,
     ],
-    'sql'       => "blob NULL",
+    'sql' => [
+        'type' => 'blob',
+        'length' => MySQLPlatform::LENGTH_LIMIT_BLOB,
+        'notnull' => false,
+    ],
 ],
-// ...
+// …
 ```
 
 {{% /tab %}}

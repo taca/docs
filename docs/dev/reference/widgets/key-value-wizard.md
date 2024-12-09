@@ -1,5 +1,5 @@
 ---
-title: "Key-Value-Wizard"
+title: Key-Value-Wizard
 description: Renders an expandable list of keys and values.
 ---
 
@@ -28,7 +28,7 @@ This table only shows the options relevant to the core functionality of this wid
 ```php
 use Doctrine\DBAL\Platforms\MySQLPlatform;
 
-// ...
+// …
 'foobar' => [
     'inputType' => 'keyValueWizard',
     'eval' => [
@@ -42,7 +42,7 @@ use Doctrine\DBAL\Platforms\MySQLPlatform;
         'notnull' => false,
     ],
 ],
-// ...
+// …
 ```
 
 

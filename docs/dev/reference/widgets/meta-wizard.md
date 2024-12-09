@@ -1,5 +1,5 @@
 ---
-title: "Meta Wizard"
+title: Meta Wizard
 description: Allow to edit meta data fields.
 ---
 
@@ -19,41 +19,38 @@ The meta data widget allows to edit meta data fields. If multiple languages are 
 | `eval.metaFields.[field].rgxp`       | `string`                | A validation regex.                                                                                                          |
 | `eval.metaFields.[field].rgxpErrMsg` | `string`                | Error message if regex validation failed.                                                                                    |
 
-## Examples
-
-{{< tabs groupId="meta-wizard-widget-examples" >}}
-
-{{% tab name="File Manager" %}}
+## Example
 
 The Meta Wizard configuration in the file manager.
 
 ```php
-// ...
+use Doctrine\DBAL\Platforms\MySQLPlatform;
+
+// …
 'meta' => [
     'exclude' => true,
     'inputType' => 'metaWizard',
-    'eval' =>
-        [
-            'allowHtml' => true,
-            'multiple' => true,
-            'metaFields' => [
-                'title' => 'maxlength="255"',
-                'alt' => 'maxlength="255"',
-                'link' => ['attributes' => 'maxlength="2048"', 'dcaPicker' => true],
-                'caption' => ['type' => 'textarea'],
-                'license' => [
-                    'attributes' => 'maxlength="255"',
-                    'dcaPicker' => true,
-                    'rgxp' => '#(^$|^{{link_url::.+$|^https?://.+$)#',
-                    'rgxpErrMsg' => &$GLOBALS['TL_LANG']['tl_files']['licenseRgxpError']
-                ]
+    'eval' => [
+        'allowHtml' => true,
+        'multiple' => true,
+        'metaFields' => [
+            'title' => 'maxlength="255"',
+            'alt' => 'maxlength="255"',
+            'link' => ['attributes' => 'maxlength="2048"', 'dcaPicker' => true],
+            'caption' => ['type' => 'textarea'],
+            'license' => [
+                'attributes' => 'maxlength="255"',
+                'dcaPicker' => true,
+                'rgxp' => '#(^$|^{{link_url::.+$|^https?://.+$)#',
+                'rgxpErrMsg' => &$GLOBALS['TL_LANG']['tl_files']['licenseRgxpError'],
             ]
-        ],
-    'sql' => "blob NULL"
+        ]
+    ],
+    'sql' => [
+        'type' => 'blob',
+        'length' => MySQLPlatform::LENGTH_LIMIT_BLOB,
+        'notnull' => false,
+    ],
 ],
-// ...
+// …
 ```
-
-{{% /tab %}}
-
-{{< /tabs >}}

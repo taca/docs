@@ -1,5 +1,5 @@
 ---
-title: "Image Size"
+title: Image Size
 description: Allows to define an output size for images.
 ---
 
@@ -65,25 +65,25 @@ class ContentImageSizeOptionsListener
 ## Example
 
 ```php
-// ...
+// …
 'size' => [
-    'exclude'   => true,
+    'exclude' => true,
     'inputType' => 'imageSize',
     'reference' => &$GLOBALS['TL_LANG']['MSC'],
-    'eval'      => [
+    'eval' => [
         'rgxp' => 'natural',
         'includeBlankOption' => true,
         'nospace' => true,
         'tl_class' => 'w50',
     ],
-    'sql'       => [
+    'sql' => [
         'type' => 'string',
         'length' => 128,
         'default' => '',
         'customSchemaOptions' => ['collation' => 'ascii_bin'],
     ],
 ],
-// ...
+// …
 ```
 
 

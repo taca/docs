@@ -1,5 +1,5 @@
 ---
-title: "Time Period"
+title: Time Period
 description: Text field with drop-down menu
 ---
 
@@ -27,12 +27,20 @@ Values are stored as a serialized array, so using blob is preferred.
 ## Example
 
 ```php
+use Doctrine\DBAL\Platforms\MySQLPlatform;
+
+// …
 'time' => [
     'inputType' => 'timePeriod',
     'options' => [
         's', 'm', 'h'
     ],
     'reference' => &$GLOBALS['TL_LANG']['MSC']['timePeriod'],
-    'sql' => 'blob NULL'
+    'sql' => [
+        'type' => 'blob',
+        'length' => MySQLPlatform::LENGTH_LIMIT_BLOB,
+        'notnull' => false,
+    ],
 ],
+// …
 ```
