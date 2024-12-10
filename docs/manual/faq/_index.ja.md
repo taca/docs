@@ -2,7 +2,7 @@
 title: "質問と答え"
 description: "よくある質問と答え"
 aliases:
-    - /en/faq/
+    - /ja/faq/
 weight: 90
 ---
 
@@ -52,7 +52,7 @@ Please note that the copyright notices in the Contao files may not be removed or
 If you want to refresh the »Application Cache« you can do this via the 
 [Console](https://docs.contao.org/dev/reference/commands/): 
 
-```php
+```bash
 vendor/bin/contao-console cache:clear --no-warmup
 vendor/bin/contao-console cache:warmup
 ```
