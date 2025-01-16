@@ -71,7 +71,7 @@ with such "auto items" to not show a 404 page, even though they ought to, depend
 enable the `$blnKeepUnused` parameter for such cases:
 
 ```php
-$autoItem = Input::get('auto_item', blnKeepUnused: true);
+$autoItem = Input::get('auto_item', false, true);
 ```
 {{% /notice %}}
 
@@ -102,7 +102,7 @@ $dolor = Input::get('dolor');
 
 * Assume you have a regular page with an alias called `foo/bar`.
 * The full URL to this page will be `https://example.com/foo/bar`.
-* We can pass and "auto item" and additional key/value pairs as path fragments to this URL, for example: 
+* We can pass an "auto item" and additional key/value pairs as path fragments to this URL, for example: 
 `https://example.com/foo/bar/some-news/lorem/ipsum/dolor/sit`.
 * This URL will then consist of an `auto_item` and the key & value pairs `lorem=ipsum`, `dolor=sit`.
 
