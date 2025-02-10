@@ -12,6 +12,7 @@ title: "Contaoマニュアル"
 - [Leo (@leofeyer)](https://github.com/leofeyer)、創始者
 - [Martin (@ausi)](https://github.com/ausi)
 - [Moritz (@m-vo)](https://github.com/m-vo)
+- [Sebastian (@zoglo)](https://github.com/zoglo)
 - [Yanick (@toflar)](https://github.com/toflar)
 
 コアチームに加えて、さらに多くの[貢献者](https://github.com/contao/contao/graphs/contributors)がContaoが優れた、そして美しい体験となるようにしています。その一部となりたい方はどなたでも歓迎します!
