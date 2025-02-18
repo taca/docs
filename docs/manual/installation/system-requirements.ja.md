@@ -7,6 +7,11 @@ weight: 10
 
 Contaoをうまく動作させるには、Webサーバーはこれらのシステム要件を満たしていなければなりません。Contaoは元々はおなじみの[LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle))スタックに向けて開発していましたが、最近のPHPとMySQLを提供しているWebサーバーであれば動作します。
 
+{{% notice info %}}
+If you use the Contao Manager to install and update your Contao instances, you should also note
+its [System requirements](https://docs.contao.org/manual/ja/installation/contao-manager/#system-requirements). 
+{{% /notice %}}
+
 
 ## ソフトウェアの推奨
 

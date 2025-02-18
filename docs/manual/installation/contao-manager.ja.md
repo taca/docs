@@ -115,33 +115,17 @@ Contao Managerが応答しなくなった、コンソールの出力ウィンド
 
 ### Contao Managerにもう1つユーザーアカウントを追加できますか?
 
-はい、`contao-manager`というディレクトリにある`users.json`というファイルを編集して、さらなるユーザーアカウントを追加しなければなりません。以下は`h.lewis`を追加した場合です。
+{{< version “Manager 1.9” >}}
 
-```json
-{
-    "users": {
-        "k.jones": {
-            "username": "k.jones",
-            "password": "…"
-        },
-        "h.lewis": {
-            "username": "h.lewis",
-            "password": "…"
-        }
-    },
-    "version": 2,
-    "secret": "…"
-}
+Yes, with ADMIN rights you can invite other users to the Contao Manager.
+To do this, click on the gear wheel in the menu and then on _Accounts_. Here you can create an invitation link,
+and assign one of the following permissions to the new account:
 
-```
-
-{{% notice info %}}
-"password"の値は暗号化して入力しなければなりません。必要なハッシュ化した値を生成するために[bcrypt-generator.com](https://bcrypt-generator.com/)のようなサービスを利用できるでしょう。変わりの方法として、インストールしているContaoで次のコンソールコマンドでハッシュ値を生成できます。
-
-```bash
-php vendor/bin/contao-console security:encode-password 'my_1._pA~~~w0rd'
-```
-{{% /notice %}}
+- **READ** – can see the installed packages and read log files, but
+  cannot change the system.
+- **UPDATE** – may update existing packages and perform maintenance tasks (e.g. clear cache).
+- **INSTALL** – may update and install packages and change system settings.
+- **ADMIN** – can use all functions of the Contao Manager.
 
 
 ### 既存のインストールしたContaoにContao Managerを追加できますか?
