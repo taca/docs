@@ -34,10 +34,15 @@ Contao 4と機能拡張をComposerを使用してコマンド行から直接管�
 
 システム要件は[Contao](/ja/installation/system-requirements/)と基本的に同じです。Contao Managerは要件を満たしているか自動的に確認します。
 
-- PHPバージョン7.4以降
+- PHPバージョン8.1以降
 - PHP拡張の*Intl*と*OpenSSL*
 - PHP関数の*proc\_open*と*proc\_close*
 - PHPの設定で*allow\_url\_fopen*が有効であるこｔ
+
+{{% notice info %}}
+Contao ManagerはPHP 5やPHP 7でもインストールできます。最初のアクセス時にPHPのバージョンを検出してContaoのサーバーから互換性のあるバージョンを自動的にダウンロードします。
+この場合、当然ながら最新のバージョンの機能は利用できませんが、それでもContaoのインストールや更新は可能です。
+{{% /notice %}}
 
 ### ホスティングの構成
 
