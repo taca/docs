@@ -1,5 +1,6 @@
 ---
-title: "Contaoマニュアル"
+title: Contaoマニュアル
+type: home
 ---
 
 # ようこそ
