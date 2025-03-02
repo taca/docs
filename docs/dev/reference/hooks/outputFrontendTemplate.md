@@ -12,9 +12,9 @@ The `outputFrontendTemplate` hook is triggered when a front end template is
 printed to the screen. It passes the template content and the template name as
 arguments and expects the template content as return value. 
 
-{{% notice note %}}
+{{% notice info %}}
 This hook is applied before the replacement of insert tags 
-whereas the corresponding [`modifyFrontendPage`](../modifyFrontendPage) is applied after 
+whereas the corresponding [`modifyFrontendPage`]({{% ref "modifyFrontendPage" %}}) is applied after 
 insert tags have been replaced.
 {{% /notice %}}
 

@@ -3,9 +3,7 @@ title: "Architecture"
 description: How the Contao Twig integration works.
 weight: 200
 aliases:
-
-- /framework/templates/architecture/
-
+    - /framework/templates/architecture/
 ---
 
 Rendering a Twig template requires several things: First, the template needs to be found by a loader, that knows where
@@ -52,7 +50,7 @@ $twig->render("<span style="color:lightblue">@Foo</span>/<span style="color:oran
            <span style="color:lightblue">Namespace</span> <span style="color:orange">Identifier</span> <span style="color:yellowgreen">Extension</span>
 </pre>
 
-{{% notice info %}}
+{{% notice note %}}
 *Logical name* is a Symfony term. Additionally, we use the term *identifier*, which means everything after the namespace
 except for the file extension. We use this term when talking about templates from the special managed [@Contao namespace](#managed-namespace).
 {{% /notice %}}
@@ -68,7 +66,7 @@ There is a specific order and the loader will only use the first template that f
 why you can overwrite templates of the `FooBundle` by putting them in the `templates/bundles/FooBundle` directory: you
 made the loader return early when finding your template instead of the original one in said namespace.
 
-{{% notice note %}}
+{{% notice info %}}
 For Contao extensions, you do not need the `bundles` directory. We use the `@Contao` namespace, that is shared across
 the ecosystem. Read on for more details about this.
 {{% /notice %}}
@@ -131,7 +129,7 @@ from directories relative to the bundle path your method returns:
 | `/vendor/foo/bar/templates` | `@FooBar` |
 
 
-{{% notice info %}}
+{{% notice note %}}
 For theme directories (e.g. `foo/bar/theme`), the path will be transformed into a snake-case slug (`foo_bar_theme`),
 which is used inside the theme namespace name (`@Contao_Theme_foo_bar_theme`). For this reason, underscores are
 forbidden characters in any directory name contributing to the slug.
@@ -159,7 +157,7 @@ please refer to their [own section](#themes) further down.
 
 {{% notice tip %}}
 You can use the `debug:contao-twig` command to browse and better understand the built hierarchy. Read more on this in
-the article about [debugging](../debugging/#debug-contao-twig-command) strategies. 
+the article about [debugging]({{% ref "debugging#debug-contao-twig-command" %}}) strategies. 
 {{% /notice %}}
 
 {{% example "Independent inheritance" %}}
@@ -227,7 +225,7 @@ In case a theme was identified and contains a more specific version of a templat
 use it instead. From a template hierarchy perspective, these theme templates **do not exist**. This is a design decision
 to keep the template hierarchy static, render calls stable (and yourself sane).
 
-{{% notice note %}}
+{{% notice info %}}
 Theme templates are runtime representations of otherwise existing templates. They are not part of the template
 hierarchy. 
 {{% /notice %}}
@@ -242,7 +240,7 @@ These are the implications that follow from this setup:
    template. By creating a selectable non-theme variant template as a basis, you also make sure that, there will
    **always** be an available template when rendering.
 
-3) When debugging templates via the [`debug:contao-twig` command](../debugging#debug--contao-twig-command), you need to
+3) When debugging templates via the [`debug:contao-twig` command]({{% ref "debugging#debug--contao-twig-command" %}}), you need to
    explicitly pass a theme (slug) to make the respective theme templates show up in the result. 
 
 
@@ -289,7 +287,7 @@ also introduce more subdirectory layers if needed.
 
 {{% best-practice %}}
 When users want to override/adjust templates from various sources, they need to replicate the filesystem structure. To
-make this a pleasant experience, please stick to the [naming conventions](../creating-templates#naming-convention), so
+make this a pleasant experience, please stick to the [naming conventions]({{% ref "creating-templates#naming-convention" %}}), so
 that multiple structures do not mix.
 {{% /notice %}}
 
@@ -300,7 +298,7 @@ guaranteed to be unique per identifier by our loader — if there would for inst
 different file extension) in a `content_element` directory, an exception would be thrown when the filesystem gets
 scanned.
 
-{{% notice info %}}
+{{% notice note %}}
 We treat everything after the last `.` in a file name as *file extension*. If this last bit is `twig`, we also include
 the part before it. So a `foo.bar.baz.html.twig` file has the extension `html.twig` while it would be just `baz` for
 `foo.bar.baz`. Even though possible, it's considered a good practice to include the filetype **and** the `.twig` suffix
@@ -405,7 +403,7 @@ foreach ($finder as $identifier => $extension) {
 $options = $finder->asTemplateOptions();
 ```
 
-{{% notice info %}}
+{{% notice note %}}
 Please refer to the doc block comments on each of the fluent interface methods of the `Finder` class for details on how
 to use it.
 {{% /notice %}}
@@ -606,7 +604,7 @@ template directory and add the following contents:
 Here we target existing blocks and use the `parent()` function as we would in a regular Twig template.
 {{% /example %}}
 
-{{% notice note %}}
+{{% notice info %}}
 You can only use Twig templates to extend from the legacy PHP templates, not the other way round. This also means, that
 an extension doing this for a template, would force everyone to change their versions to Twig as well. In this case, the
 behavior is likely not what you want, and you should use the legacy template, still. 
@@ -663,7 +661,7 @@ $this->Template->setData([
 </div>
 {{% /example %}}
 
-{{% notice note %}}
+{{% notice info %}}
 The context transformation is done by the `@contao.twig.interop.context_factory` service. Although, you could use it to
 make callables work with your own templates, we do not advice in doing so. Most times it is better to create a real
 object for this use case — in doing so, you can also profit from getting autocompletion by type hinting the variable in

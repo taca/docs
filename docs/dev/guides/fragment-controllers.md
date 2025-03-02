@@ -17,7 +17,7 @@ A regular page in Contao consists of various partials that build the actual page
 
 Splitting the page into these partials is the foundation of flexible page building in Contao.
 
-{{% notice note %}}
+{{% notice info %}}
 The concept of modules and elements exists since the beginning of Contao.
 Front end modules and content elements as Symfony controller fragments are available since **Contao 4.5**.
 {{% /notice %}}
@@ -46,7 +46,7 @@ From an HTTP perspective, each (sub) request is totally independent. Each one wi
 parameters (like `GET` and `POST` data), and they can return HTTP headers (like `Content Type`
 or `Cache-Control`).
 
-{{% notice note %}}
+{{% notice info %}}
 {{< version-tag "4.9" >}} Subrequests can generate [a response that modifies the cache time of
 the main response](/framework/caching/#caching-fragments).
 {{% /notice %}}
@@ -134,7 +134,7 @@ class AppExampleController extends ContentGallery
 ```
 {{% /expand%}}
 
-{{% notice "note" %}}
+{{% notice "info" %}}
 Since we are extending classes from the legacy Contao framework here, these controllers will not be automatically registered as a service
 by Contao. Therefore you will need to specifically register these controllers as services in your own `config/services.yaml`. See 
 [this article](/getting-started/starting-development#autoloading-services-and-actions) for more information.

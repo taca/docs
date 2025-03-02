@@ -9,7 +9,7 @@ aliases:
 ---
 
 
-{{% notice note %}}
+{{% notice info %}}
 This guide assumes a Contao version of at least **4.13**. Back end routes can be
 created in previous Contao versions as well, but might require additional steps.
 {{% /notice %}}
@@ -103,7 +103,6 @@ use Contao\CoreBundle\Event\ContaoCoreEvents;
 use Contao\CoreBundle\Event\MenuEvent;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
-use Symfony\Component\Routing\RouterInterface;
 
 #[AsEventListener(ContaoCoreEvents::BACKEND_MENU_BUILD, priority: -255)]
 class BackendMenuListener
@@ -111,9 +110,8 @@ class BackendMenuListener
     protected $router;
     protected $requestStack;
 
-    public function __construct(RouterInterface $router, RequestStack $requestStack)
+    public function __construct(RequestStack $requestStack)
     {
-        $this->router = $router;
         $this->requestStack = $requestStack;
     }
 
@@ -129,8 +127,7 @@ class BackendMenuListener
         $contentNode = $tree->getChild('content');
 
         $node = $factory
-            ->createItem('my-module')
-                ->setUri($this->router->generate(BackendController::class))
+            ->createItem('my-module', ['route' => BackendController::class])
                 ->setLabel('My Modules')
                 ->setLinkAttribute('title', 'Title')
                 ->setLinkAttribute('class', 'my-module')

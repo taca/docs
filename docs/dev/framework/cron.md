@@ -17,7 +17,7 @@ cronjobs on your system using the following command:
 $ vendor/bin/contao-console debug:container --tag contao.cronjob
 ```
 
-{{% notice "note" %}}
+{{% notice "info" %}}
 The aformentioned command can also be used in Contao **4.13**. However, this will not find cronjobs that are registered
 via the legacy `config.php` (see below). Unfortunately there is no convenient way in Contao 4 to display registered
 legacy cronjobs. If you want to look these up you could either search for any `$GLOBALS['TL_CRON']` definitions in your 
@@ -35,7 +35,7 @@ queues) will be processed within `kernel.terminate` of the web process.
 By default the cron tasks are executed after a response is sent back to the visitor 
 when a request to the Contao site has been made.
 
-{{% notice info %}}
+{{% notice note %}}
 It is recommended to run PHP via PHP-FPM, otherwise cron execution and search indexing
 will block any subsequent request by the same user.
 {{% /notice %}}
@@ -53,10 +53,17 @@ contao:
 After disabling the front end cron you should periodically let Contao execute its cron jobs, either via the command line (recommended)
 or by making a request to the web URL.
 
-{{< version-tag "5.1" >}} Starting with Contao **5.1** you cannot disable the front end cron. Instead Contao will detect 
-whether you are letting the cron jobs be executed periodically and thus disable their execution in the front end 
-automatically.
+{{< version-tag "5.1" >}} Starting with version **5.1** Contao detects whether a real cron job is executed or not and thus disables
+the front end cron automatically if applicable. However, you can modify this behavior via the following configuration:
 
+```yaml
+# config/config.yaml
+contao:
+    cron:
+        web_listener: false
+```
+
+The default value is `'auto'`.
 
 ### Command Line
 
@@ -183,7 +190,7 @@ class ExampleCron
 In this case the cron job is executed once per hour. As mentioned before this parameter can also be a full CRON expression, e.g. 
 `*/5 * * * *` for "every 5 minutes".
 
-{{% notice note %}}
+{{% notice info %}}
 If you need an interval like `*/5 * * * *` you need to escape either the `*` or `/` 
 with `\`, since `*/` would close the PHP comment.
 {{% /notice %}}
@@ -218,7 +225,7 @@ be a full CRON expression, e.g. `*/5 * * * *` for "every 5 minutes".
 
 {{% tab title="PHP" %}}
 
-{{% notice "info" %}}
+{{% notice "note" %}}
 This method is deprecated since Contao **4.13** and does not work in Contao **5** anymore.
 {{% /notice %}}
 
@@ -283,7 +290,7 @@ class HourlyCron
 }
 ```
 
-{{% notice "note" %}}
+{{% notice "info" %}}
 The above example uses the `CronExecutionSkippedException` (available since Contao **4.9.38** and **5.0.8**) which will tell Contao's Cron 
 service that the excution of this cron job was skipped and thus the last run time will stay untouched in the database. Thus the cron job 
 will be executed again at the next opportunity, ensuring that its logic is always executed within the CLI scope in this case.
@@ -307,10 +314,11 @@ namespace App\Cron;
 use Contao\CoreBundle\Cron\Cron;
 use Contao\CoreBundle\Exception\CronExecutionSkippedException;
 use GuzzleHttp\Promise\Promise;
+use GuzzleHttp\Promise\PromiseInterface;
 
 class HourlyCron
 {
-    public function __invoke(string $scope): void
+    public function __invoke(string $scope): PromiseInterface
     {
         // Skip this cron job in the web scope
         if (Cron::SCOPE_WEB === $scope) {
@@ -334,12 +342,13 @@ namespace App\Cron;
 use Contao\CoreBundle\Cron\Cron;
 use Contao\CoreBundle\Exception\CronExecutionSkippedException;
 use Contao\CoreBundle\Util\ProcessUtil;
+use GuzzleHttp\Promise\PromiseInterface;
 
 class HourlyCron
 {
     public function __construct(private ProcessUtil $processUtil) {}
 
-    public function __invoke(string $scope): void
+    public function __invoke(string $scope): PromiseInterface
     {
         // Skip this cron job in the web scope
         if (Cron::SCOPE_WEB === $scope) {
@@ -368,7 +377,7 @@ its defined interval, either truncate the whole table or delete the entry for th
 specific cron job you want to test. If the table is empty every cronjob will be 
 executed on the first cron call. After that only on its defined interval.
 
-{{% notice note %}}
+{{% notice info %}}
 In Contao **4.4**, the table is called `tl_cron` and it contains only the last execution
 times of the named intervals, not the last execution time of individual cron jobs.
 {{% /notice %}}
