@@ -23,15 +23,15 @@ weight: 50
 
 GUIのツール[phpMyAdmin](https://www.phpmyadmin.net/)、またはコマンド行から`mysqldump`プログラムを使用してSQLのdumpを作成できます。
 
-{{< tabs groupId="mysql-transfer" >}}
-{{% tab name="phpMyAdmin" %}}
+{{< tabs groupid="mysql-transfer" style="code" >}}
+{{% tab title="phpMyAdmin" %}}
 "phpMyAdmin"にログインして、エクスポートするデータベースを選択し、上部のメニューの"Export"タブを選択して、"Ok"をクリックしてください。
 
 次の段階でインポートに使用できる`sql`ファイルを受け取るでしょう。
 
 ![データベースのエクスポート]({{% asset "images/manual/installation/ja/database-export.png" %}}?classes=shadow)
 {{% /tab %}}
-{{% tab name="コマンド行" %}}
+{{% tab title="コマンド行" %}}
 `mysqldump`と`gzip`をインストールしていることを確認して、("my_user"と"my_db_name"をデータベースのユーザーと名前に置き換えて)以下のコマンドを実行してください:
 
 ```bash
@@ -47,15 +47,15 @@ mysqldump --host=localhost --user=my_user --password --hex-blob --opt my_db_name
 
 ### データベースのインポート (目的)
 
-{{< tabs groupId="mysql-transfer" >}}
-{{% tab name="phpMyAdmin" %}}
+{{< tabs groupid="mysql-transfer" style="code" >}}
+{{% tab title="phpMyAdmin" %}}
 "phpMyAdmin"を開いて新しい(空の)データベースを選択します。
 
 上部のメニューの"Import"ボタンをクリックし、前に作成したSQLのdumpファイルをアップロードしてインポートを開始してください。
 
 ![データベースをインポート]({{% asset "images/manual/installation/ja/database-import.png" %}}?classes=shadow)
 {{% /tab %}}
-{{% tab name="コマンド行" %}}
+{{% tab title="コマンド行" %}}
 前に作成しdumpファイルを目的のサーバーにコピーして、ログインします。
 
 `mysqldump`と`gzip`をインストールしていることを確認して、("my_user"と"my_db_name"をデータベースのユーザーと名前に、また"my_dump.sql.gz"をコピーしたdumpファイルの名前に適切に置き換えて)以下のコマンドを実行してください:

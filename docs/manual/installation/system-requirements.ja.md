@@ -221,9 +221,9 @@ Contaoでは、すべての公開したアクセスをするファイルはイ�
 
 Webサーバーの構成の中で、すべての要求を公開ディレクトリにある`index.php`で処理するように、通常はURLの書き換えで行わなければなりません。この方法は動作しているWebサーバーの種類に依存します。もっとも一般的なのはApacheとNGINXです:
 
-{{< tabs groupId="web-server-config" >}}
+{{< tabs groupid="web-server-config" style="code" >}}
 
-{{% tab name="Apache" %}}
+{{% tab title="Apache" %}}
 ApacheをWebサーバーとして使用している場合、Contaoは公開ディレクトリの[初期設定の`.htaccess`](https://github.com/contao/contao/blob/5.0.7/manager-bundle/skeleton/public/.htaccess)ファイルを提供します。
 `VirtualHost`の定義の中の`Directory`で`AllowOverride All`の指示が有効となっていることを確認してください、これでApacheは実際に`.htaccess`を処理します。
 さらに、`https://example.com/contao/install`といったURLが動作するように、Apache Webサーバーで`mod_rewrite`が有効となっていることも確認してください。
@@ -249,7 +249,7 @@ Contaoはシンボリックリンクを使用するので、`Directory`で`Optio
 
 {{% /tab %}}
 
-{{% tab name="NGINX" %}}
+{{% tab title="NGINX" %}}
 もっとも重要なことは、実際のファイルを指していないすべての要求を`try_files $uri /index.php$is_args$args;`を経由でアプリケーションに渡して処理することです。
 
 最小限の`server`の定義は、この例のようになります(Contao 4.9から前のバージョンでは`…/public`を`…/web`に置き換えてください。):

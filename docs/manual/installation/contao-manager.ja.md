@@ -120,7 +120,7 @@ Contao Managerが応答しなくなった、コンソールの出力ウィンド
 
 ### Contao Managerにもう1つユーザーアカウントを追加できますか?
 
-{{< version “Manager 1.9” >}}
+{{< version "Manager 1.9" >}}
 
 Yes, with ADMIN rights you can invite other users to the Contao Manager.
 To do this, click on the gear wheel in the menu and then on _Accounts_. Here you can create an invitation link,
