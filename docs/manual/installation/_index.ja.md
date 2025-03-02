@@ -14,6 +14,6 @@ Contao Managerのおかげで、サーバーが正しく構成されて最小限
 
 {{% children %}}
 
-### Guides
+### ガイド
 
 {{< taxonomylist filter="Installation" description=true >}}

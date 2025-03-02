@@ -30,7 +30,7 @@ Contao 4と機能拡張をComposerを使用してコマンド行から直接管�
 
 ## Contao Managerのインストール
 
-### システム要件
+### システム要件 {#system-requirements}
 
 システム要件は[Contao](/ja/installation/system-requirements/)と基本的に同じです。Contao Managerは要件を満たしているか自動的に確認します。
 
@@ -122,16 +122,14 @@ Contao Managerが応答しなくなった、コンソールの出力ウィンド
 
 {{< version "Manager 1.9" >}}
 
-Yes, with ADMIN rights you can invite other users to the Contao Manager.
-To do this, click on the gear wheel in the menu and then on _Accounts_. Here you can create an invitation link,
-and assign one of the following permissions to the new account:
+はい、ADMIN権限があれば他のユーザーをContao Managerに招待できます。
+このためには、メニューの歯車をクリックして、_アカウント_を選択します。
+ここから招待のリンクを作成して、以下の権限から1つを新しいアカウントに割り当てられます。
 
-- **READ** – can see the installed packages and read log files, but
-  cannot change the system.
-- **UPDATE** – may update existing packages and perform maintenance tasks (e.g. clear cache).
-- **INSTALL** – may update and install packages and change system settings.
-- **ADMIN** – can use all functions of the Contao Manager.
-
+- **読み取り** – インストールしたパッケージを確認し、ログファイルを読めますが、システムの変更はできません。
+- **更新** – 既存のパッケージの更新と、保守の作業(例えばキャッシュの消去)が可能です。
+- **インストール** – パッケージの更新とインストール、システム設定の変更を行えます。
+- **管理者** – Contao Managerのすべての機能を使用できます。
 
 ### 既存のインストールしたContaoにContao Managerを追加できますか?
 

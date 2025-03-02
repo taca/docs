@@ -1,5 +1,8 @@
 ---
 title: "システム"
+url: "system"
+aliases:
+    - /ja/system/
 weight: 5
 ---
 
