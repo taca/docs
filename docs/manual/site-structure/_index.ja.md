@@ -14,4 +14,7 @@ detailed explanation of the contents.
 
 {{% children %}}
 
-{{% taxonomylist context="tags" filter="SiteStructure" title="Guides" description=true %}}
+### Guides
+
+{{< taxonomylist filter="SiteStructure" description=true >}}
+

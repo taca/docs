@@ -1,7 +1,7 @@
 ---
 title: "DCA Adjustments"
 description: "A list of practical DCA adjustments."
-url: "/en/guides/dca"
+url: "/ja/guides/dca"
 aliases:
     - /ja/guides/dca/
 weight: 12
@@ -19,7 +19,7 @@ for example »contao/dca/tl_content.php«. After that, you need to recreate the 
 [Contao Manager](/ja/installation/contao-manager/) or via the console. This step is required after every change.
 
 
-{{% notice note %}}
+{{% notice info %}}
 Do you know other practical examples? Then add your information to this collection. Detailed information how
 you can contribute to the documentation [can be found here](/ja/contributing/).
 {{% /notice %}}

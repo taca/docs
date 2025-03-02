@@ -70,7 +70,7 @@ Contao 4と5は構造的にはあまり変更はありません。`contao/manage
 }
 ```
 
-{{% notice "note" %}}
+{{% notice "info" %}}
 The `contao/managed-edition` uses the `^5.0` notation for the version requirement for most of the core packages. This means that each
 package can be installed in at least version `5.0.0`, but not in versions `6.x`. This notation also allows `5.1.x`, `5.2.x` etc. However,
 the version requirement of the `contao/manager-bundle` is set to `5.0.*` by default. This is done so that Composer will not automatically

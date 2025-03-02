@@ -36,9 +36,9 @@ folder.
 
 **![Edit file]({{% asset "icons/editor.svg" %}}?classes=icon) Edit file:** Opens a form to edit the contents of a file with a text 
 editor. Which files may be edited can be defined in the configuration file 
-[`config/config.yaml`](/ja/system/settings/#config-yaml) under the key `editable_files` <sup>1</sup>.
+[`config/config.yaml`](/ja/system/settings/#config-yml) under the key `editable_files` <sup>1</sup>.
 
-{{% notice note %}}
+{{% notice info %}}
 <sup>1</sup>Until version 4.6 of Contao, this could be set in the system settings under "Files and Images-&gt; 
 Editable files".
 {{% /notice %}}

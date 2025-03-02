@@ -3,7 +3,7 @@ title: 'ファイル管理'
 description: 'With the File Manager you can manage files and folders on your server and transfer files from your 
 local computer to the server.'
 aliases:
-    - /en/file-manager/
+    - /ja/file-manager/
 weight: 12
 ---
 
@@ -27,9 +27,9 @@ You can create a new directory using the "New folder" button. The following opti
 
 {{< version-tag "4.13" >}} Nested folders can be created directly by entering e. g. "FolderA/FolderB".
 
-![Create nested folders]({{% asset "images/manual/file-manager/en/folder-name.gif" %}}?classes=shadow)
+![Create nested folders]({{% asset "images/manual/file-manager/ja/folder-name.gif" %}}?classes=shadow)
 
-{{% notice note %}}
+{{% notice info %}}
 If you select "Public", only the last folder will be marked as public.
 {{% /notice %}}
 

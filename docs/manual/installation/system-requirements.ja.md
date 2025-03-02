@@ -7,7 +7,7 @@ weight: 10
 
 Contaoをうまく動作させるには、Webサーバーはこれらのシステム要件を満たしていなければなりません。Contaoは元々はおなじみの[LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle))スタックに向けて開発していましたが、最近のPHPとMySQLを提供しているWebサーバーであれば動作します。
 
-{{% notice info %}}
+{{% notice note %}}
 If you use the Contao Manager to install and update your Contao instances, you should also note
 its [System requirements](https://docs.contao.org/manual/ja/installation/contao-manager/#system-requirements). 
 {{% /notice %}}
@@ -40,7 +40,7 @@ its [System requirements](https://docs.contao.org/manual/ja/installation/contao-
 | [Sodium][ext-sodium] (`ext-sodium`)               | -                                           | PHP 8.3以降で**必須**<sup>2</sup>           |
 
 
-{{% notice note %}}
+{{% notice info %}}
 <sup>1</sup> Contaoは自動的に利用可能な状況に依存した画像処理のライブラリを選択します。けれども、PHP GDライブラリは利用できなければなりません。すべての場合でPHPのImagickまたはGmagickライブラリを経由してImageMagickを使用することを推奨します。ImageMagickはより良い性能と品質をContaoが実際にどちらのライブラリを使用しているかは、以下のコマンドを実行して確認できます:
 ```bash
 $ vendor/bin/contao-console debug:container contao.image.imagine
@@ -117,7 +117,7 @@ Contaoの理想的な操作のための推奨です。異なった設定はConta
 - **PHP**バージョンVersion 5.6.0以降が必要です。
 - 拡張GD(`ext-gd`)が画像の処理に必要です。
 
-{{% notice info %}}
+{{% notice note %}}
 MySQLサーバーのバージョン**8.0.17**以降を使用している場合は、少なくともPHP **7.2.0**が必要です。
 {{% /notice %}}
 
@@ -140,7 +140,7 @@ ContaoはMySQLサーバーのバージョン5.7 / 8.0で`InnoDB`のテーブル�
 
 以上の推奨する選択がサーバーで有効にできない場合は、他のデータベースエンジンで異なる文字セットを[`config/config.yaml`](../../system/settings/#config-yaml)ファイルに構成してください:
 
-{{% notice note %}}
+{{% notice info %}}
 **Contao 4.8**より前は`app/config/config.yaml`ファイルになります。
 {{% /notice %}}
 
@@ -157,7 +157,7 @@ doctrine:
 
 さらにMySQLを"厳密モード"で動作することを推奨します、これによってデータの破損や切り詰めを防止し、データの一貫性を保証できます。
 
-{{% notice note %}}
+{{% notice info %}}
 {{< version-tag "4.9" >}} データーベースサーバーが厳密モードで動作していないとインストールツールが警告を表示します。
 {{% /notice %}}
 
@@ -181,7 +181,7 @@ doctrine:
                     1002: "SET SESSION sql_mode=(SELECT CONCAT(@@sql_mode, ',TRADITIONAL'))"
 ```
 
-{{% notice "note" %}}
+{{% notice "info" %}}
 [`TRADITIONAL`SQLモード](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html#sqlmode)は、SQLのモードの中でも特に`STRICT_TRANS_TABLES`と`STRICT_ALL_TABLES`のようなモードを組み合わせたようなものです。"[厳密なSQLモード](https://dev.mysql.com/doc/refman/8.0/ja/sql-mode.html#sql-mode-strict)"は`STRICT_TRANS_TABLES`または`STRICT_ALL_TABLES`を設定すると有効になり、これは現在のMySQLとMariaDBの両方で初期設定で有効です。けれども、多くの共用のホスティング環境では異なる設定をしています。厳密モードの利点は誤ったデータベースの操作をデータベースサーバーが静かに無視する代わりに、実際にエラーとします。この結果、より良いデータの一貫性と安全性につながります。
 {{% /notice %}}
 
@@ -201,7 +201,7 @@ Contaoでは、すべての公開したアクセスをするファイルはイ�
 
 ({{< version-tag "4.12" >}} Symfonyの標準に従って、公開するサブフォルダー`/web`は`/public`と名前が変更になりました。インストール先に`/web`というディレクトリがある場合は、Contaoは自動的に代わりに`/public`を使用します。)
 
-{{% notice note %}}
+{{% notice info %}}
 このため、それぞれのContaoのインストールには別々の(サブ)ドメインが必要です。
 {{% /notice %}}
 
@@ -297,7 +297,7 @@ Webサーバーの構成についてさらに詳しい情報は[Symfonyのドキ
 
 Internetサービスのいくつかの大規模なプロバイダーではContaoを動作させるための特別な設定を用意している場合があります。幸いなことに、それらは規則の例外です。プロバイダー特有の設定はドイツ語の[Contaoフォーラム](https://community.contao.org/de/forumdisplay.php?67-Erfahrungen-mit-Webhostern)にあります。Contaoに最適なホスティングのパッケージは"Webホスティング"のカテゴリーの[Contaoパートナー](https://contao.org/en/contao-partners.html)から得ることができます。
 
-{{% notice "note" %}}
+{{% notice "info" %}}
 1クリックのインストールを提供しているホスティングの提供者もあります。しかし、最大の使い勝手の良さのためには、Contao Managerまたはコンソールを使用することを推奨します。
 {{% /notice %}}
 

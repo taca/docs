@@ -37,7 +37,7 @@ Contaoの[リリース周期](https://contao.org/en/release-plan.html)には[長
 
 ## Contao Managerを使用した更新 {#updating-with-the-contao-manager}
 
-{{% notice note %}}
+{{% notice info %}}
 Contaoを更新する前に、`composer.json`と`composer.lock`のファイルとデータベースをバックアップすることを推奨します。
 {{% /notice %}}
 
@@ -62,11 +62,11 @@ Contao Managerにログインして開始します。
 
 ## コマンド行からの更新 {#update-via-the-command-line}
 
-{{% notice note %}}
+{{% notice info %}}
 Contaoをコマンド行から更新するには、Composerを[インストールしている](../install-contao/#install-composer)ことが必要です。
 {{% /notice %}}
 
-{{% notice note %}}
+{{% notice info %}}
 Contaoを更新する前に、`composer.json`と`composer.lock`のファイルとデータベースをバックアップすることを推奨します。
 {{% /notice %}}
 

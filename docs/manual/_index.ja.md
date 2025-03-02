@@ -61,6 +61,6 @@ type: home
 {{% children description="true" %}}
 
 
-{{% notice info %}}
+{{% notice note %}}
 この日本語版は英語版を元に翻訳を勧めています。大半の未翻訳の部分は英語版を代わりに掲載しています。
 {{% /notice %}}

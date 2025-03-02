@@ -52,7 +52,7 @@ cd www
 
 [Composer](https://en.wikipedia.org/wiki/Composer_(software))は、PHPプログラミング言語と依存関係のインストールのためのアプリケーション指向のパッケージマネージャーです。
 
-{{% notice note %}}
+{{% notice info %}}
 Composerは[ローカル](https://getcomposer.org/doc/00-intro.md#locally)にも、[全体的](https://getcomposer.org/doc/00-intro.md#globally)にもインストールできます。
  
 Composerをローカルにインストールする場合、作業ディレクトリ(つまり、プロジェクトのファイル`composer.json`と`composer.lock`をおいている場所)に`composer.phar`のファイルを置くことになります。Composerを`php composer.phar`として呼び出すことになります。
@@ -76,7 +76,7 @@ Contaoでは、すべての公開してアクセス可能なファイルはイ�
 
 ({{< version-tag "4.12" >}} Symfonyの標準に従い、公開サブフォルダーの`/web`は`/public`に名前を変更しました。`/web`ディレクトリがインストール先に存在する場合、Contaoは自動的に`/public`の代わりに使用します。).
 
-{{% notice note %}}
+{{% notice info %}}
 このため、それぞれのContaoのインストールでは固有の(サブ)ドメインが必要です。
 {{% /notice %}}
 
@@ -96,7 +96,7 @@ php vendor/bin/contao-console contao:migrate
 `php vendor/bin/contao-console doctrine:database:create`
 {{% /notice %}}
 
-{{% notice info %}}
+{{% notice note %}}
 Contaoはデータベースに対応するデータ接続先を知っている必要があります。
 この情報は(現在は[Contaoインストールツール](/ja/installation/contao-installtool/)を使用するとインストールされる)"config/parameters.yaml"ファイル、またはインストール先のルートディレクトリにある"[.env](https://docs.contao.org/dev/getting-started/starting-development/#application-configuration)"ファイルを経由して取り出します。<br><br>
 ".env"ファイルで必要な環境変数([DATABASE_URL](https://docs.contao.org/dev/reference/config/#database-url)と[APP_SECRET](https://docs.contao.org/dev/reference/config/#app-secret))については[こちら](https://docs.contao.org/dev/getting-started/starting-development/#application-configuration)を参照してください。

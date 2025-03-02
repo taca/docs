@@ -32,8 +32,8 @@ Contaoは[MySQL](../../installation/system-requirements/#mysql-minimum-requireme
 ダウンロードに成功すると、`contao-manager.phar`というファイルを取得できます。
 このファイルをWebサーバーの`public`ディレクトリに転送してください。
 
-{{% notice info %}}
-すべてのホスティング提供者で`.phar`ファイルを実効できるとは限りません。
+{{% notice note %}}
+すべてのホスティング提供者で`.phar`ファイルを実行できるとは限りません。
 最良の互換性のためには<b>アップロードした後で</b>`.php`という拡張子を追加してください。(つまり、<b>サーバー上の</b>ファイルを`contao-manager.phar.php`と名前を変更します。)
 {{% /notice %}}
 

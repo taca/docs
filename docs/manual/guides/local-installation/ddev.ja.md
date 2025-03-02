@@ -14,7 +14,7 @@ DDEV is an open source tool for launching local PHP development environments in 
 
 DDEV creates a `config.yaml`, this contains all settings for your project. This can be versioned in GIT and supports collaborative work in teams or freelancers.
 
-{{% notice note %}}
+{{% notice info %}}
 To use the DDEV, _Docker_ must be installed on your system. If this is not yet
 the case, you can download the
 [DDEV documentation](https://ddev.readthedocs.io/en/stable/users/install/docker-installation/) for
@@ -33,9 +33,9 @@ The [Contao demo website](https://demo.contao.org/) is maintained for the curren
 installed](https://github.com/contao/contao-demo). Via the Contao Manager you can simply select this option during the first installation.
 {{% /notice %}}
 
-{{< tabs groupId="ddev-contao-install">}}
+{{< tabs groupid="ddev-contao-install">}}
 
-{{% tab name="Composer" %}}
+{{% tab title="Composer" %}}
 Open the console of your choice, create the desired directory and then change to it. The directory name reflects the subsequent project hostname. However, you can [configure this](https://ddev.readthedocs.io/en/latest/users/extend/additional-hostnames/) additionally.
 
 ```shell
@@ -81,7 +81,7 @@ ddev launch contao
 
 {{% /tab %}}
 
-{{% tab name="Contao Manager" %}}
+{{% tab title="Contao Manager" %}}
 
 Open the console of your choice, create the desired directory and then change to it. The directory name reflects the subsequent project hostname. However, you can [configure this](https://ddev.readthedocs.io/en/latest/users/extend/additional-hostnames/) additionally.
 
@@ -132,7 +132,7 @@ ddev launch contao-manager.phar.php
 
 - `ddev xdebug on` starts XDebug. [Information about the IDE setup](https://ddev.readthedocs.io/en/latest/users/debugging-profiling/step-debugging/#ide-setup)
 
-{{% notice note %}}
+{{% notice info %}}
 If you are a Windows user using the "Git Bash" as a console, it may be necessary, depending on your "Git for Windows" configuration, to prepend the command `winpty` (e.g.: `winpty ddev ssh`).
 {{% /notice %}}
 

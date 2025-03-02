@@ -64,7 +64,7 @@ codefog/contao-elements-filter elements-filter extension for Contao Open Source 
 4. 「パッケージ」のタブを選択して「変更を適用」をクリックしてインストールの処理を開始します。
 5. 処理が終わりましたら、[Contaoインストールツール](../contao-installtool/)を実行してデータベースを更新します。
 
-{{% notice info %}}
+{{% notice note %}}
 インストールの処理は数分を必用とするでしょう。![コンソール出力を表示/非表示]({{% asset "icons/konsolenausgabe.png" %}}?classes=icon)のアイコンをクリックすると、動作中の処理の詳細を表示できます。
 {{% /notice %}}
 
@@ -107,6 +107,6 @@ php composer.phar require terminal42/contao-easy_themes
 php vendor/bin/contao-console contao:migrate
 ```
 
-{{% notice note %}}
+{{% notice info %}}
 `contao:migrate`コマンドはバージョン**4.9**以上で利用できます。その代わりに[Contaoインストールツール](../contao-installtool/)を使用できます。
 {{% /notice %}}

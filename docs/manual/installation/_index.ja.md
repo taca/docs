@@ -13,3 +13,7 @@ Contao Managerのおかげで、サーバーが正しく構成されて最小限
 このため、この章ではすべてのインストールに関連した方法について述べ、Contaoのローカルの開発環境から実際のWebサーバーへの移設、既存のインストールしたContaoを更新する方法について説明します。
 
 {{% children %}}
+
+### Guides
+
+{{< taxonomylist filter="Installation" description=true >}}

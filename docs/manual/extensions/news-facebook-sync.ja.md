@@ -1,6 +1,6 @@
 ---
 title: Contao News Facebook Sync
-menuTitle: News Facebook Sync
+linkTitle: News Facebook Sync
 description: Contao News Facebook Sync is a commercial extension for synchronisation of Facebook posts with a news archive.
 ---
 
@@ -123,7 +123,7 @@ website. Then click on _Save Changes_.
 7. On the left, click on _Settings_ » _Basic_ and enter your website's domain unter _App Domains_. Then click on
 _Save Changes_.
 
-{{% notice info %}}
+{{% notice note %}}
 The account under which you create this App must also have the rights to create timeline posts on
 the Facebook page you wish to synchronize with (optional if you only want to fetch Facebook Page posts). Alternatively
 you can also add further Administrator or Developers after you created the App in the _Roles_ section.
@@ -155,7 +155,7 @@ Lastly you need to fetch an __Access Token__. Click on the Facebook connect butt
 log you into Facebook and it will request some permissions from your Facebook user. After you have confirmed the 
 permissions a "Long Term Access Token" will be fetched from Facebook.
 
-{{% notice info %}}
+{{% notice note %}}
 If you want to let Contao publish news posts to your Facebook page, you need to allow the Facebook App 
 to post __publicly__ on your behalf, when granting permissions. The Facebook account under which you log in to fetch 
 the Access Token also must have the rights to create timeline posts on the Facebook page.
@@ -248,8 +248,8 @@ When posting a Contao news entry as a Facebook post, the extension either uses t
 
 The following example appends the news article's URL to any photo post:
 
-{{< tabs groupId="four-way-service-registration" >}}
-{{% tab name="Attribute" %}}
+{{< tabs groupid="four-way-service-registration" style="code" >}}
+{{% tab title="Attribute" %}}
 ```php
 // src/EventListener/ChangeFacebookMessageListener.php
 namespace App\EventListener;
@@ -275,7 +275,7 @@ class ChangeFacebookMessageListener
 ```
 {{% /tab %}}
 
-{{% tab name="Annotation" %}}
+{{% tab title="Annotation" %}}
 ```php
 // src/EventListener/ChangeFacebookMessageListener.php
 namespace App\EventListener;
@@ -300,7 +300,7 @@ class ChangeFacebookMessageListener
 }
 ```
 {{% /tab %}}
-{{% tab name="YAML" %}}
+{{% tab title="YAML" %}}
 ```yaml
 # config/services.yaml
 services:
@@ -332,7 +332,7 @@ class ChangeFacebookMessageListener
 ```
 {{% /tab %}}
 
-{{% tab name="config.php" %}}
+{{% tab title="config.php" %}}
 ```php
 // contao/config.php
 use App\EventListener\ChangeFacebookMessageListener;

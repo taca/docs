@@ -39,7 +39,7 @@ Contao 4と機能拡張をComposerを使用してコマンド行から直接管�
 - PHP関数の*proc\_open*と*proc\_close*
 - PHPの設定で*allow\_url\_fopen*が有効であるこｔ
 
-{{% notice info %}}
+{{% notice note %}}
 Contao ManagerはPHP 5やPHP 7でもインストールできます。最初のアクセス時にPHPのバージョンを検出してContaoのサーバーから互換性のあるバージョンを自動的にダウンロードします。
 この場合、当然ながら最新のバージョンの機能は利用できませんが、それでもContaoのインストールや更新は可能です。
 {{% /notice %}}
@@ -53,7 +53,7 @@ Contaoでは、すべての公開したアクセスをするファイルはイ�
 
 ({{< version-tag "4.12" >}} Symfonyの標準に従って、公開するサブフォルダー`/web`は`/public`と名前が変更になりました。インストール先に`/web`というディレクトリがある場合は、Contaoは自動的に代わりに`/public`を使用します。`/web`から`/public`に変更するときは、composer.jsonでも指定しなければなりません。)
 
-{{% notice note %}}
+{{% notice info %}}
 すべてのContaoのインストールには別々の(サブ)ドメインが必要です。
 {{% /notice %}}
 
@@ -62,7 +62,7 @@ Contaoでは、すべての公開したアクセスをするファイルはイ�
 Contao Managerは1つのファイルで構成されていて、[contao.orgからダウンロード](https://contao.org/en/download.html)できます。
 ダウンロードに成功すると`contao-manager.phar`というファイルができますので、このファイルをWebサーバーの`web` ディレクトリに転送してください。
 
-{{% notice info %}}
+{{% notice note %}}
 `.phar`という拡張子のファイルはすべてのホスティング提供者の環境で実行できるとは限りません。最良の互換性を得るためには、ファイルに拡張子`.php`を追加して(最終的な名前を`contao-manager.phar.php`として)ください。
 {{% /notice %}}
 

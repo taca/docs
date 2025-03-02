@@ -35,7 +35,7 @@ from your browser. This way you can easily create a protected download area. For
 
 ### Preview settings
 
-{{% notice info %}}
+{{% notice note %}}
 The PHP extension Imagick or Gmagick must be installed on the server to enjoy this feature.
 {{% /notice %}}
 
@@ -55,7 +55,7 @@ The PHP extension Imagick or Gmagick must be installed on the server to enjoy th
 With 0 all thumbnails are generated in our case so 10. If you want to output only the first page of your PDF as a 
 preview image, enter 1 in the field.
 
-{{% notice info %}}
+{{% notice note %}}
 Note that only those file types can be downloaded that you have specified in the backend settings under "Download
 file types".
 {{% /notice %}}
@@ -64,8 +64,8 @@ file types".
 ### Template settings
 
 
-{{< tabs groupId="contao-version" >}}
-{{% tab name="Contao 4" %}}
+{{< tabs groupid="contao-version" style="code" >}}
+{{% tab title="Contao 4" %}}
 **Content element template:** Here you can overwrite the content element `ce_download` template.
 
 **HTML Output**  
@@ -84,7 +84,7 @@ The element generates the following HTML code:
 </div>
 ```
 {{% /tab %}}
-{{% tab name="Contao 5" %}}
+{{% tab title="Contao 5" %}}
 **Content element template:** Here you can overwrite the content element `content_element/download` template.
 
 **HTML Output**  
@@ -141,7 +141,7 @@ they are not displayed when activated.
 
 ### Preview settings
 
-{{% notice info %}}
+{{% notice note %}}
 The PHP extension Imagick or Gmagick must be installed on the server to enjoy this feature.
 {{% /notice %}}
 
@@ -161,7 +161,7 @@ The PHP extension Imagick or Gmagick must be installed on the server to enjoy th
 With 0 all thumbnails are generated in our case so 10. If you want to output only the first page of your PDF as a
 preview image, enter 1 in the field.
 
-{{% notice info %}}
+{{% notice note %}}
 Note that only those file types can be downloaded that you have specified in the backend settings under "Download file 
 types".
 {{% /notice %}}
@@ -169,8 +169,8 @@ types".
 
 ### Template settings
 
-{{< tabs groupId="contao-version" >}}
-{{% tab name="Contao 4" %}}
+{{< tabs groupid="contao-version" style="code" >}}
+{{% tab title="Contao 4" %}}
 **Content element template:** Here you can overwrite the content element `ce_downloads` template.
 
 **HTML Output**  
@@ -191,7 +191,7 @@ The element generates the following HTML code:
 </div>
 ```
 {{% /tab %}}
-{{% tab name="Contao 5" %}}
+{{% tab title="Contao 5" %}}
 **Content element template:** Here you can overwrite the content element `content_elements/downloads` template.
 
 **HTML Output**  

@@ -1,6 +1,6 @@
 ---
 title: 'Members'
-menuTitle: 'Members (front end)'
+linkTitle: 'Members (front end)'
 description: 'The administration of front end users is much simpler than the administration of back end users, since there is no need to work with mounts and individual input fields.'
 aliases:
     - /ja/user-management/members/
@@ -37,7 +37,7 @@ Member groups can also be deactivated manually or automatically.
 
 Unlike users, members are not so much concerned with access rights as with personal data such as name, address or telephone number.
 
-{{% notice note %}}
+{{% notice info %}}
 The username and email address must be unique, i.e. they can only be used once. 
 {{% /notice %}}
 
