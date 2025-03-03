@@ -62,10 +62,10 @@ Composerを全体的にインストールした場合は、どのディレクト
 
 ### コマンド行からContaoのインストール作業
 
-第2段階では、Composerを使用してContaoをインストールします。"example"は望ましいインストール先のディレクトリで、4.11は[インストールしたいContaoのバージョン](https://contao.org/de/download.html)です。
+第2段階では、Composerを使用してContaoをインストールします。"example"は望ましいインストール先のディレクトリで、{{< current-version >}}は[インストールしたいContaoのバージョン](https://contao.org/de/download.html)です。
 
 ```bash
-php composer.phar create-project contao/managed-edition example 4.11
+php composer.phar create-project contao/managed-edition example {{< current-version >}}
 ```
 
 ### ホスティングの構成 {#hosting-configuration}
