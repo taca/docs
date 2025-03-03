@@ -1,5 +1,5 @@
 ---
-title: "Backend Search"
+title: "バックエンドの検索"
 description: "Here you will learn everything you need to know to use the Contao backend search."
 aliases:
     - /ja/installation/system-requirements/backend-search
