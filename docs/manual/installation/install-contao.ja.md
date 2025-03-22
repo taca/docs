@@ -29,8 +29,9 @@ Contaoをサーバーにインストールする前に、[Contao Managerのイ�
 
 ### データベースのテーブルの更新
 
-Contao Managerがすべてのパッケージをインストールしましたら、[Contaoインストールツール](../contao-installtool/)を[実行](../contao-installtool/)してデータベースを更新しなければなりません。
-
+すべてのパッケージをContao Managerがインストールできたら、次にデータベースを更新しなければなりません。
+このためには[Contaoインストールツール]({{% ref "/installation/contao-installtool" %}})を使用します(Contao 4.13 LTS)。
+Contao 5以降からは、もうインストールツールは必要なくて、データベースは[Contao Manager]({{% ref "installation/contao-manager" %}})で直接更新できます。
 
 ## コマンド行でインストール
 

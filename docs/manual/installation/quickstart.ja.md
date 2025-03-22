@@ -83,8 +83,9 @@ Contao Managerはバックグラウンドの処理を正しく行うために、
 
 ### データベースのテーブルの更新
 
-Contao Managerがすべてのパッケージをインストールしましたら、データベースを更新する必要があります。
-このためには、[Contaoインストールツール](../contao-installtool/)を開始する(Contao 4.13 LTS)か、Contao Managerに直接必要な情報を入力します(Contao 5.x)。
+すべてのパッケージをContao Managerがインストールできたら、次にデータベースを更新しなければなりません。
+このためには[Contaoインストールツール]({{% ref "/installation/contao-installtool" %}})を使用します(Contao 4.13 LTS)。
+Contao 5以降からは、もうインストールツールは必要なくて、データベースは[Contao Manager]({{% ref "installation/contao-manager" %}})で直接更新できます。
 
 
 ## 管理者アカウントの作成
