@@ -5,6 +5,7 @@ url: "layout/templates/twig/manage"
 weight: 30
 aliases:
   - /ja/layout/templates/twig/verwaltung/
+tags: [Twig]
 ---
 
 ## Folder structure

@@ -2,9 +2,10 @@
 title: "Twig templates"
 description: "Overview of Twig templates."
 url: "layout/templates/twig"
-weight: 10
 aliases:
     - /ja/layout/templates/twig/
+weight: 10
+tags: [Twig]
 ---
 
 {{% notice note %}}
