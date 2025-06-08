@@ -7,7 +7,7 @@ weight: 90
 ---
 
 {{% notice info %}}
-Contao 5の時点でContaoインストールツールは必要ありません。なぜなら、データベースは直接[Contao Manager]({{% relref"installation/contao-manager" %}})またはコンソールから更新できるからです。
+Contao 5の時点でContaoインストールツールは必要ありません。なぜなら、データベースは直接[Contao Manager]({{% ref "installation/contao-manager" %}})またはコンソールから更新できるからです。
 {{% /notice %}}
 
 ブラウザーで、インストールしているContaoのURLに`/contao/install`を追加したURLを開くとインストールツールにアクセスできます。
