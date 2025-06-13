@@ -30,8 +30,8 @@ Contaoをサーバーにインストールする前に、[Contao Managerのイ�
 ### データベースのテーブルの更新
 
 すべてのパッケージをContao Managerがインストールできたら、次にデータベースを更新しなければなりません。
-このためには[Contaoインストールツール]({{% ref "/installation/contao-installtool" %}})を使用します(Contao 4.13 LTS)。
-Contao 5以降では、もうインストールツールは必要なく、データベースは[Contao Manager]({{% ref "installation/contao-manager" %}})で直接更新できます。
+このためには[Contaoインストールツール]({{% relref "/installation/contao-installtool" %}})を使用します(Contao 4.13 LTS)。
+Contao 5以降では、もうインストールツールは必要なく、データベースは[Contao Manager]({{% relref "installation/contao-manager" %}})で直接更新できます。
 
 ## コマンド行でインストール
 
@@ -84,8 +84,8 @@ Contaoでは、すべての公開してアクセス可能なファイルはイ�
 
 ### データベースのテーブルの更新
 
-インストールの後で、[Contaoインストールツール]({{% ref "/installation/contao-installtool" %}})を使用してデータベースを更新できます。(Contao 4.13 LTS)
-Contao 5以降では、もうインストールツールは必要なく、データベースは[Contao Manager]({{% ref "installation/contao-manager" %}})で直接更新できます。
+インストールの後で、[Contaoインストールツール]({{% relref "/installation/contao-installtool" %}})を使用してデータベースを更新できます。(Contao 4.13 LTS)
+Contao 5以降では、もうインストールツールは必要なく、データベースは[Contao Manager]({{% relref "installation/contao-manager" %}})で直接更新できます。
 
 Contao 4.9からは、コマンド行で以下のコマンドも使用できます:
 
@@ -107,9 +107,9 @@ Contaoはデータベースに対応するデータ接続先を知っている�
 
 ### Contaoのバックエンドのユーザーの作成
 
-[Contao Manager]({{% ref "installation/contao-manager" %}})を使用して、バックエンドのユーザーを作成できます。
+[Contao Manager]({{% relref "installation/contao-manager" %}})を使用して、バックエンドのユーザーを作成できます。
 
-Contao **4.10**からは[コマンド行]({{% ref "/cli" %}})で以下の[コマンド]({{% ref "/cli/user" %}})も使用できます:
+Contao **4.10**からは[コマンド行]({{% relref "/cli" %}})で以下の[コマンド]({{% relref "/cli/user" %}})も使用できます:
 
 ```bash
 php vendor/bin/contao-console contao:user:create
