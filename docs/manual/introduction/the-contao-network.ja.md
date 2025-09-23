@@ -26,7 +26,7 @@ weight: 20
 
 ## 開発環境
 
-オープンソースのプロジェクトに関わっている多数のタスクと活動の中で、もちろんソフトウェアをさらに開発することはもっとも重要です。最終的に、全体のネットワークは成果物の周辺に構築されました。そして開発はそれだけ重要なので、[GitHubの単一のレポジトリ: contao/contao](https://github.com/contao/contao/)をプラットフォームとして透過的に運用しています。加えて、[公開の音声会議](https://contao.org/en/mumble-calls.html)を毎月行い、コアの開発者は"up for discussion"の付いたチケットを用いて情報交換をできます。
+オープンソースのプロジェクトに関わっている多数のタスクと活動の中で、もちろんソフトウェアをさらに開発することはもっとも重要です。最終的に、全体のネットワークは成果物の周辺に構築されました。そして開発はそれだけ重要なので、[GitHubの単一のレポジトリ: contao/contao](https://github.com/contao/contao/)をプラットフォームとして透過的に運用しています。加えて、[公開の音声会議](https://contao.org/en/contao-calls.html)を毎月行い、コアの開発者は"up for discussion"の付いたチケットを用いて情報交換をできます。
 
 ![The development environment]({{% asset "images/manual/introduction/en/the-development-environment.png" %}}?classes=shadow)
 
