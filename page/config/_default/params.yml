@@ -8,7 +8,8 @@ themeVariant:
     name: Light
   - identifier: contao-dark
     name: Dark
-disableSearch: false
+search:
+  disable: false
 disableLanguageSwitch: true
 documentation_label: Documentation
 disableInlineCopyToClipBoard: true
@@ -22,3 +23,11 @@ hideAuthorName: true
 hideAuthorEmail: true
 hideAuthorDate: true
 disableExplicitIndexURLs: true
+sidebarheadermenus: []
+sidebarfootermenus:
+  -
+      type: custom
+      identifier: footercontrols
+      elements:
+        - type: languageswitcher
+        - type: variantswitcher
