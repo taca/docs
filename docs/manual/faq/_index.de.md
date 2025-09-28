@@ -22,11 +22,6 @@ zunächst bei allen zurücksetzen, um anschließend im Contao [Install-Tool](/de
 einen neuen Administrator anzulegen.
 {{% /faq %}}
 
-{{% faq "Ich habe das Install-Tool Passwort vergessen, wie kann ich es zurücksetzen?" %}}
-Entferne in der Datei »system/config/localconfig.php« die Zeile beginnend mit `$GLOBALS['TL_CONFIG']['installPassword']`
-vollständig. Anschließend kannst du über das [Install-Tool](/de/installation/contao-installtool/) ein neues Passwort vergeben.
-{{% /faq %}}
-
 {{% faq "Kann ich mit Contao mehrere Webseiten pflegen?" %}}
 Ja. Contao unterstützt den [Multidomain-Betrieb](/de/layout/seitenstruktur/multidomain-betrieb/) und 
 [Mehrsprachige Webseiten](/de/layout/seitenstruktur/mehrsprachige-webseiten/).
@@ -108,7 +103,7 @@ Starte anschließend über den Manager oder der Konsole `composer install`.
 {{% /faq %}}
 
 {{% faq "Wie kann ich den Contao Backend-Pfad ändern?" %}}
-{{< version-tag "4.13" >}} Du kannst in der [config.yaml](/de/system/einstellungen/#config-yml) den Eintrag `route_prefix` hinzufügen.
+Du kannst in der [config.yaml](/de/system/einstellungen/#config-yml) den Eintrag `route_prefix` hinzufügen.
 Anschließend musst du über den Contao-Manager (»Systemwartung« > »Prod.-Cache erneuern«) oder über die Konsole 
 einmalig den Anwendungs-Cache leeren.
 
@@ -166,7 +161,7 @@ Antworten findest du im Bereich [TinyMCE-Editor Konfiguration](/de/anleitungen/t
 {{% faq "Meine Bilder werden im Frontend nicht angezeigt, was kann ich machen?" %}}
 Überprüfe in der [Dateiverwaltung](/de/dateiverwaltung/), ob das Verzeichnis mit deinen Bildern als »Öffentlich« 
 gekennzeichnet ist.
-Stelle außerdem sicher, dass sich keine veraltete `.htaccess` Datei im Order `/web` oder einem übergeordneten Ordner deiner Installation befindet.
+Stelle außerdem sicher, dass sich keine veraltete `.htaccess` Datei im Order `/public` oder einem übergeordneten Ordner deiner Installation befindet.
 {{% /faq %}}
 
 {{% faq "Kann man die Suche in der Dateiverwaltung ausblenden?" %}}
