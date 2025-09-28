@@ -1,7 +1,7 @@
 .PHONY: build
 
-#MANUAL_URL=https://docs.contao.org/manual/
-MANUAL_URL=https://www.contaocms.jp/manual/
+#MANUAL_SITE=https://docs.contao.org
+MANUAL_SITE=https://www.contaocms.jp
 
 build: build-dev build-manual
 
@@ -12,7 +12,7 @@ build-dev:
 		--environment dev \
 		--destination ../build/dev \
 		--logLevel info \
-		--baseURL https://docs.contao.org/dev/ \
+		--baseURL ${MANUAL_SITE}/4.x/dev/ \
 		--minify
 
 build-manual:
@@ -21,7 +21,7 @@ build-manual:
 		--environment manual \
 		--destination ../build/manual \
 		--logLevel info \
-		--baseURL $(MANUAL_URL) \
+		--baseURL ${MANUAL_SITE}/4.x/manual/ \
 		--minify
 
 # Start a live reload server
