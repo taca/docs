@@ -29,9 +29,7 @@ Contaoをサーバーにインストールする前に、[Contao Managerのイ�
 
 ### データベースのテーブルの更新
 
-すべてのパッケージをContao Managerがインストールできたら、次にデータベースを更新しなければなりません。
-このためには[Contaoインストールツール]({{% relref "/installation/contao-installtool" %}})を使用します(Contao 4.13 LTS)。
-Contao 5以降では、もうインストールツールは必要なく、データベースは[Contao Manager]({{% relref "installation/contao-manager" %}})で直接更新できます。
+すべてのパッケージをContao Managerがインストールできたら、次にデータベースを更新しなければなりません。これは[Contao Manager]({{% relref "installation/contao-manager" %}})で直接に、またはコマンド行から更新できます。
 
 ## コマンド行でインストール
 
@@ -63,10 +61,10 @@ Composerを全体的にインストールした場合は、どのディレクト
 
 ### コマンド行からContaoのインストール作業
 
-第2段階では、Composerを使用してContaoをインストールします。"example"は望ましいインストール先のディレクトリで、{{< current-version >}}は[インストールしたいContaoのバージョン](https://contao.org/de/download.html)です。
+第2段階では、Composerを使用してContaoをインストールします。"example"は望ましいインストール先のディレクトリで、{{% siteparam "currentContaoVersion" %}}は[インストールしたいContaoのバージョン](https://to.contao.org/release-plan)です。
 
 ```bash
-php composer.phar create-project contao/managed-edition example {{< current-version >}}
+php composer.phar create-project contao/managed-edition example {{% siteparam "currentContaoVersion" %}}
 ```
 
 ### ホスティングの構成 {#hosting-configuration}
@@ -83,11 +81,7 @@ Contaoでは、すべての公開してアクセス可能なファイルはイ�
 
 
 ### データベースのテーブルの更新
-
-インストールの後で、[Contaoインストールツール]({{% relref "/installation/contao-installtool" %}})を使用してデータベースを更新できます。(Contao 4.13 LTS)
-Contao 5以降では、もうインストールツールは必要なく、データベースは[Contao Manager]({{% relref "installation/contao-manager" %}})で直接更新できます。
-
-Contao 4.9からは、コマンド行で以下のコマンドも使用できます:
+インストールの後で、データベースを[Contao Manager]({{% relref "installation/contao-manager" %}})から更新するか、次のようにコマンド行から更新します:
 
 ```bash
 php vendor/bin/contao-console contao:migrate
