@@ -41,9 +41,8 @@ werden.
 
 ### Datenbanktabellen aktualisieren
 
-Sobald der Contao Manager alle Pakete installiert hat, muss die Datenbank aktualisiert werden. Dazu kannst du das 
-[Contao Install Tool]({{% relref "/installation/contao-installtool" %}}) (Contao 4.13 LTS) verwenden. Ab Contao 5 ist dies nicht mehr notwendig, 
-da die Datenbank direkt über den [Contao Manager]({{% relref "installation/contao-manager" %}}) aktualisiert werden kann.
+Sobald der Contao Manager alle Pakete installiert hat, muss die Datenbank aktualisiert werden. Dies kann direkt über den
+[Contao Manager]({{% relref "installation/contao-manager" %}}) oder über die Kommandozeile durchgeführt werden.
 
 
 ## Installation über die Kommandozeile {#installation-ueber-die-kommandozeile}
@@ -85,10 +84,10 @@ Wenn du Composer global installierst, kannst du den Befehl `composer` in jedem V
 ### Contao über die Kommandozeile installieren {#contao-ueber-die-kommandozeile-installieren}
 
 Im zweiten Schritt installierst du Contao über den Composer. Dabei steht »example« für das gewünschte 
-Installations-Verzeichnis und die {{< current-version >}} für die zu [installierende Contao-Version](https://to.contao.org/release-plan).
+Installations-Verzeichnis und die {{% siteparam "currentContaoVersion" %}} für die zu [installierende Contao-Version](https://to.contao.org/release-plan).
 
 ```bash
-php composer.phar create-project contao/managed-edition example {{< current-version >}}
+php composer.phar create-project contao/managed-edition example {{% siteparam "currentContaoVersion" %}}
 ```
 
 
@@ -107,11 +106,9 @@ Pro Contao-Installation wird deshalb eine eigene (Sub)Domain benötigt.
 
 ### Datenbanktabellen aktualisieren
 
-Sobald der Contao Manager alle Pakete installiert hat, muss die Datenbank aktualisiert werden. Dazu kannst du das 
-[Contao Install Tool]({{% relref "/installation/contao-installtool" %}}) (Contao 4.13 LTS) verwenden. Ab Contao 5 ist dies nicht mehr notwendig, 
-da die Datenbank direkt über den [Contao Manager]({{% relref "installation/contao-manager" %}}) aktualisiert werden kann.
-
-Ab Contao 4.9 steht dir hierzu der folgende Befehl auf der Kommandozeile zur Verfügung:
+Sobald der Contao Manager alle Pakete installiert hat, muss die Datenbank aktualisiert werden. Das kann direkt über den
+[Contao Manager]({{% relref "installation/contao-manager" %}}) durch geführt werden. Ansonsten steht dir hierzu der
+folgende Befehl auf der Kommandozeile zur Verfügung:
 
 ```bash
 php vendor/bin/contao-console contao:migrate
