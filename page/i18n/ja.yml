@@ -1,4 +1,6 @@
 contao_version: この機能は __Contao %s__ 以降で利用できます。
 banner_title: Contao Conference & College デュッセルドルフ 2025
 banner_date: 9月25日から27日
+Version: Version
 Search-placeholder: 検索...
+Versioning-warning: このページはバージョン{{.pageVersion.title}}を表示しています。現在のバージョンは<a href="{{.latestUrl}}">こちら</a>にあります。
