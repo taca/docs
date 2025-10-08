@@ -63,7 +63,7 @@ $ vendor/bin/contao-console debug:container contao.image.imagine
 現在のPHPのバージョンでは、すべての必要な拡張は初期状態で有効です。けれども、ホスティングの提供者によっては明示的に無効にしている場合があります。[Contao Manager](../../installation/contao-manager)または[Composer](https://getcomposer.org)でインストールする家庭で、これらの要件を自動的に検査します。
 
 {{% notice tip %}}
-q<sup>2</sup> PHPのSodium拡張を利用できない環境の場合、この要件にはプロジェクトの`composer.json`ファイルに`paragonie/sodium_compat_ext_sodium`パッケージを追加して対処できます。
+<sup>2</sup> PHPのSodium拡張を利用できない環境の場合、この要件にはプロジェクトの`composer.json`ファイルに`paragonie/sodium_compat_ext_sodium`パッケージを追加して対処できます。
 {{% /notice %}}
 
 ### PHPの設定 (`php.ini`)
