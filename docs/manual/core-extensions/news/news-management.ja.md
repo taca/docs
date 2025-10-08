@@ -86,8 +86,6 @@ comment, you can disable the security question here. Since Contao 4.4, this ques
 
 ## RSS feeds
 
-{{< tabs groupid="contaoVersion">}}
-{{% tab title="Contao  4" %}}
 Every news or blog archive can be exported as RSS/Atom feed if desired. RSS feeds are XML files containing your news 
 contributions, which can be subscribed to with an RSS reader and integrated into another website, for example.
 
@@ -138,20 +136,6 @@ Contao installation. To make sure that the feed links to the correct domain, you
 | Crop&nbsp;(important&nbsp;part) | Preserves the important part of an image as specified in the file manager. If necessary, the image will be cropped. |
 | Proportional                    | The longer side of the image is adjusted to the given dimensions and the image is resized proportionally.           |
 | Fit&nbsp;the&nbsp;box           | The shorter side of the image is adjusted to the given dimensions and the image is resized proportionally.          |
-
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
-Every news or blog archive can be exported as RSS/Atom or JSON feed if desired. RSS feeds are XML files containing your 
-news contributions, which can be subscribed to with an RSS reader and integrated into another website, for example.
-
-To create a news feed, select the page type [news feed](/en/site-structure/news-feed/) in the "Pages" area and make the 
-desired settings for your feed.
-
-The feeds can be integrated via the [page layout](/en/layout/theme-manager/manage-page-layouts/#rss-atom-feeds) in the
-header of the page. The "header" is not the header of your page layout, but the tag `head` of the HTML source code.
-{{% /tab %}}
-{{< /tabs >}}
-
 
 
 ## News items
@@ -205,9 +189,6 @@ on which the front end module "Eventleser" is integrated to display the complete
 
 **Link text:** Here you can overwrite the standard text of the "Read more..." link. <sup>1</sup> <sup>2</sup>
 <sup>3</sup> <sup>4</sup>
-
-{{< version-tag "5.3" >}} **Canonical URL:** Here you can define an individual canonical URL such as
-https://www.example.com/. <sup>1</sup>
 
 **Redirect page**: Here you can select the destination page from the page structure. <sup>2</sup>
 
@@ -318,12 +299,6 @@ files are both exported in the RSS feed and offered for download on your website
 **CSS class:** Here you can add a CSS class to the post.
 
 **Disable comments:** Here you can deactivate the comment function for a post.
-
-{{< version-tag "5.6" >}} **Search indexer:** Here you can specify whether the news article should be included or excluded from the internal [website search](/en/layout/module-management/website-search/). By default, news articles inherit the search indexer setting from the page that contains the "news reader" module. If necessary, this behavior can be adjusted per news article:
-
-- **Default:** Indexing according to the search indexer setting from the page with the "news reader" module. If no selection has been made there (-), indexing takes place according to the setting of the metadata robots tag.
-- **Always index:** Include the news article, even if it has the robots tag *noindex* or the page with the "news reader" module has a different setting.
-- **Never index:** Exclude the news article, even if it has the robots tag *index* or the page with the "news reader" module has a different setting.
 
 
 ### Publish settings
