@@ -27,7 +27,7 @@ Contaoは[セマンティック バージョニング](https://semver.org)の概
 
 ### バグ修正リリース
 
-バグ修正リリースは主な目的がバグ修正である保守リリースです。この行を書いている時点で、現在のバグ修正バージョンは**バージョン5.5.3**です。
+バグ修正リリースは主な目的がバグ修正である保守リリースです。例えば、**バージョン{{% siteparam "currentContaoVersion" %}}.1**です。
 
 
 ### 長期サポートバージョン
@@ -98,7 +98,7 @@ $ composer update
 {
     …
     "require": {
-        "contao/manager-bundle": "5.5.*",
+        "contao/manager-bundle": "{{% siteparam "currentContaoVersion" %}}.*",
         …
     },
     …
