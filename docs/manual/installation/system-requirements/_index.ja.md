@@ -66,6 +66,66 @@ $ vendor/bin/contao-console debug:container contao.image.imagine
 <sup>2</sup> PHPのSodium拡張を利用できない環境の場合、この要件にはプロジェクトの`composer.json`ファイルに`paragonie/sodium_compat_ext_sodium`パッケージを追加して対処できます。
 {{% /notice %}}
 
+### Relationships between the image libraries
+
+* `Imagine` is the PHP Composer package that Contao uses. It abstracts image handling for multiple libraries
+* `ImageMagick`, `Gmagick` or `GD` are the PHP extensions that enable image processing
+* Either natively `GD` or by creating a bridge to the actual tools `ImageMagick` and `GraphicsMagick`
+
+
+{{< tabs groupid="image-libraries" style="code" >}}
+
+{{% tab title="`GD`" %}}
+```mermaid
+sequenceDiagram
+    participant Contao as Contao
+    participant Imagine as Imagine Composer Package
+    participant GD as PHP GD extension
+
+    Contao ->> Imagine: request image operation
+    Imagine ->> GD: perform image operation
+    GD -->> Imagine: image result
+    Imagine -->> Contao: image result
+```
+{{% /tab %}}
+
+{{% tab title="`ImageMagick`" %}}
+```mermaid
+sequenceDiagram
+    participant Contao as Contao
+    participant Imagine as Imagine Composer Package
+    participant Imagick as PHP Imagick extension
+    participant IM as ImageMagick software
+
+    Contao ->> Imagine: request image operation
+    Imagine ->> Imagick: perform image operation
+    Imagick ->> IM: call ImageMagick libraries
+    IM -->> Imagick: processed image
+    Imagick -->> Imagine: image result
+    Imagine -->> Contao: image result
+```
+{{% /tab %}}
+
+{{% tab title="`GraphicsMagick`" %}}
+```mermaid
+sequenceDiagram
+    participant Contao as Contao
+    participant Imagine as Imagine Composer Package
+    participant Gmagick as PHP Gmagick extension
+    participant GM as GraphicsMagick software
+
+    Contao ->> Imagine: request image operation
+    Imagine ->> Gmagick: perform image operation
+    Gmagick ->> GM: call GraphicsMagick libraries
+    GM -->> Gmagick: processed image
+    Gmagick -->> Imagine: image result
+    Imagine -->> Contao: image result
+```
+{{% /tab %}}
+
+{{< /tabs >}}
+
+
 ### PHPの設定 (`php.ini`)
 
 Contaoの理想的な操作のための推奨です。異なった設定はContaoが動作しないという意味ではありませんが、予期せぬ動作や性能の低下や遅い反応を起こす可能性があります。
