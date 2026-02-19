@@ -29,13 +29,8 @@ Contaoは[MySQL](../../installation/system-requirements/#mysql-minimum-requireme
 ## Contao Managerのインストール
 
 [Contao Manager](../../installation/contao-manager/)は[contao.org](https://contao.org/en/download)からダウンロードできる単一のファイルで構成されています。
-ダウンロードに成功すると、`contao-manager.phar`というファイルを取得できます。
+ダウンロードに成功すると、`contao-manager.phar.php`というファイルを取得できます。
 このファイルをWebサーバーの`public`ディレクトリに転送してください。
-
-{{% notice note %}}
-すべてのホスティング提供者で`.phar`ファイルを実行できるとは限りません。
-最良の互換性のためには<b>アップロードした後で</b>`.php`という拡張子を追加してください。(つまり、<b>サーバー上の</b>ファイルを`contao-manager.phar.php`と名前を変更します。)
-{{% /notice %}}
 
 ## Contao Managerの呼び出し
 
