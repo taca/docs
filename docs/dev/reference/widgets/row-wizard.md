@@ -66,16 +66,22 @@ use Doctrine\DBAL\Platforms\MySQLPlatform;
 // …
 'data' => [
     'inputType' => 'rowWizard',
-    'key' => [
-        'label' => &$GLOBALS['TL_LANG']['MSC']['ow_key'],
-        'inputType' => 'text'
+    'fields' => [
+        'key' => [
+            'label' => &$GLOBALS['TL_LANG']['MSC']['ow_key'],
+            'inputType' => 'text'
+        ],
+        'value' => [
+            'label' => &$GLOBALS['TL_LANG']['MSC']['ow_value'],
+            'inputType' => 'text'
+        ],
     ],
-    'value' => [
-        'label' => &$GLOBALS['TL_LANG']['MSC']['ow_value'],
-        'inputType' => 'text'
+    'eval' => ['tl_class' => 'w66 clr'],
+    'sql' => [
+        'type' => 'text',
+        'length' => MySQLPlatform::LENGTH_LIMIT_BLOB,
+        'notnull' => false
     ],
-    'eval' => ['tl_class'=>'w66 clr'],
-	'sql' => ['type'=>'text', 'length'=>MySQLPlatform::LENGTH_LIMIT_TEXT, 'notnull'=>false],
 ],
 // …
 ```
