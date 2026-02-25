@@ -66,12 +66,11 @@ $ vendor/bin/contao-console debug:container contao.image.imagine
 <sup>2</sup> PHPのSodium拡張を利用できない環境の場合、この要件にはプロジェクトの`composer.json`ファイルに`paragonie/sodium_compat_ext_sodium`パッケージを追加して対処できます。
 {{% /notice %}}
 
-### Relationships between the image libraries
+### 画像ライブラリの間の関係
 
-* `Imagine` is the PHP Composer package that Contao uses. It abstracts image handling for multiple libraries
-* `ImageMagick`, `Gmagick` or `GD` are the PHP extensions that enable image processing
-* Either natively `GD` or by creating a bridge to the actual tools `ImageMagick` and `GraphicsMagick`
-
+* `Imagine`はContaoが使用するPHPのComposerパッケージです。画像を処理する複数のライブラリを抽象化します。
+* `ImageMagick`、`Gmagick`、`GD`は画像の処理を可能にするPHPの拡張です。
+* 組み込みの`GD`ライブラリ、または`ImageMagick`や`GraphicsMagick`といった実際のツールへの橋渡しをします。
 
 {{< tabs groupid="image-libraries" style="code" >}}
 
@@ -79,13 +78,13 @@ $ vendor/bin/contao-console debug:container contao.image.imagine
 ```mermaid
 sequenceDiagram
     participant Contao as Contao
-    participant Imagine as Imagine Composer Package
-    participant GD as PHP GD extension
+    participant Imagine as Imagine Composerパッケージ
+    participant GD as PHP GD拡張
 
-    Contao ->> Imagine: request image operation
-    Imagine ->> GD: perform image operation
-    GD -->> Imagine: image result
-    Imagine -->> Contao: image result
+    Contao ->> Imagine: 画像の操作を要求
+    Imagine ->> GD: 画像の操作を実行
+    GD -->> Imagine: 結果の画像
+    Imagine -->> Contao: 結果の画像
 ```
 {{% /tab %}}
 
@@ -93,16 +92,16 @@ sequenceDiagram
 ```mermaid
 sequenceDiagram
     participant Contao as Contao
-    participant Imagine as Imagine Composer Package
-    participant Imagick as PHP Imagick extension
-    participant IM as ImageMagick software
+    participant Imagine as Imagine Composerパッケージ
+    participant Imagick as PHP Imagick拡張
+    participant IM as ImageMagickソフトウェア
 
-    Contao ->> Imagine: request image operation
-    Imagine ->> Imagick: perform image operation
-    Imagick ->> IM: call ImageMagick libraries
-    IM -->> Imagick: processed image
-    Imagick -->> Imagine: image result
-    Imagine -->> Contao: image result
+    Contao ->> Imagine: 画像の操作を要求
+    Imagine ->> Imagick: 画像の操作を実行
+    Imagick ->> IM: ImageMagickのライブラリを呼び出し
+    IM -->> Imagick: 処理した画像
+    Imagick -->> Imagine: 結果の画像
+    Imagine -->> Contao: 結果の画層
 ```
 {{% /tab %}}
 
@@ -110,16 +109,16 @@ sequenceDiagram
 ```mermaid
 sequenceDiagram
     participant Contao as Contao
-    participant Imagine as Imagine Composer Package
-    participant Gmagick as PHP Gmagick extension
-    participant GM as GraphicsMagick software
+    participant Imagine as Imagine Composerパッケージ
+    participant Gmagick as PHP Gmagick拡張
+    participant GM as GraphicsMagickソフトウェア
 
-    Contao ->> Imagine: request image operation
-    Imagine ->> Gmagick: perform image operation
-    Gmagick ->> GM: call GraphicsMagick libraries
-    GM -->> Gmagick: processed image
-    Gmagick -->> Imagine: image result
-    Imagine -->> Contao: image result
+    Contao ->> Imagine: 画像の操作を要求
+    Imagine ->> Gmagick: 画像の操作を実行
+    Gmagick ->> GM: GraphicsMagickのライブラリを呼び出し
+    GM -->> Gmagick: 処理した画像
+    Gmagick -->> Imagine: 結果の画像
+    Imagine -->> Contao: 結果の画像
 ```
 {{% /tab %}}
 

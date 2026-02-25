@@ -7,13 +7,14 @@ aliases:
 
 {{< version "5.5.0" >}}
 
-The back end search in Contao is based on a project called "SEAL" by PHP-CMSIG. SEAL stands for "Search Engine Abstraction Layer" and has the same goal as Doctrine DBAL (which stands for "Database Abstraction Layer"). While Doctrine DBAL focuses on abstracting various database servers, PHP-CMSIG SEAL abstracts different search engines. The advantage in both cases: Ideally, this allows you to use Contao with different databases and search engines and benefit from their respective advantages.
+Contaoのバックエンドの検索はPHP-CMSIGによる"SEAL"というプロジェクトを基にしています。SEALは"Search Engine Abstraction Layer"の略で、Doctrine DBAL("Database Abstraction Layer"の略)と同じ目標にしています。DBALが様々なデータベースサーバーの抽象化を重点としているのに対して、PHP-CMSIG SEALは異なる検索エンジンを対象としています。両者の長所: 理想的には、Contaoで様々なデータベースと検索のエンジンを使用して、それぞれの利点を得ることができます。
 
-Learn more about PHP-CMSIG and the SEAL project [here][PHP-CMSIG] and [here][SEAL].
+それぞれの詳細については[PHP-CMSIG][PHP-CMSIG]と[SEALプロジェクト][SEAL]を参照してください。
 
-## Basic Requirements
+## 基本的な要件
 
-At the end of the day, every search engine works in a relatively similar way. You provide it with some content (usually 
+1日の終わりに、どの検索エンジンでも比較的に同じように動作します。
+You provide it with some content (usually 
 called a "document"), which is then processed so that it can be efficiently searched. There are various techniques to meet different requirements. Examples:
 
 * It would be nice if searching for "systems" also found "system" (Stemming).
