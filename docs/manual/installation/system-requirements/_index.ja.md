@@ -181,22 +181,7 @@ Contaoは[Doctrine DBAL](https://www.doctrine-project.org/projects/dbal.html)の
 
 ContaoはMySQLサーバーのバージョン5.7 / 8.0で`InnoDB`のテーブルの形式でContaoはテストに成功しています。文字セットの`utf8mb4`の代わりに`utf8`を使用すると、UTF8のサポートが悪化(例: 絵文字がない)します。
 
-以上の推奨する選択がサーバーで有効にできない場合は、他のデータベースエンジンで異なる文字セットを[`config/config.yaml`](../../system/settings/#config-yaml)ファイルに構成してください:
-
-{{% notice info %}}
-**Contao 4.8**より前は`app/config/config.yaml`ファイルになります。
-{{% /notice %}}
-
-```yaml
-doctrine:
-    dbal:
-        connections:
-            default:
-                default_table_options:
-                    charset: utf8
-                    collate: utf8_unicode_ci
-                    collation: utf8_unicode_ci
-```
+{{< version-tag "5.6" >}} Contaoを動作させるには、少なくともMySQL 5.7.6かMariaDB 10.4.3が必要です。
 
 さらにMySQLを"厳密モード"で動作することを推奨します、これによってデータの破損や切り詰めを防止し、データの一貫性を保証できます。
 
