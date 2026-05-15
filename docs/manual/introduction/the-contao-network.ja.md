@@ -39,16 +39,21 @@ weight: 20
 - 新たにインストールしたContaoでエラーを再現する方法(段階的な手順)
 - [Contaoのオンラインデモ](https://demo.contao.org/contao/login)でエラーを再現する方法(段階的な手順)
 
-## ソーシャルウェブ上のContao
+## ソーシャルメディアのプラットフォームでのContao
 
-もちろん、Contaoはいわゆる「ソーシャルウェブ」、現在は多数派はFacebook、Twitter、Youtube、Instagram、Pinterestにも表示されます。Facebookには公式のファンページ[www.facebook.com/contao](https://www.facebook.com/contao)があります。定期的に更新されて、公式なアナウンスと小さな更新状況の話題が載ります。もし、まだファンでないなら、すぐになるべきなことは間違いありません。
+もちろん、Contaoは様々なソーシャルメディアのプラットフォームでも活発です:
 
-Twitterでは[twitter.com/contaocms](https://twitter.com/contaocms)に、Youtubeでは[www.youtube.com/user/contaocms](https://www.youtube.com/user/contaocms)、Instagramでは[www.instagram.com/contaocms](https://www.instagram.com/contaocms/)、Pinterestでは[www.pinterest.de/contaocms](https://www.pinterest.de/contaocms/)でContaoを見てください。
+- [Facebook](https://www.facebook.com/contao)
+- [Instagram](https://www.instagram.com/contaocms/)
+- [LinkedIn](https://de.linkedin.com/company/contao-cms)
+- [Pinterest](https://www.pinterest.de/contaocms/)
+- [Twitter](https://twitter.com/contaocms)
+- [YouTube](https://www.youtube.com/user/contaocms)
 
 ## ドイツ語のコミュニティ
 
-ドイツ語のコミュニティは現在最大のContaoのコミュニティで独自の基盤: [community.contao.org/de/](https://community.contao.org/de/)があります。他のContaoの熱狂者と交流して、CMSからInternet、ウェブの作業者としての人生についてのすべての話題を議論できるでしょう。英語のコミュニティは[community.contao.org/en/](https://community.contao.org/en/)にあります。
+ドイツ語のコミュニティは現在最大のContaoのコミュニティで独自の基盤: [community.contao.org/de/](https://community.contao.org/de/)があります。他のContaoの熱狂者と交流して、CMSからInternet、ウェブの作業者としての人生についてのすべての話題を議論できるでしょう。英語のコミュニティは[community.contao.org/en/](https://community.contao.org/en/)にあります。また、[Contao Slack workspace](https://to.contao.org/slack)も議論の場として利用できます。
 
-バーチャルな世界で会った人々にリアルな世界で会いたい場合は会議、キャンプ、様々な常連さんのテーブルで会うことができます。イベントの一覧は[project website](https://contao.org/en/events.html)にあります。
+バーチャルな世界で会った人々にリアルな世界で会いたい場合は会議やサミット、キャンプで、様々な常連さんのテーブルで会うことができます。イベントの一覧は[project website](https://contao.org/en/events.html)にあります。
 
 ![The english speaking Contao community]({{% asset "images/manual/introduction/en/the-english-speaking-contao-community.png" %}}?classes=shadow)

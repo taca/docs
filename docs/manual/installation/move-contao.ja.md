@@ -9,8 +9,9 @@ weight: 50
 インストールしたContaoをある場所から別の場所(例えばローカルのインストールから稼働中のサーバー)に移動するのは、ほとんど[インストール](../install-contao)と同じですが、既存のデータベースとアプリケーションに関連したファイルの転送も含みます。
 
 1. [データベースの転送](#transferring-the-database)
-2. [ファイルの転送](#transferring-the-files)
-3. [Contaoのインストール](#installing-contao)
+2. [Setting up web space](#preparing-your-web-space)
+3. [ファイルの転送](#transferring-the-files)
+4. [Contaoのインストール](#installing-contao)
 
 {{% notice warning %}}
 不一致による危険性を減らすため、元のサーバーと目的のサーバーの両方が**[同じバージョンのPHP](../system-requirements/#minimum-php-requirements)**であることを確認してください。
@@ -69,9 +70,14 @@ gunzip < my_dump.sql.gz | mysql --host=localhost --user=my_user --password my_db
 {{< /tabs >}}
 
 
+## Preparing your web space
+- Create a folder called `public` in the **empty** web space.
+- Copy the latest version of the file `contao-manager.phar.php` (available on the Contao website) into **the public folder you have created**.
+
+
 ## ファイルの転送 {#transferring-the-files}
 
-以下のファイルとフォルダーを元のサーバーから目的のサーバーに転送しなければなりません。
+以下のファイルとフォルダーを元のサーバーから目的のサーバーの(`public`**ではなく**)**mainのフォルダー** に転送しなければなりません。
 
 - `files`                           (ファイル)
 - `templates`                       (テンプレート)
@@ -98,12 +104,15 @@ scp -r files/ templates/ composer.json composer.lock your_server:/www/project/
 
 ## Contaoのインストール {#installing-contao}
 
-1. [ホスティングの構成](../install-contao/#hosting-configuration)を正しく設定していることを確認してください。
+1. [ホスティングの構成](../install-contao/#hosting-configuration)を(`public`を公開するWebサイトのルートとして)正しく設定していることを確認してください。
 2. その次に*Composer*に仕事をしてもらいます。元のサーバーからすべてのパッケージのバージョンを含んだ`composer.lock`ファイルを転送していますので、Composerは以前と同様の状態を再現します。
    
    これを行うには通常のインストールの様に[Contao Manager](../install-contao#installation-via-the-contao-manager)を使用するか、[コマンド行](../install-contao#installation-via-the-command-line)を使用してください。
    
-3. [インストールツール](../contao-installtool)を使用して新しいデータベース接続を構成してください。
+3. コマンド行を使用したくない場合は、ブラウザーで次のURLを開いてください: https://example.com/contao-manager.phar.php`
+	The Contao Manager will launch and ask for a username and password for the Contao Manager. The Contao installation will then begin.
+    Finally, a connection to the database will be established. In Contao 5, there is no longer an installation tool; step 4 is not possible or required.
+4. Run the [install tool](../contao-installtool) to configure the new database connection. 
 
 {{% notice info %}}
 If you have not moved to another server and have simply created a 1:1 copy on the same server, make sure to delete and recreate the application cache via the Contao Manager after adjusting the database connection to ensure that the changes are applied correctly and that you are on the correct database.
