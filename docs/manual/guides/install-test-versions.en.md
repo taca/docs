@@ -83,7 +83,7 @@ _including_ its latest release candidates (if there are any):
             "contao-community-alliance/composer-plugin": true,
             "contao-components/installer": true,
             "contao/manager-plugin": true,
-            "php-http/discovery": true
+            "php-http/discovery": false
         }
     },
     "extra": {
