@@ -1,165 +1,152 @@
 ---
-title: 'About Contao Manager'
-description: 'Contao Manager is a tool that provides a graphical interface to easily manage a Contao installation.'
+title: 'Contao Managerについて'
+description: 'Contao ManagerはContaoのインストールを簡単にグラフィカル・ユーザー・インターフェイスで管理できるつーるです。'
 aliases:
     - /ja/installation/contao-manager/
 weight: 20
 ---
 
-The development of the Contao Manager is supported by the [Contao Association](https://association.contao.org/).
+Contao Managerの開発は[Contao Association](https://association.contao.org/)がサポートしています。
 
-## Task of the manager
+## Contao Managerの役割
 
-Like most PHP projects, Contao is installed and updated with [Composer](https://getcomposer.org). Composer is a package 
-manager that can be used from the command line and can also be used to manage Contao completely from the command line. 
-The Contao Manager is a tool that provides a graphical user interface to manage a Contao installation. It takes the 
-hurdle of the command line and allows you to execute the necessary commands with just one click.
+ほとんどのPHPのプロジェクトのように、[Composer](https://getcomposer.org)を使用してContaoのインストールと更新を行います。
+Composerはコマンド行から使用できるパッケージ管理で、コマンド行からContaoも完全に管理できます。
+Contao Managerはグラフィカル・ユーザー・インターフェイスでContaoのインストールの管理を提供します。
+コマンド行のハードルを乗り越えて、必要なコマンドをたった1度のクリックで実行できるようにします。
 
-The manager can be used to perform the following tasks, among others:
+Contao Managerを使用すると、とりわけ以下の作業を実行できます:
 
-- Install Contao
-- Update Contao
-- Search for extensions
-- Install extensions
-- Uninstalling extensions
-- Empty Contao Cache (system maintenance)
+- Contaoをインストール
+- Contaoを更新
+- 機能拡張を検索
+- 機能拡張をインストール
+- 機能拡張をアンインストール
+- ContaoのCacheを消去 (システム保守)
 
-Further functions are planned for the future, such as Define system settings.
+将来的にはシステム設定の定義といった、その他の機能も計画しています。
 
-The Contao Manager is optional and not required for running Contao. However, the tool makes it easier for beginners to 
-install and manage extensions because no composer knowledge is required.
+Contaoを動作させるのにContao Managerは必須ではありません。
+しかし、Composerの知識を必要としないので、初心者に機能拡張のインストールと管理をContao Maangerは簡単にします。
 
-It is still possible to manage the installation of Contao 4 and extensions directly from the command line using Composer.
+引き続きコマンド行からComposerを使用して、Contao 4と機能拡張のインストールの管理を行えます。
 
-## Install Contao Manager
+## Contao Managerのインストール
 
-### System requirements
+### システム要件
 
-The system requirements are basically the same as for [Contao](/ja/installation/system-requirements/). The Contao 
-Manager automatically checks if the requirements are met.
+システム要件は基本的には[Contao](/ja/installation/system-requirements/)と同じです。
+Contao Managerはシステム要件を満たしているかどうかを自動的に確認します。
 
-For the latest version you'll need:
-- PHP version 8.1 or newer
-- PHP extension *Intl* and *OpenSSL*
-- PHP functions *proc\_open* and *proc\_close*
-- PHP setting *allow\_url\_fopen* must be active
+最新のバージョンでは以下が必要です:
+
+- PHPバージョン8.1以降
+- PHPの拡張*Intl*と*OpenSSL*
+- PHPの関数*proc\_open*と*proc\_close*
+- PHPの設定で*allow\_url\_fopen*を有効なことが必須
 
 {{% notice note %}}
-The Contao Manager can also be installed on PHP 5 or PHP 7. On the first access, the
-PHP version is detected and a compatible version is automatically downloaded from the Contao servers.
-Features of the latest version are obviously not available in that case, but you can still install or update
-a Contao installation.
+Contao ManagerはPHP 5やPHP 7にもインストールできます。
+最初にアクセスした時点でPHPのバージョンを検出すると、Contaoのサーバーから互換性のあるバージョンを自動的にダウンロードします。
+この場合、最新のバージョンの機能は言うまでもなく利用できませんが、Contaoのインストールや更新は引き続き加納です。
 {{% /notice %}}
 
-### Hosting Configuration
+### ホスティングの構成
 
-In Contao, all publicly accessible files are located in the subfolder `/public` of the installation. Create the folder 
-`public` and set the document root of the installation to this subfolder using your hosting provider's admin panel.
+Contaoでは、すべてに公開してアクセス可能なファイルはContaoをインストールしているフォルダーの直下の`/public`というフォルダーに配置します。
+`public`というフォルダーを作成して、ホスティング提供者の管理パネルからContaoのドキュメントルートに設定してください。
 
-**Example:** `example.com` points to the directory `/www/example/public`
+**例:** `example.com`はディレクトリ`/www/example/public`を指しています。
 
 {{% notice info %}}
-Every Contao installation requires a separate (sub)domain.
+それぞれのContaoのインストールには別々の(サブ)ドメインが必要です。
 {{% /notice %}}
 
-### Download and Installation
+### ダウンロードとインストール
 
-The Contao Manager consists of a single file that can be [downloaded from contao.org](https://contao.org/en/download.html). 
-After the successful download you will receive a file `contao-manager.phar.php`. Transfer this file to the directory 
-`public` on your web server.
+Contao Managerは[contao.orgからダウンロード](https://contao.org/en/download.html)できるファイル1つの構成となっています。
+ダウンロードに成功すると`contao-manager.phar.php`というファイルを取得できます。
+このファイルをWebサーバーの`public`ディレクトリに転送してください。
 
+### Contao Managerの開始
 
-### Starting Contao Manager
+次に、ブラウザーでURL: `www.example.com/contao-manager.phar.php`にアクセスします。
+Contao Managerの開始ページを表示するはずです。
 
-Then use your browser to access the URL `www.example.com/contao-manager.phar.php`. You should see the Contao Manager 
-welcome page.
+![Contao Managerの開始ページ]({{% asset "images/manual/installation/ja/welcomepage-contao-manager.png" %}}?classes=shadow)
 
-![Welcome page of the Contao Manager]({{% asset "images/manual/installation/ja/welcomepage-contao-manager.png" %}}?classes=shadow)
+### 基本的な構成
 
-### Basic configuration
+Contaoをインストールする前に、Contao Manager自体を構成しなければなりません。
+ユーザー名とパスワードを入力して新しいユーザーを作成してください。
+パスワードは後に続くContaoのインストールとは無関係です。
 
-Before you install Contao, you have to configure the manager itself. Create a new user by entering a username and 
-password. The password is independent from the following Contao installation.
+Contao Managerは独自のデータベースを必要としません。`/contao-manager`というディレクトリに、Contao Managerの構成は`manager.json`に、ユーザーの情報は`users.json`というファイルにContao Managerは保存します。
 
-Contao Manager does not need its own database. The configuration of the Contao Manager is stored in the database 
-`manager.json` and the user data in the `users.json` in the directory `/contao-manager`.
+### サーバーの構成
 
+Contao Managerはバックグラウンドでプロセスを正しく実行するために、PHPの実行ファイルのパスと他のサーバーの情報を必要とします。
+Contao Managerはパスを通常は自動的に検出します。
 
-### Server configuration
+![サーバーの構成]({{% asset "images/manual/installation/ja/server-configuration.png" %}}?classes=shadow)
 
-The Contao Manager needs the path to the PHP binary and other server information to run background processes correctly. 
-The path is usually automatically detected by the Contao Manager.
+#### Composerリゾルバークラウド
 
+サーバーに十分なメモリーがない場合でも[Composerリゾルバークラウド](https://composer-resolver.cloud/)はComposerの依存関係のインストールを可能にします。
+パッケージ情報の依存関係を解決する情報は[Contao Association](https://association.contao.org/)のクラウドサービスに[送信](https://association.contao.org/)されることに注意してください。
 
-![Server configuration]({{% asset "images/manual/installation/ja/server-configuration.png" %}}?classes=shadow)
+基本的な構成を行うと、Contaoを[インストール](/ja/installation/install-contao/#installing-contao-with-the-contao-manager)できるようになります。
 
-#### Composer Resolver Cloud
+## Contao Managerのよくある質問と答え
 
-The [Composer Resolver Cloud](https://composer-resolver.cloud/) allows you to install Composer dependencies even if the 
-server does not have enough memory. Please note that your dependency resolution package information is 
-[sent](https://association.contao.org/) to a [Contao Association](https://association.contao.org/) cloud service.
+### どのようにContao Managerを更新できますか?
 
-After the successful basic configuration, Contao can now be 
-[installed](/ja/installation/install-contao/#installing-contao-with-the-contao-manager).
+基本的に、手作業による更新は必要ありません。Contao Managerはバックグラウンドで自動的に確認して、新しいバージョンを利用できる場合は自身を更新します。
 
-## Frequently asked questions about the Contao Manager
+問題のある場合は、いつでも最新のバージョンの`contao-manager.phar`をダウンロードして、[FTP](#download-and-installation)を経由して手動で[アップロードと置き換え](#download-and-installation)を行えます。
 
-### How to update the Contao Manager?
+### Contao Managerのログイン情報を忘れたらどうすればよいですか?
 
-Basically, a manual update is not necessary. The manager automatically checks in the background and updates itself if a 
-new version is available.
+パスワードを消去するには、サーバーにFTPで接続しなければなりません。
 
-In case of problems, you can always download the latest `contao-manager.phar` version and 
-[upload and replace](#download-and-installation) it manually via [FTP](#download-and-installation).
+`contao-manager`というディレクトリに移動し、`users.json`というファイルを削除してください。
 
-### Did you forget your Contao Manager login information?
+すぐに、使用しているドメインに`contao-manager.phar.php`を追加したドメインにアクセスしてContao Managerを呼び出して新しい管理者ユーザーを作成してください。
 
-To reset your password, you must connect to your server via FTP.
+`users.json`のファイルを削除したにも関わらず、既存のユーザーでログインをしようとする場合は、ブラウザーからドメインのクッキーを削除するか、Contao Managerのページをプライベートモードで開いてください。
 
-In the directory `contao-manager`, delete the file `users.json`.
+### Contao Managerが「ハングアップ」しました。
 
-Now call the Contao Manager from your domain with the addition `contao-manager.phar.php` and create a new admin user.
+Contao Managerが応答しなくなったり、コンソールの出力ウィンドウが閉じなくなったり、といった場合はContao Managerのページの再読み込みしてください。再読み込みしても同じ表示となる場合は`contao-manager`のディレクトリにある`task.json`というファイルを削除してください。
 
-If you see the login mask for an existing user despite deleting the file `users.json`, delete the cookies of the domain 
-or open the Contao Manager page in the "incognito mode" of your browser.
+その後、Contao Managerは再び動作するはずです。
 
-### The Contao Manager has "hung up"
-
-If the Contao Manager stops responding, the console output window does not close, or after a reload of the manager page
-or after a reload of the manager page you always get the same output, delete the file `contao-manager` in the directory 
-`task.json`.
-delete the file `task.json`.
-
-After that, the Contao Manager should run again.
-
-### Can I add another user account to Contao Manager?
+### Contao Managerにもう別のユーザーアカウントを追加できますか?
 
 {{< version "Manager 1.9" >}}
 
-Yes, with ADMIN rights you can invite other users to the Contao Manager.
-To do this, click on the gear wheel in the menu and then on _Accounts_. Here you can create an invitation link,
-and assign one of the following permissions to the new account:
+はい、ADMIN権限があれば他のユーザーをContao Managerに招待できます。
+このためには、メニューの歯車をクリックして、_アカウント_を選択します。
+ここから招待のリンクを作成して、以下の権限から1つを新しいアカウントに割り当てられます。
 
-- **READ** – can see the installed packages and read log files, but
-  cannot change the system.
-- **UPDATE** – may update existing packages and perform maintenance tasks (e.g. clear cache).
-- **INSTALL** – may update and install packages and change system settings.
-- **ADMIN** – can use all functions of the Contao Manager.
-
-
-### Can Contao Manager be added to an existing installation?
-
-Yes, if you use a Contao installation in the Managed Edition, you can install Contao Manager later. Just upload the 
-`contao-manager.phar` files into the directory `public` and add the file extension `.php`.
-
-During the basic installation, the manager recognizes that Contao is already installed.
+- **読み取り** – インストールしたパッケージを確認し、ログファイルを読めますが、システムの変更はできません。
+- **更新** – 既存のパッケージの更新と、保守の作業(例えばキャッシュの消去)が可能です。
+- **インストール** – パッケージの更新とインストール、システム設定の変更を行えます。
+- **管理者** – Contao Managerのすべての機能を使用できます。
 
 
-### Can I rename the ».phar« file?
-Yes. You can use any file name you want. However, the Contao Manager is no longer accessible from the Backend. 
-In this case, you can change the [config.yaml](/ja/system/settings/#config-yml) accordingly. Afterwards, you have to 
-empty the application cache 
-once using the Contao Manager ("Maintenance" &gt; "Application Cache" &gt; "Rebuild Production Cache") or the console.
+### 既存のインストールしたContaoにContao Managerを追加できますか?
+
+はい、Managed EditionのContaoをインストールして使用している場合は、後からContao Managerをインストールできます。`public`のディレクトリに`contao-manager.phar`のファイルをアップロードして、`.php`の拡張子を追加してください。
+
+Contao Managerの基本的なインストールの過程で、Contaoを既にインストールしていることを認識します。
+
+### ».phar«という名前を変更できますか?
+
+はい、変えたいと思うどのような名前も使用できます。けれども、バックエンドからContao Managerにアクセスできなくなってしまいます。
+この場合、[config.yaml](/ja/system/settings/#config-yaml)を適切に変更します。
+その後、Contao Manager("保守" &gt; "アプリケーションキャッシュ" &gt; "実稼働用のキャシュを再構築")か、コンソールを使用してアプリケーションキャッシュを一旦消去する必要があります。
+
 ```yaml
 # config/config.yaml
 contao_manager:

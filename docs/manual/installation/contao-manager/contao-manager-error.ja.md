@@ -1,31 +1,27 @@
 ---
-title: 'Contao Manager error'
+title: 'Contao Managerのエラー'
 description: ''
 url: "installation/contao-manager-error"
 aliases:
     - /ja/installation/contao-manager-error/
 ---
 
-## The Contao Manager cannot be accessed
+## Contao Managerにアクセスできません
 
-You have downloaded the Contao Manager, consisting of a single file, from [contao.org](https://contao.org/de/download.html) 
-and transferred the file `contao-manager.phar.php` to the `public` directory on your web server.
+1つのファイルであるContao Managerを[contao.org](https://contao.org/de/download.html)からダウンロードして、Webサーバーの`public`ディレクトリに、`contao-manager.phar.php`というファイルを転送しました。
 
-The download file `contao-manager.phar.php` is a PHP script that downloads the required file in the background
-and then overwrites itself.
+ダウンロードした`contao-manager.phar.php`というファイルはPHPスクリプトで、必要なファイルをバックグラウンドでダウンロードして自身を書き換えます。
 
-However, when you call up the URL `www.example.com/contao-manager.phar.php`, the welcome page of the Contao
-Manager does not appear.
+しかし、`www.example.com/contao-manager.phar.php`というURLにアクセスしても、Contaoの開始ページを表示しません。
 
-In this case, you can try uploading the [`.phar` file](https://download.contao.org/contao-manager.phar) directly.
+この場合、[`.phar`ファイル](https://download.contao.org/contao-manager.phar)を直接アップロードしてみてください。
 
 
 {{% notice note %}}
-`.phar` files are not executed by all hosting providers. For best compatibility, add the file extension `.php`(final
-file name: `contao-manager.phar.php`).
+すべてのホスティング提供者で`.phar`ファイルは実効できるとは限りません。最大限の互換性のためには、ファイルの拡張子として`.php`を追加(最終的なファイル名: `contao-manager.phar.php`)してください。
 {{% /notice %}}
 
 {{% notice warning %}}
-`.php` files are transferred by most FTP programs in text mode instead of binary mode, which destroys the manager file.
-Therefore, add the file extension `.php` only after the upload.
+ほとんどのFTPプログラムは`.php`ファイルをバイナリモードではなくテキストモードで転送し、この結果Contao Managerのファイルを破壊します。
+そのため、ファイルの拡張子`.php`をアップロードした後で追加してください。
 {{% /notice %}}

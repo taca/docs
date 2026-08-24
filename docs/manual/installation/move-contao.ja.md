@@ -110,12 +110,12 @@ scp -r files/ templates/ composer.json composer.lock your_server:/www/project/
    これを行うには通常のインストールの様に[Contao Manager](../install-contao#installation-via-the-contao-manager)を使用するか、[コマンド行](../install-contao#installation-via-the-command-line)を使用してください。
    
 3. コマンド行を使用したくない場合は、ブラウザーで次のURLを開いてください: https://example.com/contao-manager.phar.php`
-	The Contao Manager will launch and ask for a username and password for the Contao Manager. The Contao installation will then begin.
-    Finally, a connection to the database will be established. In Contao 5, there is no longer an installation tool; step 4 is not possible or required.
-4. Run the [install tool](../contao-installtool) to configure the new database connection. 
+	Contao Managerが起動して、Contao Managerのユーザー名とパスワードを求めてきます。認証に成功するとContaoのインストールを開始します。
+    最後に、データベースへの接続を確立します。Contao 5では、もうインストールツールはありません。次の4.は不可能で必要ありません。
+4. [インストールツール](../contao-installtool)を実行して新しいデータベースとの接続を確立します。
 
 {{% notice info %}}
-If you have not moved to another server and have simply created a 1:1 copy on the same server, make sure to delete and recreate the application cache via the Contao Manager after adjusting the database connection to ensure that the changes are applied correctly and that you are on the correct database.
+他のサーバーに移設するのではなく、同じサーバー上で単純に1対1のコピーを作成した場合、データベース接続を調整して変更を正しいデータベースに適用を確実に行った後で、Contao Managerでアプリケーションキャッシュの削除と再作成を忘れずに行ってください。
 {{% /notice %}}
 
-以上!  これで新しい場所でContaoインストールツールを使用する準備ができました。
+以上!  これで新しい場所でContaoを使用する準備ができました。
