@@ -71,18 +71,19 @@ Contao 4と5は構造的にはあまり変更はありません。`contao/manage
 ```
 
 {{% notice "info" %}}
-The `contao/managed-edition` uses the `^5.0` notation for the version requirement for most of the core packages. This means that each
-package can be installed in at least version `5.0.0`, but not in versions `6.x`. This notation also allows `5.1.x`, `5.2.x` etc. However,
-the version requirement of the `contao/manager-bundle` is set to `5.0.*` by default. This is done so that Composer will not automatically
-update to a new minor version of Contao, without you specifically allowing it, i.e. by changing the version requirement to `5.1.*` for
-example. See also [Composer's documentation](https://getcomposer.org/doc/articles/versions.md) on this topic.
+`contao/managed-edition`のほとんどのコアのパッケージではバージョンの要件に`^5.0`という記法を使用しています。
+これは各パッケージは少なくともバージョン`5.0.0`をインストールしますが、`6.x`はしないことを意味します。
+この記法では`5.1.x`、`5.2.x`などのインストールも許可します。
+しかし、`contao/manager-bundle`のバージョンの要件は初期設定で`5.0.*`と設定されています。
+これは具体的に許可、例えば要件を`5.1.*`に変更するといったことをしない限り、ComposerがContaoの新しいマイナーバージョンに自動的に更新しないようにするためです。
+これについては[Composerのドキュメント](https://getcomposer.org/doc/articles/versions.md)も参照してください。
 {{% /notice %}}
 
 
-### Adjust Composer Scripts
+### Composerスクリプトの調整
 
-If your Contao instance was started with an older version then your `composer.json` might still contain a reference to a `ScriptHandler`
-class that does not exist anymore in Contao 5. This section will need to be changed to use `@php vendor/bin/contao-setup` instead:
+インストールしているContaoが古いバージョンで起動する場合、もうContao 5には存在しない`ScriptHandler`クラスへの参照を`composer.json`が未だに含んでいる可能性があります。
+その部分は代わりに`@php vendor/bin/contao-setup`を使用するように変更しなければなりません:
 
 ```json
 {
@@ -98,22 +99,21 @@ class that does not exist anymore in Contao 5. This section will need to be chan
 ```
 
 
-### Document Root
+### ドキュメントルート
 
-Contao 4.13 and 5 use the `public/` folder as its entry point. Contao 4.13 still contains an automatic detection in case you are still
-using the `web/` folder instead (which was the standard in previous Contao versions). However, Contao 5 does not have that anymore and thus
-you should rename your existing `web/` folder to `public/` before you update and adjust your web server's configuration accordingly.
-Alternatively you can also set the folder to be used as the public directory in your `composer.json` 
-(see [hosting configuration][HostingConfig]).
+Contao 4.13と5はその入り口として`public/`フォルダーを使用しています。
+Contao 4.13は(以前のContaoのバージョンの標準だった)`web/`フォルダーを代わりに使用している場合を自動的に検出していました。
+しかし、Contao 5ではもう自動的な検出を行わないので、Webサーバーの設定の更新と調整を行う前に既存の`web/`フォルダーを`public/`に名前を変更しなければなりません。
+あるいは、公開ディレクトリとして使用するフォルダーを`composer.json`で設定すること模できます。([ホスティングの構成][HostingConfig]を参照してください。)
 
 
-### Adjust Folder Structure
+### フォルダーの構成を調整
 
-Previous Contao versions used the `app/` folder for ressources and other application adjustments. Newer versions use a new structure, but
-still had support for the old one - but Contao 5 does not not. The following files and folders will need to be moved, in case they are still
-in use:
+以前のContaoのバージョンは`app/`フォルダーをリソースと他のアプリケーションの調整に使用していました。
+新しいバージョンは新規の構成を使用し、古い構成もサポートしていましたが、Contao 5は古い構成をサポートしていません。
+万が一、まだ使用している場合は、以下のファイルとフォルダーを移動しなければなりません:
 
-| Old | New |
+| 旧 | 新 |
 |---|---|
 | `app/config/` | `config/` |
 | `app/Resources/contao/` | `contao/` |
@@ -122,56 +122,51 @@ in use:
 | `app/Resources/views/` | `templates/bundles/` |
 
 
-### Application Adjustments
+### アプリケーションの調整
 
-Contao 4 still had support for adjustments in the `system/config/` folder from Contao 3. This support has been dropped in Contao 5 and thus
-any such adjsutments will need to be moved to the correct location now. See the [developer documentation][ConfigTranslations] for more
-details.
-
+Contao 4はContao 3からの`system/config/`フォルダーでの調整をまだサポートしていました。
+このサポートはContao 5で削除されたので、そのような調整は正しい場所に移動しなければならなくなりました。
+詳細については[開発者のドキュメント][ConfigTranslations]を参照してください。
 
 #### `contao/config.yaml`
 
-The following configurations within the `config.yaml` have been removed in Contao 5 and need to be deleted:
+`config.yaml`の以下の構成はContao 5で削除されたので、取り除かなければなりません:
 
-| Entry                 | Replacement                                       |
-|-----------------------|---------------------------------------------------|
-| contao.prepend_locale | Adjustable within the starting point of a website |
-| contao.url_suffix     | Adjustable within the starting point of a website |
-| contao.legacy_routing | -                                                 |
-| contao.encryption_key | -                                                 |
-
-
-### Export Internal Stylesheets
-
-Contao 5 drops the [internal CSS editor][ManageStylesheets]. If you are still using such internal stylesheets you will need to 
-[export][ExportStylesheets] them before upgrading to Contao 5 and then select them as [external stylesheets][LayoutStylesheets] in your page 
-layout again.
+| 項目                  | 置き換え                              |
+|-----------------------|---------------------------------------|
+| contao.prepend_locale | Webサイトの起点となる範囲内で調整可能 |
+| contao.url_suffix     | Webサイトの起点となる範囲内で調整可能 |
+| contao.legacy_routing | -                                     |
+| contao.encryption_key | -                                     |
 
 
-### Extensions
+### 内部のスタイルシートの取り出し
 
-After implementing the previously mentioned adjustments you will now be able to execute a full Composer package update in order to upgrade 
-to Contao 5. However, Composer might prevent you from doing so if you still require extension that haven't been unlocked for Contao 5 - or 
-if other dependencies are not compatible with Contao 5.
-
-In this case you should evaluate whether if newer major versions of these packages exist that might be compatible, or if the respective 
-extension is still required for your Contao instance and thus could otherwise be removed.
+Contao 5は[内部のCSSエディター][ManageStylesheets]を廃止しました。
+まだ、内部のスタイルシートを使用している場合はContao 5にアップグレードする前に[取り出し][ExportStylesheets]て、ページレイアウトで[外部スタイルシート][LayoutStylesheets]として改めて選択してください。
 
 
-### Templates
+### 機能拡張
 
-As mentioned previously you will always need to check whether any of your customised templates will need to be adjusted. There is however
-one thing in particular to note in Contao 5: all content elements (and also front end modules in the future) have been modernised and use
-[Twig-Templates][TwigTemplates] now, along with a new template file structure. If you had a customised `templates/ce_text.html5` template
-for example then this adjustment will not have any effect by default in Contao 5 (unless you switch the respective content element back to
-its old implementation, which is still possible in Contao 5).
+以上に書きました調整を行った後、これでContao 5にアップグレードするためにComposerの全パッケージの更新を実行できるようになります。
+しかし、Contao 5に対応していない機能拡張をインストールしていたり、他にContao 5と互換性のない依存関係があったり、といった場合にComposerは更新を阻む場合があります。
+
+この場合、これらに互換性のある新しいバージョンのパッケージがあるかどうかを確認したり、インストールしているContaoにその機能拡張が引き続き必要かどうかを確認して不要であれば削除するといったことが必要となります。
 
 
-### Run Migrations and Database Updates
+### テンプレート
 
-In case the Composer package update to Contao 5 was successful you can now update the database. Contao 5 does not have the Install Tool
-anymore. Instead the database migration and update must be run from the command line - or via the respective method within the Contao
-Manager itself. In order to start the process on the command line you can use the following command:
+以前に書きましたように、カスタマイズしたテンプレートに調整が必要かどうか常に確認する必要があります。
+しかし、Contao 5では特に留意が必要な点があります: すべてのコンテント要素(そして将来はフロントエンドモジュールも)近代化されて、新しいテンプレートファイルの構造とともに[Twigテンプレート][TwigTemplates]を使用するようになりました。
+例えば、`templates/ce_text.html5`といったテンプレートをカスタマイズしていた場合、これによる調整はContao 5の初期設定では何の効果もありません。(それぞれのコンテント要素を古い実装に切り替えれば別ですが、これはContao 5でも可能です。)
+
+
+### 移行の実行とデータベースの更新
+
+Contao 5へのComposerパッケージの更新を終えましたら、データベースの更新を行えます。
+Contao 5にはインストールツールはもうありません。
+代わりに、データベースの移行と更新をコマンド行から実行するか、Contao Managerの機能で実行します。
+コマンド行で処理を開始するには、以下のコマンドを実行してください:
 
 ```shell
 vendor/bin/contao-console contao:migrate
